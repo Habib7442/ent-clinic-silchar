@@ -77,7 +77,7 @@ export default function HeroSection({ lang }: HeroProps) {
             {content.eyebrow}
           </div>
           
-          <h1 ref={titleRef} className="reveal-text text-5xl md:text-7xl lg:text-8xl mb-8 whitespace-pre-line leading-[1.05]">
+          <h1 ref={titleRef} className="reveal-text text-4xl sm:text-5xl md:text-7xl lg:text-8xl mb-8 whitespace-pre-line leading-[1.05] break-words">
             {content.title}
           </h1>
           

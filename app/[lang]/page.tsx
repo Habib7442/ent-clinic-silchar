@@ -16,7 +16,7 @@ export default async function Home({
   const { lang } = await params;
 
   return (
-    <main className="flex-1">
+    <main className="flex-1 overflow-x-hidden">
       <HeroSection lang={lang} />
       <DoctorBrief lang={lang} />
       <ServicesSection lang={lang} />

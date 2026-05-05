@@ -65,7 +65,7 @@ export default function ClosingCTA({ lang }: ClosingCTAProps) {
     <section ref={containerRef} className="relative py-32 lg:py-48 px-6 lg:px-24 bg-[#0A1A12] overflow-hidden text-center">
       {/* Dynamic background glow */}
       <div className="absolute inset-0 flex items-center justify-center">
-        <div className="w-[500px] h-[500px] bg-forest/10 blur-[140px] rounded-full animate-pulse" />
+        <div className="w-[300px] h-[300px] md:w-[500px] md:h-[500px] bg-forest/10 blur-[100px] md:blur-[140px] rounded-full animate-pulse" />
       </div>
 
       <div className="relative z-10 max-w-4xl mx-auto space-y-12">

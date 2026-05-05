@@ -20,15 +20,15 @@
 
 @layer base {
   html {
+    @apply h-full overflow-x-hidden;
     background-color: #0A1A12;
   }
   
   body {
-    @apply text-paper/90 antialiased selection:bg-rust/20 selection:text-rust;
+    @apply text-paper/90 antialiased selection:bg-rust/20 selection:text-rust min-h-full flex flex-col overflow-x-hidden max-w-full;
     font-feature-settings: "ss01", "ss02";
     background: radial-gradient(circle at top left, #1E3A2B 0%, #0A1A12 100%);
     background-attachment: fixed;
-    min-height: 100vh;
   }
 
   h1, h2, h3, h4, h5, h6 {
