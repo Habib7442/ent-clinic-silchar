@@ -4,6 +4,7 @@ import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 interface HeroProps {
   lang: string;
@@ -86,10 +87,12 @@ export default function HeroSection({ lang }: HeroProps) {
           </p>
           
           <div className="reveal-text flex flex-wrap gap-4">
-            <Button variant="rust" className="group h-auto py-4 px-10">
-              {content.cta}
-              <ArrowRight className="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1" />
-            </Button>
+            <Link href={`/${lang}/book`}>
+              <Button variant="rust" className="group h-auto py-4 px-10">
+                {content.cta}
+                <ArrowRight className="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1" />
+              </Button>
+            </Link>
           </div>
         </div>
 
