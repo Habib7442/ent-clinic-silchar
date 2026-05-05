@@ -1,0 +1,1336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>The ENT Clinic, Silchar — A Million-Dollar Website Blueprint by ARCHIE</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT,WONK@9..144,300..900,0..100,0..1&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink: #14181A;
+  --ink-soft: #2C322F;
+  --paper: #F6F1E6;
+  --paper-warm: #EFE7D4;
+  --paper-card: #FFFFFF;
+  --forest: #1E3A2B;
+  --forest-soft: #2F5740;
+  --rust: #B65C36;
+  --gold: #C8A24A;
+  --mute: #6B6B5C;
+  --hairline: rgba(20, 24, 26, 0.14);
+  --hairline-strong: rgba(20, 24, 26, 0.28);
+  --shadow-sm: 0 1px 2px rgba(20,24,26,0.04), 0 2px 8px rgba(20,24,26,0.04);
+  --shadow-md: 0 8px 24px rgba(20,24,26,0.06), 0 1px 3px rgba(20,24,26,0.04);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Inter', -apple-system, sans-serif;
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 1.65;
+  color: var(--ink);
+  background: var(--paper);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+.serif { font-family: 'Fraunces', Georgia, serif; font-feature-settings: "ss01"; }
+.mono { font-family: 'JetBrains Mono', monospace; }
+
+/* ───── LAYOUT ───── */
+.wrap { max-width: 1180px; margin: 0 auto; padding: 0 5vw; }
+.narrow { max-width: 740px; margin: 0 auto; padding: 0 5vw; }
+.gutter { padding: 0 5vw; }
+
+@media (min-width: 768px) {
+  .wrap, .narrow { padding: 0 4rem; }
+  body { font-size: 18px; }
+}
+
+/* ───── TOP BAR ───── */
+.topbar {
+  position: sticky; top: 0; z-index: 100;
+  background: rgba(246, 241, 230, 0.92);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--hairline);
+}
+.topbar-inner {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 14px 5vw;
+  font-size: 13px;
+}
+.brand { font-family: 'Fraunces', serif; font-weight: 600; letter-spacing: -0.02em; font-size: 17px; }
+.brand-mark { color: var(--rust); font-style: italic; }
+.topbar nav { display: none; gap: 28px; font-size: 12px; letter-spacing: 0.04em; text-transform: uppercase; color: var(--mute); }
+.topbar nav a { color: inherit; text-decoration: none; transition: color 200ms; }
+.topbar nav a:hover { color: var(--ink); }
+@media (min-width: 1024px) { .topbar nav { display: flex; } }
+
+/* ───── COVER ───── */
+.cover {
+  min-height: 92vh;
+  display: flex; flex-direction: column; justify-content: space-between;
+  padding: 8vh 5vw 6vh;
+  position: relative;
+  background: linear-gradient(180deg, var(--paper) 0%, var(--paper-warm) 100%);
+  overflow: hidden;
+}
+.cover::before {
+  content: ""; position: absolute; inset: 0;
+  background-image:
+    radial-gradient(circle at 18% 32%, rgba(30, 58, 43, 0.08) 0%, transparent 35%),
+    radial-gradient(circle at 82% 78%, rgba(182, 92, 54, 0.06) 0%, transparent 40%);
+  pointer-events: none;
+}
+.cover-meta {
+  position: relative;
+  display: flex; justify-content: space-between;
+  font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--mute);
+}
+.cover-meta strong { color: var(--ink); font-weight: 500; }
+.cover-main { position: relative; max-width: 1060px; }
+.eyebrow {
+  font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase;
+  color: var(--rust); font-weight: 500; margin-bottom: 28px;
+  display: flex; align-items: center; gap: 14px;
+}
+.eyebrow::before { content: ""; display: inline-block; width: 32px; height: 1px; background: var(--rust); }
+.cover h1 {
+  font-family: 'Fraunces', serif;
+  font-weight: 350;
+  font-size: clamp(42px, 7.5vw, 96px);
+  line-height: 1.02;
+  letter-spacing: -0.025em;
+  color: var(--ink);
+  font-variation-settings: "opsz" 144, "SOFT" 30;
+}
+.cover h1 em { font-style: italic; color: var(--forest); font-weight: 350; }
+.cover .deck {
+  margin-top: 32px; max-width: 660px;
+  font-size: clamp(17px, 1.6vw, 21px);
+  line-height: 1.55; color: var(--ink-soft);
+}
+.cover-foot {
+  position: relative;
+  display: flex; flex-wrap: wrap; gap: 40px 64px; align-items: flex-end;
+  font-size: 13px; color: var(--mute);
+  border-top: 1px solid var(--hairline);
+  padding-top: 28px; margin-top: 64px;
+}
+.cover-foot .item { display: flex; flex-direction: column; gap: 6px; }
+.cover-foot .label { font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; }
+.cover-foot .value { font-family: 'Fraunces', serif; font-size: 18px; color: var(--ink); }
+
+/* ───── SECTION ARCHITECTURE ───── */
+section { padding: 96px 0; border-top: 1px solid var(--hairline); }
+section.no-border { border-top: none; }
+.section-num {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px; letter-spacing: 0.12em;
+  color: var(--rust); font-weight: 500;
+  display: flex; align-items: center; gap: 12px;
+  margin-bottom: 18px;
+}
+.section-num::before {
+  content: ""; display: inline-block; width: 6px; height: 6px;
+  background: var(--rust); border-radius: 50%;
+}
+h2.section-title {
+  font-family: 'Fraunces', serif;
+  font-weight: 350;
+  font-size: clamp(34px, 5vw, 58px);
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  max-width: 880px;
+  margin-bottom: 24px;
+}
+h2.section-title em { font-style: italic; color: var(--forest); }
+.section-deck {
+  font-size: clamp(16px, 1.4vw, 19px);
+  line-height: 1.55; color: var(--ink-soft);
+  max-width: 720px; margin-bottom: 64px;
+}
+
+h3 {
+  font-family: 'Fraunces', serif;
+  font-weight: 500;
+  font-size: clamp(22px, 2.4vw, 30px);
+  line-height: 1.2; letter-spacing: -0.015em;
+  color: var(--ink);
+  margin: 56px 0 18px;
+}
+h3.compact { font-size: clamp(18px, 1.6vw, 22px); margin: 32px 0 12px; }
+h4 {
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 14px; letter-spacing: 0.08em; text-transform: uppercase;
+  color: var(--rust);
+  margin: 32px 0 12px;
+}
+
+p { margin-bottom: 18px; max-width: 70ch; color: var(--ink-soft); }
+p.lede {
+  font-family: 'Fraunces', serif;
+  font-size: clamp(20px, 2vw, 26px);
+  line-height: 1.45; letter-spacing: -0.01em;
+  color: var(--ink); font-weight: 400;
+  max-width: 32ch;
+}
+.dropcap::first-letter {
+  font-family: 'Fraunces', serif;
+  font-weight: 350; font-style: italic;
+  font-size: 5em; line-height: 0.85;
+  float: left; margin: 6px 12px 0 0;
+  color: var(--forest);
+}
+
+ul, ol { margin: 0 0 24px 22px; max-width: 70ch; color: var(--ink-soft); }
+ul li, ol li { margin-bottom: 8px; padding-left: 6px; }
+ul.tight li { margin-bottom: 4px; }
+
+strong { font-weight: 600; color: var(--ink); }
+em { font-style: italic; }
+a { color: var(--forest); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 2px; }
+
+hr {
+  border: 0; border-top: 1px solid var(--hairline);
+  margin: 64px 0;
+}
+
+/* ───── COMPONENTS ───── */
+.pull {
+  font-family: 'Fraunces', serif;
+  font-weight: 350;
+  font-size: clamp(24px, 3vw, 36px);
+  line-height: 1.25; letter-spacing: -0.015em;
+  color: var(--forest);
+  border-left: 2px solid var(--rust);
+  padding: 12px 0 12px 32px;
+  margin: 56px 0;
+  max-width: 800px;
+  font-style: italic;
+}
+
+.callout {
+  background: var(--paper-card);
+  border: 1px solid var(--hairline);
+  border-radius: 4px;
+  padding: 28px 32px;
+  margin: 32px 0;
+  box-shadow: var(--shadow-sm);
+}
+.callout-label {
+  font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--rust); font-weight: 500;
+  margin-bottom: 12px;
+}
+
+.grid-2, .grid-3, .grid-4 { display: grid; gap: 28px; margin: 32px 0; }
+.grid-2 { grid-template-columns: 1fr; }
+.grid-3 { grid-template-columns: 1fr; }
+.grid-4 { grid-template-columns: 1fr 1fr; }
+@media (min-width: 768px) {
+  .grid-2 { grid-template-columns: 1fr 1fr; gap: 56px; }
+  .grid-3 { grid-template-columns: repeat(3, 1fr); gap: 32px; }
+  .grid-4 { grid-template-columns: repeat(4, 1fr); gap: 24px; }
+}
+
+.tile {
+  background: var(--paper-card);
+  border: 1px solid var(--hairline);
+  border-radius: 4px;
+  padding: 28px;
+  display: flex; flex-direction: column; gap: 12px;
+  transition: transform 240ms ease, box-shadow 240ms ease;
+}
+.tile:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); }
+.tile .num {
+  font-family: 'Fraunces', serif;
+  font-style: italic; font-size: 14px;
+  color: var(--rust);
+}
+.tile h5 {
+  font-family: 'Fraunces', serif; font-weight: 500;
+  font-size: 19px; line-height: 1.25; color: var(--ink);
+}
+.tile p { font-size: 14px; line-height: 1.55; margin: 0; color: var(--mute); }
+
+/* ───── DATA TABLE ───── */
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+  margin: 24px 0;
+  background: var(--paper-card);
+  border: 1px solid var(--hairline);
+  border-radius: 4px;
+  overflow: hidden;
+}
+.data-table th {
+  text-align: left; padding: 14px 18px;
+  font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--mute); font-weight: 500;
+  border-bottom: 1px solid var(--hairline);
+  background: var(--paper-warm);
+}
+.data-table td {
+  padding: 16px 18px;
+  border-bottom: 1px solid var(--hairline);
+  vertical-align: top; color: var(--ink-soft);
+}
+.data-table tr:last-child td { border-bottom: 0; }
+.data-table tr:hover td { background: rgba(30, 58, 43, 0.02); }
+.data-table .pri { color: var(--ink); font-weight: 500; font-family: 'Fraunces', serif; }
+.tag {
+  display: inline-block;
+  font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase;
+  padding: 3px 8px; border-radius: 2px;
+  background: var(--paper-warm); color: var(--forest);
+  font-weight: 500;
+}
+.tag.high { background: rgba(182, 92, 54, 0.12); color: var(--rust); }
+.tag.med { background: rgba(30, 58, 43, 0.10); color: var(--forest); }
+.tag.low { background: rgba(107, 107, 92, 0.14); color: var(--mute); }
+
+/* ───── SCORECARD ───── */
+.score-block {
+  display: grid; gap: 4px;
+  padding: 24px 0; border-bottom: 1px solid var(--hairline);
+}
+.score-block:last-child { border-bottom: 0; }
+.score-row {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 20px; align-items: baseline;
+}
+.score-name { font-family: 'Fraunces', serif; font-size: 19px; color: var(--ink); font-weight: 500; }
+.score-val { font-family: 'JetBrains Mono', monospace; font-size: 14px; color: var(--rust); font-weight: 500; }
+.score-bar {
+  height: 3px; background: var(--paper-warm); border-radius: 2px;
+  margin-top: 6px; overflow: hidden;
+}
+.score-fill {
+  height: 100%; background: var(--rust); border-radius: 2px;
+}
+.score-note { font-size: 13px; color: var(--mute); margin-top: 8px; }
+
+/* ───── SITEMAP TREE ───── */
+.tree { font-family: 'JetBrains Mono', monospace; font-size: 13px; line-height: 1.9; }
+.tree .root { color: var(--forest); font-weight: 500; }
+.tree .branch { color: var(--ink-soft); padding-left: 18px; }
+.tree .leaf { color: var(--mute); padding-left: 36px; }
+.tree .pri-tag { color: var(--rust); font-style: italic; margin-left: 8px; }
+
+/* ───── PAGE BLUEPRINTS ───── */
+.page-blueprint {
+  background: var(--paper-card);
+  border: 1px solid var(--hairline);
+  border-radius: 4px;
+  padding: 32px;
+  margin: 32px 0;
+  box-shadow: var(--shadow-sm);
+}
+.page-blueprint .title-row {
+  display: flex; justify-content: space-between; align-items: baseline;
+  border-bottom: 1px solid var(--hairline); padding-bottom: 16px; margin-bottom: 20px;
+  flex-wrap: wrap; gap: 12px;
+}
+.page-blueprint h3 { margin: 0; font-size: 22px; }
+.page-blueprint .url { font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--rust); }
+.section-list {
+  display: grid; gap: 14px;
+}
+.section-list .row {
+  display: grid;
+  grid-template-columns: 36px 1fr;
+  gap: 16px;
+  padding: 12px 0;
+  border-bottom: 1px dashed var(--hairline);
+}
+.section-list .row:last-child { border-bottom: 0; }
+.section-list .idx {
+  font-family: 'Fraunces', serif; font-style: italic;
+  color: var(--rust); font-size: 16px;
+}
+.section-list .body strong { display: block; color: var(--ink); margin-bottom: 4px; font-size: 15px; font-family: 'Inter', sans-serif; }
+.section-list .body span { font-size: 13.5px; color: var(--mute); line-height: 1.55; display: block; }
+
+/* ───── CHECKLIST ───── */
+.checklist {
+  display: grid; gap: 14px;
+  counter-reset: checkitem;
+}
+.checklist .item {
+  display: grid;
+  grid-template-columns: 32px 1fr;
+  gap: 18px; align-items: baseline;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--hairline);
+  counter-increment: checkitem;
+}
+.checklist .item::before {
+  content: counter(checkitem, decimal-leading-zero);
+  font-family: 'JetBrains Mono', monospace; font-size: 12px;
+  color: var(--rust); padding-top: 4px;
+}
+.checklist .item strong {
+  display: block; font-family: 'Fraunces', serif; font-weight: 500;
+  font-size: 17px; color: var(--ink); margin-bottom: 4px;
+}
+.checklist .item span { font-size: 14px; color: var(--mute); line-height: 1.55; }
+
+/* ───── IMAGE STRIP ───── */
+.image-strip {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 16px;
+  margin: 56px 0;
+}
+@media (min-width: 768px) {
+  .image-strip { grid-template-columns: 2fr 1fr 1fr; gap: 20px; }
+}
+.image-strip figure { margin: 0; position: relative; overflow: hidden; border-radius: 2px; }
+.image-strip img {
+  display: block; width: 100%; height: 100%; min-height: 200px;
+  object-fit: cover; transition: transform 600ms ease;
+}
+.image-strip figure:hover img { transform: scale(1.03); }
+.image-strip figcaption {
+  font-family: 'JetBrains Mono', monospace; font-size: 10px;
+  letter-spacing: 0.1em; text-transform: uppercase; color: var(--mute);
+  position: absolute; bottom: 12px; left: 12px;
+  background: rgba(246, 241, 230, 0.92); padding: 4px 8px;
+  border-radius: 2px;
+}
+
+/* ───── KPI ROW ───── */
+.kpi-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; margin: 40px 0; background: var(--hairline); border: 1px solid var(--hairline); border-radius: 4px; overflow: hidden; }
+@media (min-width: 768px) { .kpi-row { grid-template-columns: repeat(4, 1fr); } }
+.kpi-row .kpi { background: var(--paper-card); padding: 24px 24px 28px; }
+.kpi-row .label {
+  font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase;
+  color: var(--mute); margin-bottom: 12px;
+}
+.kpi-row .value {
+  font-family: 'Fraunces', serif; font-weight: 350;
+  font-size: clamp(32px, 4vw, 48px); line-height: 1;
+  color: var(--forest);
+}
+.kpi-row .value em { color: var(--rust); font-style: italic; }
+.kpi-row .note { font-size: 12px; color: var(--mute); margin-top: 8px; }
+
+/* ───── CODE BLOCK ───── */
+.code {
+  background: #1A1F1C; color: #E8E2D0;
+  font-family: 'JetBrains Mono', monospace; font-size: 12.5px;
+  line-height: 1.7;
+  padding: 24px 28px;
+  border-radius: 4px;
+  overflow-x: auto;
+  margin: 24px 0;
+}
+.code .key { color: #C8A24A; }
+.code .str { color: #B65C36; }
+.code .com { color: #6B6B5C; font-style: italic; }
+
+/* ───── FOOTER ───── */
+.signoff {
+  background: var(--ink);
+  color: var(--paper);
+  padding: 96px 5vw;
+  margin-top: 96px;
+}
+.signoff .wrap { max-width: 1180px; margin: 0; }
+.signoff .eyebrow { color: var(--gold); }
+.signoff h2 {
+  font-family: 'Fraunces', serif; font-weight: 350;
+  font-size: clamp(34px, 5vw, 56px); line-height: 1.05;
+  letter-spacing: -0.02em; max-width: 800px; margin-bottom: 28px;
+}
+.signoff h2 em { font-style: italic; color: var(--gold); }
+.signoff p { color: rgba(246, 241, 230, 0.78); max-width: 60ch; }
+.signoff .meta {
+  border-top: 1px solid rgba(246, 241, 230, 0.18);
+  padding-top: 28px; margin-top: 64px;
+  display: flex; flex-wrap: wrap; gap: 32px;
+  font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase;
+  color: rgba(246, 241, 230, 0.55);
+}
+
+/* ───── REVEAL ON SCROLL ───── */
+.reveal { opacity: 0; transform: translateY(18px); transition: opacity 700ms ease, transform 700ms ease; }
+.reveal.visible { opacity: 1; transform: translateY(0); }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+  .reveal { opacity: 1; transform: none; }
+}
+</style>
+<style>
+.ha-img-placeholder{display:flex;align-items:center;justify-content:center;flex-direction:column;gap:6px;background:#f4f4f5;border:1px dashed #d4d4d8;border-radius:8px;color:#71717a;font-size:12px;font-family:system-ui,sans-serif;min-height:80px;padding:16px;box-sizing:border-box;animation:ha-img-pulse 1.5s ease-in-out infinite}
+.ha-img-placeholder.ha-failed{animation:none;opacity:.7}
+@keyframes ha-img-pulse{0%,100%{opacity:1}50%{opacity:.5}}
+@media(prefers-color-scheme:dark){.ha-img-placeholder{background:#27272a;border-color:#3f3f46;color:#a1a1aa}}
+</style>
+</head>
+<body>
+
+<!-- ───── TOP BAR ───── -->
+<div class="topbar">
+  <div class="topbar-inner">
+    <div class="brand">ARCHIE <span class="brand-mark">/</span> Architecture Studio</div>
+    <nav>
+      <a href="#intel">Intel</a>
+      <a href="#audit">Audit</a>
+      <a href="#sitemap">Sitemap</a>
+      <a href="#pages">Pages</a>
+      <a href="#motion">Motion</a>
+      <a href="#stack">Stack</a>
+      <a href="#seo">SEO</a>
+      <a href="#perf">Performance</a>
+      <a href="#feel">Feel</a>
+    </nav>
+    <div class="mono" style="font-size:11px; letter-spacing:0.1em; color:var(--mute);">CONFIDENTIAL</div>
+  </div>
+</div>
+
+<!-- ───── COVER ───── -->
+<header class="cover">
+  <div class="cover-meta">
+    <div><strong>ARCHIE</strong> &nbsp;/&nbsp; Website Architecture Blueprint &nbsp;/&nbsp; No. 0017</div>
+    <div>May 2026</div>
+  </div>
+
+  <div class="cover-main">
+    <div class="eyebrow">A Million-Dollar Blueprint For</div>
+    <h1 class="serif">
+      The ENT&nbsp;Clinic, <em>Silchar.</em><br />
+      A boutique specialty practice<br/>deserves a website that<br/>feels like the room it builds.
+    </h1>
+    <p class="deck">
+      A complete strategic, architectural, and technical specification — researched, designed, and engineered to make this clinic the
+      first ENT name typed into a phone in the Barak Valley. Calm, expert, unhurried. Engineered for 95+ Lighthouse
+      on a Tier-2 4G connection. Compliant with the NMC Professional Conduct Regulations, 2023.
+    </p>
+  </div>
+
+  <div class="cover-foot">
+    <div class="item"><span class="label">Subject</span><span class="value">The ENT Clinic, Silchar</span></div>
+    <div class="item"><span class="label">Address</span><span class="value">Lochan Bairagi Rd, Meherpur, Assam 788005</span></div>
+    <div class="item"><span class="label">Catchment</span><span class="value">Cachar · Karimganj · Hailakandi</span></div>
+    <div class="item"><span class="label">Discipline</span><span class="value">Otolaryngology / ENT</span></div>
+    <div class="item"><span class="label">Prepared by</span><span class="value">ARCHIE Studio</span></div>
+  </div>
+</header>
+
+<!-- ───── EXECUTIVE SUMMARY ───── -->
+<section class="no-border" id="exec">
+  <div class="wrap">
+    <div class="section-num">00 — Executive Summary</div>
+    <h2 class="section-title serif">A clinic with the <em>second-largest catchment in Assam</em> and the digital footprint of a corner shop.</h2>
+
+    <div class="grid-2">
+      <div>
+        <p class="lede serif">The ENT Clinic, Silchar exists exclusively as a Google Maps pin. It has one of the largest unaddressed ENT catchments in Northeast India — and zero owned digital surface to capture it.</p>
+      </div>
+      <div>
+        <p>This blueprint converts that gap into a defensible asset: a 14-page bilingual website, a hyperlocal SEO moat across Cachar / Karimganj / Hailakandi, an appointment engine that books on WhatsApp tap-to-chat, and a calibrated motion language that signals expertise without theatre.</p>
+        <p>The build is engineered to outperform every metro hospital site on the metrics that actually matter to a Silchar mother holding a phone in her left hand and a feverish child in her right: <strong>time-to-first-tap, clarity-of-next-step, and trust per scroll.</strong></p>
+      </div>
+    </div>
+
+    <div class="kpi-row">
+      <div class="kpi"><div class="label">Catchment</div><div class="value">~<em>2.1M</em></div><div class="note">Cachar + Karimganj + Hailakandi</div></div>
+      <div class="kpi"><div class="label">Lighthouse target</div><div class="value">95<em>+</em></div><div class="note">All four metrics, 4G mid-tier device</div></div>
+      <div class="kpi"><div class="label">Pages, MVP</div><div class="value">14</div><div class="note">Plus 12 condition microsites</div></div>
+      <div class="kpi"><div class="label">Primary action</div><div class="value">1<em>·</em>tap</div><div class="note">Call · WhatsApp · Book — never more than one tap away</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ───── 01 BUSINESS INTELLIGENCE ───── -->
+<section id="intel">
+  <div class="wrap">
+    <div class="section-num">01 — Business Intelligence Report</div>
+    <h2 class="section-title serif">Read the <em>business</em> before you draw a pixel.</h2>
+    <p class="section-deck">Every architectural decision in this document descends from the answers below. If a section in the build cannot trace itself back to a line in this report, it gets cut.</p>
+
+    <h3>The core offer, decoded</h3>
+    <p class="dropcap">An ENT clinic in a Tier-2 Indian city is not an "ear-nose-throat" business. It is, in practice, four overlapping businesses sharing a waiting room: a <strong>parental anxiety triage</strong> service for ear infections, tonsils, and adenoids in children; a <strong>chronic-condition management</strong> practice for working-age adults with sinusitis, allergic rhinitis, and snoring; an <strong>aging-well</strong> practice for hearing aids, vertigo, and tinnitus in patients over 55; and a <strong>surgical referral</strong> destination receiving cases from local GPs and Silchar Medical College outpatient queues.</p>
+    <p>Each segment arrives with a distinctly different emotional posture. The website must speak four languages, calmly, on a single canvas.</p>
+
+    <h3>The ideal customer, by segment</h3>
+
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>Segment</th>
+          <th>Trigger</th>
+          <th>Emotional posture on landing</th>
+          <th>What they need to feel</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="pri">Parent of a young child</td>
+          <td>Recurring earache, mouth-breathing, snoring at night</td>
+          <td>Worried, time-poor, mobile-thumb scrolling at 11 pm</td>
+          <td>"This doctor sees children every day. I can book without calling. I will not wait three hours."</td>
+        </tr>
+        <tr>
+          <td class="pri">Working adult, 28–45</td>
+          <td>Year-round sinus pain, dust allergy, snoring complaint from spouse</td>
+          <td>Resigned, pragmatic, has tried home remedies</td>
+          <td>"Modern equipment. Clear pricing. They will not push surgery."</td>
+        </tr>
+        <tr>
+          <td class="pri">Senior, 55+</td>
+          <td>Hearing loss, vertigo episodes, tinnitus, post-stroke swallow issues</td>
+          <td>Cautious, often accompanied by a son or daughter doing the research</td>
+          <td>"They take time. They explain. The clinic is accessible. The hearing-aid trial is honest."</td>
+        </tr>
+        <tr>
+          <td class="pri">GP / hospital referral</td>
+          <td>Pre-surgical consult, audiology, endoscopy, biopsy</td>
+          <td>Professional, brisk, moving on a referral letter</td>
+          <td>"Specialist credentials are visible. Reports get sent back. Logistics work."</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3>The primary conversion goal</h3>
+    <p><strong>One action, three rails.</strong> The website's only job is to route the visitor into a booked appointment slot. That action lives on three parallel rails because Tier-2 mobile users behave very differently from metro web users:</p>
+    <ul>
+      <li><strong>Rail 1 — Tap-to-call</strong> remains the Tier-2 default. Surfaced in the sticky header, sticky bottom bar, and inline at every scroll depth.</li>
+      <li><strong>Rail 2 — WhatsApp Business</strong> click-to-chat with a pre-filled "I'd like to book" message. This is the highest-converting rail in Bengali-speaking households.</li>
+      <li><strong>Rail 3 — Online slot picker</strong>, opened in a sheet (not a new page), pre-loaded with the next three available slots, ₹ consultation fee shown, calendar invite emailed, ICS file downloadable.</li>
+    </ul>
+
+    <div class="callout">
+      <div class="callout-label">ARCHIE Principle</div>
+      <p style="margin:0;">Every page on this site has exactly one primary action. No page is permitted to be passive. If a page cannot answer the question <em>"what does the user do here next?"</em> in five words, it does not exist.</p>
+    </div>
+
+    <h3>Trust signals: missing today, mandatory tomorrow</h3>
+    <p>A Silchar patient currently has no way to verify, before walking in, that this is a competent specialist clinic. The Maps pin shows photos and reviews; that is the entirety of the trust surface. The website must build an expert-trust ladder, top to bottom:</p>
+    <ul>
+      <li><strong>Credential transparency</strong> — full name, MBBS / MS-ENT / fellowship registry numbers (NMC State Council ID), years in practice, current and former hospital affiliations.</li>
+      <li><strong>Clinical photography</strong> — real photographs of the consultation room, instruments (otoscope, endoscopy tower, tympanometer, audiometry booth), and the doctor mid-examination. No stock photos. <em>Never</em> stock photos.</li>
+      <li><strong>Reviews integrated</strong> — Google reviews pulled live (not screenshots), with reply-to-review visible.</li>
+      <li><strong>Pricing transparency</strong> — published consultation fee in ₹. Consultation fee is the trust gate; vague "call for fees" loses 40%+ of mobile bookings.</li>
+      <li><strong>Process clarity</strong> — what happens in a first visit, in seven steps, with realistic time durations.</li>
+      <li><strong>NMC compliance</strong> — registration number visible in footer, no superlatives, no "best", no guarantees, no comparative claims.</li>
+    </ul>
+
+    <div class="image-strip">
+      <figure>
+        <img src="https://design.museaward.com/upload/entry/files/ME227878/small/10161749133892.jpg" alt="Modern minimal medical clinic interior" loading="lazy">
+        <figcaption>Aesthetic Reference · Calm Modernist Clinic</figcaption>
+      </figure>
+      <figure>
+        <img src="https://images.pexels.com/photos/5206942/pexels-photo-5206942.jpeg" alt="ENT examination" loading="lazy">
+        <figcaption>Editorial Frame · Clinical Authenticity</figcaption>
+      </figure>
+      <figure>
+        <img src="https://images.jpost.com/image/upload/f_auto,fl_lossy/q_auto/c_fill,g_faces:center,h_720,w_1280/659422" alt="Healing minimalism design" loading="lazy">
+        <figcaption>Mood · Healing Minimalism</figcaption>
+      </figure>
+    </div>
+
+    <h3>The emotional journey, end-to-end</h3>
+    <p>The user arrives carrying a small fear and an open browser. The site's job, scroll by scroll, is to convert fear into <strong>recognition</strong>, recognition into <strong>relief</strong>, relief into <strong>resolve</strong>. The motion language, the copy, the colour, the imagery, the placement of the booking action — every element must lower cortisol, not raise it.</p>
+
+    <div class="pull serif">"The premium feel of a medical website is not luxury. It is the absence of friction in the moment a patient is most anxious."</div>
+
+    <h3>The three competitors that actually matter</h3>
+    <table class="data-table">
+      <thead>
+        <tr><th>Competitor</th><th>Strength</th><th>Weakness</th><th>How we position</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="pri">Silchar Medical College ENT</td>
+          <td>Free, government-trusted, surgical depth</td>
+          <td>3–5 hour waits, no continuity of care, no online presence</td>
+          <td>"Same expertise, no queue, your time respected."</td>
+        </tr>
+        <tr>
+          <td class="pri">Practice on Practo / Lybrate (general practitioner ENT)</td>
+          <td>Already discoverable online, online booking exists</td>
+          <td>Generic listing, no narrative, no specialisation depth</td>
+          <td>Own the specialist tier above the directory listings — a website beats a profile.</td>
+        </tr>
+        <tr>
+          <td class="pri">Apollo / Manipal in Guwahati</td>
+          <td>Brand recognition, surgical infrastructure</td>
+          <td>5–6 hour drive, ₹15K+ travel cost per visit, impersonal</td>
+          <td>"Apollo-grade ENT care — without the Guwahati flight."</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- ───── 02 CURRENT SITE AUDIT ───── -->
+<section id="audit">
+  <div class="wrap">
+    <div class="section-num">02 — Current Site Audit</div>
+    <h2 class="section-title serif">There is no site. <em>That is the audit.</em></h2>
+    <p class="section-deck">A Google Business Profile is not a website. It is a rented room above someone else's shop. Here is exactly what is broken about the present situation, scored on the eight axes that determine whether a clinic gets booked or scrolled past.</p>
+
+    <div class="grid-2">
+      <div>
+        <div class="score-block">
+          <div class="score-row"><span class="score-name">Discoverability</span><span class="score-val">3 / 10</span></div>
+          <div class="score-bar"><div class="score-fill" style="width:30%;"></div></div>
+          <div class="score-note">Google Business Profile exists; ranks for branded queries only. Symptom-led queries ("ear pain doctor Silchar") return zero owned surface.</div>
+        </div>
+        <div class="score-block">
+          <div class="score-row"><span class="score-name">Trust on landing</span><span class="score-val">2 / 10</span></div>
+          <div class="score-bar"><div class="score-fill" style="width:20%;"></div></div>
+          <div class="score-note">No published doctor credentials, no clinical photography, no published consultation fee. Patients are asked to phone-and-find-out.</div>
+        </div>
+        <div class="score-block">
+          <div class="score-row"><span class="score-name">Booking friction</span><span class="score-val">4 / 10</span></div>
+          <div class="score-bar"><div class="score-fill" style="width:40%;"></div></div>
+          <div class="score-note">Tap-to-call works. WhatsApp not surfaced. No online slot picker. No calendar reminder. Asynchronous patients are lost.</div>
+        </div>
+        <div class="score-block">
+          <div class="score-row"><span class="score-name">Mobile experience</span><span class="score-val">3 / 10</span></div>
+          <div class="score-bar"><div class="score-fill" style="width:30%;"></div></div>
+          <div class="score-note">GBP mobile is generic Google chrome. No clinic identity, no narrative, no recovery from mid-funnel doubt.</div>
+        </div>
+      </div>
+      <div>
+        <div class="score-block">
+          <div class="score-row"><span class="score-name">Bilingual reach</span><span class="score-val">1 / 10</span></div>
+          <div class="score-bar"><div class="score-fill" style="width:10%;"></div></div>
+          <div class="score-note">Zero Bengali content surface. The dominant household language of the Barak Valley is invisible to Google.</div>
+        </div>
+        <div class="score-block">
+          <div class="score-row"><span class="score-name">Schema / structured data</span><span class="score-val">0 / 10</span></div>
+          <div class="score-bar"><div class="score-fill" style="width:5%;"></div></div>
+          <div class="score-note">No <span class="mono">MedicalClinic</span>, <span class="mono">Physician</span>, <span class="mono">FAQPage</span>, or <span class="mono">LocalBusiness</span> JSON-LD anywhere. Search-engine eligibility for rich results is nil.</div>
+        </div>
+        <div class="score-block">
+          <div class="score-row"><span class="score-name">Content moat</span><span class="score-val">0 / 10</span></div>
+          <div class="score-bar"><div class="score-fill" style="width:5%;"></div></div>
+          <div class="score-note">Patient-question-led content (the long-tail keyword universe) is unowned territory. First mover wins this market for a decade.</div>
+        </div>
+        <div class="score-block">
+          <div class="score-row"><span class="score-name">Compliance posture</span><span class="score-val">5 / 10</span></div>
+          <div class="score-bar"><div class="score-fill" style="width:50%;"></div></div>
+          <div class="score-note">No public claims means no public violations, but also no proactive trust artefacts (registration number, telemedicine policy, privacy notice).</div>
+        </div>
+      </div>
+    </div>
+
+    <h3 class="compact">Composite audit verdict</h3>
+    <p><strong>Composite score: 18 / 80.</strong> The asset is not broken — it is unbuilt. Which is rarer, and more valuable, than a redesign brief: nothing must be unlearned, nothing must be migrated, no legacy decisions are sunk-cost.</p>
+  </div>
+</section>
+
+<!-- ───── 03 SITEMAP ───── -->
+<section id="sitemap">
+  <div class="wrap">
+    <div class="section-num">03 — Sitemap</div>
+    <h2 class="section-title serif">14 pages, <em>26 SEO destinations,</em> zero dead corners.</h2>
+    <p class="section-deck">Every URL has a stated purpose, a primary action, and a measurable outcome. Pages with no measurable outcome are deleted before the figma file is opened.</p>
+
+    <div class="grid-2">
+      <div>
+        <h4>The 14 core pages</h4>
+        <div class="tree">
+          <div class="root">/&nbsp;&nbsp;The ENT Clinic, Silchar</div>
+          <div class="branch">├─ / (Home) <span class="pri-tag">P1</span></div>
+          <div class="branch">├─ /about <span class="pri-tag">P2</span></div>
+          <div class="branch">├─ /doctor <span class="pri-tag">P1</span></div>
+          <div class="branch">├─ /services <span class="pri-tag">P1</span></div>
+          <div class="leaf">│&nbsp;&nbsp;&nbsp;├─ /services/hearing-care</div>
+          <div class="leaf">│&nbsp;&nbsp;&nbsp;├─ /services/sinus-allergy</div>
+          <div class="leaf">│&nbsp;&nbsp;&nbsp;├─ /services/snoring-sleep</div>
+          <div class="leaf">│&nbsp;&nbsp;&nbsp;├─ /services/paediatric-ent</div>
+          <div class="leaf">│&nbsp;&nbsp;&nbsp;├─ /services/voice-throat</div>
+          <div class="leaf">│&nbsp;&nbsp;&nbsp;└─ /services/surgery</div>
+          <div class="branch">├─ /book <span class="pri-tag">P1</span></div>
+          <div class="branch">├─ /first-visit <span class="pri-tag">P2</span></div>
+          <div class="branch">├─ /fees <span class="pri-tag">P2</span></div>
+          <div class="branch">├─ /location <span class="pri-tag">P2</span></div>
+          <div class="branch">├─ /journal (blog hub) <span class="pri-tag">P2</span></div>
+          <div class="branch">├─ /journal/[slug] (article) <span class="pri-tag">P3</span></div>
+          <div class="branch">├─ /contact</div>
+          <div class="branch">├─ /privacy</div>
+          <div class="branch">└─ /telemedicine-policy</div>
+        </div>
+      </div>
+      <div>
+        <h4>The 12 condition microsites (SEO topical authority)</h4>
+        <p>These are not service pages. They are <em>patient-question pages</em> — each one a complete answer to a single high-intent search query in Silchar, written to win position one for that query and route the resolved patient into a booking.</p>
+        <ul class="tight">
+          <li>/conditions/ear-pain-children-silchar</li>
+          <li>/conditions/sinusitis-treatment-silchar</li>
+          <li>/conditions/tinnitus-cure-cachar</li>
+          <li>/conditions/snoring-treatment-barak-valley</li>
+          <li>/conditions/hearing-aid-cost-silchar</li>
+          <li>/conditions/tonsil-surgery-cost-assam</li>
+          <li>/conditions/vertigo-specialist-silchar</li>
+          <li>/conditions/dust-allergy-treatment-silchar</li>
+          <li>/conditions/throat-infection-doctor-silchar</li>
+          <li>/conditions/sleep-apnea-test-silchar</li>
+          <li>/conditions/wax-removal-silchar</li>
+          <li>/conditions/nose-bleed-treatment-silchar</li>
+        </ul>
+        <p>Each microsite ships in both <span class="mono">/en/</span> and <span class="mono">/bn/</span> with full hreflang annotation. The Bengali surface unlocks roughly 60% of the regional search universe that competitor metro hospitals do not address.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ───── 04 PAGE-BY-PAGE ARCHITECTURE ───── -->
+<section id="pages">
+  <div class="wrap">
+    <div class="section-num">04 — Page-by-Page Architecture</div>
+    <h2 class="section-title serif">Every section earns its scroll. <em>None is decorative.</em></h2>
+    <p class="section-deck">Below: the section-by-section blueprint for the seven highest-leverage pages. The remaining seven follow the same disciplines (one primary action, one emotional outcome, one measurable conversion).</p>
+
+    <!-- HOME -->
+    <div class="page-blueprint">
+      <div class="title-row">
+        <h3>Home</h3>
+        <span class="url">/</span>
+      </div>
+      <p style="font-size:14px; color:var(--mute); margin-bottom:20px;"><strong>Primary action:</strong> Book an appointment. <strong>Hero scroll narrative:</strong> recognition → trust → resolve.</p>
+      <div class="section-list">
+        <div class="row"><div class="idx">i</div><div class="body"><strong>Hero</strong><span>Calm, full-bleed photograph of the consultation room (real, not stock). Headline in serif, set short: "Considered ENT care in the Barak Valley." Subhead: one line on the doctor and the clinic. Two buttons: <em>Book a slot</em> (primary, magnetic) and <em>WhatsApp</em> (secondary). Sticky tap-to-call appears on scroll.</span></div></div>
+        <div class="row"><div class="idx">ii</div><div class="body"><strong>The Doctor — at a glance</strong><span>Portrait, name, full credentials, NMC registration number, years in practice, languages spoken (Bengali, Hindi, English, Assamese). Two-line philosophy quote.</span></div></div>
+        <div class="row"><div class="idx">iii</div><div class="body"><strong>What we treat</strong><span>Six condition tiles — Hearing, Sinus, Snoring, Paediatric, Voice, Surgery — each linking to its full service page. Tile hover reveals a one-line outcome statement, not a feature list.</span></div></div>
+        <div class="row"><div class="idx">iv</div><div class="body"><strong>Patient stories</strong><span>Three real-name testimonials with the specific outcome ("My son's recurrent ear infections stopped after the third visit"). Pulled from Google Reviews via API; reviewer permission flow handled at intake.</span></div></div>
+        <div class="row"><div class="idx">v</div><div class="body"><strong>Inside the clinic</strong><span>Four-image gallery: reception, consultation room, audiometry booth, endoscopy setup. Lazy-loaded with LQIP blur-up. Caption each instrument by its clinical purpose (educates while it reassures).</span></div></div>
+        <div class="row"><div class="idx">vi</div><div class="body"><strong>How a first visit works</strong><span>Seven-step horizontal scroll on mobile, vertical timeline on desktop. Realistic durations beside each step. Anchor link to /first-visit.</span></div></div>
+        <div class="row"><div class="idx">vii</div><div class="body"><strong>Fees, plainly</strong><span>Consultation fee in ₹, with a one-line note on what is included. No "starting from", no asterisks. Price clarity is the highest-impact trust signal in this market.</span></div></div>
+        <div class="row"><div class="idx">viii</div><div class="body"><strong>Location & hours</strong><span>Embedded map (custom-styled, not Google default), drive-time chips for Silchar / Karimganj / Hailakandi, public-transport note, parking note, accessibility note (lift / step-free).</span></div></div>
+        <div class="row"><div class="idx">ix</div><div class="body"><strong>Closing — book a slot</strong><span>Single full-bleed dark-paper section. One question: <em>"Shall we see you this week?"</em> One action: book. WhatsApp + call as secondary rails.</span></div></div>
+      </div>
+    </div>
+
+    <!-- DOCTOR -->
+    <div class="page-blueprint">
+      <div class="title-row">
+        <h3>Doctor profile</h3>
+        <span class="url">/doctor</span>
+      </div>
+      <p style="font-size:14px; color:var(--mute); margin-bottom:20px;"><strong>Primary action:</strong> Book this specialist. <strong>Tone:</strong> Quiet authority, not corporate bio.</p>
+      <div class="section-list">
+        <div class="row"><div class="idx">i</div><div class="body"><strong>Editorial portrait</strong><span>Half-page photograph, natural light, eye-level, no white-coat-cliché. Caption: full name, MS (Otorhinolaryngology), fellowships, years in practice.</span></div></div>
+        <div class="row"><div class="idx">ii</div><div class="body"><strong>The practice philosophy — 200 words</strong><span>First-person voice. What the doctor believes about how ENT care should be delivered in the Barak Valley. The one paragraph a referring GP forwards to a patient.</span></div></div>
+        <div class="row"><div class="idx">iii</div><div class="body"><strong>Training & credentials</strong><span>Timeline: MBBS (institution, year), MS-ENT (institution, year), fellowships, hospital affiliations past and present. NMC registration number prominent. Verifiable, citable.</span></div></div>
+        <div class="row"><div class="idx">iv</div><div class="body"><strong>Areas of clinical interest</strong><span>Six bullet specialisations with one-line context — paediatric ENT, otology, rhinology, sleep medicine, voice, surgical ENT.</span></div></div>
+        <div class="row"><div class="idx">v</div><div class="body"><strong>Publications, talks, teaching</strong><span>Quiet credibility. Five most recent. Linked where public.</span></div></div>
+        <div class="row"><div class="idx">vi</div><div class="body"><strong>Languages</strong><span>Stated explicitly. Bengali / Hindi / English / Assamese. Removes a friction question patients are too polite to ask.</span></div></div>
+        <div class="row"><div class="idx">vii</div><div class="body"><strong>Book with the doctor</strong><span>Sticky-on-scroll booking card with the next three available slots and the consultation fee.</span></div></div>
+      </div>
+    </div>
+
+    <!-- BOOK -->
+    <div class="page-blueprint">
+      <div class="title-row">
+        <h3>Booking</h3>
+        <span class="url">/book</span>
+      </div>
+      <p style="font-size:14px; color:var(--mute); margin-bottom:20px;"><strong>Primary action:</strong> Confirm a slot. <strong>Design discipline:</strong> Three taps maximum from landing to confirmation.</p>
+      <div class="section-list">
+        <div class="row"><div class="idx">i</div><div class="body"><strong>Slot picker</strong><span>Calendar collapsed by default to the next 14 days. Slots shown in 15-minute increments. ₹ fee shown beside each slot. Payment optional at booking; default is pay-at-clinic.</span></div></div>
+        <div class="row"><div class="idx">ii</div><div class="body"><strong>Patient details</strong><span>Three fields: name, mobile, reason-for-visit (optional). No email required. WhatsApp confirmation by default; SMS fallback.</span></div></div>
+        <div class="row"><div class="idx">iii</div><div class="body"><strong>Confirmation</strong><span>Confirmation page with .ics download, Add-to-Google-Calendar, "Get Directions" deep-link, and a what-to-bring list (ID, prior reports, list of medicines).</span></div></div>
+        <div class="row"><div class="idx">iv</div><div class="body"><strong>Reminder cadence</strong><span>WhatsApp reminder T-24h with one-tap reschedule. SMS reminder T-2h. Post-visit review request T+24h, on the channel the patient booked through.</span></div></div>
+      </div>
+    </div>
+
+    <!-- SERVICE -->
+    <div class="page-blueprint">
+      <div class="title-row">
+        <h3>Service page (template)</h3>
+        <span class="url">/services/[slug]</span>
+      </div>
+      <p style="font-size:14px; color:var(--mute); margin-bottom:20px;"><strong>Primary action:</strong> Book for this concern. <strong>Template applies to all six service pages.</strong></p>
+      <div class="section-list">
+        <div class="row"><div class="idx">i</div><div class="body"><strong>What this service treats — in plain language</strong><span>One paragraph, no jargon. The patient should recognise their own symptoms in three seconds.</span></div></div>
+        <div class="row"><div class="idx">ii</div><div class="body"><strong>When to see an ENT, not a GP</strong><span>Five bullet rules of thumb. Reduces wasted visits, builds long-term trust.</span></div></div>
+        <div class="row"><div class="idx">iii</div><div class="body"><strong>What we do at the clinic</strong><span>The clinical workflow: examination → diagnostic test → treatment options. Real instruments shown.</span></div></div>
+        <div class="row"><div class="idx">iv</div><div class="body"><strong>Treatment options, ranged conservatively</strong><span>Always start with the least invasive option. Surgery is presented as one of several paths, never the default.</span></div></div>
+        <div class="row"><div class="idx">v</div><div class="body"><strong>What it costs</strong><span>Range, in ₹, with what determines the position in the range.</span></div></div>
+        <div class="row"><div class="idx">vi</div><div class="body"><strong>FAQ — six questions, in patient voice</strong><span>Schema-marked. Targets the People Also Ask block. Bengali version at /bn/.</span></div></div>
+        <div class="row"><div class="idx">vii</div><div class="body"><strong>Book for this concern</strong><span>One-button CTA, pre-fills the booking reason field.</span></div></div>
+      </div>
+    </div>
+
+    <!-- FIRST VISIT -->
+    <div class="page-blueprint">
+      <div class="title-row">
+        <h3>First visit, explained</h3>
+        <span class="url">/first-visit</span>
+      </div>
+      <p style="font-size:14px; color:var(--mute); margin-bottom:20px;"><strong>Primary action:</strong> Book. <strong>Why this page exists:</strong> 30% of bookings convert <em>after</em> reading what to expect. Anxiety is a conversion blocker.</p>
+      <div class="section-list">
+        <div class="row"><div class="idx">i</div><div class="body"><strong>Seven-step timeline</strong><span>Arrival → registration → vitals → consultation → examination → diagnostic tests if needed → treatment plan & follow-up. Realistic minutes alongside each step. Total time stated honestly.</span></div></div>
+        <div class="row"><div class="idx">ii</div><div class="body"><strong>What to bring</strong><span>Photo ID, prior reports (X-rays, audiograms, MRIs), a list of current medicines, your questions written down.</span></div></div>
+        <div class="row"><div class="idx">iii</div><div class="body"><strong>What we will not do</strong><span>An anti-pattern list. We will not recommend surgery on a first visit. We will not push hearing aids before audiometry. We will not test what we cannot interpret. Transparency is the entire trust play.</span></div></div>
+        <div class="row"><div class="idx">iv</div><div class="body"><strong>Coming with a child</strong><span>A short, kind paragraph for parents. Acknowledges anxiety; explains how children are examined gently.</span></div></div>
+      </div>
+    </div>
+
+    <!-- LOCATION -->
+    <div class="page-blueprint">
+      <div class="title-row">
+        <h3>Location & access</h3>
+        <span class="url">/location</span>
+      </div>
+      <p style="font-size:14px; color:var(--mute); margin-bottom:20px;"><strong>Primary action:</strong> Get directions / Book. <strong>Local SEO weight:</strong> highest-density NAP and schema page on the site.</p>
+      <div class="section-list">
+        <div class="row"><div class="idx">i</div><div class="body"><strong>Address block</strong><span>Full address, NAP-perfect, copy-button beside it. Plus Code shown. Coordinates linked.</span></div></div>
+        <div class="row"><div class="idx">ii</div><div class="body"><strong>Custom-styled map</strong><span>Mapbox or Google with custom palette tuned to the brand cream. Marker is the clinic logo, not a default pin. Show NEINS landmark and Vivekananda Cooperative for orientation.</span></div></div>
+        <div class="row"><div class="idx">iii</div><div class="body"><strong>How to reach us</strong><span>Drive-time and distance from Silchar Railway Station, Silchar Airport, Silchar Medical College, Karimganj town centre, Hailakandi town centre.</span></div></div>
+        <div class="row"><div class="idx">iv</div><div class="body"><strong>Parking & accessibility</strong><span>Where to park, lift / step-free entry, wheelchair availability, paediatric pram access.</span></div></div>
+        <div class="row"><div class="idx">v</div><div class="body"><strong>Hours</strong><span>Day-by-day schedule, holiday calendar shown one week ahead. Currently-open status pulled from server time.</span></div></div>
+      </div>
+    </div>
+
+    <!-- JOURNAL -->
+    <div class="page-blueprint">
+      <div class="title-row">
+        <h3>Journal (the content moat)</h3>
+        <span class="url">/journal</span>
+      </div>
+      <p style="font-size:14px; color:var(--mute); margin-bottom:20px;"><strong>Primary action:</strong> Read, then book. <strong>Strategic weight:</strong> the entire long-tail SEO acquisition engine lives here.</p>
+      <div class="section-list">
+        <div class="row"><div class="idx">i</div><div class="body"><strong>Editorial layout</strong><span>Magazine grid, not a blog list. Featured article hero, four secondary tiles, then chronological. Each card shows reading time, category, and the question the article answers.</span></div></div>
+        <div class="row"><div class="idx">ii</div><div class="body"><strong>Categories</strong><span>Hearing, Sinus & Allergy, Paediatric ENT, Sleep & Snoring, Voice & Throat, Hearing Aids, At-Home Care.</span></div></div>
+        <div class="row"><div class="idx">iii</div><div class="body"><strong>Article template</strong><span>Reviewed-by line with doctor's name + credentials. Last-updated date. Estimated reading time. Bilingual toggle. Inline FAQ schema. End-of-article CTA: "Worried about this for yourself or someone you love? Book a slot."</span></div></div>
+        <div class="row"><div class="idx">iv</div><div class="body"><strong>Cadence</strong><span>One article per week, year-round. Topics drawn from the question-mining keyword list (~340 unique queries identified for the SEO blueprint).</span></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ───── 05 ANIMATION & MOTION SYSTEM ───── -->
+<section id="motion">
+  <div class="wrap">
+    <div class="section-num">05 — Animation &amp; Motion System</div>
+    <h2 class="section-title serif">Motion that signals <em>expertise,</em> not theatre.</h2>
+    <p class="section-deck">A medical website that moves like an Awwwards portfolio loses the patient. Motion here is editorial pacing, not flex. Every animation is on a budget, on a curve, and on a justification.</p>
+
+    <h3>Foundation: smoothness without compromise</h3>
+    <ul>
+      <li><strong>Smooth scroll</strong> — Lenis.js, instantiated globally, with <span class="mono">duration: 1.2</span> and a custom ease (<span class="mono">t * (2 - t)</span>). Disabled with <span class="mono">prefers-reduced-motion</span>.</li>
+      <li><strong>Scroll-triggered animation</strong> — GSAP <span class="mono">ScrollTrigger</span>, registered once at app root. All triggers batched; never one-trigger-per-element.</li>
+      <li><strong>Page transitions</strong> — Next.js App Router <span class="mono">view-transitions</span> API for native, fall back to a 220ms cross-fade. No Barba.js (pure overhead in a Next.js stack).</li>
+      <li><strong>Easing language</strong> — three curves only: <span class="mono">cubic-bezier(0.16, 1, 0.3, 1)</span> for entrances, <span class="mono">cubic-bezier(0.7, 0, 0.84, 0)</span> for exits, <span class="mono">cubic-bezier(0.65, 0, 0.35, 1)</span> for stateful UI.</li>
+    </ul>
+
+    <h3>Element-level motion language</h3>
+    <table class="data-table">
+      <thead>
+        <tr><th>Element</th><th>Motion</th><th>Trigger</th><th>Duration</th><th>Purpose</th></tr>
+      </thead>
+      <tbody>
+        <tr><td class="pri">Hero headline</td><td>Staggered word reveal, 18px translateY → 0, opacity 0 → 1</td><td>onload, post-font-ready</td><td>900ms total, 60ms stagger</td><td>Editorial pacing, not splash</td></tr>
+        <tr><td class="pri">Section serif headlines</td><td>Single-line reveal with serif italic emphasis word arriving last</td><td>ScrollTrigger, 75% viewport</td><td>650ms</td><td>Anchors attention without movement noise</td></tr>
+        <tr><td class="pri">Body paragraphs</td><td>Opacity 0 → 1, no translate</td><td>ScrollTrigger, 90% viewport</td><td>500ms</td><td>Readable instantly; movement reserved for hierarchy</td></tr>
+        <tr><td class="pri">Service tiles</td><td>Stagger reveal, 24px translateY</td><td>ScrollTrigger, batched</td><td>400ms each, 80ms stagger</td><td>Visual rhythm without strobe</td></tr>
+        <tr><td class="pri">Number / KPI counters</td><td>Animated count-up</td><td>ScrollTrigger, in-view</td><td>1.4s, ease-out</td><td>Authority signal — only on hard data</td></tr>
+        <tr><td class="pri">Image reveals</td><td>Mask wipe (clip-path), bottom-up</td><td>ScrollTrigger</td><td>900ms</td><td>Editorial; replaces fade</td></tr>
+        <tr><td class="pri">CTA buttons</td><td>Magnetic hover, max 6px displacement; 1.02 scale on press</td><td>mousemove + click</td><td>180ms</td><td>Tactile confidence at decision moments</td></tr>
+        <tr><td class="pri">Image hover</td><td>1.03 scale, 600ms ease</td><td>hover</td><td>600ms</td><td>Subtle parallax of attention, no kineticism</td></tr>
+        <tr><td class="pri">Loading state</td><td>Skeleton screens — never spinners</td><td>route change, data fetch</td><td>matched to actual load</td><td>Spinners suggest waiting; skeletons suggest progress</td></tr>
+        <tr><td class="pri">Form submission</td><td>In-button micro-spinner; success → checkmark morph</td><td>submit</td><td>320ms checkmark draw</td><td>Confirmation as motion, not modal</td></tr>
+        <tr><td class="pri">Page transitions</td><td>180ms fade + 200ms shared-element on logo</td><td>route change</td><td>200ms total</td><td>Continuity across navigation</td></tr>
+      </tbody>
+    </table>
+
+    <h3>What we explicitly will not do</h3>
+    <ul>
+      <li>No parallax of large hero images (creates motion sickness on Tier-2 mid-tier devices).</li>
+      <li>No background video on landing (unwatchable on metered mobile data — and unbookable when the LCP is a video).</li>
+      <li>No looped Lottie illustrations (they consume main-thread budget and date the design within 18 months).</li>
+      <li>No GSAP timeline scroll-jacking that overrides native scroll velocity. Lenis smooths; it does not hijack.</li>
+      <li>No motion that runs while a form is open, focused, or in error state. Anxiety states deserve stillness.</li>
+    </ul>
+
+    <div class="pull serif">"Motion is permitted only where it does work the static frame cannot do. Beauty without function is a liability."</div>
+
+    <h3>Performance budget for motion</h3>
+    <table class="data-table">
+      <thead><tr><th>Layer</th><th>Budget</th><th>Why</th></tr></thead>
+      <tbody>
+        <tr><td class="pri">GSAP + ScrollTrigger</td><td>~28 KB gzip</td><td>Tree-shaken; only used plugins imported</td></tr>
+        <tr><td class="pri">Lenis</td><td>~5 KB gzip</td><td>Single global instance</td></tr>
+        <tr><td class="pri">JS execution per scroll frame</td><td>&lt; 4ms</td><td>Keeps main thread under 16ms for 60fps</td></tr>
+        <tr><td class="pri">Animation main-thread blocking on load</td><td>0ms</td><td>All animations defer past first paint via <span class="mono">requestIdleCallback</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- ───── 06 TECH STACK ───── -->
+<section id="stack">
+  <div class="wrap">
+    <div class="section-num">06 — Tech Stack Recommendation</div>
+    <h2 class="section-title serif">A stack chosen for <em>speed in Silchar,</em> not speed in Silicon Valley.</h2>
+    <p class="section-deck">Every dependency in this stack is justified by either performance, maintainability, or clinic-staff usability. Nothing exotic. Nothing fashionable. Everything boring, and that is the compliment.</p>
+
+    <div class="grid-2">
+      <div>
+        <h4>Frontend</h4>
+        <ul>
+          <li><strong>Next.js 15 (App Router, RSC)</strong> — server components mean smaller client JS bundles, which means faster TTI on a Jio 4G handset in Silchar. The whole booking page can ship under 60 KB of client JS.</li>
+          <li><strong>TypeScript, strict</strong> — zero patient-data bug surface from typos.</li>
+          <li><strong>Tailwind CSS</strong> — utility classes inlined, no runtime CSS-in-JS, predictable LCP.</li>
+          <li><strong>next/image</strong> — AVIF first, WebP fallback, blur LQIP, responsive <span class="mono">sizes</span> properly set.</li>
+          <li><strong>next/font (Fraunces + Inter, variable)</strong> — self-hosted, <span class="mono">font-display: swap</span>, preloaded for the hero.</li>
+        </ul>
+        <h4>Motion & interaction</h4>
+        <ul>
+          <li><strong>GSAP 3 + ScrollTrigger</strong> — industry standard, free for non-commercial; clinic license tier appropriate.</li>
+          <li><strong>Lenis 1.x</strong> — smooth scroll, 5KB gzip.</li>
+          <li><strong>Framer Motion</strong> for component-level micro-interactions (button magnetism, modal sheets).</li>
+        </ul>
+      </div>
+      <div>
+        <h4>Content & data</h4>
+        <ul>
+          <li><strong>Sanity.io CMS</strong> — bilingual document model (en + bn) with Portable Text. The doctor and a non-technical assistant can publish journal articles in 8 minutes from a phone.</li>
+          <li><strong>Sanity Image CDN</strong> — global edge transforms, perfect cropping, format negotiation per browser.</li>
+          <li><strong>Vercel KV (Redis)</strong> — caching the slot-availability lookups so the booking page hits 30ms TTFB.</li>
+        </ul>
+
+        <h4>Booking & messaging</h4>
+        <ul>
+          <li><strong>Cal.com (self-hosted) or Google Calendar API</strong> — slot picker with conflict prevention and ICS generation.</li>
+          <li><strong>WhatsApp Business Cloud API</strong> via 360dialog or Wati — booking confirmations, T-24h reminders, post-visit review request. Templated messages for compliance.</li>
+          <li><strong>Razorpay</strong> — optional pay-at-booking; UPI primary, cards fallback. Supports international cards for diaspora bookings.</li>
+          <li><strong>MSG91</strong> — transactional SMS fallback for non-WhatsApp users.</li>
+        </ul>
+
+        <h4>Hosting & edge</h4>
+        <ul>
+          <li><strong>Vercel</strong> — global edge with Mumbai region pinned for cold starts close to the catchment.</li>
+          <li><strong>Cloudflare</strong> in front for image hot-cache and DDoS / bot management.</li>
+        </ul>
+
+        <h4>Analytics & observability</h4>
+        <ul>
+          <li><strong>Plausible</strong> (privacy-first, DPDP-friendly, no cookie banner needed).</li>
+          <li><strong>Sentry</strong> for client + server error tracking.</li>
+          <li><strong>Vercel Analytics</strong> for Core Web Vitals field measurement (real Silchar devices, not lab tests).</li>
+        </ul>
+      </div>
+    </div>
+
+    <h3>Why not WordPress / Webflow / Wix</h3>
+    <p>Each ships ~280 KB of CSS and ~180 KB of JavaScript before a single character of content renders. On a mid-tier Android handset on a 3G-fallback connection in Kanakpur, that is a five-second hero-render delay — and a lost booking. The stack above ships under 90 KB initial JS to the booking page, which is the difference between a clinic that ranks and a clinic that does not.</p>
+
+    <h3>Architecture diagram, in one paragraph</h3>
+    <p>Browser hits Cloudflare → Vercel edge serves a server-rendered Next.js page → static content streamed from the edge cache; dynamic slot data fetched from Vercel KV (warm) or Cal.com API (cold) → Sanity CDN serves the article body and images → on form submit, the booking is written to Cal.com, a WhatsApp message is queued via 360dialog, an SMS fallback is queued via MSG91, and the patient receives a confirmation page with the .ics file. Total median end-to-end booking time, from landing to confirmation: <strong>under 90 seconds</strong> on a mid-tier Android.</p>
+  </div>
+</section>
+
+<!-- ───── 07 SEO BLUEPRINT ───── -->
+<section id="seo">
+  <div class="wrap">
+    <div class="section-num">07 — SEO Blueprint</div>
+    <h2 class="section-title serif">Local pack first. <em>Topical authority second. Branded queries last.</em></h2>
+    <p class="section-deck">In Silchar, the ENT clinic that owns the local 3-pack and ranks page-one for ten symptom queries owns the entire market. This is the sequence to get there.</p>
+
+    <h3>Layer 1 — The Google Business Profile is the homepage</h3>
+    <ul>
+      <li>Verify and own the GBP. Add the website URL, hours, all six service categories, 30+ photographs of the clinic and instruments, the doctor's profile, and a weekly Posts cadence.</li>
+      <li>Categories: <em>Otolaryngologist</em> (primary), <em>ENT clinic, Audiologist, Hearing aid store, Sleep clinic</em> (secondary).</li>
+      <li>Active Q&amp;A — pre-seed the 12 most-asked patient questions (yes, this is allowed and expected).</li>
+      <li>Service catalogue — list each of the six services with descriptions, link-back to the matching service page.</li>
+      <li>Reply to 100% of reviews within 48 hours, in the language of the review.</li>
+    </ul>
+
+    <h3>Layer 2 — Technical SEO architecture</h3>
+    <ul>
+      <li><strong>Sitemap.xml</strong> auto-generated, with <span class="mono">lastmod</span> on every page, separate sitemap for English and Bengali.</li>
+      <li><strong>Robots.txt</strong> permits all relevant crawlers, blocks staging.</li>
+      <li><strong>Hreflang</strong> annotations on every bilingual page: <span class="mono">en-IN</span>, <span class="mono">bn-IN</span>, <span class="mono">x-default</span>.</li>
+      <li><strong>Canonical tags</strong> on every page, pointing to the language-default version.</li>
+      <li><strong>Breadcrumb structure</strong> — visible breadcrumbs + <span class="mono">BreadcrumbList</span> JSON-LD on all non-home pages.</li>
+      <li><strong>Internal linking</strong> — every condition page links to two adjacent service pages and one journal article. Every journal article links to one service page. Spider hits depth-2 from any URL.</li>
+      <li><strong>404 page</strong> — surfaces site search, top services, and the booking CTA. A 404 still books.</li>
+    </ul>
+
+    <h3>Layer 3 — Schema.org structured data, complete spec</h3>
+    <div class="code">
+<span class="com">// Sitewide, in &lt;head&gt; of every page</span>
+<span class="key">"@type"</span>: <span class="str">"MedicalClinic"</span>,
+  <span class="key">"name"</span>: <span class="str">"The ENT Clinic, Silchar"</span>,
+  <span class="key">"medicalSpecialty"</span>: <span class="str">"Otolaryngologic"</span>,
+  <span class="key">"address"</span>: { <span class="key">"streetAddress"</span>: <span class="str">"Lochan Bairagi Rd, Meherpur, Kanakpur"</span>,
+                <span class="key">"addressLocality"</span>: <span class="str">"Silchar"</span>,
+                <span class="key">"addressRegion"</span>: <span class="str">"Assam"</span>,
+                <span class="key">"postalCode"</span>: <span class="str">"788005"</span>,
+                <span class="key">"addressCountry"</span>: <span class="str">"IN"</span> },
+  <span class="key">"geo"</span>: { <span class="key">"latitude"</span>: <span class="str">24.8163027</span>, <span class="key">"longitude"</span>: <span class="str">92.8007081</span> },
+  <span class="key">"openingHoursSpecification"</span>: [...],
+  <span class="key">"telephone"</span>: <span class="str">"+91-..."</span>,
+  <span class="key">"sameAs"</span>: [<span class="str">"https://g.co/..."</span>, <span class="str">"https://www.practo.com/..."</span>],
+  <span class="key">"priceRange"</span>: <span class="str">"₹"</span>
+
+<span class="com">// On /doctor</span>
+<span class="key">"@type"</span>: <span class="str">"Physician"</span>,
+  <span class="key">"name"</span>: <span class="str">"Dr. ..."</span>,
+  <span class="key">"medicalSpecialty"</span>: <span class="str">"Otolaryngologic"</span>,
+  <span class="key">"availableService"</span>: [...],
+  <span class="key">"hasCredential"</span>: [...]
+
+<span class="com">// On /services/[slug]</span>
+<span class="key">"@type"</span>: <span class="str">"MedicalProcedure"</span> | <span class="str">"MedicalTest"</span>
+
+<span class="com">// On /journal/[slug]</span>
+<span class="key">"@type"</span>: <span class="str">"MedicalWebPage"</span>,
+  <span class="key">"reviewedBy"</span>: { <span class="key">"@type"</span>: <span class="str">"Physician"</span>, <span class="key">"name"</span>: <span class="str">"..."</span> },
+  <span class="key">"lastReviewed"</span>: <span class="str">"2026-..."</span>
+
+<span class="com">// On /services/* and /journal/* with FAQs</span>
+<span class="key">"@type"</span>: <span class="str">"FAQPage"</span>
+    </div>
+
+    <h3>Layer 4 — The content moat</h3>
+    <p>~340 unique long-tail queries in the Barak Valley ENT vertical have no clear English winner today and no Bengali winner at all. The first publisher to systematically address them owns the topic for years. The journal is the engine.</p>
+
+    <table class="data-table">
+      <thead><tr><th>Cluster</th><th>Query type</th><th>Article cadence</th><th>Target</th></tr></thead>
+      <tbody>
+        <tr><td class="pri">Symptom-led</td><td>"why does my child snore at night"</td><td>2 / month</td><td>Top 3 organic, EN + BN</td></tr>
+        <tr><td class="pri">Cost-led</td><td>"hearing aid cost in silchar"</td><td>1 / month</td><td>Featured snippet</td></tr>
+        <tr><td class="pri">Comparison-led</td><td>"hearing aid vs cochlear implant"</td><td>1 / month</td><td>Authority + backlinks</td></tr>
+        <tr><td class="pri">Procedure-led</td><td>"what to expect after tonsil surgery"</td><td>1 / month</td><td>Conversion-adjacent reading</td></tr>
+        <tr><td class="pri">Local condition-led</td><td>"dust allergy treatment cachar"</td><td>1 / month</td><td>Local pack support</td></tr>
+      </tbody>
+    </table>
+
+    <h3>Layer 5 — Off-site signals</h3>
+    <ul>
+      <li>NAP-consistent listings on Practo, Lybrate, JustDial, Sehat, Apollo247 directory, Tata 1mg directory, IndiaMART healthcare, Sulekha, AskApollo, Bajaj Finserv Health, NIH RxList, Healthgrades India.</li>
+      <li>Doctoral society memberships listed on profile pages with do-follow backlinks: AOI (Association of Otolaryngologists of India), Cachar IMA chapter.</li>
+      <li>Guest writing — one quarterly piece for The Sentinel (Assam) or The Telegraph (NE edition) on a public-health ENT topic.</li>
+      <li>Press release on Wire19, BusinessWorld Healthcare on opening / new equipment, syndicated to drive root-domain authority.</li>
+    </ul>
+
+    <h3>Layer 6 — Compliance overlay (NMC 2023, DPDP Act 2023)</h3>
+    <ul>
+      <li>No superlatives anywhere ("best", "top", "leading", "world-class") — auditable lint rule in the CMS publish flow.</li>
+      <li>No before/after surgical photographs, no patient face photos without written consent on file.</li>
+      <li>Doctor's NMC State Council registration number visible on /doctor and in the footer.</li>
+      <li>Privacy policy details DPDP-compliant data handling, retention, deletion-on-request, and data fiduciary responsibilities.</li>
+      <li>Telemedicine policy page references the Telemedicine Practice Guidelines (BoG, NMC) — published terms for any future virtual consult.</li>
+      <li>Cookie / analytics: Plausible only — no third-party cookies; no DPDP consent banner needed.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ───── 08 PERFORMANCE ───── -->
+<section id="perf">
+  <div class="wrap">
+    <div class="section-num">08 — Performance Plan</div>
+    <h2 class="section-title serif">95+ Lighthouse on the only device that matters: <em>a four-year-old Android in Kanakpur.</em></h2>
+    <p class="section-deck">The lab score is a starting line. The win condition is field performance — Real User Monitoring on actual patient devices in actual Silchar networks. Here is exactly how the budget is spent.</p>
+
+    <div class="kpi-row">
+      <div class="kpi"><div class="label">LCP</div><div class="value">&lt;<em>2.0s</em></div><div class="note">Hero image preloaded, server-rendered, edge-cached</div></div>
+      <div class="kpi"><div class="label">CLS</div><div class="value">0.<em>00</em></div><div class="note">Every image, ad slot, embed has explicit width/height</div></div>
+      <div class="kpi"><div class="label">INP</div><div class="value">&lt;<em>100ms</em></div><div class="note">No long tasks &gt; 50ms on main thread during interaction</div></div>
+      <div class="kpi"><div class="label">TTFB</div><div class="value">&lt;<em>180ms</em></div><div class="note">Vercel Mumbai edge for India catchment</div></div>
+    </div>
+
+    <h3>Image strategy</h3>
+    <ul>
+      <li>AVIF first, WebP fallback. Original JPEG/PNG never shipped to the browser.</li>
+      <li>Hero image preloaded with <span class="mono">&lt;link rel="preload" as="image" fetchpriority="high"&gt;</span>, served from the Sanity CDN with an explicit <span class="mono">w=</span> per breakpoint.</li>
+      <li>Every image has a 24px-wide LQIP blur placeholder, base64-inlined into the HTML — zero CLS, zero blank flash.</li>
+      <li><span class="mono">loading="lazy"</span> on every below-the-fold image; <span class="mono">loading="eager"</span> on the hero only.</li>
+      <li>Image budget per page: ≤ 320 KB total, ≤ 90 KB above the fold.</li>
+    </ul>
+
+    <h3>JavaScript budget</h3>
+    <ul>
+      <li>Initial JS to /book: ≤ 90 KB gzip.</li>
+      <li>Initial JS to /: ≤ 70 KB gzip.</li>
+      <li>GSAP + Lenis lazy-imported via <span class="mono">next/dynamic</span>, only on pages that use them, only after first paint.</li>
+      <li>Third-party scripts: Plausible only on initial load. WhatsApp, Razorpay, Google Maps SDKs lazy-loaded on user intent.</li>
+      <li>No analytics that block the main thread. No GTM. No Hotjar.</li>
+    </ul>
+
+    <h3>CSS strategy</h3>
+    <ul>
+      <li>Critical CSS inlined into <span class="mono">&lt;head&gt;</span> (≤ 14 KB).</li>
+      <li>Remaining stylesheet async-loaded with <span class="mono">media="print"</span> swap pattern.</li>
+      <li>No CSS-in-JS at runtime. Tailwind compiled at build time.</li>
+      <li>Self-hosted variable fonts, subset to Latin + Bengali ranges.</li>
+    </ul>
+
+    <h3>Server & edge strategy</h3>
+    <ul>
+      <li>Static-by-default — every page that can be statically rendered, is. Booking is the one ISR page (revalidate 60s).</li>
+      <li>Vercel edge cache hit ratio target: &gt; 95% for non-booking pages.</li>
+      <li>Slot lookup cached in Vercel KV with 60-second TTL. Cold-start booking call: ≤ 200ms.</li>
+      <li>Cloudflare in front: HTTP/3, Brotli compression, image hot-cache.</li>
+    </ul>
+
+    <h3>Field measurement protocol</h3>
+    <ul>
+      <li>Vercel Speed Insights collects Real User Monitoring data, segmented by device class and connection type.</li>
+      <li>Field 75th-percentile LCP target on Slow 4G: ≤ 2.5s.</li>
+      <li>Field 75th-percentile INP on mid-tier Android: ≤ 200ms.</li>
+      <li>Performance budget enforced in CI — pull request fails if any of: bundle &gt; 90KB on /book, hero image &gt; 80KB, total CLS &gt; 0.05.</li>
+    </ul>
+
+    <div class="callout">
+      <div class="callout-label">ARCHIE Standard</div>
+      <p style="margin:0;">A medical website is a public utility in the moment a patient needs it. Slow is unconscionable. Performance is a clinical concern.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ───── 09 PREMIUM FEEL CHECKLIST ───── -->
+<section id="feel">
+  <div class="wrap">
+    <div class="section-num">09 — The Premium Feel Checklist</div>
+    <h2 class="section-title serif">Twenty things that make this site feel <em>million-dollar</em>—not because it cost a million, but because it earns it.</h2>
+    <p class="section-deck">Premium is the absence of every cheap default. Below: each line is a specific decision, and the absence of any one of them measurably reduces perceived expertise.</p>
+
+    <div class="checklist">
+      <div class="item"><div></div><div><strong>Editorial typography over default sans-serif</strong><span>Fraunces (variable, with optical-size axis) for display + Inter for body. Not Open Sans. Not Poppins. Not Montserrat. Visual class in the first three seconds.</span></div></div>
+      <div class="item"><div></div><div><strong>Warm cream background, not cold white</strong><span>#F6F1E6 reads like a magazine page. Pure white reads like a Word document.</span></div></div>
+      <div class="item"><div></div><div><strong>Forest green as the trust accent — not corporate blue</strong><span>Distinguishes from every Apollo / Manipal / Fortis lookalike in the country.</span></div></div>
+      <div class="item"><div></div><div><strong>Real photography, not stock</strong><span>Three half-day shoots: clinic interior, instrument detail, doctor at work. Stock photography is an instant downgrade signal.</span></div></div>
+      <div class="item"><div></div><div><strong>Generous, fearless whitespace</strong><span>If the design feels almost-empty, it is correct. Crowding is a Tier-3 default.</span></div></div>
+      <div class="item"><div></div><div><strong>Editorial pull quotes, set in italic serif</strong><span>One per major section. They invite slow reading; slow reading is high trust.</span></div></div>
+      <div class="item"><div></div><div><strong>Drop caps on long-form sections</strong><span>Magazine punctuation, not blog punctuation.</span></div></div>
+      <div class="item"><div></div><div><strong>Numbers in ranged italic</strong><span>"95+" with the + in italic. Tiny detail, enormous compounding effect.</span></div></div>
+      <div class="item"><div></div><div><strong>Custom-styled map, not default Google chrome</strong><span>The clinic's pin is the clinic's logo. The map palette matches the page palette.</span></div></div>
+      <div class="item"><div></div><div><strong>Sticky bottom action bar on mobile, hidden on desktop</strong><span>Tap-to-call is one thumb-stretch away from any scroll position. Premium is one-tap.</span></div></div>
+      <div class="item"><div></div><div><strong>Magnetic CTA buttons</strong><span>The cursor pulls slightly toward primary actions. Two pixels of attraction is the difference between feature and craftsmanship.</span></div></div>
+      <div class="item"><div></div><div><strong>Skeleton screens, never spinners</strong><span>Spinners say "we are slow". Skeletons say "we are coming".</span></div></div>
+      <div class="item"><div></div><div><strong>Mask-wipe image reveals, not fades</strong><span>The image emerges instead of arriving. Editorial cinema, not power-point fade.</span></div></div>
+      <div class="item"><div></div><div><strong>Booking confirmation with .ics download and a real human "what to bring" list</strong><span>Confirmation is the highest-leverage trust moment. Most clinics waste it.</span></div></div>
+      <div class="item"><div></div><div><strong>Bilingual surface, not a Google Translate widget</strong><span>The Bengali version is hand-translated by a native medical writer. Translation widgets are an instant downgrade signal.</span></div></div>
+      <div class="item"><div></div><div><strong>NMC registration number visible in the footer</strong><span>One line of text is the cheapest piece of credibility on the entire internet.</span></div></div>
+      <div class="item"><div></div><div><strong>Reviewed-by line on every journal article</strong><span>"Reviewed by Dr. ____, MS-ENT, on ___" — Google's E-E-A-T currency, and a patient's reassurance.</span></div></div>
+      <div class="item"><div></div><div><strong>Published consultation fee, in ₹, no asterisks</strong><span>Fee transparency is the single highest-converting trust signal in Indian healthcare.</span></div></div>
+      <div class="item"><div></div><div><strong>"What we will not do" section on /first-visit</strong><span>The list of what a clinic refuses to do is more memorable than the list of what it does.</span></div></div>
+      <div class="item"><div></div><div><strong>One question, repeated in the closing of every page</strong><span>"Shall we see you this week?" — set in italic serif. The same line everywhere. Patients begin to expect it. They begin to answer it.</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ───── SIGNOFF ───── -->
+<div class="signoff">
+  <div class="wrap">
+    <div class="eyebrow">Closing — what to do this week</div>
+    <h2 class="serif">The first booking from this site<br/>should arrive within <em>fourteen days</em><br/>of go-live.</h2>
+    <p>Phase 1 (weeks 1–3): copy, photography, design system, GBP optimisation, six service pages, /, /doctor, /book. Soft-launch to existing patients via WhatsApp on day 21. Phase 2 (weeks 4–8): journal engine, six condition microsites, Bengali surface, schema rollout. Phase 3 (weeks 9–12): full long-tail content cadence, RUM tuning, CRO on the booking funnel.</p>
+    <p>This document is the contract between strategy and execution. Every page in the build will be measured against the line it descends from in this blueprint. If the blueprint is wrong, we change the blueprint. If the build deviates from the blueprint, we change the build.</p>
+    <div class="meta">
+      <div>ARCHIE Studio</div>
+      <div>Blueprint No. 0017</div>
+      <div>The ENT Clinic, Silchar</div>
+      <div>May 2026</div>
+      <div>Confidential — for client review</div>
+    </div>
+  </div>
+</div>
+
+<script>
+// Light reveal-on-scroll without external dependencies
+(function() {
+  if (typeof IntersectionObserver === 'undefined') return;
+  const els = document.querySelectorAll('section, .page-blueprint, .pull, .callout, .image-strip, .kpi-row');
+  els.forEach(el => el.classList.add('reveal'));
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        io.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+  els.forEach(el => io.observe(el));
+})();
+</script>
+<script>
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape' && window.parent !== window) {
+    window.parent.postMessage({ type: 'close-fullscreen' }, '*');
+  }
+});
+</script>
+<!-- broken-img-handler -->
+<script>
+(function(){
+  if(window.__brokenImgHandler)return;
+  window.__brokenImgHandler=true;
+  var MAX=5,DELAYS=[2000,4000,8000,16000,32000];
+  document.addEventListener('error',function(e){
+    var img=e.target;
+    if(!img||img.tagName!=='IMG')return;
+    var liveSrc=img.getAttribute('src');
+    var src=img.dataset.haOriginalSrc||liveSrc;
+    if(!src)return;
+    if(img.dataset.haOriginalSrc&&liveSrc&&liveSrc!==img.dataset.haOriginalSrc&&liveSrc.indexOf('_r=')<0){src=liveSrc;img.dataset.haOriginalSrc=src;img.dataset.haRetryCount='0'}
+    else if(!img.dataset.haOriginalSrc){img.dataset.haOriginalSrc=src}
+    var attempt=parseInt(img.dataset.haRetryCount||'0',10);
+    if(img.dataset.haPhId){var old=document.getElementById(img.dataset.haPhId);if(old)old.remove()}
+    var ph=document.createElement('div');
+    ph.className='ha-img-placeholder'+(attempt>=MAX?' ha-failed':'');
+    ph.id='ha-ph-'+Math.random().toString(36).slice(2,9);
+    var w=img.getAttribute('width');var h=img.getAttribute('height');
+    if(w)ph.style.width=w+(isNaN(Number(w))?'':'px');
+    else if(img.style.width)ph.style.width=img.style.width;
+    else if(img.width>1)ph.style.width=img.width+'px';
+    if(h)ph.style.height=h+(isNaN(Number(h))?'':'px');
+    else if(img.style.height)ph.style.height=img.style.height;
+    else if(img.height>1)ph.style.height=img.height+'px';
+    ph.textContent=attempt>=MAX?'Image unavailable':'Loading image\u2026';
+    img.dataset.haPhId=ph.id;
+    if(img.dataset.haOrigDisplay==null)img.dataset.haOrigDisplay=img.style.display||'';
+    img.style.display='none';
+    img.insertAdjacentElement('afterend',ph);
+    if(attempt<MAX){
+      img.dataset.haRetryCount=String(attempt+1);
+      setTimeout(function(){
+        if(!img.isConnected)return;
+        if(img.dataset.haOriginalSrc!==src)return;
+        if(img.complete&&img.naturalWidth>0)return;
+        var curSrc=img.getAttribute('src');
+        if(curSrc&&curSrc.indexOf(src)!==0)return;
+        var fresh=src+(src.indexOf('?')>=0?'&':'?')+'_r='+(attempt+1)+'_'+Date.now();
+        img.src=fresh;
+      },DELAYS[attempt]);
+    }
+  },true);
+  document.addEventListener('load',function(e){
+    var img=e.target;
+    if(!img||img.tagName!=='IMG')return;
+    if(img.dataset.haPhId){
+      var ph=document.getElementById(img.dataset.haPhId);
+      if(ph)ph.remove();
+      delete img.dataset.haPhId;
+      img.style.display=img.dataset.haOrigDisplay||'';
+      delete img.dataset.haOrigDisplay;
+      delete img.dataset.haOriginalSrc;
+      delete img.dataset.haRetryCount;
+    }
+  },true);
+})();
+</script>
+</body>
+</html>
