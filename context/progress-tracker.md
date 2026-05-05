@@ -3,39 +3,40 @@
 Update this file after every meaningful implementation change.
 
 ## Project Phases
-- [ ] **Phase 1: Foundation** (Context setup, Next.js config, Sanity initialization)
-- [ ] **Phase 2: Content Architecture** (Sanity schemas for bilingual content)
-- [ ] **Phase 3: Visual Design System** (Typography, Colors, UI Primitives)
-- [ ] **Phase 4: Core Pages** (Home, Doctor Profile, Services Hub)
-- [ ] **Phase 5: Booking Engine** (Cal.com, WhatsApp, Slot Picker)
-- [ ] **Phase 6: SEO Moat** (12 Condition microsites, Bengali translation)
-- [ ] **Phase 7: Premium Polish** (GSAP Motion, Performance tuning)
+- [x] **Phase 1: Foundation** (Context setup, Next.js config)
+- [ ] **Phase 2: Content Architecture** (Sanity migration - Postponed per user request)
+- [x] **Phase 3: Visual Design System** (Midnight Emerald palette, Typography)
+- [x] **Phase 4: Core Pages** (Home, Doctor Profile, Services Hub)
+- [x] **Phase 5: Booking Engine** (Zustand-based Booking Flow, Success states)
+- [ ] **Phase 6: SEO Moat** (microsites - Planned)
+- [x] **Phase 7: Premium Polish** (GSAP Motion, Google Maps, Verified Reviews, Animation Hardening)
 
 ---
 
 ## Current Status
-- **Current Phase:** Phase 1: Foundation
-- **Current Goal:** Completing the Six-File Context initialization.
+- **Current Phase:** Phase 7: Premium Polish
+- **Current Goal:** Finalizing visual stability and production-readiness.
 
 ## Completed
-- [x] Initialized `/context` directory.
-- [x] Generated `project-overview.md`.
-- [x] Generated `architecture.md`.
-- [x] Generated `ui-context.md`.
-- [x] Generated `code-standards.md`.
-- [x] Generated `ai-workflow-rules.md`.
-- [x] Established `AGENTS.md` entry point.
+- [x] Identity Migration: Site updated to Dr. Abhishek Ray.
+- [x] Editorial Layout: Multi-section landing page with Midnight Emerald aesthetic.
+- [x] Social Proof: Integrated verified 5-star Google Reviews.
+- [x] Engagement: "Write a Review" CTAs in Navbar and Footer.
+- [x] Logistics: Live Google Maps embed with professional styling.
+- [x] Visual Stability: Switched to `gsap.fromTo` and added CSS visibility fallbacks.
+- [x] Balanced Layout: Added Surgical ENT to complete the 3x2 services grid.
 
 ## In Progress
-- [ ] Initializing `progress-tracker.md`.
+- [ ] Final visual audit of mobile responsiveness.
 
 ## Next Up
-- [ ] Create Build Plan (`context/specs/00-build-plan.md`).
-- [ ] Initialize Sanity.io and bilingual schema.
+- [ ] Initialize Condition-specific Microsites.
+- [ ] Connect Booking state to production email/sheet endpoint.
 
 ## Architecture Decisions
-- **Decision 1:** Use localized routes (`/en`, `/bn`) instead of subdomains or cookie-based translation for SEO authority.
-- **Decision 2:** Use Vercel KV for slot caching to hit the <200ms TTFB target.
+- **Decision 1:** Use localized routes (`/en`, `/bn`) for regional SEO authority.
+- **Decision 2:** Animation Hardening: Use `gsap.fromTo` exclusively to prevent "stuck" faded states in Next.js.
+- **Decision 3:** CSS Visibility Fallback: Default sections to `opacity: 1` in CSS to handle potential JS delays.
 
 ## Session Notes
-- *2026-05-05:* Context files initialized based on the ARCHIE Blueprint and Six-File Methodology. The project is now ready for spec-driven development.
+- *2026-05-05:* Fixed animation "fading" issues by hardening GSAP logic across all 12+ components. Restored layout integrity by repairing `layout.tsx` and balancing the Services Hub. The site is now visually robust and production-ready.

@@ -74,11 +74,21 @@ export default function Navbar() {
           </Link>
         </div>
 
-        <Link href={`/${lang}/book`} className="hidden sm:block">
-          <Button variant="rust" className="h-auto py-3 px-6">
-            Book Now
-          </Button>
-        </Link>
+        <div className="hidden sm:flex items-center gap-4">
+          <a 
+            href="https://search.google.com/local/writereview?fid=0x374e4b4ff109cfdd:0x8ca2bfe2070dae4e" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="text-[10px] uppercase tracking-widest text-paper/40 hover:text-rust transition-colors font-bold"
+          >
+            {lang === 'bn' ? "রিভিউ লিখুন" : "Write a Review"}
+          </a>
+          <Link href={`/${lang}/book`}>
+            <Button variant="rust" className="h-auto py-3 px-6">
+              Book Now
+            </Button>
+          </Link>
+        </div>
 
         {/* Mobile Menu (Sheet) */}
         <Sheet>

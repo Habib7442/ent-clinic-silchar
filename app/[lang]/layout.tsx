@@ -3,6 +3,7 @@ import { Fraunces, Inter } from "next/font/google";
 import "../globals.css";
 import { cn } from "@/lib/utils";
 import Navbar from "@/components/editorial/Navbar";
+import Footer from "@/components/editorial/Footer";
 
 const fraunces = Fraunces({
   subsets: ["latin"],
@@ -43,13 +44,14 @@ export default async function RootLayout({
       suppressHydrationWarning
     >
       <body 
-        className="min-h-full flex flex-col bg-paper selection:bg-forest/10 selection:text-forest"
+        className="min-h-full flex flex-col bg-[#0A1A12] selection:bg-rust/20 selection:text-rust"
         suppressHydrationWarning
       >
         <Navbar />
         <div className="pt-16 lg:pt-20 flex-1 flex flex-col">
           {children}
         </div>
+        <Footer lang={lang} />
       </body>
     </html>
   );

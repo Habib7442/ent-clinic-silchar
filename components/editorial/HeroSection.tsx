@@ -17,23 +17,35 @@ export default function HeroSection({ lang }: HeroProps) {
   useEffect(() => {
     const ctx = gsap.context(() => {
       // Title reveal
-      gsap.from(".reveal-text", {
-        y: 40,
-        opacity: 0,
-        duration: 1.2,
-        stagger: 0.1,
-        ease: "power4.out",
-        delay: 0.2,
-      });
-
+      gsap.fromTo(".reveal-text", 
+        { 
+          y: 40, 
+          opacity: 0 
+        },
+        {
+          y: 0,
+          opacity: 1,
+          duration: 1.2,
+          stagger: 0.1,
+          ease: "power4.out",
+          delay: 0.2,
+        }
+      );
+      
       // Image reveal
-      gsap.from(imageRef.current, {
-        opacity: 0,
-        y: 20,
-        duration: 1.5,
-        ease: "power4.out",
-        delay: 0.1,
-      });
+      gsap.fromTo(imageRef.current, 
+        { 
+          opacity: 0, 
+          y: 20 
+        },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 1.5,
+          ease: "power4.out",
+          delay: 0.1,
+        }
+      );
     }, containerRef);
 
     return () => ctx.revert();

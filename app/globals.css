@@ -54,3 +54,8 @@
     clip-path: inset(0 0 0 0);
   }
 }
+/* GSAP reveal safety - Base state before JS kicks in */
+.reveal-loc, .service-card, .testimonial-card, .process-step {
+  opacity: 1;
+  visibility: visible;
+}
