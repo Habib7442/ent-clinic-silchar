@@ -1,18 +1,19 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Inter } from "next/font/google";
+import { Fraunces, Inter } from "next/font/google";
 import "../globals.css";
 import { cn } from "@/lib/utils";
+import Navbar from "@/components/editorial/Navbar";
 
-const inter = Inter({subsets:['latin'],variable:'--font-sans'});
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const fraunces = Fraunces({
   subsets: ["latin"],
+  variable: "--font-serif",
+  display: "swap",
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const inter = Inter({
   subsets: ["latin"],
+  variable: "--font-sans",
+  display: "swap",
 });
 
 export const metadata: Metadata = {
@@ -32,9 +33,24 @@ export default async function RootLayout({
   return (
     <html
       lang={lang}
-      className={cn("h-full", "antialiased", geistSans.variable, geistMono.variable, "font-sans", inter.variable)}
+      className={cn(
+        "h-full",
+        "antialiased",
+        fraunces.variable,
+        inter.variable,
+        "font-sans"
+      )}
+      suppressHydrationWarning
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body 
+        className="min-h-full flex flex-col bg-paper selection:bg-forest/10 selection:text-forest"
+        suppressHydrationWarning
+      >
+        <Navbar />
+        <div className="pt-16 lg:pt-20 flex-1 flex flex-col">
+          {children}
+        </div>
+      </body>
     </html>
   );
 }

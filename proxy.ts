@@ -4,7 +4,7 @@ import type { NextRequest } from 'next/server';
 const locales = ['en', 'bn'];
 const defaultLocale = 'en';
 
-export function middleware(request: NextRequest) {
+export default function proxy(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
   // Check if the pathname is missing a locale
@@ -21,6 +21,6 @@ export function middleware(request: NextRequest) {
 }
 
 export const config = {
-  // Matcher ignoring `/_next/` and `/api/`
-  matcher: ['/((?!api|_next/static|_next/image|favicon.ico).*)'],
+  // Matcher ignoring `/_next/`, `/api/`, and `/images/`
+  matcher: ['/((?!api|_next/static|_next/image|images|favicon.ico).*)'],
 };
