@@ -154,6 +154,7 @@ export function constructMetadata({
   // - No page title        → "Brand — Tagline"
   const resolvedTitle = title ? `${title} | ${brand}` : `${brand} — ${tagline}`;
   const resolvedDescription = description ?? defaultDesc;
+  const absoluteImageUrl = image.startsWith("http") ? image : `${SITE.domain}${image}`;
 
   return {
     title: resolvedTitle,
@@ -190,7 +191,7 @@ export function constructMetadata({
         : {}),
       images: [
         {
-          url: image,
+          url: absoluteImageUrl,
           width: 1200,
           height: 630,
           alt: resolvedTitle,
@@ -203,7 +204,7 @@ export function constructMetadata({
       card: "summary_large_image",
       title: resolvedTitle,
       description: resolvedDescription,
-      images: [{ url: image, alt: resolvedTitle }],
+      images: [{ url: absoluteImageUrl, alt: resolvedTitle }],
       ...(SITE.twitterHandle
         ? { creator: SITE.twitterHandle, site: SITE.twitterHandle }
         : {}),
