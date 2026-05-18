@@ -1,7 +1,14 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  async rewrites() {
+    return [
+      {
+        source: "/:lang(en|bn)/site.webmanifest",
+        destination: "/site.webmanifest",
+      },
+    ];
+  },
 };
 
 export default nextConfig;

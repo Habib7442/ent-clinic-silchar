@@ -1,19 +1,90 @@
 import { constructMetadata } from "@/lib/seo";
 import { Metadata } from "next";
 import Link from "next/link";
+import icons from "@/lib/icons.json";
 import { 
-  Award, 
   ShieldCheck, 
   ChevronRight, 
   Activity, 
-  Volume2, 
-  Brain, 
-  Ear,
   Heart,
   Calendar,
   CheckCircle2
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
+
+// Custom Premium Clinical Vector Icons ($10,000 Bespoke Aesthetic)
+function EarClinicIcon() {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" className="w-8 h-8 text-forest transition-transform duration-500 group-hover:scale-110" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+      {/* Central Auditory Node */}
+      <circle cx="12" cy="12" r="2" className="fill-forest/30 stroke-rust" strokeWidth="1" />
+      {/* Concentric Acoustic Rings (Dashed & Continuous) */}
+      <circle cx="12" cy="12" r="5" strokeDasharray="3 3" className="stroke-forest/40" />
+      <circle cx="12" cy="12" r="8" className="stroke-forest/60" />
+      <circle cx="12" cy="12" r="11" strokeDasharray="4 2" className="stroke-rust/20" />
+      {/* Precision Crosshairs / Clinical Alignment */}
+      <line x1="12" y1="1" x2="12" y2="3" className="stroke-rust" />
+      <line x1="12" y1="21" x2="12" y2="23" className="stroke-rust" />
+      <line x1="1" y1="12" x2="3" y2="12" className="stroke-rust" />
+      <line x1="21" y1="12" x2="23" y2="12" className="stroke-rust" />
+      {/* Elegant ear contour integrated into the waves */}
+      <path d="M10 7.5c2-1 4.5 0 5 2.5s-1 4.5-3 5.5c-1 .5-2 1.5-2 2.5" className="stroke-rust" strokeWidth="2" />
+    </svg>
+  );
+}
+
+function VertigoClinicIcon() {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" className="w-8 h-8 text-rust transition-transform duration-500 group-hover:scale-110" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+      {/* Central Balance Glowing Sphere */}
+      <circle cx="12" cy="12" r="2.5" className="fill-rust/30 stroke-forest" strokeWidth="1.2" />
+      {/* Axis 1: Horizontal Orbital Path */}
+      <ellipse cx="12" cy="12" rx="10" ry="3" className="stroke-rust/30" />
+      {/* Axis 2: 45 Degree Diagonal Path */}
+      <g transform="rotate(45 12 12)">
+        <ellipse cx="12" cy="12" rx="10" ry="3" className="stroke-rust/60" />
+      </g>
+      {/* Axis 3: -45 Degree Diagonal Path */}
+      <g transform="rotate(-45 12 12)">
+        <ellipse cx="12" cy="12" rx="10" ry="3" className="stroke-forest/50" />
+      </g>
+      {/* Gyroscopic Position Indicators */}
+      <circle cx="12" cy="2" r="1" className="fill-rust stroke-rust" />
+      <circle cx="12" cy="22" r="1" className="fill-rust stroke-rust" />
+      <circle cx="2" cy="12" r="1" className="fill-forest stroke-forest" />
+      <circle cx="22" cy="12" r="1" className="fill-forest stroke-forest" />
+    </svg>
+  );
+}
+
+function SpeechTherapyIcon() {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" className="w-8 h-8 text-forest transition-transform duration-500 group-hover:scale-110" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+      {/* Clinical Target Ring */}
+      <circle cx="12" cy="12" r="10" strokeDasharray="3 3" className="stroke-forest/20" />
+      {/* Frequency Sine Waves */}
+      <path d="M2 12c2.5-3 5.5-3 8 0s3.5 3 6 0 4-2.5 6-1" className="stroke-forest/40" />
+      <path d="M2 12c2-1.5 4-1.5 6 0s4 1.5 6 0 4-1.5 6 0" className="stroke-rust" strokeWidth="2" />
+      {/* High-Precision Equalizer Bars */}
+      <line x1="6" y1="10" x2="6" y2="14" className="stroke-forest" strokeWidth="2" />
+      <line x1="9" y1="8" x2="9" y2="16" className="stroke-forest/70" strokeWidth="2" />
+      <line x1="12" y1="5" x2="12" y2="19" className="stroke-rust/80" strokeWidth="2" />
+      <line x1="15" y1="7" x2="15" y2="17" className="stroke-forest/70" strokeWidth="2" />
+      <line x1="18" y1="9" x2="18" y2="15" className="stroke-forest" strokeWidth="2" />
+    </svg>
+  );
+}
+
+function MedicalSealIcon() {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" className="w-6 h-6 text-forest" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" className="fill-forest/10" />
+      <circle cx="12" cy="11" r="3" className="stroke-rust" strokeWidth="2" />
+      <path d="M12 14v4" className="stroke-rust" />
+      <path d="M10 16h4" className="stroke-rust" />
+    </svg>
+  );
+}
 
 export async function generateMetadata({
   params,
@@ -95,10 +166,10 @@ export default async function DoctorPage({
   };
 
   return (
-    <main className="flex-1 bg-[#0A1A12] text-paper overflow-x-hidden pt-12 md:pt-20">
+    <main className="flex-1 bg-[#0A1A12] text-paper overflow-x-hidden pt-0">
       
       {/* 1. Doctor Hero Section */}
-      <section className="relative py-20 lg:py-32 px-6 lg:px-24 border-b border-white/5">
+      <section className="relative pt-8 pb-20 lg:pt-12 lg:pb-32 px-6 lg:px-24 border-b border-white/5">
         <div className="absolute top-0 right-0 w-1/2 h-full bg-forest/5 blur-[120px] rounded-full -translate-y-1/2 translate-x-1/4 pointer-events-none" />
         
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24 items-center">
@@ -122,17 +193,10 @@ export default async function DoctorPage({
 
             <div className="flex flex-wrap gap-8 pt-6 border-t border-white/5">
               <div className="flex items-center gap-3">
-                <Award className="w-6 h-6 text-forest" />
+                <MedicalSealIcon />
                 <div>
                   <p className="text-paper text-sm font-semibold">{content.hero.experienceLabel}</p>
                   <p className="text-paper/40 text-[10px] uppercase tracking-widest">{content.hero.recordLabel}</p>
-                </div>
-              </div>
-              <div className="flex items-center gap-3">
-                <ShieldCheck className="w-6 h-6 text-rust" />
-                <div>
-                  <p className="text-paper text-sm font-semibold">{content.hero.nmcLabel}</p>
-                  <p className="text-paper/40 text-[10px] uppercase tracking-widest">{content.hero.nmcSub}</p>
                 </div>
               </div>
             </div>
@@ -169,65 +233,107 @@ export default async function DoctorPage({
 
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
             {/* Card 1: Ear Clinic */}
-            <div className="p-8 lg:p-10 bg-[#0A1A12] border border-white/5 rounded-sm flex flex-col justify-between hover:border-forest/40 transition-all duration-500 hover:-translate-y-1">
-              <div className="space-y-8">
-                <div className="w-12 h-12 bg-forest/10 rounded-full flex items-center justify-center text-forest">
-                  <Ear className="w-6 h-6" />
+            <div className="group overflow-hidden bg-[#0A1A12] border border-white/5 rounded-sm flex flex-col justify-between hover:border-forest/40 transition-all duration-500 hover:-translate-y-1">
+              <div>
+                <div className="relative aspect-[16/10] w-full overflow-hidden bg-forest/10">
+                  <img 
+                    src={icons.doctor_page.earClinic} 
+                    alt={content.sections.earClinic.title}
+                    className="object-cover w-full h-full filter brightness-75 contrast-125 group-hover:scale-105 transition-transform duration-700" 
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#0A1A12] via-[#0A1A12]/40 to-transparent" />
+                  
+                  {/* Floating Custom Icon */}
+                  <div className="absolute bottom-4 left-6 z-10 w-16 h-16 rounded-full flex items-center justify-center bg-[#0A1A12]/90 border border-forest/20 backdrop-blur-md shadow-lg">
+                    <EarClinicIcon />
+                  </div>
                 </div>
-                <div className="space-y-4">
+
+                <div className="p-8 lg:p-10 pt-6 space-y-4">
                   <h3 className="text-2xl font-serif text-paper font-semibold">{content.sections.earClinic.title}</h3>
                   <p className="text-sm text-paper/60 leading-relaxed font-light">{content.sections.earClinic.desc}</p>
                 </div>
               </div>
-              <div className="mt-8 pt-6 border-t border-white/5 space-y-3">
-                {content.sections.earClinic.tests.map((test, index) => (
-                  <div key={index} className="flex items-center gap-2 text-xs text-paper/80">
-                    <CheckCircle2 className="w-4 h-4 text-rust shrink-0" />
-                    <span>{test}</span>
-                  </div>
-                ))}
+
+              <div className="px-8 lg:px-10 pb-8">
+                <div className="pt-6 border-t border-white/5 space-y-3">
+                  {content.sections.earClinic.tests.map((test, index) => (
+                    <div key={index} className="flex items-center gap-2 text-xs text-paper/80">
+                      <CheckCircle2 className="w-4 h-4 text-rust shrink-0" />
+                      <span>{test}</span>
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
 
             {/* Card 2: Vertigo Clinic */}
-            <div className="p-8 lg:p-10 bg-[#0A1A12] border border-white/5 rounded-sm flex flex-col justify-between hover:border-rust/30 transition-all duration-500 hover:-translate-y-1">
-              <div className="space-y-8">
-                <div className="w-12 h-12 bg-rust/10 rounded-full flex items-center justify-center text-rust">
-                  <Brain className="w-6 h-6" />
+            <div className="group overflow-hidden bg-[#0A1A12] border border-white/5 rounded-sm flex flex-col justify-between hover:border-rust/30 transition-all duration-500 hover:-translate-y-1">
+              <div>
+                <div className="relative aspect-[16/10] w-full overflow-hidden bg-rust/5">
+                  <img 
+                    src={icons.doctor_page.vertigoClinic} 
+                    alt={content.sections.vertigoClinic.title}
+                    className="object-cover w-full h-full filter brightness-75 contrast-125 group-hover:scale-105 transition-transform duration-700" 
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#0A1A12] via-[#0A1A12]/40 to-transparent" />
+                  
+                  {/* Floating Custom Icon */}
+                  <div className="absolute bottom-4 left-6 z-10 w-16 h-16 rounded-full flex items-center justify-center bg-[#0A1A12]/90 border border-rust/20 backdrop-blur-md shadow-lg">
+                    <VertigoClinicIcon />
+                  </div>
                 </div>
-                <div className="space-y-4">
+
+                <div className="p-8 lg:p-10 pt-6 space-y-4">
                   <h3 className="text-2xl font-serif text-paper font-semibold">{content.sections.vertigoClinic.title}</h3>
                   <p className="text-sm text-paper/60 leading-relaxed font-light">{content.sections.vertigoClinic.desc}</p>
                 </div>
               </div>
-              <div className="mt-8 pt-6 border-t border-white/5 space-y-3">
-                {content.sections.vertigoClinic.tests.map((test, index) => (
-                  <div key={index} className="flex items-center gap-2 text-xs text-paper/80">
-                    <Activity className="w-4 h-4 text-forest shrink-0" />
-                    <span>{test}</span>
-                  </div>
-                ))}
+
+              <div className="px-8 lg:px-10 pb-8">
+                <div className="pt-6 border-t border-white/5 space-y-3">
+                  {content.sections.vertigoClinic.tests.map((test, index) => (
+                    <div key={index} className="flex items-center gap-2 text-xs text-paper/80">
+                      <Activity className="w-4 h-4 text-forest shrink-0" />
+                      <span>{test}</span>
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
 
             {/* Card 3: Speech Therapy */}
-            <div className="p-8 lg:p-10 bg-[#0A1A12] border border-white/5 rounded-sm flex flex-col justify-between hover:border-forest/40 transition-all duration-500 hover:-translate-y-1">
-              <div className="space-y-8">
-                <div className="w-12 h-12 bg-forest/10 rounded-full flex items-center justify-center text-forest">
-                  <Volume2 className="w-6 h-6" />
+            <div className="group overflow-hidden bg-[#0A1A12] border border-white/5 rounded-sm flex flex-col justify-between hover:border-forest/40 transition-all duration-500 hover:-translate-y-1">
+              <div>
+                <div className="relative aspect-[16/10] w-full overflow-hidden bg-forest/10">
+                  <img 
+                    src={icons.doctor_page.speechClinic} 
+                    alt={content.sections.speechClinic.title}
+                    className="object-cover w-full h-full filter brightness-75 contrast-125 group-hover:scale-105 transition-transform duration-700" 
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#0A1A12] via-[#0A1A12]/40 to-transparent" />
+                  
+                  {/* Floating Custom Icon */}
+                  <div className="absolute bottom-4 left-6 z-10 w-16 h-16 rounded-full flex items-center justify-center bg-[#0A1A12]/90 border border-forest/20 backdrop-blur-md shadow-lg">
+                    <SpeechTherapyIcon />
+                  </div>
                 </div>
-                <div className="space-y-4">
+
+                <div className="p-8 lg:p-10 pt-6 space-y-4">
                   <h3 className="text-2xl font-serif text-paper font-semibold">{content.sections.speechClinic.title}</h3>
                   <p className="text-sm text-paper/60 leading-relaxed font-light">{content.sections.speechClinic.desc}</p>
                 </div>
               </div>
-              <div className="mt-8 pt-6 border-t border-white/5 space-y-3">
-                {content.sections.speechClinic.tests.map((test, index) => (
-                  <div key={index} className="flex items-center gap-2 text-xs text-paper/80">
-                    <CheckCircle2 className="w-4 h-4 text-rust shrink-0" />
-                    <span>{test}</span>
-                  </div>
-                ))}
+
+              <div className="px-8 lg:px-10 pb-8">
+                <div className="pt-6 border-t border-white/5 space-y-3">
+                  {content.sections.speechClinic.tests.map((test, index) => (
+                    <div key={index} className="flex items-center gap-2 text-xs text-paper/80">
+                      <CheckCircle2 className="w-4 h-4 text-rust shrink-0" />
+                      <span>{test}</span>
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
           </div>

@@ -69,24 +69,26 @@ export default function HeroSection({ lang }: HeroProps) {
 
   return (
     <section ref={containerRef} className="relative min-h-[90vh] flex flex-col justify-start px-6 py-8 lg:px-24 lg:py-12 overflow-hidden">
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start mt-12 lg:mt-20">
-        <div className="lg:col-span-7 z-10">
-          <div className="reveal-text mb-6 inline-flex items-center gap-2 text-[10px] uppercase tracking-[0.2em] text-rust font-sans font-semibold">
-            <span className="w-8 h-[1px] bg-rust/30" />
-            {content.eyebrow}
+      <div className="max-w-7xl mx-auto w-full relative z-10 flex-1 flex flex-col justify-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start mt-12 lg:mt-20">
+          <div className="lg:col-span-7">
+            <div className="reveal-text mb-6 inline-flex items-center gap-2 text-[10px] uppercase tracking-[0.2em] text-rust font-sans font-semibold">
+              <span className="w-8 h-[1px] bg-rust/30" />
+              {content.eyebrow}
+            </div>
+            
+            <h1 ref={titleRef} className="reveal-text text-4xl sm:text-5xl md:text-7xl lg:text-8xl mb-8 whitespace-pre-line leading-[1.05] break-words">
+              {content.title}
+            </h1>
+            
+            <p className="reveal-text max-w-lg text-lg md:text-xl text-paper/70 mb-10 leading-relaxed">
+              {content.description}
+            </p>
           </div>
-          
-          <h1 ref={titleRef} className="reveal-text text-4xl sm:text-5xl md:text-7xl lg:text-8xl mb-8 whitespace-pre-line leading-[1.05] break-words">
-            {content.title}
-          </h1>
-          
-          <p className="reveal-text max-w-lg text-lg md:text-xl text-paper/70 mb-10 leading-relaxed">
-            {content.description}
-          </p>
-        </div>
 
-        <div ref={imageRef} className="lg:col-span-5 relative w-full lg:mt-16 z-10 flex items-center justify-center">
-            <HeroBookingForm lang={lang} />
+          <div ref={imageRef} className="lg:col-span-5 relative w-full lg:mt-16 flex items-center justify-center">
+              <HeroBookingForm lang={lang} />
+          </div>
         </div>
       </div>
       

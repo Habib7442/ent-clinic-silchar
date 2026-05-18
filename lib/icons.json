@@ -1,0 +1,29 @@
+{
+  "doctor_page": {
+    "earClinic": "/images/icons/doctor_page/Well-Equipped Ear Clinic.webp",
+    "vertigoClinic": "/images/icons/doctor_page/Dedicated Vertigo Clinic.webp",
+    "speechClinic": "/images/icons/doctor_page/Dedicated Speech Therapy Center.webp"
+  },
+  "treatments": {
+    "ear": "/images/ear_treatment.png",
+    "nose": "/images/nose_treatment.png",
+    "throat": "/images/throat_treatment.png"
+  },
+  "gallery": {
+    "audiometry": "/images/gallery-audiometry.png",
+    "consultation": "/images/gallery-consultation.png",
+    "endoscopy": "/images/gallery-endoscopy.png",
+    "reception": "/images/gallery-reception.png"
+  },
+  "heroes": {
+    "home": "/images/hero.png",
+    "hearing": "/images/hearing-hero.png",
+    "sinus": "/images/sinus-hero.png",
+    "philosophy": "/images/doctor-philosophy.png"
+  },
+  "branding": {
+    "favicon": "/favicon.ico",
+    "faviconSvg": "/favicon.svg",
+    "ogImage": "/og-image.png"
+  }
+}

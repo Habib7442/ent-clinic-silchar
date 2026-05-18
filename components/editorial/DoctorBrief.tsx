@@ -3,12 +3,23 @@
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { ArrowRight, Award, Languages, ShieldCheck } from "lucide-react";
+import { ArrowRight, Languages } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
+}
+
+function MedicalSealIcon() {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" className="w-5 h-5 text-forest" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" className="fill-forest/10" />
+      <circle cx="12" cy="11" r="3" className="stroke-rust" strokeWidth="2" />
+      <path d="M12 14v4" className="stroke-rust" />
+      <path d="M10 16h4" className="stroke-rust" />
+    </svg>
+  );
 }
 
 const translations = {
@@ -62,24 +73,6 @@ export default function DoctorBrief({ lang }: DoctorBriefProps) {
           },
         }
       );
-
-      gsap.fromTo(".reveal-img", 
-        { 
-          scale: 1.1, 
-          opacity: 0 
-        },
-        {
-          scale: 1,
-          opacity: 1,
-          scrollTrigger: {
-            trigger: containerRef.current,
-            start: "top 80%",
-            toggleActions: "play none none none"
-          },
-          duration: 1.5,
-          ease: "power2.out",
-        }
-      );
     }, containerRef);
 
     return () => ctx.revert();
@@ -90,74 +83,50 @@ export default function DoctorBrief({ lang }: DoctorBriefProps) {
       {/* Decorative background element */}
       <div className="absolute top-0 right-0 w-1/2 h-full bg-forest/5 blur-[120px] rounded-full -translate-y-1/2 translate-x-1/4" />
       
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24 items-center relative z-10">
-        {/* Image Column */}
-        <div className="lg:col-span-5 order-2 lg:order-1">
-          <div className="reveal-img relative aspect-[4/5] rounded-sm overflow-hidden shadow-2xl ring-1 ring-white/10">
-            <div className="absolute inset-0 w-full h-full bg-forest/20 flex items-center justify-center">
-              <ShieldCheck className="w-24 h-24 text-forest/40" />
-            </div>
-            {/* Gradient Overlay */}
-            <div className="absolute inset-0 bg-gradient-to-t from-[#0A1A12] via-transparent to-transparent opacity-40" />
+      <div className="max-w-7xl mx-auto relative z-10">
+        <div className="reveal-doc space-y-8">
+          <div className="space-y-2">
+            <span className="text-xs uppercase tracking-[0.3em] text-rust font-semibold">
+              {content.title}
+            </span>
+            <h2 className="text-4xl md:text-5xl lg:text-7xl font-serif text-paper leading-tight">
+              {content.name}
+            </h2>
+            <p className="text-xl lg:text-2xl text-paper/80 font-serif italic italic-rust">
+              {content.credentials}
+            </p>
           </div>
-        </div>
 
-        {/* Content Column */}
-        <div className="lg:col-span-7 order-1 lg:order-2">
-          <div className="reveal-doc space-y-8">
-            <div className="space-y-2">
-              <span className="text-xs uppercase tracking-[0.3em] text-rust font-semibold">
-                {content.title}
-              </span>
-              <h2 className="text-4xl md:text-5xl lg:text-7xl font-serif text-paper leading-tight">
-                {content.name}
-              </h2>
-              <p className="text-xl lg:text-2xl text-paper/80 font-serif italic italic-rust">
-                {content.credentials}
-              </p>
-            </div>
-
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 py-8 border-y border-white/5">
-              <div className="flex items-start gap-4">
-                <div className="p-3 bg-forest/10 rounded-full text-forest">
-                  <Award className="w-5 h-5" />
-                </div>
-                <div>
-                  <p className="text-paper font-semibold">{content.experience}</p>
-                  <p className="text-xs text-paper/40 uppercase tracking-widest mt-1">Clinical Record</p>
-                </div>
+          <div className="py-8 border-y border-white/5">
+            <div className="flex items-start gap-4">
+              <div className="p-3 bg-forest/10 rounded-full text-forest flex items-center justify-center">
+                <MedicalSealIcon />
               </div>
-
-              <div className="flex items-start gap-4">
-                <div className="p-3 bg-rust/10 rounded-full text-rust">
-                  <ShieldCheck className="w-5 h-5" />
-                </div>
-                <div>
-                  <p className="text-paper font-semibold">{content.nmc}</p>
-                  <p className="text-xs text-paper/40 uppercase tracking-widest mt-1">Verifiable Credentials</p>
-                </div>
+              <div>
+                <p className="text-paper font-semibold">{content.experience}</p>
+                <p className="text-xs text-paper/40 uppercase tracking-widest mt-1">Clinical Record</p>
               </div>
             </div>
+          </div>
 
-            <div className="space-y-6">
-              <p className="text-lg lg:text-xl text-paper/70 leading-relaxed max-w-2xl font-light">
-                "{content.philosophy}"
-              </p>
-              
-              <div className="flex items-center gap-3 text-sm text-paper/50">
-                <Languages className="w-4 h-4 text-forest" />
-                <span>{content.languages}</span>
-              </div>
+          <div className="space-y-6">
+            <p className="text-lg lg:text-xl text-paper/70 leading-relaxed font-light">
+              "{content.philosophy}"
+            </p>
+            
+            <div className="flex items-center gap-3 text-sm text-paper/50">
+              <Languages className="w-4 h-4 text-forest" />
+              <span>{content.languages}</span>
             </div>
+          </div>
 
-            <div className="pt-4">
-              <Link href={`/${lang}/doctor`}>
-                <Button variant="outline" className="group border-white/10 hover:border-rust hover:bg-transparent text-paper rounded-none px-8 py-6">
-                  {content.cta}
-                  <ArrowRight className="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1 text-rust" />
-                </Button>
-              </Link>
-            </div>
+          <div className="pt-4">
+            <Link href={`/${lang}/doctor`}>
+              <Button variant="outline" className="group border-white/10 hover:border-rust hover:bg-transparent text-paper rounded-none px-8 py-6">
+                {content.cta}
+                <ArrowRight className="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1 text-rust" />
+              </Button>
+            </Link>
           </div>
         </div>
       </div>
