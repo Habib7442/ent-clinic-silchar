@@ -17,7 +17,7 @@ const translations = {
     name: "Dr. Abhishek Ray",
     credentials: "MS (ENT), Head & Neck Surgeon",
     nmc: "NMC Reg No: 12345",
-    experience: "19+ Years of Clinical Excellence",
+    experience: "10+ Years of Clinical Excellence",
     philosophy: "ENT care is not just about treating symptoms; it's about restoring the sensory connection to the world. We combine surgical precision with a patient-first philosophy.",
     cta: "View Full Profile",
     languages: "English, Bengali, Hindi, Assamese"
@@ -27,7 +27,7 @@ const translations = {
     name: "ডাঃ অভিষেক রায়",
     credentials: "এমএস (ইএনটি), হেড ও নেক সার্জন",
     nmc: "এনএমসি রেজিস্ট্রেশন নং: ১২৩৪৫",
-    experience: "১৯+ বছরের ক্লিনিকাল অভিজ্ঞতা",
+    experience: "১০+ বছরের ক্লিনিকাল অভিজ্ঞতা",
     philosophy: "ইএনটি চিকিৎসা মানে শুধু উপসর্গের চিকিৎসা নয়; এটি বিশ্বের সাথে সংবেদনশীল সংযোগ পুনরুদ্ধার করার বিষয়। আমরা অস্ত্রোপচারের নির্ভুলতার সাথে রোগীর অগ্রাধিকার দর্শনকে একত্রিত করি।",
     cta: "সম্পূর্ণ প্রোফাইল দেখুন",
     languages: "ইংরেজি, বাংলা, হিন্দি, অসমীয়া"
@@ -94,11 +94,9 @@ export default function DoctorBrief({ lang }: DoctorBriefProps) {
         {/* Image Column */}
         <div className="lg:col-span-5 order-2 lg:order-1">
           <div className="reveal-img relative aspect-[4/5] rounded-sm overflow-hidden shadow-2xl ring-1 ring-white/10">
-            <img
-              src="/images/doctor.png"
-              alt={content.name}
-              className="absolute inset-0 w-full h-full object-cover"
-            />
+            <div className="absolute inset-0 w-full h-full bg-forest/20 flex items-center justify-center">
+              <ShieldCheck className="w-24 h-24 text-forest/40" />
+            </div>
             {/* Gradient Overlay */}
             <div className="absolute inset-0 bg-gradient-to-t from-[#0A1A12] via-transparent to-transparent opacity-40" />
           </div>

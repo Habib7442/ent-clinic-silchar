@@ -1,21 +1,27 @@
-import BookingFlow from "@/components/editorial/BookingFlow";
+import HeroBookingForm from "@/components/editorial/HeroBookingForm";
+import Link from "next/link";
+import { ArrowLeft } from "lucide-react";
 
-export default async function BookingPage({ params }: { params: Promise<{ lang: string }> }) {
+export default async function BookingPage({
+  params,
+}: {
+  params: Promise<{ lang: string }>;
+}) {
   const { lang } = await params;
-  
+  const isEn = lang === "en";
+
   return (
-    <main className="flex-1 bg-[#0A1A12] min-h-screen pt-24">
-      <div className="border-b border-white/5 pb-12">
-        <div className="max-w-4xl mx-auto px-6 text-center space-y-4">
-          <span className="text-xs uppercase tracking-[0.4em] text-rust font-semibold">
-            Appointment Booking
-          </span>
-          <h1 className="text-4xl md:text-5xl lg:text-7xl font-serif text-paper">
-            Secure your slot.
-          </h1>
-        </div>
+    <main className="flex-1 overflow-x-hidden min-h-screen bg-paper flex flex-col items-center justify-center pt-24 pb-12 px-6">
+      <div className="w-full max-w-md">
+        <Link 
+          href={`/${lang}`} 
+          className="inline-flex items-center gap-2 text-rust hover:text-forest transition-colors mb-8 text-sm font-semibold tracking-widest uppercase"
+        >
+          <ArrowLeft className="w-4 h-4" />
+          {isEn ? "Back to Home" : "হোমে ফিরে যান"}
+        </Link>
+        <HeroBookingForm lang={lang} />
       </div>
-      <BookingFlow lang={lang} />
     </main>
   );
 }

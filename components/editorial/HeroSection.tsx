@@ -2,9 +2,7 @@
 
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
-import { ArrowRight } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import Link from "next/link";
+import HeroBookingForm from "./HeroBookingForm";
 
 interface HeroProps {
   lang: string;
@@ -85,24 +83,10 @@ export default function HeroSection({ lang }: HeroProps) {
           <p className="reveal-text max-w-lg text-lg md:text-xl text-paper/70 mb-10 leading-relaxed">
             {content.description}
           </p>
-          
-          <div className="reveal-text flex flex-wrap gap-4">
-            <Link href={`/${lang}/book`}>
-              <Button variant="rust" className="group h-auto py-4 px-10">
-                {content.cta}
-                <ArrowRight className="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1" />
-              </Button>
-            </Link>
-          </div>
         </div>
 
-        <div ref={imageRef} className="lg:col-span-5 relative aspect-[4/5] lg:aspect-square w-full bg-teal-deep overflow-hidden rounded-sm shadow-2xl lg:mt-16">
-            <img
-              src="/images/hero.png"
-              alt="Modern ENT Clinic"
-              className="absolute inset-0 w-full h-full object-cover scale-105"
-              loading="eager"
-            />
+        <div ref={imageRef} className="lg:col-span-5 relative w-full lg:mt-16 z-10 flex items-center justify-center">
+            <HeroBookingForm lang={lang} />
         </div>
       </div>
       

@@ -17,10 +17,24 @@ const inter = Inter({
   display: "swap",
 });
 
-export const metadata: Metadata = {
-  title: "The ENT Clinic, Silchar",
-  description: "Boutique specialty ENT practice in Silchar, Assam.",
-};
+import { constructMetadata, viewport, medicalClinicSchema, jsonLd } from "@/lib/seo";
+export { viewport };
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ lang: string }>;
+}): Promise<Metadata> {
+  const { lang } = await params;
+  return constructMetadata({
+    lang: lang as "en" | "bn",
+    title: lang === "bn" ? "দি ইএনটি ক্লিনিক" : "The ENT Clinic",
+    description: lang === "bn"
+      ? "শিলচর, আসামে ডঃ অভিষেক রায়-এর বিশেষায়িত ইএনটি (নাক, কান, গলা) চিকিৎসা কেন্দ্র।"
+      : "Boutique specialty ENT practice in Silchar, Assam by Dr. Abhishek Ray.",
+    path: "/",
+  });
+}
 
 export default async function RootLayout({
   children,
@@ -47,6 +61,10 @@ export default async function RootLayout({
         className="min-h-full flex flex-col bg-[#0A1A12] selection:bg-rust/20 selection:text-rust"
         suppressHydrationWarning
       >
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={jsonLd(medicalClinicSchema())}
+        />
         <Navbar />
         <div className="pt-16 lg:pt-20 flex-1 flex flex-col">
           {children}

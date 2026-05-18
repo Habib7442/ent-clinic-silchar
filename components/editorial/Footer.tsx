@@ -90,8 +90,7 @@ export default function Footer({ lang }: FooterProps) {
               {[
                 { name: "Doctor Profile", href: `/${lang}/doctor` },
                 { name: "First Visit", href: `/${lang}#process` },
-                { name: "Location", href: `/${lang}#location` },
-                { name: "Fees", href: `/${lang}#fees` }
+                { name: "Location", href: `/${lang}#location` }
               ].map((item) => (
                 <li key={item.name}>
                   <Link href={item.href} className="text-paper/40 hover:text-rust transition-colors text-sm">
@@ -119,7 +118,7 @@ export default function Footer({ lang }: FooterProps) {
               <div className="flex items-start gap-4">
                 <MapPin className="w-5 h-5 text-rust shrink-0 mt-1" />
                 <p className="text-paper/40 text-sm leading-relaxed">
-                  Near Durga Bari, Bilpar, Silchar, Assam 788001
+                  Hriday Rajani Complex, Lochan Bairagi Rd, beside Durga Badi, Bilpar, Silchar, Assam 788001
                 </p>
               </div>
               <div className="flex items-center gap-4">

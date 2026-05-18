@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <!-- English Static Pages -->
+  <url>
+    <loc>https://theentclinicsilchar.com/en</loc>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://theentclinicsilchar.com/en" />
+    <xhtml:link rel="alternate" hreflang="bn" href="https://theentclinicsilchar.com/bn" />
+  </url>
+  <url>
+    <loc>https://theentclinicsilchar.com/en/services</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://theentclinicsilchar.com/en/services" />
+    <xhtml:link rel="alternate" hreflang="bn" href="https://theentclinicsilchar.com/bn/services" />
+  </url>
+  <url>
+    <loc>https://theentclinicsilchar.com/en/about</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://theentclinicsilchar.com/en/about" />
+    <xhtml:link rel="alternate" hreflang="bn" href="https://theentclinicsilchar.com/bn/about" />
+  </url>
+  <url>
+    <loc>https://theentclinicsilchar.com/en/book</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://theentclinicsilchar.com/en/book" />
+    <xhtml:link rel="alternate" hreflang="bn" href="https://theentclinicsilchar.com/bn/book" />
+  </url>
+  <url>
+    <loc>https://theentclinicsilchar.com/en/contact</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://theentclinicsilchar.com/en/contact" />
+    <xhtml:link rel="alternate" hreflang="bn" href="https://theentclinicsilchar.com/bn/contact" />
+  </url>
+  <url>
+    <loc>https://theentclinicsilchar.com/en/doctor</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://theentclinicsilchar.com/en/doctor" />
+    <xhtml:link rel="alternate" hreflang="bn" href="https://theentclinicsilchar.com/bn/doctor" />
+  </url>
+  <url>
+    <loc>https://theentclinicsilchar.com/en/first-visit</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://theentclinicsilchar.com/en/first-visit" />
+    <xhtml:link rel="alternate" hreflang="bn" href="https://theentclinicsilchar.com/bn/first-visit" />
+  </url>
+  <url>
+    <loc>https://theentclinicsilchar.com/en/journal</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://theentclinicsilchar.com/en/journal" />
+    <xhtml:link rel="alternate" hreflang="bn" href="https://theentclinicsilchar.com/bn/journal" />
+  </url>
+  <url>
+    <loc>https://theentclinicsilchar.com/en/location</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://theentclinicsilchar.com/en/location" />
+    <xhtml:link rel="alternate" hreflang="bn" href="https://theentclinicsilchar.com/bn/location" />
+  </url>
+  <url>
+    <loc>https://theentclinicsilchar.com/en/privacy</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://theentclinicsilchar.com/en/privacy" />
+    <xhtml:link rel="alternate" hreflang="bn" href="https://theentclinicsilchar.com/bn/privacy" />
+  </url>
+  <url>
+    <loc>https://theentclinicsilchar.com/en/telemedicine-policy</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://theentclinicsilchar.com/en/telemedicine-policy" />
+    <xhtml:link rel="alternate" hreflang="bn" href="https://theentclinicsilchar.com/bn/telemedicine-policy" />
+  </url>
+
+  <!-- Bengali Static Pages -->
+  <url>
+    <loc>https://theentclinicsilchar.com/bn</loc>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://theentclinicsilchar.com/en" />
+    <xhtml:link rel="alternate" hreflang="bn" href="https://theentclinicsilchar.com/bn" />
+  </url>
+  <url>
+    <loc>https://theentclinicsilchar.com/bn/services</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://theentclinicsilchar.com/en/services" />
+    <xhtml:link rel="alternate" hreflang="bn" href="https://theentclinicsilchar.com/bn/services" />
+  </url>
+  <url>
+    <loc>https://theentclinicsilchar.com/bn/about</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://theentclinicsilchar.com/en/about" />
+    <xhtml:link rel="alternate" hreflang="bn" href="https://theentclinicsilchar.com/bn/about" />
+  </url>
+  <url>
+    <loc>https://theentclinicsilchar.com/bn/book</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://theentclinicsilchar.com/en/book" />
+    <xhtml:link rel="alternate" hreflang="bn" href="https://theentclinicsilchar.com/bn/book" />
+  </url>
+  <url>
+    <loc>https://theentclinicsilchar.com/bn/contact</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://theentclinicsilchar.com/en/contact" />
+    <xhtml:link rel="alternate" hreflang="bn" href="https://theentclinicsilchar.com/bn/contact" />
+  </url>
+  <url>
+    <loc>https://theentclinicsilchar.com/bn/doctor</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://theentclinicsilchar.com/en/doctor" />
+    <xhtml:link rel="alternate" hreflang="bn" href="https://theentclinicsilchar.com/bn/doctor" />
+  </url>
+  <url>
+    <loc>https://theentclinicsilchar.com/bn/first-visit</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://theentclinicsilchar.com/en/first-visit" />
+    <xhtml:link rel="alternate" hreflang="bn" href="https://theentclinicsilchar.com/bn/first-visit" />
+  </url>
+  <url>
+    <loc>https://theentclinicsilchar.com/bn/journal</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://theentclinicsilchar.com/en/journal" />
+    <xhtml:link rel="alternate" hreflang="bn" href="https://theentclinicsilchar.com/bn/journal" />
+  </url>
+  <url>
+    <loc>https://theentclinicsilchar.com/bn/location</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://theentclinicsilchar.com/en/location" />
+    <xhtml:link rel="alternate" hreflang="bn" href="https://theentclinicsilchar.com/bn/location" />
+  </url>
+  <url>
+    <loc>https://theentclinicsilchar.com/bn/privacy</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://theentclinicsilchar.com/en/privacy" />
+    <xhtml:link rel="alternate" hreflang="bn" href="https://theentclinicsilchar.com/bn/privacy" />
+  </url>
+  <url>
+    <loc>https://theentclinicsilchar.com/bn/telemedicine-policy</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://theentclinicsilchar.com/en/telemedicine-policy" />
+    <xhtml:link rel="alternate" hreflang="bn" href="https://theentclinicsilchar.com/bn/telemedicine-policy" />
+  </url>
+
+  <!-- English Treatment Pages -->
+  <url>
+    <loc>https://theentclinicsilchar.com/en/treatments/tympanoplasty</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://theentclinicsilchar.com/en/treatments/tympanoplasty" />
+    <xhtml:link rel="alternate" hreflang="bn" href="https://theentclinicsilchar.com/bn/treatments/tympanoplasty" />
+  </url>
+  <url>
+    <loc>https://theentclinicsilchar.com/en/treatments/fess-surgery</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://theentclinicsilchar.com/en/treatments/fess-surgery" />
+    <xhtml:link rel="alternate" hreflang="bn" href="https://theentclinicsilchar.com/bn/treatments/fess-surgery" />
+  </url>
+  <url>
+    <loc>https://theentclinicsilchar.com/en/treatments/tonsillectomy</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://theentclinicsilchar.com/en/treatments/tonsillectomy" />
+    <xhtml:link rel="alternate" hreflang="bn" href="https://theentclinicsilchar.com/bn/treatments/tonsillectomy" />
+  </url>
+  <url>
+    <loc>https://theentclinicsilchar.com/en/treatments/septoplasty</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://theentclinicsilchar.com/en/treatments/septoplasty" />
+    <xhtml:link rel="alternate" hreflang="bn" href="https://theentclinicsilchar.com/bn/treatments/septoplasty" />
+  </url>
+  <url>
+    <loc>https://theentclinicsilchar.com/en/treatments/adenoidectomy</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://theentclinicsilchar.com/en/treatments/adenoidectomy" />
+    <xhtml:link rel="alternate" hreflang="bn" href="https://theentclinicsilchar.com/bn/treatments/adenoidectomy" />
+  </url>
+  <url>
+    <loc>https://theentclinicsilchar.com/en/treatments/mastoidectomy</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://theentclinicsilchar.com/en/treatments/mastoidectomy" />
+    <xhtml:link rel="alternate" hreflang="bn" href="https://theentclinicsilchar.com/bn/treatments/mastoidectomy" />
+  </url>
+  <url>
+    <loc>https://theentclinicsilchar.com/en/treatments/thyroidectomy</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://theentclinicsilchar.com/en/treatments/thyroidectomy" />
+    <xhtml:link rel="alternate" hreflang="bn" href="https://theentclinicsilchar.com/bn/treatments/thyroidectomy" />
+  </url>
+
+  <!-- Bengali Treatment Pages -->
+  <url>
+    <loc>https://theentclinicsilchar.com/bn/treatments/tympanoplasty</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://theentclinicsilchar.com/en/treatments/tympanoplasty" />
+    <xhtml:link rel="alternate" hreflang="bn" href="https://theentclinicsilchar.com/bn/treatments/tympanoplasty" />
+  </url>
+  <url>
+    <loc>https://theentclinicsilchar.com/bn/treatments/fess-surgery</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://theentclinicsilchar.com/en/treatments/fess-surgery" />
+    <xhtml:link rel="alternate" hreflang="bn" href="https://theentclinicsilchar.com/bn/treatments/fess-surgery" />
+  </url>
+  <url>
+    <loc>https://theentclinicsilchar.com/bn/treatments/tonsillectomy</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://theentclinicsilchar.com/en/treatments/tonsillectomy" />
+    <xhtml:link rel="alternate" hreflang="bn" href="https://theentclinicsilchar.com/bn/treatments/tonsillectomy" />
+  </url>
+  <url>
+    <loc>https://theentclinicsilchar.com/bn/treatments/septoplasty</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://theentclinicsilchar.com/en/treatments/septoplasty" />
+    <xhtml:link rel="alternate" hreflang="bn" href="https://theentclinicsilchar.com/bn/treatments/septoplasty" />
+  </url>
+  <url>
+    <loc>https://theentclinicsilchar.com/bn/treatments/adenoidectomy</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://theentclinicsilchar.com/en/treatments/adenoidectomy" />
+    <xhtml:link rel="alternate" hreflang="bn" href="https://theentclinicsilchar.com/bn/treatments/adenoidectomy" />
+  </url>
+  <url>
+    <loc>https://theentclinicsilchar.com/bn/treatments/mastoidectomy</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://theentclinicsilchar.com/en/treatments/mastoidectomy" />
+    <xhtml:link rel="alternate" hreflang="bn" href="https://theentclinicsilchar.com/bn/treatments/mastoidectomy" />
+  </url>
+  <url>
+    <loc>https://theentclinicsilchar.com/bn/treatments/thyroidectomy</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://theentclinicsilchar.com/en/treatments/thyroidectomy" />
+    <xhtml:link rel="alternate" hreflang="bn" href="https://theentclinicsilchar.com/bn/treatments/thyroidectomy" />
+  </url>
+</urlset>

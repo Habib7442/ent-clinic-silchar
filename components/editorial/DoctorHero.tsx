@@ -84,7 +84,7 @@ export default function DoctorHero({ lang }: DoctorHeroProps) {
             <div className="flex items-center gap-3">
               <Award className="w-6 h-6 text-rust" />
               <div>
-                <p className="text-paper text-sm font-semibold">19+ Years</p>
+                <p className="text-paper text-sm font-semibold">10+ Years</p>
                 <p className="text-paper/40 text-[10px] uppercase tracking-widest">Clinical Practice</p>
               </div>
             </div>
@@ -94,11 +94,9 @@ export default function DoctorHero({ lang }: DoctorHeroProps) {
         {/* Image Column */}
         <div className="lg:col-span-5 order-1 lg:order-2">
           <div className="relative aspect-[4/5] rounded-sm overflow-hidden shadow-2xl ring-1 ring-white/10 group">
-             <img
-              src="/images/doctor.png"
-              alt={content.name}
-              className="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
-            />
+             <div className="absolute inset-0 w-full h-full bg-forest/20 flex items-center justify-center transition-transform duration-1000 group-hover:scale-105">
+              <ShieldCheck className="w-24 h-24 text-forest/40" />
+            </div>
             <div className="absolute inset-0 bg-gradient-to-t from-[#0A1A12] via-transparent to-transparent opacity-40" />
           </div>
         </div>

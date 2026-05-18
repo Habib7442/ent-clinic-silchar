@@ -1,0 +1,10 @@
+User-agent: *
+Allow: /
+
+# Disallow indexing system paths
+Disallow: /api/
+Disallow: /_next/
+Disallow: /static/
+
+# Sitemap location
+Sitemap: https://theentclinicsilchar.com/sitemap.xml
