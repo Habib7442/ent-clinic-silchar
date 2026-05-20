@@ -70,7 +70,7 @@ export default function BookingFlow({ lang }: BookingFlowProps) {
         {[1, 2, 3, 4].map((s) => (
           <div 
             key={s} 
-            className={`h-1 flex-1 transition-all duration-500 rounded-full ${step >= s ? "bg-rust" : "bg-white/10"}`} 
+            className={`h-1 flex-1 transition-all duration-500 rounded-full ${step >= s ? "bg-gold" : "bg-white/10"}`} 
           />
         ))}
       </div>
@@ -89,10 +89,10 @@ export default function BookingFlow({ lang }: BookingFlowProps) {
                   key={s.id}
                   onClick={() => setService(s.id)}
                   className={`p-6 text-left border transition-all flex items-center gap-4 rounded-sm ${
-                    selectedService === s.id ? "bg-rust/10 border-rust" : "bg-white/5 border-white/10 hover:border-paper/20"
+                    selectedService === s.id ? "bg-gold/10 border-gold" : "bg-white/5 border-white/10 hover:border-paper/20"
                   }`}
                 >
-                  <s.icon className={`w-6 h-6 ${selectedService === s.id ? "text-rust" : "text-paper/60"}`} />
+                  <s.icon className={`w-6 h-6 ${selectedService === s.id ? "text-gold" : "text-paper/60"}`} />
                   <span className="text-paper font-medium">{isEn ? s.name.en : s.name.bn}</span>
                 </button>
               ))}
@@ -121,7 +121,7 @@ export default function BookingFlow({ lang }: BookingFlowProps) {
                     key={i}
                     onClick={() => setDate(date)}
                     className={`p-6 flex flex-col items-center border transition-all rounded-sm ${
-                      isSelected ? "bg-rust/10 border-rust" : "bg-white/5 border-white/10 hover:border-paper/20"
+                      isSelected ? "bg-gold/10 border-gold" : "bg-white/5 border-white/10 hover:border-paper/20"
                     }`}
                   >
                     <span className="text-[10px] uppercase tracking-widest text-paper/60 mb-2">
@@ -152,7 +152,7 @@ export default function BookingFlow({ lang }: BookingFlowProps) {
                   key={s}
                   onClick={() => setSlot(s)}
                   className={`p-6 border transition-all rounded-sm ${
-                    selectedSlot === s ? "bg-rust/10 border-rust" : "bg-white/5 border-white/10 hover:border-paper/20"
+                    selectedSlot === s ? "bg-gold/10 border-gold" : "bg-white/5 border-white/10 hover:border-paper/20"
                   }`}
                 >
                   <span className="text-paper font-medium">{s}</span>
@@ -180,7 +180,7 @@ export default function BookingFlow({ lang }: BookingFlowProps) {
                   type="text" 
                   value={patientData.name}
                   onChange={(e) => setPatientData({ name: e.target.value })}
-                  className="w-full bg-white/5 border border-white/10 p-4 text-paper focus:border-rust outline-none transition-all rounded-sm"
+                  className="w-full bg-white/5 border border-white/10 p-4 text-paper focus:border-gold outline-none transition-all rounded-sm"
                   placeholder="e.g. Rahul Sharma"
                 />
               </div>
@@ -190,7 +190,7 @@ export default function BookingFlow({ lang }: BookingFlowProps) {
                   type="tel" 
                   value={patientData.phone}
                   onChange={(e) => setPatientData({ phone: e.target.value })}
-                  className="w-full bg-white/5 border border-white/10 p-4 text-paper focus:border-rust outline-none transition-all rounded-sm"
+                  className="w-full bg-white/5 border border-white/10 p-4 text-paper focus:border-gold outline-none transition-all rounded-sm"
                   placeholder="+91 XXXXX XXXXX"
                 />
               </div>
@@ -199,7 +199,7 @@ export default function BookingFlow({ lang }: BookingFlowProps) {
                 <textarea 
                   value={patientData.concern}
                   onChange={(e) => setPatientData({ concern: e.target.value })}
-                  className="w-full bg-white/5 border border-white/10 p-4 text-paper focus:border-rust outline-none transition-all rounded-sm h-32"
+                  className="w-full bg-white/5 border border-white/10 p-4 text-paper focus:border-gold outline-none transition-all rounded-sm h-32"
                   placeholder="Tell us about your symptoms..."
                 />
               </div>

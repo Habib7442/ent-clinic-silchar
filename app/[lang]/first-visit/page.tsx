@@ -62,7 +62,7 @@ export default async function FirstVisitPage({
 
           {/* What we will not do */}
           <div>
-            <div className="mb-6 inline-flex items-center justify-center w-12 h-12 rounded-full bg-rust/5 text-rust">
+            <div className="mb-6 inline-flex items-center justify-center w-12 h-12 rounded-full bg-forest/5 text-forest">
               <AlertTriangle className="w-6 h-6" />
             </div>
             <h3 className="font-serif text-2xl md:text-3xl text-forest mb-4">
@@ -70,15 +70,15 @@ export default async function FirstVisitPage({
             </h3>
             <ul className="space-y-4 font-sans text-ink-soft">
               <li className="flex gap-3">
-                <span className="text-rust mt-1">•</span>
+                <span className="text-forest mt-1">•</span>
                 <span>{isBn ? "প্রথম দিনেই অপ্রয়োজনীয় সার্জারির পরামর্শ দেব না।" : "We will not recommend surgery on your first visit unless it's a critical emergency."}</span>
               </li>
               <li className="flex gap-3">
-                <span className="text-rust mt-1">•</span>
+                <span className="text-forest mt-1">•</span>
                 <span>{isBn ? "সঠিক অডিওমেট্রি পরীক্ষা ছাড়া হিয়ারিং এইড কিনতে বাধ্য করব না।" : "We will not push hearing aids before a comprehensive audiometry assessment."}</span>
               </li>
               <li className="flex gap-3">
-                <span className="text-rust mt-1">•</span>
+                <span className="text-forest mt-1">•</span>
                 <span>{isBn ? "যে রিপোর্ট আমরা বিশ্লেষণ করতে পারব না, তার পরীক্ষা করতে দেব না।" : "We will not order diagnostic tests that we cannot independently interpret."}</span>
               </li>
             </ul>

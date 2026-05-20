@@ -39,7 +39,7 @@ export default function Navbar() {
       <div className="flex items-center gap-12">
         <Link href={`/${lang}`} className="group">
           <span className="font-serif text-xl lg:text-2xl text-paper tracking-tight">
-            The ENT Clinic<span className="text-rust">.</span>
+            The ENT Clinic<span className="text-gold">.</span>
           </span>
           <span className="block text-[8px] uppercase tracking-[0.3em] text-paper/60 font-sans mt-0.5">
             SILCHAR, ASSAM
@@ -101,7 +101,7 @@ export default function Navbar() {
           </SheetTrigger>
           <SheetContent side="right" className="bg-[#0A1A12] border-white/10 text-paper flex flex-col p-8">
             <SheetHeader className="text-left mb-12">
-              <SheetTitle className="font-serif text-2xl text-paper">Menu<span className="text-rust">.</span></SheetTitle>
+              <SheetTitle className="font-serif text-2xl text-paper">Menu<span className="text-gold">.</span></SheetTitle>
               <SheetDescription className="sr-only">
                 Navigate through The ENT Clinic Silchar services and information.
               </SheetDescription>

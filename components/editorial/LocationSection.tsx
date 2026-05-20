@@ -63,7 +63,7 @@ export default function LocationSection({ lang }: LocationSectionProps) {
           {/* Left: Info Column */}
           <div className="lg:col-span-5 space-y-12">
             <div className="reveal-loc space-y-4">
-              <span className="text-xs uppercase tracking-[0.3em] text-rust font-semibold">
+              <span className="text-xs uppercase tracking-[0.3em] text-gold font-semibold">
                 {isEn ? "Location & Access" : "অবস্থান ও যাতায়াত"}
               </span>
               <h2 className="text-4xl md:text-5xl lg:text-7xl font-serif text-paper leading-tight">
@@ -73,7 +73,7 @@ export default function LocationSection({ lang }: LocationSectionProps) {
 
             <div className="reveal-loc space-y-6">
               <div className="flex items-start gap-4 p-6 bg-white/5 border border-white/10 rounded-sm">
-                <MapPin className="w-6 h-6 text-rust shrink-0" />
+                <MapPin className="w-6 h-6 text-gold shrink-0" />
                 <div>
                   <p className="text-paper font-serif text-xl mb-2">
                     {isEn ? "Hriday Rajani Complex" : "হৃদয় রজনী কমপ্লেক্স"}
@@ -116,7 +116,7 @@ export default function LocationSection({ lang }: LocationSectionProps) {
             {/* Hours Card */}
             <div className="reveal-loc p-8 lg:p-12 bg-forest/5 border border-forest/10 rounded-sm">
               <div className="flex items-center gap-3 mb-8">
-                <Clock className="w-6 h-6 text-rust" />
+                <Clock className="w-6 h-6 text-gold" />
                 <h3 className="text-2xl font-serif text-paper">{isEn ? "Clinic Hours" : "ক্লিনিকের সময়সূচী"}</h3>
               </div>
               
@@ -124,7 +124,7 @@ export default function LocationSection({ lang }: LocationSectionProps) {
                 {hours.map((h) => (
                   <div key={h.day.en} className="flex justify-between items-center py-4 border-b border-white/5 last:border-0">
                     <span className="text-paper/60">{isEn ? h.day.en : h.day.bn}</span>
-                    <span className={(typeof h.time !== 'string' && h.time.en === "Closed") ? "text-rust font-bold" : "text-paper font-bold"}>
+                    <span className={(typeof h.time !== 'string' && h.time.en === "Closed") ? "text-gold font-bold" : "text-paper font-bold"}>
                       {typeof h.time === 'string' ? h.time : (isEn ? h.time.en : h.time.bn)}
                     </span>
                   </div>

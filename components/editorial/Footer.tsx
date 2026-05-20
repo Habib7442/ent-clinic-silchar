@@ -42,7 +42,7 @@ export default function Footer({ lang }: FooterProps) {
           <div className="lg:col-span-4 space-y-8">
             <Link href={`/${lang}`} className="block">
               <span className="text-2xl font-serif text-paper tracking-tight">
-                The ENT <span className="text-rust">Clinic</span>
+                The ENT <span className="text-gold">Clinic</span>
               </span>
             </Link>
             <p className="text-paper/70 text-lg leading-relaxed max-w-sm">
@@ -126,11 +126,11 @@ export default function Footer({ lang }: FooterProps) {
                 </a>
               </div>
               <a href="tel:+919435070156" className="flex items-center gap-4 group/footer-phone">
-                <Phone className="w-5 h-5 text-gold group-hover/footer-phone:text-rust transition-colors shrink-0" />
+                <Phone className="w-5 h-5 text-gold group-hover/footer-phone:text-gold/80 transition-colors shrink-0" />
                 <p className="text-paper/70 group-hover/footer-phone:text-gold transition-colors text-sm font-bold font-sans">+91 94350 70156</p>
               </a>
               <a href="mailto:abhishek.hister@gmail.com" className="flex items-center gap-4 group/footer-mail">
-                <Mail className="w-5 h-5 text-gold group-hover/footer-mail:text-rust transition-colors shrink-0" />
+                <Mail className="w-5 h-5 text-gold group-hover/footer-mail:text-gold/80 transition-colors shrink-0" />
                 <p className="text-paper/70 group-hover/footer-mail:text-gold transition-colors text-sm font-sans">abhishek.hister@gmail.com</p>
               </a>
             </div>

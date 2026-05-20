@@ -72,8 +72,8 @@ export default function HeroSection({ lang }: HeroProps) {
       <div className="max-w-7xl mx-auto w-full relative z-10 flex-1 flex flex-col justify-center">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start mt-12 lg:mt-20">
           <div className="lg:col-span-7">
-            <div className="reveal-text mb-6 inline-flex items-center gap-2 text-[10px] uppercase tracking-[0.2em] text-rust font-sans font-semibold">
-              <span className="w-8 h-[1px] bg-rust/30" />
+            <div className="reveal-text mb-6 inline-flex items-center gap-2 text-[10px] uppercase tracking-[0.2em] text-gold font-sans font-semibold">
+              <span className="w-8 h-[1px] bg-gold/30" />
               {content.eyebrow}
             </div>
             

@@ -38,14 +38,14 @@ export default function ComingSoon({ lang, pageName }: ComingSoonProps) {
   return (
     <div ref={containerRef} className="min-h-[80vh] flex flex-col items-center justify-center px-6 text-center">
       <div className="reveal-soon mb-8">
-        <div className="p-6 bg-rust/10 rounded-full inline-block">
-          <Construction className="w-12 h-12 text-rust" />
+        <div className="p-6 bg-gold/10 rounded-full inline-block">
+          <Construction className="w-12 h-12 text-gold" />
         </div>
       </div>
       
       <div className="reveal-soon space-y-4 mb-12">
         <h1 className="text-5xl md:text-7xl font-serif text-paper">
-          {pageName} <span className="text-rust">.</span>
+          {pageName} <span className="text-gold">.</span>
         </h1>
         <p className="text-xl text-paper/60 max-w-md mx-auto">
           {isEn 

@@ -117,7 +117,7 @@ export default function ClosingCTA({ lang }: ClosingCTAProps) {
             
             <a href="tel:+919435070156" className="flex-1">
               <Button variant="outline" className="w-full py-8 px-8 border-white/10 hover:border-gold hover:bg-transparent text-paper group">
-                <Phone className="w-5 h-5 mr-3 text-rust group-hover:scale-110 transition-transform" />
+                <Phone className="w-5 h-5 mr-3 text-gold group-hover:scale-110 transition-transform" />
                 {content.call}
               </Button>
             </a>

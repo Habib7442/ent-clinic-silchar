@@ -37,7 +37,7 @@ export default async function TreatmentPage({
       <div className="max-w-4xl mx-auto px-6 lg:px-24 pb-12">
         <Link 
           href={`/${lang}/services`} 
-          className="inline-flex items-center gap-2 text-rust hover:text-forest transition-colors mb-8 text-sm font-semibold tracking-widest uppercase"
+          className="inline-flex items-center gap-2 text-forest hover:text-forest-soft transition-colors mb-8 text-sm font-semibold tracking-widest uppercase"
         >
           <ArrowLeft className="w-4 h-4" />
           {isEn ? "Back to Services" : "সেবাসমূহে ফিরে যান"}
@@ -55,7 +55,7 @@ export default async function TreatmentPage({
         </div>
 
         <div className="space-y-8">
-          <span className="text-xs uppercase tracking-[0.4em] text-rust font-semibold">
+          <span className="text-xs uppercase tracking-[0.4em] text-forest font-semibold">
             {isEn ? "Specialized Treatment" : "বিশেষ চিকিৎসা"}
           </span>
           <h1 className="text-4xl md:text-5xl lg:text-7xl font-serif text-forest leading-tight">
@@ -66,7 +66,7 @@ export default async function TreatmentPage({
           </p>
         </div>
 
-        <div className="my-16 w-16 h-px bg-rust/30" />
+        <div className="my-16 w-16 h-px bg-forest/30" />
 
         <div className="prose prose-lg prose-forest max-w-none mb-16">
           <p className="text-lg leading-loose text-ink-soft">
@@ -85,7 +85,7 @@ export default async function TreatmentPage({
               isEn ? "Expert Care with Post-Surgery Follow-ups" : "অস্ত্রোপচার পরবর্তী ফলো-আপ সহ বিশেষজ্ঞ যত্ন",
             ].map((item, idx) => (
               <li key={idx} className="flex items-start gap-3">
-                <CheckCircle2 className="w-6 h-6 text-rust shrink-0" />
+                <CheckCircle2 className="w-6 h-6 text-forest shrink-0" />
                 <span className="text-ink-soft">{item}</span>
               </li>
             ))}

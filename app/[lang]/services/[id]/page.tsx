@@ -40,18 +40,18 @@ export default async function ServiceDetailPage({
     <main className="flex-1 overflow-x-hidden pt-24 md:pt-32 bg-paper min-h-screen">
       <div className="max-w-7xl mx-auto px-6 lg:px-24 pb-24">
         {/* Breadcrumb Back Button */}
-        <Link 
-          href={`/${lang}/services`} 
-          className="inline-flex items-center gap-2 text-rust hover:text-forest transition-colors mb-8 text-xs font-semibold tracking-widest uppercase"
+        <Link
+          href={`/${lang}/services`}
+          className="inline-flex items-center gap-2 text-forest hover:text-forest-soft transition-colors mb-8 text-xs font-semibold tracking-widest uppercase"
         >
           <ArrowLeft className="w-4 h-4" />
           {isEn ? "Back to Services" : "সেবাসমূহে ফিরে যান"}
         </Link>
-        
+
         {/* Majestic Hero Banner */}
         <div className="relative aspect-[21/9] w-full rounded-sm overflow-hidden mb-16 shadow-2xl border border-forest/10">
-          <Image 
-            src={service.bgImage} 
+          <Image
+            src={service.bgImage}
             alt={title}
             fill
             priority
@@ -63,20 +63,20 @@ export default async function ServiceDetailPage({
 
         {/* Dynamic 2-Column Grid Layout (Information Hierarchy) */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
-          
+
           {/* Left Column: Clinical Description & Features */}
           <div className="lg:col-span-8 space-y-8">
-            <span className="text-xs uppercase tracking-[0.4em] text-rust font-semibold">
+            <div className="text-xs uppercase tracking-[0.4em] text-forest font-semibold leading-relaxed mb-6 block">
               {tagline}
-            </span>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif text-forest leading-tight">
+            </div>
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif text-forest leading-tight mt-0">
               {title}
             </h1>
-            <p className="text-xl md:text-2xl text-rust font-serif italic">
+            <p className="text-xl md:text-2xl text-forest-soft font-serif italic">
               {outcome}
             </p>
 
-            <div className="my-8 w-16 h-px bg-rust/30" />
+            <div className="my-8 w-16 h-px bg-forest/30" />
 
             <div className="prose prose-lg prose-forest max-w-none text-ink-soft leading-loose">
               <p className="text-lg text-ink-soft/90 font-light">
@@ -84,20 +84,7 @@ export default async function ServiceDetailPage({
               </p>
             </div>
 
-            {/* Core Offerings & Specialized Procedures Checklist */}
-            <div className="pt-8 border-t border-forest/10 space-y-6">
-              <h3 className="text-2xl font-serif text-forest">
-                {isEn ? "Specialized Clinical Offerings" : "বিশেষ ক্লিনিকাল সুবিধাসমূহ"}
-              </h3>
-              <ul className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                {features.map((item, idx) => (
-                  <li key={idx} className="flex items-start gap-3">
-                    <CheckCircle2 className="w-5 h-5 text-rust shrink-0 mt-0.5" />
-                    <span className="text-ink-soft text-base font-light">{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
+
           </div>
 
           {/* Right Column: Premium Timing, Pricing & Sticky Booking Card */}
@@ -108,7 +95,7 @@ export default async function ServiceDetailPage({
 
             {/* Timings */}
             <div className="space-y-3">
-              <div className="flex items-center gap-3 text-rust">
+              <div className="flex items-center gap-3 text-gold">
                 <Clock className="w-5 h-5" />
                 <span className="text-xs uppercase tracking-widest font-semibold">
                   {isEn ? "Clinical Schedule" : "ক্লিনিকাল সময়সূচী"}
@@ -135,9 +122,9 @@ export default async function ServiceDetailPage({
 
         {/* FAQ Section */}
         <div className="mt-20 border-t border-forest/10 pt-12">
-          <FaqSection 
-            faqs={faqs} 
-            title={isEn ? "Service Specific FAQs" : "সেবা সংক্রান্ত সচরাচর জিজ্ঞাস্য"} 
+          <FaqSection
+            faqs={faqs}
+            title={isEn ? "Service Specific FAQs" : "সেবা সংক্রান্ত সচরাচর জিজ্ঞাস্য"}
           />
         </div>
 

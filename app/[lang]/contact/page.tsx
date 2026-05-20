@@ -19,7 +19,7 @@ export default async function ContactPage({
     <main className="flex-1 overflow-x-hidden pt-24 md:pt-32 bg-[#0A1A12]">
       {/* Hero Section */}
       <section className="px-6 lg:px-24 py-16 max-w-4xl mx-auto text-center space-y-6">
-        <span className="text-xs uppercase tracking-[0.3em] text-rust font-semibold">
+        <span className="text-xs uppercase tracking-[0.3em] text-gold font-semibold">
           {isBn ? "সরাসরি যোগাযোগ ও সহায়তা" : "DIRECT CALLS & INQUIRIES"}
         </span>
         <h1 className="font-serif text-4xl md:text-5xl lg:text-7xl text-paper font-light leading-tight">
@@ -52,7 +52,7 @@ export default async function ContactPage({
               </p>
               <a 
                 href="tel:+919435070156" 
-                className="block text-2xl font-bold font-sans text-gold hover:text-rust transition-colors mt-2"
+                className="block text-2xl font-bold font-sans text-gold hover:text-gold/80 transition-colors mt-2"
               >
                 +91 94350 70156
               </a>
@@ -92,7 +92,7 @@ export default async function ContactPage({
               </p>
               <a 
                 href="mailto:abhishek.hister@gmail.com" 
-                className="block text-lg font-semibold font-sans text-gold hover:text-rust transition-colors break-all mt-2"
+                className="block text-lg font-semibold font-sans text-gold hover:text-gold/80 transition-colors break-all mt-2"
               >
                 abhishek.hister@gmail.com
               </a>
@@ -112,7 +112,7 @@ export default async function ContactPage({
           {/* Card 3: Clinic Hours */}
           <div className="p-8 bg-white/5 border border-white/10 rounded-sm space-y-6 hover:border-gold/30 transition-all group flex flex-col justify-between">
             <div className="space-y-4">
-              <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-rust/10 text-rust">
+              <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-gold/10 text-gold">
                 <Clock className="w-5 h-5" />
               </div>
               <h3 className="font-serif text-2xl text-paper">
@@ -129,7 +129,7 @@ export default async function ContactPage({
                   <span className="text-paper/60">{isBn ? "সোমবার - শনিবার:" : "Mon - Sat:"}</span>
                   <span className="font-bold">10:00 AM - 8:00 PM</span>
                 </div>
-                <div className="flex justify-between py-1 text-rust font-semibold">
+                <div className="flex justify-between py-1 text-gold font-semibold">
                   <span>{isBn ? "রবিবার:" : "Sunday:"}</span>
                   <span>{isBn ? "বন্ধ" : "Closed"}</span>
                 </div>
@@ -139,7 +139,7 @@ export default async function ContactPage({
             <div className="pt-6">
               <Link 
                 href={`/${lang}/book`}
-                className="w-full py-4 bg-rust/10 hover:bg-rust/20 transition-all rounded-sm border border-rust/20 hover:border-rust/40 flex items-center justify-center gap-2 text-xs text-rust font-semibold uppercase tracking-wider"
+                className="w-full py-4 bg-gold/10 hover:bg-gold/20 transition-all rounded-sm border border-gold/20 hover:border-gold/40 flex items-center justify-center gap-2 text-xs text-gold font-semibold uppercase tracking-wider"
               >
                 <span>{isBn ? "অ্যাপয়েন্টমেন্ট বুকিং" : "Book Online"}</span>
                 <ArrowUpRight className="w-4 h-4 ml-1 opacity-70" />

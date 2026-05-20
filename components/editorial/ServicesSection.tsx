@@ -51,7 +51,7 @@ export default function ServicesSection({ lang, hideExploreLink = false }: Servi
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-16 lg:mb-24">
           <div className="max-w-2xl space-y-4">
-            <span className="text-xs uppercase tracking-[0.3em] text-rust font-semibold">
+            <span className="text-xs uppercase tracking-[0.3em] text-gold font-semibold">
               {isEn ? "Expert Clinical Services" : "বিশেষজ্ঞ ক্লিনিকাল সেবা"}
             </span>
             <h2 className="text-4xl md:text-5xl lg:text-7xl font-serif text-paper leading-tight">
@@ -106,7 +106,12 @@ export default function ServicesSection({ lang, hideExploreLink = false }: Servi
                 <p className="text-paper/70 group-hover:text-paper/95 transition-colors duration-500 text-sm font-sans leading-relaxed">
                   {lang === "bn" ? service.outcome.bn : service.outcome.en}
                 </p>
-                <div className="w-8 h-px bg-white/20 group-hover:w-full group-hover:bg-gold transition-all duration-700" />
+                <div className="flex items-center gap-4">
+                  <div className="h-px bg-gold md:bg-white/20 group-hover:bg-gold transition-all duration-700 w-12 md:w-8 group-hover:w-12" />
+                  <span className="text-[10px] uppercase tracking-widest font-semibold text-gold opacity-100 translate-x-0 md:opacity-0 md:-translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-500 flex items-center gap-1">
+                    {lang === "bn" ? "ক্লিক করুন" : "Click Me"}
+                  </span>
+                </div>
               </div>
             </Link>
           ))}

@@ -76,7 +76,7 @@ export default function FeeSection({ lang }: FeeSectionProps) {
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-32 items-center">
         <div className="reveal-fee space-y-8">
           <div className="space-y-4">
-            <span className="text-xs uppercase tracking-[0.3em] text-rust font-semibold">
+            <span className="text-xs uppercase tracking-[0.3em] text-gold font-semibold">
               {content.title}
             </span>
             <h2 className="text-4xl md:text-5xl lg:text-7xl font-serif text-paper leading-tight">
@@ -107,10 +107,10 @@ export default function FeeSection({ lang }: FeeSectionProps) {
               {content.label}
             </p>
             <div className="font-serif text-8xl md:text-9xl text-paper mb-4 relative">
-              <span className="text-rust absolute -left-8 top-4 text-4xl italic opacity-50">₹</span>
+              <span className="text-gold absolute -left-8 top-4 text-4xl italic opacity-50">₹</span>
               {content.fee.replace("₹", "")}
             </div>
-            <div className="w-12 h-1 bg-rust mb-8" />
+            <div className="w-12 h-1 bg-gold mb-8" />
             <p className="text-paper/60 max-w-xs mx-auto">
               {lang === "en" ? "Inclusive of all first-visit diagnostics performed by the doctor." : "ডাক্তারের দ্বারা সম্পাদিত সমস্ত প্রথম ভিজিটের ডায়াগনস্টিকস অন্তর্ভুক্ত।"}
             </p>

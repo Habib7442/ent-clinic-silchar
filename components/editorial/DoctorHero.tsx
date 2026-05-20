@@ -9,9 +9,9 @@ function MedicalSealIcon() {
   return (
     <svg viewBox="0 0 24 24" fill="none" className="w-6 h-6 text-forest shrink-0 animate-pulse" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
       <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" className="fill-forest/10" />
-      <circle cx="12" cy="11" r="3" className="stroke-rust" strokeWidth="2" />
-      <path d="M12 14v4" className="stroke-rust" />
-      <path d="M10 16h4" className="stroke-rust" />
+      <circle cx="12" cy="11" r="3" className="stroke-gold" strokeWidth="2" />
+      <path d="M12 14v4" className="stroke-gold" />
+      <path d="M10 16h4" className="stroke-gold" />
     </svg>
   );
 }
@@ -77,13 +77,13 @@ export default function DoctorHero({ lang }: DoctorHeroProps) {
         {/* Content Column */}
         <div className="lg:col-span-7 space-y-10 order-2 lg:order-1">
           <div className="space-y-6">
-            <span className="reveal-doc-hero inline-block text-xs uppercase tracking-[0.3em] text-rust font-semibold">
+            <span className="reveal-doc-hero inline-block text-xs uppercase tracking-[0.3em] text-gold font-semibold">
               {content.tagline}
             </span>
             <h1 className="reveal-doc-hero text-5xl md:text-7xl lg:text-8xl font-serif text-paper leading-tight">
               {content.name}
             </h1>
-            <p className="reveal-doc-hero text-xl lg:text-2xl text-rust font-serif italic">
+            <p className="reveal-doc-hero text-xl lg:text-2xl text-gold font-serif italic">
               {content.credentials}
             </p>
           </div>
@@ -114,7 +114,7 @@ export default function DoctorHero({ lang }: DoctorHeroProps) {
         <div className="lg:col-span-5 order-1 lg:order-2">
           <div className="relative aspect-[4/5] rounded-sm overflow-hidden bg-forest/10 ring-1 ring-white/10 group shadow-2xl">
             <div className="absolute inset-0 flex flex-col items-center justify-center p-6 text-center space-y-4">
-              <div className="p-4 bg-forest/20 rounded-full text-rust transition-transform duration-500 group-hover:scale-110">
+              <div className="p-4 bg-forest/20 rounded-full text-gold transition-transform duration-500 group-hover:scale-110">
                 <ShieldCheck className="w-16 h-16" />
               </div>
               <h3 className="font-serif text-xl text-paper">{content.name}</h3>

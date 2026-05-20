@@ -76,7 +76,7 @@ export default function ClinicGallery({ lang }: ClinicGalleryProps) {
     <section ref={containerRef} className="py-12 lg:py-16 px-6 lg:px-24 bg-[#0A1A12]">
       <div className="max-w-7xl mx-auto">
         <div className="max-w-2xl mb-16 lg:mb-24 space-y-4">
-          <span className="text-xs uppercase tracking-[0.3em] text-rust font-semibold">
+          <span className="text-xs uppercase tracking-[0.3em] text-gold font-semibold">
             {isEn ? "Inside the Clinic" : "ক্লিনিকের ভেতর"}
           </span>
           <h2 className="text-4xl md:text-5xl lg:text-7xl font-serif text-paper leading-tight">

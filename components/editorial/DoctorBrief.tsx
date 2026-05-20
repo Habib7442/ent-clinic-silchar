@@ -15,9 +15,9 @@ function MedicalSealIcon() {
   return (
     <svg viewBox="0 0 24 24" fill="none" className="w-5 h-5 text-forest" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
       <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" className="fill-forest/10" />
-      <circle cx="12" cy="11" r="3" className="stroke-rust" strokeWidth="2" />
-      <path d="M12 14v4" className="stroke-rust" />
-      <path d="M10 16h4" className="stroke-rust" />
+      <circle cx="12" cy="11" r="3" className="stroke-gold" strokeWidth="2" />
+      <path d="M12 14v4" className="stroke-gold" />
+      <path d="M10 16h4" className="stroke-gold" />
     </svg>
   );
 }
@@ -86,13 +86,13 @@ export default function DoctorBrief({ lang }: DoctorBriefProps) {
       <div className="max-w-7xl mx-auto relative z-10">
         <div className="reveal-doc space-y-8">
           <div className="space-y-2">
-            <span className="text-xs uppercase tracking-[0.3em] text-rust font-semibold">
+            <span className="text-xs uppercase tracking-[0.3em] text-gold font-semibold">
               {content.title}
             </span>
             <h2 className="text-4xl md:text-5xl lg:text-7xl font-serif text-paper leading-tight">
               {content.name}
             </h2>
-            <p className="text-xl lg:text-2xl text-rust font-serif italic">
+            <p className="text-xl lg:text-2xl text-gold font-serif italic">
               {content.credentials}
             </p>
           </div>

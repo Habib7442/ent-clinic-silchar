@@ -17,40 +17,40 @@ function EarClinicIcon() {
   return (
     <svg viewBox="0 0 24 24" fill="none" className="w-8 h-8 text-forest transition-transform duration-500 group-hover:scale-110" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
       {/* Central Auditory Node */}
-      <circle cx="12" cy="12" r="2" className="fill-forest/30 stroke-rust" strokeWidth="1" />
+      <circle cx="12" cy="12" r="2" className="fill-forest/30 stroke-gold" strokeWidth="1" />
       {/* Concentric Acoustic Rings (Dashed & Continuous) */}
       <circle cx="12" cy="12" r="5" strokeDasharray="3 3" className="stroke-forest/40" />
       <circle cx="12" cy="12" r="8" className="stroke-forest/60" />
-      <circle cx="12" cy="12" r="11" strokeDasharray="4 2" className="stroke-rust/20" />
+      <circle cx="12" cy="12" r="11" strokeDasharray="4 2" className="stroke-gold/20" />
       {/* Precision Crosshairs / Clinical Alignment */}
-      <line x1="12" y1="1" x2="12" y2="3" className="stroke-rust" />
-      <line x1="12" y1="21" x2="12" y2="23" className="stroke-rust" />
-      <line x1="1" y1="12" x2="3" y2="12" className="stroke-rust" />
-      <line x1="21" y1="12" x2="23" y2="12" className="stroke-rust" />
+      <line x1="12" y1="1" x2="12" y2="3" className="stroke-gold" />
+      <line x1="12" y1="21" x2="12" y2="23" className="stroke-gold" />
+      <line x1="1" y1="12" x2="3" y2="12" className="stroke-gold" />
+      <line x1="21" y1="12" x2="23" y2="12" className="stroke-gold" />
       {/* Elegant ear contour integrated into the waves */}
-      <path d="M10 7.5c2-1 4.5 0 5 2.5s-1 4.5-3 5.5c-1 .5-2 1.5-2 2.5" className="stroke-rust" strokeWidth="2" />
+      <path d="M10 7.5c2-1 4.5 0 5 2.5s-1 4.5-3 5.5c-1 .5-2 1.5-2 2.5" className="stroke-gold" strokeWidth="2" />
     </svg>
   );
 }
 
 function VertigoClinicIcon() {
   return (
-    <svg viewBox="0 0 24 24" fill="none" className="w-8 h-8 text-rust transition-transform duration-500 group-hover:scale-110" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+    <svg viewBox="0 0 24 24" fill="none" className="w-8 h-8 text-gold transition-transform duration-500 group-hover:scale-110" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
       {/* Central Balance Glowing Sphere */}
-      <circle cx="12" cy="12" r="2.5" className="fill-rust/30 stroke-forest" strokeWidth="1.2" />
+      <circle cx="12" cy="12" r="2.5" className="fill-gold/30 stroke-forest" strokeWidth="1.2" />
       {/* Axis 1: Horizontal Orbital Path */}
-      <ellipse cx="12" cy="12" rx="10" ry="3" className="stroke-rust/30" />
+      <ellipse cx="12" cy="12" rx="10" ry="3" className="stroke-gold/30" />
       {/* Axis 2: 45 Degree Diagonal Path */}
       <g transform="rotate(45 12 12)">
-        <ellipse cx="12" cy="12" rx="10" ry="3" className="stroke-rust/60" />
+        <ellipse cx="12" cy="12" rx="10" ry="3" className="stroke-gold/60" />
       </g>
       {/* Axis 3: -45 Degree Diagonal Path */}
       <g transform="rotate(-45 12 12)">
         <ellipse cx="12" cy="12" rx="10" ry="3" className="stroke-forest/50" />
       </g>
       {/* Gyroscopic Position Indicators */}
-      <circle cx="12" cy="2" r="1" className="fill-rust stroke-rust" />
-      <circle cx="12" cy="22" r="1" className="fill-rust stroke-rust" />
+      <circle cx="12" cy="2" r="1" className="fill-gold stroke-gold" />
+      <circle cx="12" cy="22" r="1" className="fill-gold stroke-gold" />
       <circle cx="2" cy="12" r="1" className="fill-forest stroke-forest" />
       <circle cx="22" cy="12" r="1" className="fill-forest stroke-forest" />
     </svg>
@@ -64,11 +64,11 @@ function SpeechTherapyIcon() {
       <circle cx="12" cy="12" r="10" strokeDasharray="3 3" className="stroke-forest/20" />
       {/* Frequency Sine Waves */}
       <path d="M2 12c2.5-3 5.5-3 8 0s3.5 3 6 0 4-2.5 6-1" className="stroke-forest/40" />
-      <path d="M2 12c2-1.5 4-1.5 6 0s4 1.5 6 0 4-1.5 6 0" className="stroke-rust" strokeWidth="2" />
+      <path d="M2 12c2-1.5 4-1.5 6 0s4 1.5 6 0 4-1.5 6 0" className="stroke-gold" strokeWidth="2" />
       {/* High-Precision Equalizer Bars */}
       <line x1="6" y1="10" x2="6" y2="14" className="stroke-forest" strokeWidth="2" />
       <line x1="9" y1="8" x2="9" y2="16" className="stroke-forest/70" strokeWidth="2" />
-      <line x1="12" y1="5" x2="12" y2="19" className="stroke-rust/80" strokeWidth="2" />
+      <line x1="12" y1="5" x2="12" y2="19" className="stroke-gold/80" strokeWidth="2" />
       <line x1="15" y1="7" x2="15" y2="17" className="stroke-forest/70" strokeWidth="2" />
       <line x1="18" y1="9" x2="18" y2="15" className="stroke-forest" strokeWidth="2" />
     </svg>
@@ -79,9 +79,9 @@ function MedicalSealIcon() {
   return (
     <svg viewBox="0 0 24 24" fill="none" className="w-6 h-6 text-forest" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
       <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" className="fill-forest/10" />
-      <circle cx="12" cy="11" r="3" className="stroke-rust" strokeWidth="2" />
-      <path d="M12 14v4" className="stroke-rust" />
-      <path d="M10 16h4" className="stroke-rust" />
+      <circle cx="12" cy="11" r="3" className="stroke-gold" strokeWidth="2" />
+      <path d="M12 14v4" className="stroke-gold" />
+      <path d="M10 16h4" className="stroke-gold" />
     </svg>
   );
 }
@@ -176,13 +176,13 @@ export default async function DoctorPage({
           {/* Content Column */}
           <div className="lg:col-span-7 space-y-8 order-2 lg:order-1">
             <div className="space-y-4">
-              <span className="inline-block text-xs uppercase tracking-[0.3em] text-rust font-semibold">
+              <span className="inline-block text-xs uppercase tracking-[0.3em] text-gold font-semibold">
                 {content.hero.tagline}
               </span>
               <h1 className="text-5xl md:text-7xl lg:text-8xl font-serif text-paper leading-tight">
                 {content.hero.title}
               </h1>
-              <p className="text-xl lg:text-2xl text-rust font-serif italic">
+              <p className="text-xl lg:text-2xl text-gold font-serif italic">
                 {content.hero.specialty}
               </p>
             </div>
@@ -206,7 +206,7 @@ export default async function DoctorPage({
           <div className="lg:col-span-5 order-1 lg:order-2">
             <div className="relative aspect-[4/5] rounded-sm overflow-hidden bg-forest/10 ring-1 ring-white/10 group shadow-2xl">
               <div className="absolute inset-0 flex flex-col items-center justify-center p-6 text-center space-y-4">
-                <div className="p-4 bg-forest/20 rounded-full text-rust">
+                <div className="p-4 bg-forest/20 rounded-full text-gold">
                   <ShieldCheck className="w-16 h-16" />
                 </div>
                 <h3 className="font-serif text-xl text-paper">{content.hero.title}</h3>
@@ -254,7 +254,7 @@ export default async function DoctorPage({
                 <div className="pt-6 border-t border-white/5 space-y-3">
                   {content.sections.earClinic.tests.map((test, index) => (
                     <div key={index} className="flex items-center gap-2 text-xs text-paper/80">
-                      <CheckCircle2 className="w-4 h-4 text-rust shrink-0" />
+                      <CheckCircle2 className="w-4 h-4 text-gold shrink-0" />
                       <span>{test}</span>
                     </div>
                   ))}
@@ -265,7 +265,7 @@ export default async function DoctorPage({
             {/* Card 2: Vertigo Clinic */}
             <div className="group overflow-hidden bg-[#0A1A12] border border-white/5 rounded-sm flex flex-col justify-between hover:border-gold/30 transition-all duration-500 hover:-translate-y-1">
               <div>
-                <div className="relative aspect-[16/10] w-full overflow-hidden bg-rust/5">
+                <div className="relative aspect-[16/10] w-full overflow-hidden bg-gold/5">
                   <img 
                     src={icons.doctor_page.vertigoClinic} 
                     alt={content.sections.vertigoClinic.title}
@@ -314,7 +314,7 @@ export default async function DoctorPage({
                 <div className="pt-6 border-t border-white/5 space-y-3">
                   {content.sections.speechClinic.tests.map((test, index) => (
                     <div key={index} className="flex items-center gap-2 text-xs text-paper/80">
-                      <CheckCircle2 className="w-4 h-4 text-rust shrink-0" />
+                      <CheckCircle2 className="w-4 h-4 text-gold shrink-0" />
                       <span>{test}</span>
                     </div>
                   ))}
@@ -328,8 +328,8 @@ export default async function DoctorPage({
       {/* 3. Philosophy Quote Section */}
       <section className="py-12 lg:py-16 px-6 lg:px-24 bg-[#0A1A12] relative overflow-hidden">
         <div className="max-w-4xl mx-auto text-center space-y-6">
-          <Heart className="w-8 h-8 text-rust mx-auto opacity-70" />
-          <h3 className="text-xs uppercase tracking-[0.3em] text-rust font-semibold">{content.philosophy.title}</h3>
+          <Heart className="w-8 h-8 text-gold mx-auto opacity-70" />
+          <h3 className="text-xs uppercase tracking-[0.3em] text-gold font-semibold">{content.philosophy.title}</h3>
           <p className="text-3xl md:text-4xl lg:text-5xl font-serif italic text-paper leading-snug">
             "{content.philosophy.quote}"
           </p>
@@ -350,7 +350,7 @@ export default async function DoctorPage({
           </div>
           <div className="pt-4">
             <Link href={`/${lang}/book`}>
-              <Button className="group bg-rust hover:bg-rust/95 text-paper rounded-none px-8 py-6 text-base font-semibold transition-all">
+              <Button className="group bg-gold hover:bg-gold/95 text-paper rounded-none px-8 py-6 text-base font-semibold transition-all">
                 {content.cta.btn}
                 <ChevronRight className="ml-2 w-5 h-5 transition-transform group-hover:translate-x-1" />
               </Button>

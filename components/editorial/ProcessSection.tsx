@@ -110,7 +110,7 @@ export default function ProcessSection({ lang }: ProcessSectionProps) {
     <section id="process" ref={containerRef} className="py-12 lg:py-16 px-6 lg:px-24 bg-[#0A1A12] overflow-hidden">
       <div className="max-w-7xl mx-auto">
         <div className="max-w-2xl mb-20 lg:mb-32 space-y-4">
-          <span className="text-xs uppercase tracking-[0.3em] text-rust font-semibold">
+          <span className="text-xs uppercase tracking-[0.3em] text-gold font-semibold">
             {isEn ? "The Clinical Journey" : "ক্লিনিকাল যাত্রা"}
           </span>
           <h2 className="text-4xl md:text-5xl lg:text-7xl font-serif text-paper leading-tight">
@@ -121,7 +121,7 @@ export default function ProcessSection({ lang }: ProcessSectionProps) {
         <div className="process-container relative">
           {/* Vertical Line for Desktop */}
           <div className="hidden lg:block absolute left-[45px] top-0 bottom-0 w-px bg-white/10" />
-          <div className="process-line hidden lg:block absolute left-[45px] top-0 bottom-0 w-px bg-rust" />
+          <div className="process-line hidden lg:block absolute left-[45px] top-0 bottom-0 w-px bg-gold" />
 
           <div className="space-y-12 lg:space-y-24">
             {steps.map((step) => (
@@ -136,7 +136,7 @@ export default function ProcessSection({ lang }: ProcessSectionProps) {
                 <div className="flex flex-col lg:flex-row lg:items-start justify-between gap-6 lg:gap-12">
                   <div className="max-w-xl space-y-4">
                     <div className="flex items-center gap-4 lg:hidden">
-                      <span className="text-rust font-serif text-2xl">{step.number}</span>
+                      <span className="text-gold font-serif text-2xl">{step.number}</span>
                       <div className="h-px flex-1 bg-white/10" />
                     </div>
                     <h3 className="text-2xl lg:text-4xl font-serif text-paper">

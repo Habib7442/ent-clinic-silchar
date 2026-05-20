@@ -85,7 +85,7 @@ export default function Testimonials({ lang }: TestimonialsProps) {
       
       <div className="max-w-7xl mx-auto relative z-10">
         <div className="max-w-3xl mb-16 lg:mb-24 space-y-4">
-          <span className="text-xs uppercase tracking-[0.3em] text-rust font-semibold">
+          <span className="text-xs uppercase tracking-[0.3em] text-gold font-semibold">
             {isEn ? "Patient Success Stories" : "রোগীর সাফল্যের গল্প"}
           </span>
           <h2 className="text-4xl md:text-5xl lg:text-7xl font-serif text-paper leading-tight">
@@ -102,9 +102,9 @@ export default function Testimonials({ lang }: TestimonialsProps) {
               <Quote className="absolute top-8 right-8 w-12 h-12 text-white/5 group-hover:text-gold/15 transition-colors" />
               
               <div className="space-y-6">
-                <div className="flex gap-1 text-rust">
+                <div className="flex gap-1 text-gold">
                   {[...Array(item.rating)].map((_, i) => (
-                    <Star key={i} className="w-4 h-4 fill-rust" />
+                    <Star key={i} className="w-4 h-4 fill-gold" />
                   ))}
                 </div>
                 
@@ -117,8 +117,8 @@ export default function Testimonials({ lang }: TestimonialsProps) {
                 <p className="text-paper font-serif text-xl">{item.name}</p>
                 <div className="flex items-center gap-2 text-[10px] uppercase tracking-widest text-paper/60">
                   <span>{item.role}</span>
-                  <span className="w-1 h-1 bg-rust rounded-full" />
-                  <span className="text-rust">{lang === "bn" ? item.concern.bn : item.concern.en}</span>
+                  <span className="w-1 h-1 bg-gold rounded-full" />
+                  <span className="text-gold">{lang === "bn" ? item.concern.bn : item.concern.en}</span>
                 </div>
               </div>
             </div>
@@ -128,9 +128,9 @@ export default function Testimonials({ lang }: TestimonialsProps) {
         {/* Trust Badge */}
         <div className="mt-16 lg:mt-24 flex flex-col items-center gap-4 py-8 border-y border-white/5">
           <div className="flex items-center gap-2">
-            <div className="flex gap-0.5 text-rust">
+            <div className="flex gap-0.5 text-gold">
               {[...Array(5)].map((_, i) => (
-                <Star key={i} className="w-5 h-5 fill-rust" />
+                <Star key={i} className="w-5 h-5 fill-gold" />
               ))}
             </div>
             <span className="text-paper font-bold text-xl ml-2">4.9 / 5</span>

@@ -47,7 +47,7 @@ export default function TreatmentsList({ lang }: TreatmentsListProps) {
     <section ref={containerRef} className="py-12 lg:py-16 px-6 lg:px-24 bg-paper border-t border-forest/10">
       <div className="max-w-7xl mx-auto">
         <div className="mb-16">
-          <span className="text-xs uppercase tracking-[0.3em] text-rust font-semibold">
+          <span className="text-xs uppercase tracking-[0.3em] text-forest font-semibold">
             {isEn ? "Specialized Procedures" : "বিশেষ প্রক্রিয়া"}
           </span>
           <h2 className="text-4xl md:text-5xl font-serif text-forest mt-4 leading-tight">

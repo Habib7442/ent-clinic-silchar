@@ -25,7 +25,7 @@ import { useSearchParams } from "next/navigation";
 import { useEffect, Suspense } from "react";
 
 const serviceToDiseaseMap: Record<string, string> = {
-  "audiometry-speech-therapy": "hearing",
+  "speech-therapy-clinic": "hearing",
   "hearing-aids": "hearing",
   "micro-otoscopy": "hearing",
   "headache-clinic": "sinus",

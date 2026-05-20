@@ -25,7 +25,7 @@
   }
   
   body {
-    @apply text-paper/90 antialiased selection:bg-rust/20 selection:text-rust min-h-full flex flex-col overflow-x-hidden max-w-full;
+    @apply text-paper/90 antialiased selection:bg-gold/20 selection:text-gold min-h-full flex flex-col overflow-x-hidden max-w-full;
     font-feature-settings: "ss01", "ss02";
     background: radial-gradient(circle at top left, #1E3A2B 0%, #0A1A12 100%);
     background-attachment: fixed;
@@ -55,7 +55,7 @@
   }
 
   .italic-rust {
-    @apply text-rust;
+    @apply text-gold;
   }
 
   .container-padding {

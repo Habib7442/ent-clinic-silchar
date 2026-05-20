@@ -15,7 +15,7 @@ export default async function BookingPage({
       <div className="w-full max-w-md">
         <Link 
           href={`/${lang}`} 
-          className="inline-flex items-center gap-2 text-rust hover:text-forest transition-colors mb-8 text-sm font-semibold tracking-widest uppercase"
+          className="inline-flex items-center gap-2 text-forest hover:text-forest-soft transition-colors mb-8 text-sm font-semibold tracking-widest uppercase"
         >
           <ArrowLeft className="w-4 h-4" />
           {isEn ? "Back to Home" : "হোমে ফিরে যান"}

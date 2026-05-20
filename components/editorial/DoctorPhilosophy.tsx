@@ -63,15 +63,15 @@ export default function DoctorPhilosophy({ lang }: DoctorPhilosophyProps) {
     <section ref={containerRef} className="py-12 lg:py-16 px-6 lg:px-24 bg-[#07140E] relative overflow-hidden border-b border-white/5">
       {/* Subtle Ambient Glow */}
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-        <div className="w-[400px] h-[400px] bg-rust/5 blur-[120px] rounded-full" />
+        <div className="w-[400px] h-[400px] bg-gold/5 blur-[120px] rounded-full" />
       </div>
 
       <div className="relative z-10 max-w-4xl mx-auto space-y-16 text-center">
         
         {/* Header Elements */}
         <div className="reveal-phi space-y-4">
-          <Heart className="w-8 h-8 text-rust mx-auto opacity-70 animate-pulse" />
-          <span className="inline-block text-xs uppercase tracking-[0.4em] text-rust font-semibold">
+          <Heart className="w-8 h-8 text-gold mx-auto opacity-70 animate-pulse" />
+          <span className="inline-block text-xs uppercase tracking-[0.4em] text-gold font-semibold">
             {content.title}
           </span>
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif text-paper leading-tight">
