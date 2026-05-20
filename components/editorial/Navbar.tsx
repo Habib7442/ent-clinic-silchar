@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import Link from "next/link";
 import { useParams, usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
@@ -15,6 +16,7 @@ import {
 } from "@/components/ui/sheet";
 
 export default function Navbar() {
+  const [open, setOpen] = useState(false);
   const params = useParams();
   const pathname = usePathname();
   const lang = params.lang as string;
@@ -91,7 +93,7 @@ export default function Navbar() {
         </div>
 
         {/* Mobile Menu (Sheet) */}
-        <Sheet>
+        <Sheet open={open} onOpenChange={setOpen}>
           <SheetTrigger asChild>
             <Button variant="ghost" size="icon" className="md:hidden text-paper">
               <Menu className="w-6 h-6" />
@@ -110,6 +112,7 @@ export default function Navbar() {
                 <Link
                   key={link.name}
                   href={link.href}
+                  onClick={() => setOpen(false)}
                   className="text-lg font-serif text-paper/80 hover:text-paper transition-colors"
                 >
                   {link.name}
@@ -123,12 +126,14 @@ export default function Navbar() {
                 <div className="flex gap-2">
                   <Link 
                     href={pathname.replace(`/${lang}`, "/en")} 
+                    onClick={() => setOpen(false)}
                     className={cn("px-3 py-1 rounded-full border border-white/10 transition-colors", lang === 'en' ? "bg-forest text-paper border-forest" : "text-paper/60")}
                   >
                     EN
                   </Link>
                   <Link 
                     href={pathname.replace(`/${lang}`, "/bn")} 
+                    onClick={() => setOpen(false)}
                     className={cn("px-3 py-1 rounded-full border border-white/10 transition-colors", lang === 'bn' ? "bg-forest text-paper border-forest" : "text-paper/60")}
                   >
                     BN
@@ -136,7 +141,7 @@ export default function Navbar() {
                 </div>
               </div>
 
-              <Link href={`/${lang}/book`} className="w-full">
+              <Link href={`/${lang}/book`} className="w-full" onClick={() => setOpen(false)}>
                 <Button variant="rust" className="w-full h-auto py-5 text-sm">
                   Book Now
                 </Button>
