@@ -23,12 +23,12 @@ export default function Navbar() {
     en: [
       { name: "Services", href: `/${lang}/services` },
       { name: "About", href: `/${lang}/about` },
-      { name: "Journal", href: `/${lang}/journal` },
+      { name: "Contact", href: `/${lang}/contact` },
     ],
     bn: [
       { name: "সেবাসমূহ", href: `/${lang}/services` },
       { name: "আমাদের সম্পর্কে", href: `/${lang}/about` },
-      { name: "জার্নাল", href: `/${lang}/journal` },
+      { name: "যোগাযোগ", href: `/${lang}/contact` },
     ]
   }[lang as 'en' | 'bn'] || [];
 

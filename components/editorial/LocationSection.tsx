@@ -3,7 +3,7 @@
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { MapPin, Clock, Car, Accessibility, Navigation } from "lucide-react";
+import { MapPin, Clock, Car, Navigation } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 if (typeof window !== "undefined") {
@@ -100,10 +100,6 @@ export default function LocationSection({ lang }: LocationSectionProps) {
               <div className="flex items-center gap-4 text-paper/60">
                 <Car className="w-5 h-5 text-forest" />
                 <span className="text-sm">{isEn ? "Free On-site Parking Available" : "ক্লিনিকে পার্কিং ব্যবস্থা আছে"}</span>
-              </div>
-              <div className="flex items-center gap-4 text-paper/60">
-                <Accessibility className="w-5 h-5 text-forest" />
-                <span className="text-sm">{isEn ? "Wheelchair & Lift Accessible" : "হুইলচেয়ার ও লিফট সুবিধা আছে"}</span>
               </div>
             </div>
 
