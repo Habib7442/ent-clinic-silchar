@@ -53,6 +53,10 @@
   .mask-reveal.visible {
     clip-path: inset(0 0 0 0);
   }
+
+  .italic-rust {
+    @apply text-rust;
+  }
 }
 /* GSAP reveal safety - Base state before JS kicks in */
 .reveal-loc, .service-card, .testimonial-card, .process-step {

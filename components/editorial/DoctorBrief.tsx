@@ -92,7 +92,7 @@ export default function DoctorBrief({ lang }: DoctorBriefProps) {
             <h2 className="text-4xl md:text-5xl lg:text-7xl font-serif text-paper leading-tight">
               {content.name}
             </h2>
-            <p className="text-xl lg:text-2xl text-paper/80 font-serif italic italic-rust">
+            <p className="text-xl lg:text-2xl text-rust font-serif italic">
               {content.credentials}
             </p>
           </div>
