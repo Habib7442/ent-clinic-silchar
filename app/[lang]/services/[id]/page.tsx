@@ -122,7 +122,7 @@ export default async function ServiceDetailPage({
 
             {/* Dynamic Slot Picker Call-to-action */}
             <div className="pt-4 border-t border-white/5">
-              <Link href={`/${lang}/book`}>
+              <Link href={`/${lang}/book?service=${service.id}`}>
                 <Button variant="rust" className="w-full py-6 rounded-none group flex items-center justify-center gap-2">
                   <Calendar className="w-5 h-5" />
                   {isEn ? "Book This Service" : "এই সেবা বুক করুন"}

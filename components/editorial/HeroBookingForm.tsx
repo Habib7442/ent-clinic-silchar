@@ -21,11 +21,41 @@ import {
   PopoverTrigger,
 } from "@/components/ui/popover";
 
-export default function HeroBookingForm({ lang }: { lang: string }) {
+import { useSearchParams } from "next/navigation";
+import { useEffect, Suspense } from "react";
+
+const serviceToDiseaseMap: Record<string, string> = {
+  "audiometry-speech-therapy": "hearing",
+  "hearing-aids": "hearing",
+  "micro-otoscopy": "hearing",
+  "headache-clinic": "sinus",
+  "snoring-sleep-apnea": "snoring",
+  "paediatric-ent": "tonsils",
+  "surgical-ent": "other",
+  "laryngoscopy-endoscopy": "other",
+};
+
+function BookingForm({ lang }: { lang: string }) {
   const isEn = lang === "en";
+  const searchParams = useSearchParams();
+  const serviceParam = searchParams.get("service");
 
   const [date, setDate] = useState<Date>();
+  const [disease, setDisease] = useState<string>("");
   const [isSubmitting, setIsSubmitting] = useState(false);
+
+  useEffect(() => {
+    if (serviceParam) {
+      if (["hearing", "sinus", "tonsils", "snoring", "other", "not_sure"].includes(serviceParam)) {
+        setDisease(serviceParam);
+      } else {
+        const mapped = serviceToDiseaseMap[serviceParam];
+        if (mapped) {
+          setDisease(mapped);
+        }
+      }
+    }
+  }, [serviceParam]);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -90,7 +120,7 @@ export default function HeroBookingForm({ lang }: { lang: string }) {
             </Popover>
           </div>
           <div className="space-y-2">
-            <Select required>
+            <Select required value={disease} onValueChange={setDisease}>
               <SelectTrigger className="h-12 border-[#0A1A12]/20 focus:ring-[#B65C36] bg-white text-[#0A1A12]">
                 <SelectValue placeholder={isEn ? "Select Disease" : "রোগ নির্বাচন করুন"} />
               </SelectTrigger>
@@ -117,5 +147,27 @@ export default function HeroBookingForm({ lang }: { lang: string }) {
         </form>
       </CardContent>
     </Card>
+  );
+}
+
+export default function HeroBookingForm({ lang }: { lang: string }) {
+  return (
+    <Suspense fallback={
+      <Card className="w-full max-w-md mx-auto lg:max-w-none bg-white shadow-2xl border-0 overflow-hidden p-0 gap-0">
+        <div className="bg-[#0A1A12] text-[#F6F1E6] pb-6 pt-8 px-8 border-b-4 border-[#B65C36] animate-pulse">
+          <div className="h-8 bg-white/20 rounded w-2/3 mb-2" />
+          <div className="h-4 bg-white/10 rounded w-5/6" />
+        </div>
+        <div className="p-8 space-y-5 animate-pulse">
+          <div className="h-12 bg-[#0A1A12]/5 rounded" />
+          <div className="h-12 bg-[#0A1A12]/5 rounded" />
+          <div className="h-12 bg-[#0A1A12]/5 rounded" />
+          <div className="h-12 bg-[#0A1A12]/5 rounded" />
+          <div className="h-12 bg-[#B65C36]/50 rounded mt-4" />
+        </div>
+      </Card>
+    }>
+      <BookingForm lang={lang} />
+    </Suspense>
   );
 }
