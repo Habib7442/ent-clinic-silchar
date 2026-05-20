@@ -141,8 +141,12 @@ export default function Footer({ lang }: FooterProps) {
         <div className="pt-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-8">
           <div className="flex flex-wrap justify-center gap-6 text-[10px] uppercase tracking-[0.2em] text-paper/30">
             <span>© 2026 The ENT Clinic Silchar</span>
-            <Link href="#" className="hover:text-gold">Privacy Policy</Link>
-            <Link href="#" className="hover:text-gold">Terms of Service</Link>
+            <Link href={`/${lang}/privacy`} className="hover:text-gold transition-colors">
+              {lang === "bn" ? "গোপনীয়তা নীতি" : "Privacy Policy"}
+            </Link>
+            <Link href={`/${lang}/telemedicine-policy`} className="hover:text-gold transition-colors">
+              {lang === "bn" ? "টেলিমেডিসিন নীতি" : "Telemedicine Policy"}
+            </Link>
           </div>
           
           <div className="text-[10px] uppercase tracking-[0.3em] text-paper/20">
