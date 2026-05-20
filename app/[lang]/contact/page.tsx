@@ -14,10 +14,10 @@ export default async function ContactPage({
     <main className="flex-1 overflow-x-hidden pt-24 md:pt-32">
       {/* Hero Section */}
       <section className="container-padding py-16 max-w-4xl mx-auto text-center">
-        <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl text-forest font-light mb-6">
+        <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl text-paper font-light mb-6">
           {isBn ? "যোগাযোগ করুন" : "Contact Us"}
         </h1>
-        <p className="font-sans text-lg md:text-xl text-ink-soft max-w-2xl mx-auto leading-relaxed">
+        <p className="font-sans text-lg md:text-xl text-paper/70 max-w-2xl mx-auto leading-relaxed">
           {isBn
             ? "আমরা আপনার যেকোনো প্রশ্নের উত্তর দিতে প্রস্তুত। অ্যাপয়েন্টমেন্ট বুকিং বা অন্য কোনো সহায়তার জন্য আমাদের সাথে যোগাযোগ করুন।"
             : "We are here to answer your questions. Reach out to us for appointment bookings or any other assistance."}

@@ -79,7 +79,7 @@ export default function DoctorBrief({ lang }: DoctorBriefProps) {
   }, []);
 
   return (
-    <section id="doctor" ref={containerRef} className="relative py-24 lg:py-40 px-6 lg:px-24 bg-[#0A1A12] overflow-hidden">
+    <section id="doctor" ref={containerRef} className="relative py-12 lg:py-16 px-6 lg:px-24 bg-[#0A1A12] overflow-hidden">
       {/* Decorative background element */}
       <div className="absolute top-0 right-0 w-1/2 h-full bg-forest/5 blur-[120px] rounded-full -translate-y-1/2 translate-x-1/4" />
       
@@ -122,9 +122,9 @@ export default function DoctorBrief({ lang }: DoctorBriefProps) {
 
           <div className="pt-4">
             <Link href={`/${lang}/doctor`}>
-              <Button variant="outline" className="group border-white/10 hover:border-rust hover:bg-transparent text-paper rounded-none px-8 py-6">
+              <Button variant="outline" className="group border-white/10 hover:border-gold hover:bg-transparent text-paper rounded-none px-8 py-6">
                 {content.cta}
-                <ArrowRight className="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1 text-rust" />
+                <ArrowRight className="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1 text-gold" />
               </Button>
             </Link>
           </div>

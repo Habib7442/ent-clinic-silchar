@@ -72,7 +72,7 @@ export default function FeeSection({ lang }: FeeSectionProps) {
   }, []);
 
   return (
-    <section id="fees" ref={containerRef} className="py-24 lg:py-40 px-6 lg:px-24 bg-[#0A1A12] border-t border-white/5">
+    <section id="fees" ref={containerRef} className="py-12 lg:py-16 px-6 lg:px-24 bg-[#0A1A12] border-t border-white/5">
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-32 items-center">
         <div className="reveal-fee space-y-8">
           <div className="space-y-4">

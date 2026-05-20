@@ -15,10 +15,10 @@ export default async function FirstVisitPage({
     <main className="flex-1 overflow-x-hidden pt-24 md:pt-32">
       {/* Hero Section */}
       <section className="container-padding py-16 md:py-24 max-w-4xl mx-auto text-center">
-        <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl text-forest font-light mb-6">
+        <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl text-paper font-light mb-6">
           {isBn ? "প্রথম দর্শনে কী আশা করবেন" : "What to Expect on Your First Visit"}
         </h1>
-        <p className="font-sans text-lg md:text-xl text-ink-soft max-w-2xl mx-auto leading-relaxed">
+        <p className="font-sans text-lg md:text-xl text-paper/70 max-w-2xl mx-auto leading-relaxed">
           {isBn
             ? "আমরা জানি ডাক্তারের কাছে যাওয়া উদ্বেগের হতে পারে। তাই আমরা আমাদের প্রক্রিয়াটি পরিষ্কার, ধীর এবং স্বচ্ছ রেখেছি। এখানে কোনো লুকানো চমক নেই।"
             : "We know that visiting a specialist can cause anxiety. We have designed our process to be clear, unhurried, and transparent. There are no hidden surprises here."}

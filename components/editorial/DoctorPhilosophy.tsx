@@ -59,13 +59,13 @@ export default function DoctorPhilosophy({ lang }: DoctorPhilosophyProps) {
   }, []);
 
   return (
-    <section ref={containerRef} className="py-24 lg:py-40 px-6 lg:px-24 bg-[#0A1A12]">
+    <section ref={containerRef} className="py-12 lg:py-16 px-6 lg:px-24 bg-[#0A1A12]">
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-32 items-center">
         
         {/* Image Column */}
         <div className="reveal-phi relative aspect-square rounded-sm overflow-hidden group">
           <img
-            src="/images/doctor-philosophy.png"
+            src="/images/doctor-philosophy.webp"
             alt="Doctor Philosophy"
             className="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
           />

@@ -53,7 +53,7 @@ export default function DoctorCredentials({ lang }: DoctorCredentialsProps) {
   }, []);
 
   return (
-    <section ref={containerRef} className="py-24 lg:py-40 px-6 lg:px-24 bg-[#0A1A12] border-t border-white/5">
+    <section ref={containerRef} className="py-12 lg:py-16 px-6 lg:px-24 bg-[#0A1A12] border-t border-white/5">
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-24 lg:gap-40">
         
         {/* Education Column */}
@@ -67,7 +67,7 @@ export default function DoctorCredentials({ lang }: DoctorCredentialsProps) {
 
           <div className="space-y-12">
             {education.map((item, idx) => (
-              <div key={idx} className="reveal-cred space-y-2 relative pl-8 border-l border-white/10 hover:border-rust transition-colors duration-500">
+              <div key={idx} className="reveal-cred space-y-2 relative pl-8 border-l border-white/10 hover:border-gold transition-colors duration-500">
                 <div className="absolute -left-[5px] top-0 w-2 h-2 bg-rust rounded-full" />
                 <p className="text-xs uppercase tracking-widest text-paper/40 font-semibold">{item.year}</p>
                 <h3 className="text-2xl font-serif text-paper">{isEn ? item.degree.en : item.degree.bn}</h3>

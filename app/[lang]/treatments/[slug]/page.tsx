@@ -48,6 +48,7 @@ export default async function TreatmentPage({
             src={treatment.image} 
             alt={title}
             fill
+            sizes="(max-width: 1024px) 100vw, 896px"
             className="object-cover"
           />
           <div className="absolute inset-0 bg-forest/20 mix-blend-multiply" />

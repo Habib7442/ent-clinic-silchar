@@ -5,21 +5,21 @@
     "speechClinic": "/images/icons/doctor_page/Dedicated Speech Therapy Center.webp"
   },
   "treatments": {
-    "ear": "/images/ear_treatment.png",
-    "nose": "/images/nose_treatment.png",
-    "throat": "/images/throat_treatment.png"
+    "ear": "/images/ear_treatment.webp",
+    "nose": "/images/nose_treatment.webp",
+    "throat": "/images/throat_treatment.webp"
   },
   "gallery": {
-    "audiometry": "/images/gallery-audiometry.png",
-    "consultation": "/images/gallery-consultation.png",
-    "endoscopy": "/images/gallery-endoscopy.png",
-    "reception": "/images/gallery-reception.png"
+    "audiometry": "/images/gallery-audiometry.webp",
+    "consultation": "/images/gallery-consultation.webp",
+    "endoscopy": "/images/gallery-endoscopy.webp",
+    "reception": "/images/gallery-reception.webp"
   },
   "heroes": {
-    "home": "/images/hero.png",
-    "hearing": "/images/hearing-hero.png",
-    "sinus": "/images/sinus-hero.png",
-    "philosophy": "/images/doctor-philosophy.png"
+    "home": "/images/hero.webp",
+    "hearing": "/images/hearing-hero.webp",
+    "sinus": "/images/sinus-hero.webp",
+    "philosophy": "/images/doctor-philosophy.webp"
   },
   "branding": {
     "favicon": "/favicon.ico",

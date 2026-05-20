@@ -220,7 +220,7 @@ export default async function DoctorPage({
       </section>
 
       {/* 2. Specialized Clinics Grid */}
-      <section className="py-24 lg:py-40 px-6 lg:px-24 bg-[#07140E]">
+      <section className="py-12 lg:py-16 px-6 lg:px-24 bg-[#07140E]">
         <div className="max-w-7xl mx-auto space-y-20">
           <div className="text-center space-y-4 max-w-3xl mx-auto">
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif text-paper font-light">
@@ -242,11 +242,6 @@ export default async function DoctorPage({
                     className="object-cover w-full h-full filter brightness-75 contrast-125 group-hover:scale-105 transition-transform duration-700" 
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#0A1A12] via-[#0A1A12]/40 to-transparent" />
-                  
-                  {/* Floating Custom Icon */}
-                  <div className="absolute bottom-4 left-6 z-10 w-16 h-16 rounded-full flex items-center justify-center bg-[#0A1A12]/90 border border-forest/20 backdrop-blur-md shadow-lg">
-                    <EarClinicIcon />
-                  </div>
                 </div>
 
                 <div className="p-8 lg:p-10 pt-6 space-y-4">
@@ -268,7 +263,7 @@ export default async function DoctorPage({
             </div>
 
             {/* Card 2: Vertigo Clinic */}
-            <div className="group overflow-hidden bg-[#0A1A12] border border-white/5 rounded-sm flex flex-col justify-between hover:border-rust/30 transition-all duration-500 hover:-translate-y-1">
+            <div className="group overflow-hidden bg-[#0A1A12] border border-white/5 rounded-sm flex flex-col justify-between hover:border-gold/30 transition-all duration-500 hover:-translate-y-1">
               <div>
                 <div className="relative aspect-[16/10] w-full overflow-hidden bg-rust/5">
                   <img 
@@ -277,11 +272,6 @@ export default async function DoctorPage({
                     className="object-cover w-full h-full filter brightness-75 contrast-125 group-hover:scale-105 transition-transform duration-700" 
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#0A1A12] via-[#0A1A12]/40 to-transparent" />
-                  
-                  {/* Floating Custom Icon */}
-                  <div className="absolute bottom-4 left-6 z-10 w-16 h-16 rounded-full flex items-center justify-center bg-[#0A1A12]/90 border border-rust/20 backdrop-blur-md shadow-lg">
-                    <VertigoClinicIcon />
-                  </div>
                 </div>
 
                 <div className="p-8 lg:p-10 pt-6 space-y-4">
@@ -312,11 +302,6 @@ export default async function DoctorPage({
                     className="object-cover w-full h-full filter brightness-75 contrast-125 group-hover:scale-105 transition-transform duration-700" 
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#0A1A12] via-[#0A1A12]/40 to-transparent" />
-                  
-                  {/* Floating Custom Icon */}
-                  <div className="absolute bottom-4 left-6 z-10 w-16 h-16 rounded-full flex items-center justify-center bg-[#0A1A12]/90 border border-forest/20 backdrop-blur-md shadow-lg">
-                    <SpeechTherapyIcon />
-                  </div>
                 </div>
 
                 <div className="p-8 lg:p-10 pt-6 space-y-4">
@@ -341,10 +326,10 @@ export default async function DoctorPage({
       </section>
 
       {/* 3. Philosophy Quote Section */}
-      <section className="py-20 lg:py-32 px-6 lg:px-24 bg-[#0A1A12] relative overflow-hidden">
+      <section className="py-12 lg:py-16 px-6 lg:px-24 bg-[#0A1A12] relative overflow-hidden">
         <div className="max-w-4xl mx-auto text-center space-y-6">
           <Heart className="w-8 h-8 text-rust mx-auto opacity-70" />
-          <h3 className="text-xs uppercase tracking-[0.3em] text-forest font-semibold">{content.philosophy.title}</h3>
+          <h3 className="text-xs uppercase tracking-[0.3em] text-rust font-semibold">{content.philosophy.title}</h3>
           <p className="text-3xl md:text-4xl lg:text-5xl font-serif italic text-paper leading-snug">
             "{content.philosophy.quote}"
           </p>
@@ -352,7 +337,7 @@ export default async function DoctorPage({
       </section>
 
       {/* 4. Action Booking CTA Section */}
-      <section className="py-24 lg:py-36 px-6 lg:px-24 bg-[#07140E] border-t border-white/5 text-center relative">
+      <section className="py-12 lg:py-16 px-6 lg:px-24 bg-[#07140E] border-t border-white/5 text-center relative">
         <div className="max-w-4xl mx-auto space-y-8">
           <Calendar className="w-12 h-12 text-forest mx-auto" />
           <div className="space-y-4">

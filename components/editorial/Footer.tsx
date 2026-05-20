@@ -50,11 +50,11 @@ export default function Footer({ lang }: FooterProps) {
             </p>
             <div className="flex gap-4">
               {[
-                { name: "facebook", img: "/social-icons/facebook.png", href: "#" },
-                { name: "instagram", img: "/social-icons/instagram.png", href: "#" },
-                { name: "X", img: "/social-icons/X.png", href: "#" },
-                { name: "linkedin", img: "/social-icons/linkedin.png", href: "#" },
-                { name: "whatsapp", img: "/social-icons/whatsapp.png", href: "https://wa.me/919435070156" },
+                { name: "facebook", img: "/social-icons/facebook.webp", href: "#" },
+                { name: "instagram", img: "/social-icons/instagram.webp", href: "#" },
+                { name: "X", img: "/social-icons/X.webp", href: "#" },
+                { name: "linkedin", img: "/social-icons/linkedin.webp", href: "#" },
+                { name: "whatsapp", img: "/social-icons/whatsapp.webp", href: "https://wa.me/919435070156" },
               ].map((social, i) => (
                 <a key={i} href={social.href} className="p-3 bg-white/5 hover:bg-white/10 transition-all rounded-full border border-white/5 group flex items-center justify-center">
                   <img 
@@ -76,7 +76,7 @@ export default function Footer({ lang }: FooterProps) {
             <ul className="space-y-4">
               {["Hearing", "Sinus", "Snoring", "Paediatric", "Surgical"].map((item) => (
                 <li key={item}>
-                  <Link href={`/${lang}/services`} className="text-paper/40 hover:text-rust transition-colors text-sm">
+                  <Link href={`/${lang}/services`} className="text-paper/40 hover:text-gold transition-colors text-sm">
                     {item} Care
                   </Link>
                 </li>
@@ -93,7 +93,7 @@ export default function Footer({ lang }: FooterProps) {
                 { name: "Location", href: `/${lang}#location` }
               ].map((item) => (
                 <li key={item.name}>
-                  <Link href={item.href} className="text-paper/40 hover:text-rust transition-colors text-sm">
+                  <Link href={item.href} className="text-paper/40 hover:text-gold transition-colors text-sm">
                     {item.name}
                   </Link>
                 </li>
@@ -103,7 +103,7 @@ export default function Footer({ lang }: FooterProps) {
                   href="https://search.google.com/local/writereview?fid=0x374e4b4ff109cfdd:0x8ca2bfe2070dae4e"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-paper/40 hover:text-rust transition-colors text-sm"
+                  className="text-paper/40 hover:text-gold transition-colors text-sm"
                 >
                   {isEn ? "Write a Google Review" : "গুগল রিভিউ লিখুন"}
                 </a>
@@ -137,8 +137,8 @@ export default function Footer({ lang }: FooterProps) {
         <div className="pt-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-8">
           <div className="flex flex-wrap justify-center gap-6 text-[10px] uppercase tracking-[0.2em] text-paper/30">
             <span>© 2026 The ENT Clinic Silchar</span>
-            <Link href="#" className="hover:text-rust">Privacy Policy</Link>
-            <Link href="#" className="hover:text-rust">Terms of Service</Link>
+            <Link href="#" className="hover:text-gold">Privacy Policy</Link>
+            <Link href="#" className="hover:text-gold">Terms of Service</Link>
           </div>
           
           <div className="text-[10px] uppercase tracking-[0.3em] text-paper/20">

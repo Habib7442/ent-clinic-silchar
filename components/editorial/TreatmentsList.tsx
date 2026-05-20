@@ -44,7 +44,7 @@ export default function TreatmentsList({ lang }: TreatmentsListProps) {
   }, []);
 
   return (
-    <section ref={containerRef} className="py-24 px-6 lg:px-24 bg-paper border-t border-forest/10">
+    <section ref={containerRef} className="py-12 lg:py-16 px-6 lg:px-24 bg-paper border-t border-forest/10">
       <div className="max-w-7xl mx-auto">
         <div className="mb-16">
           <span className="text-xs uppercase tracking-[0.3em] text-rust font-semibold">
@@ -72,15 +72,16 @@ export default function TreatmentsList({ lang }: TreatmentsListProps) {
                   src={treatment.image}
                   alt={isEn ? treatment.titleEn : treatment.titleBn}
                   fill
+                  sizes="(max-width: 768px) 80px, 96px"
                   className="object-cover transition-transform duration-500 group-hover:scale-105"
                 />
               </div>
               <div className="flex-1 flex flex-col justify-center min-w-0">
                 <div className="flex items-center justify-between mb-1">
-                  <h3 className="text-lg font-serif font-semibold text-forest group-hover:text-rust transition-colors duration-200 truncate pr-2">
+                  <h3 className="text-lg font-serif font-semibold text-forest group-hover:text-gold transition-colors duration-200 truncate pr-2">
                     {isEn ? treatment.titleEn : treatment.titleBn}
                   </h3>
-                  <ArrowUpRight className="w-5 h-5 text-rust opacity-0 shrink-0 transition-all duration-300 group-hover:opacity-100 group-hover:translate-x-1 group-hover:-translate-y-0.5" />
+                  <ArrowUpRight className="w-5 h-5 text-gold opacity-0 shrink-0 transition-all duration-300 group-hover:opacity-100 group-hover:translate-x-1 group-hover:-translate-y-0.5" />
                 </div>
                 <p className="text-sm text-ink-soft line-clamp-2 leading-relaxed">
                   {isEn ? treatment.descEn : treatment.descBn}

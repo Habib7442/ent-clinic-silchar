@@ -107,7 +107,7 @@ export default function ProcessSection({ lang }: ProcessSectionProps) {
   }, []);
 
   return (
-    <section id="process" ref={containerRef} className="py-24 lg:py-40 px-6 lg:px-24 bg-[#0A1A12] overflow-hidden">
+    <section id="process" ref={containerRef} className="py-12 lg:py-16 px-6 lg:px-24 bg-[#0A1A12] overflow-hidden">
       <div className="max-w-7xl mx-auto">
         <div className="max-w-2xl mb-20 lg:mb-32 space-y-4">
           <span className="text-xs uppercase tracking-[0.3em] text-rust font-semibold">
@@ -125,10 +125,10 @@ export default function ProcessSection({ lang }: ProcessSectionProps) {
 
           <div className="space-y-12 lg:space-y-24">
             {steps.map((step) => (
-              <div key={step.number} className="process-step relative lg:pl-32">
+              <div key={step.number} className="process-step group relative lg:pl-32">
                 {/* Step Marker */}
                 <div className="hidden lg:flex absolute left-0 top-0 w-24 h-24 items-center justify-center bg-[#0A1A12] z-10">
-                  <span className="font-serif text-3xl text-paper/20 group-hover:text-rust transition-colors duration-500">
+                  <span className="font-serif text-3xl text-paper/20 group-hover:text-gold transition-colors duration-500">
                     {step.number}
                   </span>
                 </div>

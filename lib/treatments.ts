@@ -20,7 +20,7 @@ export const treatments: Treatment[] = [
     titleBn: "টিম্পানোপ্লাস্টি",
     descEn: "Surgery for hearing loss reversal due to perforated eardrum.",
     descBn: "কানের পর্দা ছিঁড়ে যাওয়ার কারণে শ্রবণশক্তি হ্রাসের জন্য অস্ত্রোপচার।",
-    image: "/images/ear_treatment.png",
+    image: "/images/ear_treatment.webp",
     detailedDescEn: "Tympanoplasty is a surgical procedure performed to repair a hole in the eardrum. It helps restore hearing and prevents recurrent ear infections. The surgery utilizes a graft, usually taken from your own tissues, to close the perforation securely.",
     detailedDescBn: "টিম্পানোপ্লাস্টি হলো কানের পর্দার ছিদ্র মেরামতের একটি অস্ত্রোপচার। এটি শ্রবণশক্তি ফিরে পেতে সাহায্য করে এবং বারবার কানের সংক্রমণ রোধ করে। অস্ত্রোপচারে সাধারণত আপনার নিজের টিস্যু থেকে নেওয়া গ্রাফ্ট ব্যবহার করা হয়।",
     faqsEn: [
@@ -39,7 +39,7 @@ export const treatments: Treatment[] = [
     titleBn: "ফেস (FESS) সার্জারি",
     descEn: "Functional Endoscopic Sinus Surgery for chronic sinusitis.",
     descBn: "ক্রনিক সাইনোসাইটিসের জন্য ফাংশনাল এন্ডোস্কোপিক সাইনাস সার্জারি।",
-    image: "/images/nose_treatment.png",
+    image: "/images/nose_treatment.webp",
     detailedDescEn: "Functional Endoscopic Sinus Surgery (FESS) is a minimally invasive procedure used to treat chronic sinus infections. By using an endoscope, the surgeon widens the sinus drainage pathways, restoring normal function without external incisions.",
     detailedDescBn: "ফাংশনাল এন্ডোস্কোপিক সাইনাস সার্জারি (FESS) একটি ন্যূনতম আক্রমণাত্মক পদ্ধতি যা ক্রনিক সাইনাস সংক্রমণের চিকিৎসায় ব্যবহৃত হয়। সার্জন এন্ডোস্কোপ ব্যবহার করে সাইনাস নিষ্কাশনের পথগুলি প্রশস্ত করেন।",
     faqsEn: [
@@ -58,7 +58,7 @@ export const treatments: Treatment[] = [
     titleBn: "টনসিলেক্টমি",
     descEn: "Surgical removal of infected or inflamed tonsils.",
     descBn: "সংক্রমিত বা প্রদাহযুক্ত টনসিল অস্ত্রোপচারের মাধ্যমে অপসারণ।",
-    image: "/images/throat_treatment.png",
+    image: "/images/throat_treatment.webp",
     detailedDescEn: "Tonsillectomy is the surgical removal of the tonsils, two oval-shaped pads of tissue at the back of the throat. It is commonly performed to treat recurrent tonsillitis or sleep apnea caused by enlarged tonsils.",
     detailedDescBn: "টনসিলেক্টমি হলো গলার পিছনে থাকা টনসিল অপসারণের একটি অস্ত্রোপচার। এটি সাধারণত বারবার টনসিলাইটিস বা বর্ধিত টনসিলের কারণে হওয়া স্লিপ অ্যাপনিয়ার চিকিৎসায় ব্যবহৃত হয়।",
     faqsEn: [
@@ -77,7 +77,7 @@ export const treatments: Treatment[] = [
     titleBn: "সেপ্টোপ্লাস্টি",
     descEn: "Surgical procedure to straighten a deviated nasal septum.",
     descBn: "নাকের বাঁকা হাড় সোজা করার অস্ত্রোপচার পদ্ধতি।",
-    image: "/images/nose_treatment.png",
+    image: "/images/nose_treatment.webp",
     detailedDescEn: "Septoplasty straightens a deviated nasal septum (the wall dividing the nasal cavity). A deviated septum can obstruct breathing and contribute to sinus issues. The surgery improves airflow and overall quality of life.",
     detailedDescBn: "সেপ্টোপ্লাস্টি নাকের বাঁকা সেপ্টামকে সোজা করে। একটি বাঁকা সেপ্টাম শ্বাসকষ্ট সৃষ্টি করতে পারে এবং সাইনাসের সমস্যা বাড়াতে পারে। এই অস্ত্রোপচার বায়ুপ্রবাহ উন্নত করে।",
     faqsEn: [
@@ -96,7 +96,7 @@ export const treatments: Treatment[] = [
     titleBn: "অ্যাডেনয়েক্টমি",
     descEn: "Removal of infected or inflamed adenoid glands.",
     descBn: "সংক্রমিত বা প্রদাহযুক্ত অ্যাডেনয়েড গ্রন্থি অপসারণ।",
-    image: "/images/throat_treatment.png",
+    image: "/images/throat_treatment.webp",
     detailedDescEn: "Adenoidectomy removes the adenoid glands situated high in the throat behind the nose. Enlarged adenoids can cause breathing problems, chronic ear infections, and snoring, particularly in children.",
     detailedDescBn: "অ্যাডেনয়েক্টমি নাকের পিছনে গলায় অবস্থিত অ্যাডেনয়েড গ্রন্থিগুলি অপসারণ করে। বর্ধিত অ্যাডেনয়েডগুলি শিশুদের শ্বাসকষ্ট, কানের সংক্রমণ এবং নাক ডাকার কারণ হতে পারে।",
     faqsEn: [
@@ -115,7 +115,7 @@ export const treatments: Treatment[] = [
     titleBn: "মাস্টয়ডেক্টমি",
     descEn: "Surgery to remove diseased mastoid air cells.",
     descBn: "রোগাক্রান্ত মাস্টয়েড এয়ার কোষ অপসারণের অস্ত্রোপচার।",
-    image: "/images/ear_treatment.png",
+    image: "/images/ear_treatment.webp",
     detailedDescEn: "Mastoidectomy removes diseased mastoid air cells sitting behind the ear in the skull. This is typically done to treat chronic ear infections that have spread into the skull bone and don't respond to antibiotics.",
     detailedDescBn: "মাস্টয়ডেক্টমি কানের পিছনে মাথার খুলিতে থাকা রোগাক্রান্ত মাস্টয়েড এয়ার কোষগুলিকে অপসারণ করে। এটি সাধারণত ক্রনিক কানের সংক্রমণের চিকিৎসায় করা হয়।",
     faqsEn: [
@@ -134,7 +134,7 @@ export const treatments: Treatment[] = [
     titleBn: "থাইরয়েডেক্টমি",
     descEn: "Surgical removal of all or part of the thyroid gland.",
     descBn: "থাইরয়েড গ্রন্থির সম্পূর্ণ বা আংশিক অপসারণ।",
-    image: "/images/throat_treatment.png",
+    image: "/images/throat_treatment.webp",
     detailedDescEn: "Thyroidectomy is the removal of the thyroid gland, usually indicated for thyroid cancer, hyperthyroidism, or large goiters causing swallowing difficulties. Modern techniques emphasize vocal cord protection.",
     detailedDescBn: "থাইরয়েডেক্টমি হলো থাইরয়েড গ্রন্থি অপসারণ, যা সাধারণত থাইরয়েড ক্যান্সার বা বড় গলগন্ডের জন্য নির্দেশিত হয়। আধুনিক কৌশলগুলি ভোকাল কর্ড সুরক্ষায় জোর দেয়।",
     faqsEn: [

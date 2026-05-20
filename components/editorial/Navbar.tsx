@@ -79,7 +79,7 @@ export default function Navbar() {
             href="https://search.google.com/local/writereview?fid=0x374e4b4ff109cfdd:0x8ca2bfe2070dae4e" 
             target="_blank" 
             rel="noopener noreferrer"
-            className="text-[10px] uppercase tracking-widest text-paper/40 hover:text-rust transition-colors font-bold"
+            className="text-[10px] uppercase tracking-widest text-paper/40 hover:text-gold transition-colors font-bold"
           >
             {lang === 'bn' ? "রিভিউ লিখুন" : "Write a Review"}
           </a>

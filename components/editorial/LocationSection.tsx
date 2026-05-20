@@ -56,7 +56,7 @@ export default function LocationSection({ lang }: LocationSectionProps) {
   }, []);
 
   return (
-    <section id="location" ref={containerRef} className="py-24 lg:py-40 px-6 lg:px-24 bg-[#0A1A12]">
+    <section id="location" ref={containerRef} className="py-12 lg:py-16 px-6 lg:px-24 bg-[#0A1A12]">
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24">
           

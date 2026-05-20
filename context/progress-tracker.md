@@ -38,9 +38,14 @@ Update this file after every meaningful implementation change.
 - [x] Built core static pages: /first-visit, /fees, /location, /contact, /privacy, /telemedicine-policy
 - [x] Replaced 'Coming Soon' placeholder for /about and /services with real components
 - [x] **Condition & Treatment Pages:** Added a dynamic route system for detailed treatment pages (e.g., Tympanoplasty, FESS Surgery) featuring generated premium images and accordion FAQs.
+- [x] **Services Integration & Realignment:** Realigned homepage services with the Google Business profile (8 core services), migrated to a single dynamic route system under `/services/[id]` with beautiful custom AI generated images, and cleaned legacy routing (`hearing-care`, `sinus-allergy`).
+- [x] **Services Hub Polish:** Purged the redundant "Explore all services" link from the Services page while keeping it active on the Homepage using the `hideExploreLink` prop. Upgraded text contrast on `/services` and other subpage heroes to bright ivory (`text-paper` / `text-paper/70`) to resolve clashing dark forest green overlays on dark backgrounds.
+- [x] **Bandwidth Optimization:** Converted all PNG assets in `/public/images` and `/public/social-icons` to high-performance `.webp` format, achieving >90% bandwidth savings (e.g., hero image reduced from 1.89 MB to 91.51 KB) and updated all reference paths.
+- [x] **Services Pricing Update:** Removed all consultation fee fields (`fee`) from the services data definition in `lib/services.ts` and their corresponding sidebar UI elements in dynamic `/services/[id]` pages.
 - [ ] **Microsite Build:** Expand on these treatment hubs to create more long-tail SEO pages.
 - [ ] **Backend Integration:** Connect the `BookingFlow` component to an actual data handling service (e.g., Google Sheets, EmailJS, or WhatsApp API).
-- [x] **SEO Audit:** Finalize the bilingual content audit, generate search console assets (robots.txt, sitemap.xml), and establish a dynamic `lib/seo.ts` helper aligned with `https://theentclinicsilchar.com`.
+- [x] **SEO Audit & Assets:** Finalize the bilingual content audit, generate search console assets (robots.txt, sitemap.xml), and establish a dynamic `lib/seo.ts` helper aligned with `https://theentclinicsilchar.com`.
+- [x] **Build Hardening:** Configured next.config.ts for optimized memory allocation under webpack (cpus: 1, disabled workers, enabled webpackMemoryOptimizations) allowing 100% successful clean builds.
 
 ## Architecture Decisions
 - **Decision 1:** Use localized routes (`/en`, `/bn`) for regional SEO authority.
@@ -51,3 +56,4 @@ Update this file after every meaningful implementation change.
 ## Session Notes
 - *2026-05-05:* Fixed animation "fading" issues by hardening GSAP logic across all 12+ components. Restored layout integrity by repairing `layout.tsx` and balancing the Services Hub. The site is now visually robust and production-ready.
 - *2026-05-18:* Finished comprehensive Search Console asset compilation: created `public/robots.txt`, `public/sitemap.xml`, and a dynamic `lib/seo.ts` helper targeting `https://theentclinicsilchar.com`. Solved Next.js 16 proxy convention routing. Verified build compiles flawlessly.
+- *2026-05-20:* Upgraded site-wide hover accents from orange/rust to bright premium gold (`text-gold`, `hover:text-gold`, `hover:border-gold/30`), covering all key interactive components. Switched off automated production builds per user request. Verified type soundness with npx tsc. Resolved Next.js `<Image>` sizes warning on treatments page to optimize mobile LCP. Standardized all primary vertical padding sections from `py-24 lg:py-40` to a tight, high-end editorial `py-12 lg:py-16` across the Home and Doctor page sections (incorporating DoctorBrief, ServicesSection, Testimonials, ClinicGallery, ProcessSection, LocationSection, DoctorPhilosophy, DoctorCredentials, FeeSection, TreatmentsList, and ClosingCTA) to match the elegant compact visual spacing in the user's reference mockup. Left-aligned the Testimonials header section to maintain high layout consistency with all other main-page components.

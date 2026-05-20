@@ -11,28 +11,28 @@ if (typeof window !== "undefined") {
 const galleryItems = [
   {
     id: "reception",
-    src: "/images/gallery-reception.png",
+    src: "/images/gallery-reception.webp",
     title: { en: "Reception", bn: "অভ্যর্থনা" },
     description: { en: "A calm, modern space designed for patient comfort.", bn: "রোগীর আরামের জন্য ডিজাইন করা একটি শান্ত, আধুনিক স্থান।" },
     span: "lg:col-span-7"
   },
   {
     id: "consultation",
-    src: "/images/gallery-consultation.png",
+    src: "/images/gallery-consultation.webp",
     title: { en: "Consultation", bn: "পরামর্শ কক্ষ" },
     description: { en: "Advanced diagnostics in a private, professional setting.", bn: "ব্যক্তিগত এবং পেশাদার পরিবেশে উন্নত ডায়াগনস্টিকস।" },
     span: "lg:col-span-5"
   },
   {
     id: "audiometry",
-    src: "/images/gallery-audiometry.png",
+    src: "/images/gallery-audiometry.webp",
     title: { en: "Audiometry", bn: "অডিওমেট্রি" },
     description: { en: "Soundproof testing for accurate hearing assessment.", bn: "সঠিক শ্রবণ মূল্যায়নের জন্য শব্দরোধী পরীক্ষা।" },
     span: "lg:col-span-5"
   },
   {
     id: "endoscopy",
-    src: "/images/gallery-endoscopy.png",
+    src: "/images/gallery-endoscopy.webp",
     title: { en: "Endoscopy", bn: "এন্ডোস্কোপি" },
     description: { en: "High-definition visualization for precise treatment.", bn: "নির্ভুল চিকিৎসার জন্য হাই-ডেফিনিশন ভিজুয়ালাইজেশন।" },
     span: "lg:col-span-7"
@@ -73,7 +73,7 @@ export default function ClinicGallery({ lang }: ClinicGalleryProps) {
   }, []);
 
   return (
-    <section ref={containerRef} className="py-24 lg:py-40 px-6 lg:px-24 bg-[#0A1A12]">
+    <section ref={containerRef} className="py-12 lg:py-16 px-6 lg:px-24 bg-[#0A1A12]">
       <div className="max-w-7xl mx-auto">
         <div className="max-w-2xl mb-16 lg:mb-24 space-y-4">
           <span className="text-xs uppercase tracking-[0.3em] text-rust font-semibold">

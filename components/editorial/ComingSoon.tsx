@@ -56,7 +56,7 @@ export default function ComingSoon({ lang, pageName }: ComingSoonProps) {
 
       <div className="reveal-soon">
         <Link href={`/${lang}`}>
-          <Button variant="outline" className="border-white/10 text-paper hover:border-rust group">
+          <Button variant="outline" className="border-white/10 text-paper hover:border-gold group">
             <ArrowLeft className="w-4 h-4 mr-2 transition-transform group-hover:-translate-x-1" />
             {isEn ? "Back to Clinic" : "ক্লিনিকে ফিরে যান"}
           </Button>

@@ -79,12 +79,12 @@ export default function Testimonials({ lang }: TestimonialsProps) {
   }, []);
 
   return (
-    <section ref={containerRef} className="py-24 lg:py-40 px-6 lg:px-24 bg-[#0A1A12] relative overflow-hidden">
+    <section ref={containerRef} className="py-12 lg:py-16 px-6 lg:px-24 bg-[#0A1A12] relative overflow-hidden">
       {/* Decorative radial glow */}
       <div className="absolute bottom-0 left-0 w-full h-1/2 bg-forest/5 blur-[120px] rounded-full translate-y-1/2" />
       
       <div className="max-w-7xl mx-auto relative z-10">
-        <div className="text-center max-w-3xl mx-auto mb-16 lg:mb-24 space-y-4">
+        <div className="max-w-3xl mb-16 lg:mb-24 space-y-4">
           <span className="text-xs uppercase tracking-[0.3em] text-rust font-semibold">
             {isEn ? "Patient Success Stories" : "রোগীর সাফল্যের গল্প"}
           </span>
@@ -97,9 +97,9 @@ export default function Testimonials({ lang }: TestimonialsProps) {
           {testimonials.map((item) => (
             <div 
               key={item.id}
-              className="testimonial-card group relative p-10 bg-white/5 border border-white/10 rounded-sm flex flex-col justify-between transition-all duration-500 hover:border-rust/30"
+              className="testimonial-card group relative p-10 bg-white/5 border border-white/10 rounded-sm flex flex-col justify-between transition-all duration-500 hover:border-gold/30"
             >
-              <Quote className="absolute top-8 right-8 w-12 h-12 text-white/5 group-hover:text-rust/10 transition-colors" />
+              <Quote className="absolute top-8 right-8 w-12 h-12 text-white/5 group-hover:text-gold/15 transition-colors" />
               
               <div className="space-y-6">
                 <div className="flex gap-1 text-rust">
