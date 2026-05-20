@@ -12,7 +12,7 @@ export default async function ServicesPage({
 
   return (
     <main className="flex-1 overflow-x-hidden pt-24 md:pt-32">
-      <section className="container-padding py-16 max-w-4xl mx-auto text-center">
+      <section className="px-6 lg:px-24 py-16 max-w-4xl mx-auto text-center">
         <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl text-paper font-light mb-6">
           {isBn ? "আমাদের সেবাসমূহ" : "Clinical Services"}
         </h1>

@@ -133,7 +133,7 @@ export default function LocationSection({ lang }: LocationSectionProps) {
             </div>
 
             {/* Map Placeholder Visual */}
-            <div className="reveal-loc relative aspect-video lg:aspect-auto lg:h-full min-h-[400px] rounded-sm overflow-hidden border border-white/10 group">
+            <div className="reveal-loc relative w-full h-[300px] sm:h-[400px] lg:h-full lg:min-h-[400px] rounded-sm overflow-hidden border border-white/10 group">
               <iframe 
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d905.3448291394222!2d92.80013211814338!3d24.81669857211992!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x374e4bc39d29f7cd%3A0xa1149eff6fb1f70d!2sEAR%20CLINIC!5e0!3m2!1sen!2sin!4v1779078655094!5m2!1sen!2sin"
                 className="absolute inset-0 w-full h-full grayscale-[0.3] contrast-[1.1] brightness-[0.9] transition-all duration-700 group-hover:grayscale-0 group-hover:contrast-100 group-hover:brightness-100"

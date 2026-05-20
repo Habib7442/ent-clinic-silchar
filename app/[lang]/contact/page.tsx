@@ -18,7 +18,7 @@ export default async function ContactPage({
   return (
     <main className="flex-1 overflow-x-hidden pt-24 md:pt-32 bg-[#0A1A12]">
       {/* Hero Section */}
-      <section className="container-padding py-16 max-w-4xl mx-auto text-center space-y-6">
+      <section className="px-6 lg:px-24 py-16 max-w-4xl mx-auto text-center space-y-6">
         <span className="text-xs uppercase tracking-[0.3em] text-rust font-semibold">
           {isBn ? "সরাসরি যোগাযোগ ও সহায়তা" : "DIRECT CALLS & INQUIRIES"}
         </span>
@@ -33,7 +33,7 @@ export default async function ContactPage({
       </section>
 
       {/* Contact Cards Grid */}
-      <section className="container-padding py-12 border-t border-white/5 bg-[#08150F]">
+      <section className="px-6 lg:px-24 py-12 border-t border-white/5 bg-[#08150F]">
         <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
           
           {/* Card 1: Phone & WhatsApp */}

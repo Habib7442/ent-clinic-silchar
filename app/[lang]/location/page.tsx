@@ -13,7 +13,7 @@ export default async function LocationPage({
   return (
     <main className="flex-1 overflow-x-hidden pt-24 md:pt-32">
       {/* Hero Section */}
-      <section className="container-padding py-16 max-w-4xl mx-auto text-center">
+      <section className="px-6 lg:px-24 py-16 max-w-4xl mx-auto text-center">
         <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl text-paper font-light mb-6">
           {isBn ? "ক্লিনিকের অবস্থান" : "Location & Access"}
         </h1>
@@ -28,7 +28,7 @@ export default async function LocationPage({
       <LocationSection lang={lang} />
 
       {/* Access Details */}
-      <section className="container-padding py-24 bg-paper-card">
+      <section className="px-6 lg:px-24 py-24 bg-paper-card">
         <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           
           <div className="text-center md:text-left">

@@ -14,7 +14,7 @@ export default async function FirstVisitPage({
   return (
     <main className="flex-1 overflow-x-hidden pt-24 md:pt-32">
       {/* Hero Section */}
-      <section className="container-padding py-16 md:py-24 max-w-4xl mx-auto text-center">
+      <section className="px-6 lg:px-24 py-16 md:py-24 max-w-4xl mx-auto text-center">
         <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl text-paper font-light mb-6">
           {isBn ? "প্রথম দর্শনে কী আশা করবেন" : "What to Expect on Your First Visit"}
         </h1>
@@ -29,7 +29,7 @@ export default async function FirstVisitPage({
       <ProcessSection lang={lang} />
 
       {/* Detailed Info Sections */}
-      <section className="container-padding py-24 bg-paper-card">
+      <section className="px-6 lg:px-24 py-24 bg-paper-card">
         <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16">
           
           {/* What to bring */}
@@ -88,7 +88,7 @@ export default async function FirstVisitPage({
       </section>
 
       {/* Paediatric Section */}
-      <section className="container-padding py-24 bg-paper">
+      <section className="px-6 lg:px-24 py-24 bg-paper">
         <div className="max-w-4xl mx-auto text-center">
           <div className="mb-6 inline-flex items-center justify-center w-16 h-16 rounded-full bg-gold/10 text-gold mx-auto">
             <Baby className="w-8 h-8" />

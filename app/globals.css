@@ -57,6 +57,10 @@
   .italic-rust {
     @apply text-rust;
   }
+
+  .container-padding {
+    @apply px-6 lg:px-24;
+  }
 }
 /* GSAP reveal safety - Base state before JS kicks in */
 .reveal-loc, .service-card, .testimonial-card, .process-step {

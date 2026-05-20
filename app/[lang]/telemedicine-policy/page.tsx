@@ -8,7 +8,7 @@ export default async function TelemedicinePolicyPage({
 
   return (
     <main className="flex-1 overflow-x-hidden pt-24 md:pt-32 pb-24 bg-paper">
-      <section className="container-padding max-w-3xl mx-auto">
+      <section className="px-6 lg:px-24 max-w-3xl mx-auto">
         <h1 className="font-serif text-4xl md:text-5xl text-forest font-light mb-8">
           {isBn ? "টেলিমেডিসিন নীতি" : "Telemedicine Policy"}
         </h1>
