@@ -115,19 +115,24 @@ export default function Footer({ lang }: FooterProps) {
             <h4 className="text-paper font-serif text-xl">{content.contact}</h4>
             <div className="space-y-6">
               <div className="flex items-start gap-4">
-                <MapPin className="w-5 h-5 text-rust shrink-0 mt-1" />
-                <p className="text-paper/40 text-sm leading-relaxed">
+                <MapPin className="w-5 h-5 text-gold shrink-0 mt-1" />
+                <a 
+                  href="https://maps.google.com/?q=The+ENT+Clinic+Silchar+Hriday+Rajani+Complex+Lochan+Bairagi+Rd"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-paper/60 hover:text-gold transition-colors text-sm leading-relaxed"
+                >
                   Hriday Rajani Complex, Lochan Bairagi Rd, beside Durga Badi, Bilpar, Silchar, Assam 788001
-                </p>
+                </a>
               </div>
-              <div className="flex items-center gap-4">
-                <Phone className="w-5 h-5 text-forest shrink-0" />
-                <p className="text-paper/40 text-sm font-bold">+91 94350 70156</p>
-              </div>
-              <div className="flex items-center gap-4">
-                <Mail className="w-5 h-5 text-forest shrink-0" />
-                <p className="text-paper/40 text-sm">abhishek.hister@gmail.com</p>
-              </div>
+              <a href="tel:+919435070156" className="flex items-center gap-4 group/footer-phone">
+                <Phone className="w-5 h-5 text-gold group-hover/footer-phone:text-rust transition-colors shrink-0" />
+                <p className="text-paper/60 group-hover/footer-phone:text-gold transition-colors text-sm font-bold font-sans">+91 94350 70156</p>
+              </a>
+              <a href="mailto:abhishek.hister@gmail.com" className="flex items-center gap-4 group/footer-mail">
+                <Mail className="w-5 h-5 text-gold group-hover/footer-mail:text-rust transition-colors shrink-0" />
+                <p className="text-paper/60 group-hover/footer-mail:text-gold transition-colors text-sm font-sans">abhishek.hister@gmail.com</p>
+              </a>
             </div>
           </div>
         </div>
