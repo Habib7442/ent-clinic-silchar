@@ -70,7 +70,7 @@ export default function ClosingCTA({ lang }: ClosingCTAProps) {
 
       <div className="relative z-10 max-w-4xl mx-auto space-y-12">
         <div className="space-y-6">
-          <h2 className="reveal-cta text-5xl md:text-7xl lg:text-9xl font-serif text-paper leading-tight italic italic-rust">
+          <h2 className="reveal-cta text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-serif text-paper leading-tight italic italic-rust">
             {content.question}
           </h2>
           <p className="reveal-cta text-xl lg:text-2xl text-paper/60 font-light max-w-2xl mx-auto leading-relaxed">
