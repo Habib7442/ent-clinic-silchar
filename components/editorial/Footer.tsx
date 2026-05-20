@@ -49,24 +49,23 @@ export default function Footer({ lang }: FooterProps) {
               {content.tagline}
             </p>
             <div className="flex gap-4">
-              {[
-                { name: "facebook", img: "/social-icons/facebook.webp", href: "#" },
-                { name: "instagram", img: "/social-icons/instagram.webp", href: "#" },
-                { name: "X", img: "/social-icons/X.webp", href: "#" },
-                { name: "linkedin", img: "/social-icons/linkedin.webp", href: "#" },
-                { name: "whatsapp", img: "/social-icons/whatsapp.webp", href: "https://wa.me/919435070156" },
-              ].map((social, i) => (
-                <a key={i} href={social.href} className="p-3 bg-white/5 hover:bg-white/10 transition-all rounded-full border border-white/5 group flex items-center justify-center">
-                  <img 
-                    src={social.img} 
-                    alt={social.name} 
-                    className={cn(
-                      "w-5 h-5 transition-transform duration-300 group-hover:scale-110",
-                      social.name === "X" && "invert"
-                    )} 
-                  />
-                </a>
-              ))}
+              <a 
+                href={
+                  lang === "bn" 
+                    ? "https://wa.me/919435070156?text=নমস্কার%2C%20আমি%20দি%20ইএনটি%20ক্লিনিক%20শিলচরের%20সাথে%20যোগাযোগ%20করতে%20চাই।"
+                    : "https://wa.me/919435070156?text=Hello%2C%20I%20would%20like%20to%20connect%20with%20The%20ENT%20Clinic%20Silchar%20regarding%20an%20appointment."
+                } 
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-3 bg-[#25D366]/10 hover:bg-[#25D366]/20 transition-all rounded-full border border-[#25D366]/20 hover:border-[#25D366]/40 group flex items-center justify-center gap-2 px-5 text-xs text-[#25D366] font-semibold"
+              >
+                <img 
+                  src="/social-icons/whatsapp.webp" 
+                  alt="WhatsApp" 
+                  className="w-5 h-5 transition-transform duration-300 group-hover:scale-110" 
+                />
+                <span>{lang === "bn" ? "হোয়াটসঅ্যাপ করুন" : "WhatsApp Us"}</span>
+              </a>
             </div>
           </div>
 
