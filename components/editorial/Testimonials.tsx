@@ -115,7 +115,7 @@ export default function Testimonials({ lang }: TestimonialsProps) {
 
               <div className="mt-12 pt-8 border-t border-white/5 space-y-1">
                 <p className="text-paper font-serif text-xl">{item.name}</p>
-                <div className="flex items-center gap-2 text-[10px] uppercase tracking-widest text-paper/40">
+                <div className="flex items-center gap-2 text-[10px] uppercase tracking-widest text-paper/60">
                   <span>{item.role}</span>
                   <span className="w-1 h-1 bg-rust rounded-full" />
                   <span className="text-rust">{lang === "bn" ? item.concern.bn : item.concern.en}</span>
@@ -135,7 +135,7 @@ export default function Testimonials({ lang }: TestimonialsProps) {
             </div>
             <span className="text-paper font-bold text-xl ml-2">4.9 / 5</span>
           </div>
-          <p className="text-xs uppercase tracking-[0.2em] text-paper/40">
+          <p className="text-xs uppercase tracking-[0.2em] text-paper/60">
             {isEn ? "Based on 150+ Verified Google Reviews" : "১৫০+ যাচাইকৃত গুগল রিভিউ ভিত্তিক"}
           </p>
         </div>

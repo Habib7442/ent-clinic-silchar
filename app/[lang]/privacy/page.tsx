@@ -52,7 +52,7 @@ export default async function PrivacyPage({
             </p>
           </div>
 
-          <div className="pt-8 border-t border-hairline text-sm text-mute">
+          <div className="pt-8 border-t border-hairline text-sm text-ink-soft">
             {isBn ? "সর্বশেষ আপডেট: মে ২০২৬" : "Last updated: May 2026"}
           </div>
         </div>

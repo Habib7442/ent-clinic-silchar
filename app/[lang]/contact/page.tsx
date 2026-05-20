@@ -45,7 +45,7 @@ export default async function ContactPage({
               <h3 className="font-serif text-2xl text-paper">
                 {isBn ? "ফোন ও হোয়াটসঅ্যাপ" : "Phone & WhatsApp"}
               </h3>
-              <p className="font-sans text-paper/40 text-sm leading-relaxed">
+              <p className="font-sans text-paper/60 text-sm leading-relaxed">
                 {isBn 
                   ? "যেকোনো জরুরি জিজ্ঞাসা ও সাধারণ অ্যাপয়েন্টমেন্টের জন্য আমাদের সাথে কথা বলুন।" 
                   : "Call us directly or send a message for quick booking support and queries."}
@@ -85,7 +85,7 @@ export default async function ContactPage({
               <h3 className="font-serif text-2xl text-paper">
                 {isBn ? "অফিসিয়াল ইমেইল" : "Official Email"}
               </h3>
-              <p className="font-sans text-paper/40 text-sm leading-relaxed">
+              <p className="font-sans text-paper/60 text-sm leading-relaxed">
                 {isBn 
                   ? "মেডিকেল রিপোর্ট, রেফারেল লেটার এবং প্রাতিষ্ঠানিক যোগাযোগের জন্য আমাদের ইমেল করুন।" 
                   : "Send your clinical reports, referral letters, and general queries to our inbox."}
@@ -118,7 +118,7 @@ export default async function ContactPage({
               <h3 className="font-serif text-2xl text-paper">
                 {isBn ? "ক্লিনিকের সময়সূচী" : "Clinic Timings"}
               </h3>
-              <p className="font-sans text-paper/40 text-sm leading-relaxed">
+              <p className="font-sans text-paper/60 text-sm leading-relaxed">
                 {isBn
                   ? "অ্যাপয়েন্টমেন্ট অনুযায়ী সেবা দেওয়া হয়। অনুগ্রহ করে পৌঁছানোর পূর্বে আপনার সময় কনফার্ম করুন।"
                   : "We operate strictly by appointment to ensure zero waiting room crowding and high patient focus."}
@@ -126,7 +126,7 @@ export default async function ContactPage({
               
               <div className="space-y-2 pt-2 text-sm text-paper/80 font-sans">
                 <div className="flex justify-between py-1 border-b border-white/5">
-                  <span className="text-paper/40">{isBn ? "সোমবার - শনিবার:" : "Mon - Sat:"}</span>
+                  <span className="text-paper/60">{isBn ? "সোমবার - শনিবার:" : "Mon - Sat:"}</span>
                   <span className="font-bold">10:00 AM - 8:00 PM</span>
                 </div>
                 <div className="flex justify-between py-1 text-rust font-semibold">

@@ -104,7 +104,7 @@ export default function DoctorBrief({ lang }: DoctorBriefProps) {
               </div>
               <div>
                 <p className="text-paper font-semibold">{content.experience}</p>
-                <p className="text-xs text-paper/40 uppercase tracking-widest mt-1">Clinical Record</p>
+                <p className="text-xs text-paper/60 uppercase tracking-widest mt-1">Clinical Record</p>
               </div>
             </div>
           </div>
@@ -114,7 +114,7 @@ export default function DoctorBrief({ lang }: DoctorBriefProps) {
               "{content.philosophy}"
             </p>
             
-            <div className="flex items-center gap-3 text-sm text-paper/50">
+            <div className="flex items-center gap-3 text-sm text-paper/70">
               <Languages className="w-4 h-4 text-forest" />
               <span>{content.languages}</span>
             </div>

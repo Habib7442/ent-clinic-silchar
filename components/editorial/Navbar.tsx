@@ -41,7 +41,7 @@ export default function Navbar() {
           <span className="font-serif text-xl lg:text-2xl text-paper tracking-tight">
             The ENT Clinic<span className="text-rust">.</span>
           </span>
-          <span className="block text-[8px] uppercase tracking-[0.3em] text-paper/40 font-sans mt-0.5">
+          <span className="block text-[8px] uppercase tracking-[0.3em] text-paper/60 font-sans mt-0.5">
             SILCHAR, ASSAM
           </span>
         </Link>
@@ -64,13 +64,13 @@ export default function Navbar() {
         <div className="hidden sm:flex items-center gap-2 text-[10px] font-bold tracking-tighter border border-white/10 rounded-full px-3 py-1.5 text-paper">
           <Link 
             href={pathname.replace(`/${lang}`, "/en")} 
-            className={cn("px-2 py-0.5 rounded-full transition-colors", lang === 'en' ? "bg-forest text-paper" : "text-paper/40 hover:text-paper")}
+            className={cn("px-2 py-0.5 rounded-full transition-colors", lang === 'en' ? "bg-forest text-paper" : "text-paper/60 hover:text-paper")}
           >
             EN
           </Link>
           <Link 
             href={pathname.replace(`/${lang}`, "/bn")} 
-            className={cn("px-2 py-0.5 rounded-full transition-colors", lang === 'bn' ? "bg-forest text-paper" : "text-paper/40 hover:text-paper")}
+            className={cn("px-2 py-0.5 rounded-full transition-colors", lang === 'bn' ? "bg-forest text-paper" : "text-paper/60 hover:text-paper")}
           >
             BN
           </Link>
@@ -81,7 +81,7 @@ export default function Navbar() {
             href="https://search.google.com/local/writereview?fid=0x374e4b4ff109cfdd:0x8ca2bfe2070dae4e" 
             target="_blank" 
             rel="noopener noreferrer"
-            className="text-[10px] uppercase tracking-widest text-paper/40 hover:text-gold transition-colors font-bold"
+            className="text-[10px] uppercase tracking-widest text-paper/60 hover:text-gold transition-colors font-bold"
           >
             {lang === 'bn' ? "রিভিউ লিখুন" : "Write a Review"}
           </a>
@@ -95,7 +95,7 @@ export default function Navbar() {
         {/* Mobile Menu (Sheet) */}
         <Sheet open={open} onOpenChange={setOpen}>
           <SheetTrigger asChild>
-            <Button variant="ghost" size="icon" className="md:hidden text-paper">
+            <Button variant="ghost" size="icon" className="md:hidden text-paper" aria-label="Open navigation menu">
               <Menu className="w-6 h-6" />
             </Button>
           </SheetTrigger>
@@ -122,7 +122,7 @@ export default function Navbar() {
 
             <div className="flex flex-col gap-6 pt-8 border-t border-white/10">
               <div className="flex items-center gap-4 text-xs font-bold tracking-widest uppercase">
-                <span className="text-paper/40">Language</span>
+                <span className="text-paper/60">Language</span>
                 <div className="flex gap-2">
                   <Link 
                     href={pathname.replace(`/${lang}`, "/en")} 

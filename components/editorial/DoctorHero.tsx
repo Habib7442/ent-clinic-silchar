@@ -97,14 +97,14 @@ export default function DoctorHero({ lang }: DoctorHeroProps) {
               <MedicalSealIcon />
               <div>
                 <p className="text-paper text-sm font-semibold">{content.experienceLabel}</p>
-                <p className="text-paper/40 text-[10px] uppercase tracking-widest">{content.recordLabel}</p>
+                <p className="text-paper/60 text-[10px] uppercase tracking-widest">{content.recordLabel}</p>
               </div>
             </div>
             <div className="flex items-center gap-3 border-l border-white/5 pl-8">
               <ShieldCheck className="w-6 h-6 text-forest shrink-0" />
               <div>
                 <p className="text-paper text-sm font-semibold">{content.reg}</p>
-                <p className="text-paper/40 text-[10px] uppercase tracking-widest">{content.regSub}</p>
+                <p className="text-paper/60 text-[10px] uppercase tracking-widest">{content.regSub}</p>
               </div>
             </div>
           </div>
@@ -118,7 +118,7 @@ export default function DoctorHero({ lang }: DoctorHeroProps) {
                 <ShieldCheck className="w-16 h-16" />
               </div>
               <h3 className="font-serif text-xl text-paper">{content.name}</h3>
-              <p className="text-xs text-paper/40 uppercase tracking-widest">{content.credentials}</p>
+              <p className="text-xs text-paper/60 uppercase tracking-widest">{content.credentials}</p>
             </div>
             {/* Elegant Gradient Overlay */}
             <div className="absolute inset-0 bg-gradient-to-t from-[#0A1A12] via-transparent to-transparent opacity-50 pointer-events-none" />

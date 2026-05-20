@@ -92,7 +92,7 @@ export default function BookingFlow({ lang }: BookingFlowProps) {
                     selectedService === s.id ? "bg-rust/10 border-rust" : "bg-white/5 border-white/10 hover:border-paper/20"
                   }`}
                 >
-                  <s.icon className={`w-6 h-6 ${selectedService === s.id ? "text-rust" : "text-paper/40"}`} />
+                  <s.icon className={`w-6 h-6 ${selectedService === s.id ? "text-rust" : "text-paper/60"}`} />
                   <span className="text-paper font-medium">{isEn ? s.name.en : s.name.bn}</span>
                 </button>
               ))}
@@ -107,7 +107,7 @@ export default function BookingFlow({ lang }: BookingFlowProps) {
               <h2 className="text-4xl lg:text-5xl font-serif text-paper">
                 {isEn ? "Choose a date" : "একটি তারিখ বেছে নিন"}
               </h2>
-              <Button variant="ghost" onClick={() => setStep(1)} className="text-paper/40 hover:text-paper">
+              <Button variant="ghost" onClick={() => setStep(1)} className="text-paper/60 hover:text-paper">
                 <ArrowLeft className="w-4 h-4 mr-2" /> {isEn ? "Back" : "পিছনে"}
               </Button>
             </div>
@@ -124,7 +124,7 @@ export default function BookingFlow({ lang }: BookingFlowProps) {
                       isSelected ? "bg-rust/10 border-rust" : "bg-white/5 border-white/10 hover:border-paper/20"
                     }`}
                   >
-                    <span className="text-[10px] uppercase tracking-widest text-paper/40 mb-2">
+                    <span className="text-[10px] uppercase tracking-widest text-paper/60 mb-2">
                       {date.toLocaleDateString(isEn ? 'en-US' : 'bn-BD', { weekday: 'short' })}
                     </span>
                     <span className="text-2xl font-serif text-paper">{date.getDate()}</span>
@@ -142,7 +142,7 @@ export default function BookingFlow({ lang }: BookingFlowProps) {
               <h2 className="text-4xl lg:text-5xl font-serif text-paper">
                 {isEn ? "Select a time" : "একটি সময় নির্বাচন করুন"}
               </h2>
-              <Button variant="ghost" onClick={() => setStep(2)} className="text-paper/40 hover:text-paper">
+              <Button variant="ghost" onClick={() => setStep(2)} className="text-paper/60 hover:text-paper">
                 <ArrowLeft className="w-4 h-4 mr-2" /> {isEn ? "Back" : "পিছনে"}
               </Button>
             </div>
@@ -169,13 +169,13 @@ export default function BookingFlow({ lang }: BookingFlowProps) {
               <h2 className="text-4xl lg:text-5xl font-serif text-paper">
                 {isEn ? "Patient Details" : "রোগীর তথ্য"}
               </h2>
-              <Button variant="ghost" onClick={() => setStep(3)} className="text-paper/40 hover:text-paper">
+              <Button variant="ghost" onClick={() => setStep(3)} className="text-paper/60 hover:text-paper">
                 <ArrowLeft className="w-4 h-4 mr-2" /> {isEn ? "Back" : "পিছনে"}
               </Button>
             </div>
             <div className="space-y-6 max-w-xl">
               <div className="space-y-2">
-                <label className="text-xs uppercase tracking-widest text-paper/40">Full Name</label>
+                <label className="text-xs uppercase tracking-widest text-paper/60">Full Name</label>
                 <input 
                   type="text" 
                   value={patientData.name}
@@ -185,7 +185,7 @@ export default function BookingFlow({ lang }: BookingFlowProps) {
                 />
               </div>
               <div className="space-y-2">
-                <label className="text-xs uppercase tracking-widest text-paper/40">Phone Number</label>
+                <label className="text-xs uppercase tracking-widest text-paper/60">Phone Number</label>
                 <input 
                   type="tel" 
                   value={patientData.phone}
@@ -195,7 +195,7 @@ export default function BookingFlow({ lang }: BookingFlowProps) {
                 />
               </div>
               <div className="space-y-2">
-                <label className="text-xs uppercase tracking-widest text-paper/40">Brief Concern (Optional)</label>
+                <label className="text-xs uppercase tracking-widest text-paper/60">Brief Concern (Optional)</label>
                 <textarea 
                   value={patientData.concern}
                   onChange={(e) => setPatientData({ concern: e.target.value })}

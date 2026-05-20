@@ -196,7 +196,7 @@ export default async function DoctorPage({
                 <MedicalSealIcon />
                 <div>
                   <p className="text-paper text-sm font-semibold">{content.hero.experienceLabel}</p>
-                  <p className="text-paper/40 text-[10px] uppercase tracking-widest">{content.hero.recordLabel}</p>
+                  <p className="text-paper/60 text-[10px] uppercase tracking-widest">{content.hero.recordLabel}</p>
                 </div>
               </div>
             </div>
@@ -210,7 +210,7 @@ export default async function DoctorPage({
                   <ShieldCheck className="w-16 h-16" />
                 </div>
                 <h3 className="font-serif text-xl text-paper">{content.hero.title}</h3>
-                <p className="text-xs text-paper/40 uppercase tracking-widest">{content.hero.specialty}</p>
+                <p className="text-xs text-paper/60 uppercase tracking-widest">{content.hero.specialty}</p>
               </div>
               {/* Gradient Overlay */}
               <div className="absolute inset-0 bg-gradient-to-t from-[#0A1A12] via-transparent to-transparent opacity-50" />

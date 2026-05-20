@@ -47,7 +47,7 @@ export default function ComingSoon({ lang, pageName }: ComingSoonProps) {
         <h1 className="text-5xl md:text-7xl font-serif text-paper">
           {pageName} <span className="text-rust">.</span>
         </h1>
-        <p className="text-xl text-paper/40 max-w-md mx-auto">
+        <p className="text-xl text-paper/60 max-w-md mx-auto">
           {isEn 
             ? "We are currently curating this experience. Please check back soon." 
             : "আমরা বর্তমানে এই অভিজ্ঞতাটি সাজাচ্ছি। দয়া করে শীঘ্রই আবার দেখুন।"}

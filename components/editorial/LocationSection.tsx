@@ -78,7 +78,7 @@ export default function LocationSection({ lang }: LocationSectionProps) {
                   <p className="text-paper font-serif text-xl mb-2">
                     {isEn ? "Hriday Rajani Complex" : "হৃদয় রজনী কমপ্লেক্স"}
                   </p>
-                  <p className="text-paper/40 text-sm leading-relaxed">
+                  <p className="text-paper/60 text-sm leading-relaxed">
                     {isEn 
                       ? "Lochan Bairagi Rd, beside Durga Badi, Bilpar, Silchar, Assam 788001"
                       : "লোচন বৈরাগী রোড, দুর্গা বাড়ি-র পাশে, বিলপার, শিলচর, আসাম ৭৮৮০০১"}
@@ -89,7 +89,7 @@ export default function LocationSection({ lang }: LocationSectionProps) {
               <div className="grid grid-cols-2 gap-4">
                 {locations.map((loc) => (
                   <div key={loc.name.en} className="p-4 bg-white/5 border border-white/10 rounded-sm flex flex-col gap-1">
-                    <span className="text-[10px] uppercase tracking-widest text-paper/40">{isEn ? loc.name.en : loc.name.bn}</span>
+                    <span className="text-[10px] uppercase tracking-widest text-paper/60">{isEn ? loc.name.en : loc.name.bn}</span>
                     <span className="text-paper font-semibold">{loc.time}</span>
                   </div>
                 ))}

@@ -93,7 +93,7 @@ export default function FeeSection({ lang }: FeeSectionProps) {
             ))}
           </div>
 
-          <p className="text-sm italic text-paper/40 pt-4">
+          <p className="text-sm italic text-paper/60 pt-4">
             {content.note}
           </p>
         </div>
@@ -103,7 +103,7 @@ export default function FeeSection({ lang }: FeeSectionProps) {
           <div className="relative p-12 lg:p-20 bg-white/5 border border-white/10 rounded-sm overflow-hidden flex flex-col items-center text-center">
             <div className="absolute top-0 right-0 w-32 h-32 bg-forest/20 blur-[60px] rounded-full" />
             
-            <p className="text-xs uppercase tracking-[0.3em] text-paper/40 mb-4">
+            <p className="text-xs uppercase tracking-[0.3em] text-paper/60 mb-4">
               {content.label}
             </p>
             <div className="font-serif text-8xl md:text-9xl text-paper mb-4 relative">

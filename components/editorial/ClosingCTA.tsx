@@ -125,7 +125,7 @@ export default function ClosingCTA({ lang }: ClosingCTAProps) {
         </div>
 
         <div className="reveal-cta pt-12">
-          <p className="text-[10px] uppercase tracking-[0.4em] text-paper/30">
+          <p className="text-[10px] uppercase tracking-[0.4em] text-paper/60">
             {lang === "en" ? "Available Monday — Saturday · Silchar, Assam" : "সোমবার — শনিবার উপলব্ধ · শিলচর, আসাম"}
           </p>
         </div>
