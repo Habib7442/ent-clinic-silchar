@@ -18,7 +18,7 @@ export const SITE = {
     "The ENT Clinic is a premier institute in Silchar led by Dr. Abhishek Ray (10+ years experience). Dedicated Ear Clinic (Audiometry, Tympanometry, BERA, OAE), Vertigo Clinic (VEMP, VNG), and Speech Therapy.",
   defaultDescriptionBn:
     "দি ইএনটি ক্লিনিক শিলচরের একটি অগ্রণী নাক, কান ও গলা চিকিৎসা প্রতিষ্ঠান। ডাঃ অভিষেক রায় (১০+ বছরের অভিজ্ঞতা) এর অধীনে অডিওমেট্রি, ভেরটিগো ক্লিনিক (VEMP, VNG), এবং স্পিচ থেরাপি প্রদান করা হয়।",
-  ogImage: "/og-image.png",
+  ogImage: "/og-image.jpg",
 
   // Doctor
   doctor: {
@@ -195,7 +195,7 @@ export function constructMetadata({
           width: 1200,
           height: 630,
           alt: resolvedTitle,
-          type: "image/png",
+          type: "image/jpeg",
         },
       ],
     },

@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <!-- The ENT Clinic, Silchar — favicon -->
+  <!-- Cream paper background -->
+  <rect width="64" height="64" rx="10" fill="#F6F1E6"/>
+
+  <!-- Thin rust hairline accent (low-third) -->
+  <rect x="8" y="46" width="48" height="0.8" fill="#B65C36" opacity="0.85"/>
+
+  <!-- Serif italic "E" — drawn as a path to keep weight crisp at small sizes -->
+  <g fill="#1E3A2B">
+    <!-- Italic E composed of refined strokes -->
+    <path d="
+      M 24.5 14
+      L 47.5 14
+      L 46.5 19.5
+      L 45.2 19.5
+      C 44.6 16.8 43.5 16.0 40.5 16.0
+      L 33.2 16.0
+      L 31.4 27.5
+      L 38.2 27.5
+      C 40.5 27.5 41.5 26.9 42.4 24.6
+      L 43.6 24.6
+      L 42.0 33.0
+      L 40.8 33.0
+      C 41.0 30.8 40.4 29.6 38.1 29.6
+      L 31.0 29.6
+      L 29.0 42.4
+      L 36.8 42.4
+      C 40.5 42.4 41.9 41.4 43.6 38.0
+      L 44.9 38.0
+      L 43.0 44.6
+      L 19.5 44.6
+      L 19.8 43.3
+      C 22.4 43.0 23.3 42.4 23.7 39.9
+      L 27.2 18.6
+      C 27.5 16.2 27.0 15.6 24.3 15.3
+      Z"/>
+  </g>
+</svg>
