@@ -23,7 +23,7 @@ const translations = {
     credentials: "MS (ENT), Head & Neck Surgeon",
     mission: "The ENT Clinic is a premier institute in Silchar catering to the ear, nose, and throat problems for the people of Barak Valley. Discover top-notch ENT care with Dr. Abhishek Ray, a highly experienced ENT specialist with more than 10 years of clinical experience offering personalized treatment options.",
     reg: "NMC Registered Specialist",
-    regNo: "Reg No: 12345",
+    regSub: "NMC Verified",
     experienceLabel: "10+ Years Experience",
     recordLabel: "Clinical Excellence"
   },
@@ -33,7 +33,7 @@ const translations = {
     credentials: "এমএস (ইএনটি), নাক কান গলা ও হেড নেক সার্জন",
     mission: "দি ইএনটি ক্লিনিক হলো বরাক উপত্যকার মানুষের নাক, কান এবং গলার সমস্যার চিকিৎসার জন্য শিলচরের একটি অগ্রণী প্রতিষ্ঠান। ১০ বছরেরও বেশি অভিজ্ঞতাসম্পন্ন একজন অত্যন্ত অভিজ্ঞ ইএনটি বিশেষজ্ঞ ডাঃ অভিষেক রায়ের সাথে উন্নত চিকিৎসার অভিজ্ঞতা নিন।",
     reg: "এনএমসি নিবন্ধিত বিশেষজ্ঞ",
-    regNo: "রেজি নং: ১২৩৪৫",
+    regSub: "এনএমসি লাইসেন্সপ্রাপ্ত",
     experienceLabel: "১০+ বছরের অভিজ্ঞতা",
     recordLabel: "ক্লিনিকাল শ্রেষ্ঠত্ব"
   }
@@ -104,7 +104,7 @@ export default function DoctorHero({ lang }: DoctorHeroProps) {
               <ShieldCheck className="w-6 h-6 text-forest shrink-0" />
               <div>
                 <p className="text-paper text-sm font-semibold">{content.reg}</p>
-                <p className="text-paper/40 text-[10px] uppercase tracking-widest">{content.regNo}</p>
+                <p className="text-paper/40 text-[10px] uppercase tracking-widest">{content.regSub}</p>
               </div>
             </div>
           </div>
