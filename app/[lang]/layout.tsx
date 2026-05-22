@@ -31,7 +31,7 @@ export async function generateMetadata({
     title: lang === "bn" ? "দি ইএনটি ক্লিনিক" : "The ENT Clinic",
     description: lang === "bn"
       ? "শিলচর, আসামে ডঃ অভিষেক রায়-এর বিশেষায়িত ইএনটি (নাক, কান, গলা) চিকিৎসা কেন্দ্র।"
-      : "Boutique specialty ENT practice in Silchar, Assam by Dr. Abhishek Ray.",
+      : "Premium ENT clinic in Silchar, Assam by Dr. Abhishek Ray.",
     path: "/",
   });
 }
