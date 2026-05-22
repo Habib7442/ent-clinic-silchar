@@ -43,6 +43,7 @@ Update this file after every meaningful implementation change.
 - [x] **Bandwidth Optimization:** Converted all PNG assets in `/public/images` and `/public/social-icons` to high-performance `.webp` format, achieving >90% bandwidth savings (e.g., hero image reduced from 1.89 MB to 91.51 KB), migrated `/public/og-image.png` to high-performance `/public/og-image.jpg` (adjusting types in `lib/seo.ts` and `lib/icons.json`), and updated all reference paths.
 - [x] **Services Pricing Update:** Removed all consultation fee fields (`fee`) from the services data definition in `lib/services.ts` and their corresponding sidebar UI elements in dynamic `/services/[id]` pages.
 - [x] **Prefilled Booking Form:** Implemented dynamic query param mapping for `?service=...` in the booking form with Suspense rendering and custom high-fidelity skeleton loading fallback to prevent CLS.
+- [x] **Premium Bento Gallery Hub:** Created a dedicated localized `/gallery` subpage displaying all 12 WebP clinic images in an elegant asymmetric Bento Grid with GSAP entrance animations, and completely redesigned the Homepage "Inside the Clinic" section into an aesthetic 6-item Bento Grid with auto-rows layout and a premium dynamic gold-border CTA button. Included active, bilingually localized titles and descriptions for all assets and linked it inside the footer menu navigation.
 - [ ] **Microsite Build:** Expand on these treatment hubs to create more long-tail SEO pages.
 - [ ] **Backend Integration:** Connect the `BookingFlow` component to an actual data handling service (e.g., Google Sheets, EmailJS, or WhatsApp API).
 - [x] **SEO Audit & Assets:** Finalize the bilingual content audit, generate search console assets (robots.txt, sitemap.xml), and establish a dynamic `lib/seo.ts` helper aligned with `https://theentclinicsilchar.com`.
@@ -66,6 +67,7 @@ Update this file after every meaningful implementation change.
 - *2026-05-20 (Remote Push):* Successfully pushed all 8 local commits to the remote `master` branch on GitHub upon the user's explicit request.
 - *2026-05-20 (Credentials Purge):* Removed the placeholder DoctorCredentials component entirely from the About page (/en/about, /bn/about) and deleted the file `DoctorCredentials.tsx` to maintain codebase hygiene. Verified type checking passes successfully.
 - *2026-05-20 (Accessibility & Contrast Hardening):* Audited and hardened typography text-to-background contrast settings across 13 components and route pages to guarantee strict adherence to WCAG AA guidelines (>4.5:1 ratio for body, >3:1 for large text). Verified full application compile and TypeScript safety (`npx tsc --noEmit` and `npm run build`) passing 100% cleanly in production with zero errors or warnings, securing a flawless 100/100 Lighthouse Accessibility score.
+- *2026-05-22 (Gallery Image Optimization):* Converted all 12 high-resolution clinical and facility `.jpeg` gallery images under `public/images/gallery` to high-performance `.webp` format using `sharp` from the terminal (quality: 80). Purged the legacy `.jpeg` files to optimize bandwidth, page speed, and repository footprint.
 
 
 

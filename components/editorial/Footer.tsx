@@ -87,9 +87,10 @@ export default function Footer({ lang }: FooterProps) {
             <h4 className="text-paper font-serif text-xl">{content.practice}</h4>
             <ul className="space-y-4">
               {[
-                { name: "Doctor Profile", href: `/${lang}/doctor` },
-                { name: "First Visit", href: `/${lang}#process` },
-                { name: "Location", href: `/${lang}#location` }
+                { name: isEn ? "Doctor Profile" : "ডাক্তারের পরিচিতি", href: `/${lang}/doctor` },
+                { name: isEn ? "Clinic Gallery" : "ক্লিনিক গ্যালারি", href: `/${lang}/gallery` },
+                { name: isEn ? "First Visit" : "প্রথম ভিজিট", href: `/${lang}#process` },
+                { name: isEn ? "Location" : "অবস্থান", href: `/${lang}#location` }
               ].map((item) => (
                 <li key={item.name}>
                   <Link href={item.href} className="text-paper/60 hover:text-gold transition-colors text-sm">
