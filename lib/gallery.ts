@@ -71,15 +71,15 @@ export const galleryItems: GalleryItem[] = [
     spanFullpage: "lg:col-span-4 lg:row-span-2"
   },
   {
-    id: "tools",
+    id: "clinic_close_up",
     src: "/images/gallery/close-up-shot.webp",
     title: {
-      en: "High-Definition Otology Tools",
-      bn: "হাই-ডেফিনিশন অটোলোজি সরঞ্জাম"
+      en: "The ENT Clinic, Silchar",
+      bn: "দি ইএনটি ক্লিনিক, শিলচর"
     },
     description: {
-      en: "Precision medical otoscopes and endoscopes for micro-otoscopic evaluation.",
-      bn: "কান পরীক্ষার জন্য নির্ভুল এবং আধুনিক অটোস্কোপ এবং এন্ডোস্কোপ।"
+      en: "A premier diagnostic and therapeutic institute dedicated to high-fidelity ear, nose, throat, and hearing care.",
+      bn: "কান, নাক, গলা এবং শ্রবণ সংক্রান্ত উন্নত ও আধুনিক চিকিৎসার জন্য শিলচরের একটি নির্ভরযোগ্য প্রতিষ্ঠান।"
     },
     spanHomepage: "lg:col-span-4 lg:row-span-1",
     spanFullpage: "lg:col-span-8 lg:row-span-2"
@@ -160,19 +160,6 @@ export const galleryItems: GalleryItem[] = [
     description: {
       en: "Easily visible landmark located on the prominent street of Silchar.",
       bn: "শিলচরের প্রধান রাস্তায় অবস্থিত সহজে চেনা যাওয়ার মতো ল্যান্ডমার্ক।"
-    },
-    spanFullpage: "lg:col-span-4 lg:row-span-1"
-  },
-  {
-    id: "exterior_2",
-    src: "/images/gallery/exterior_2.webp",
-    title: {
-      en: "Patient Parking & Access",
-      bn: "রোগীদের পার্কিং ও প্রবেশপথ"
-    },
-    description: {
-      en: "Spacious entrance with easy walk-in accessibility for patients of all ages.",
-      bn: "সব বয়সের রোগীদের জন্য পার্কিং ও সরাসরি সহজে প্রবেশের ব্যবস্থা।"
     },
     spanFullpage: "lg:col-span-4 lg:row-span-1"
   }

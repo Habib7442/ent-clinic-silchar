@@ -47,7 +47,7 @@ export default function FullGallery({ lang }: FullGalleryProps) {
       <div className="max-w-7xl mx-auto">
         
         {/* Full Bento Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-6 lg:gap-8 lg:auto-rows-[240px]">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-6 lg:gap-8 lg:auto-rows-[300px]">
           {galleryItems.map((item) => (
             <div 
               key={item.id} 
@@ -65,9 +65,6 @@ export default function FullGallery({ lang }: FullGalleryProps) {
               
               {/* Text Block below the image */}
               <div className="mt-4 space-y-1 select-none">
-                <span className="text-[10px] tracking-[0.2em] uppercase text-gold font-semibold block">
-                  {lang === "bn" ? "অত্যাধুনিক ইএনটি" : "Advanced ENT"}
-                </span>
                 <h3 className="text-lg lg:text-xl font-serif text-paper group-hover:text-gold transition-colors duration-300">
                   {lang === "bn" ? item.title.bn : item.title.en}
                 </h3>
