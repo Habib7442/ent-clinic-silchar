@@ -12,6 +12,17 @@ if (typeof window !== "undefined") {
 const testimonials = [
   {
     id: 1,
+    name: "Sumon Nath",
+    role: "Consultation",
+    concern: { en: "General ENT", bn: "সাধারণ ইএনটি" },
+    content: {
+      en: "Good experience the process is simple and Easy, also my problem got solved thanks sir.",
+      bn: "দারুণ অভিজ্ঞতা, প্রক্রিয়াটি খুব সহজ এবং সরল ছিল, আমার সমস্যাও সমাধান হয়ে গেছে। ধন্যবাদ স্যার।"
+    },
+    rating: 5
+  },
+  {
+    id: 2,
     name: "Premision Manar",
     role: "Surgical Patient",
     concern: { en: "ENT Surgery", bn: "ইএনটি সার্জারি" },
@@ -22,24 +33,13 @@ const testimonials = [
     rating: 5
   },
   {
-    id: 2,
+    id: 3,
     name: "Dhaval Thakkar",
     role: "Consultation",
     concern: { en: "General ENT", bn: "সাধারণ ইএনটি" },
     content: { 
       en: "Genuine doctor. Properly diagnosed my issue and gave me correct directions. Didn't even charge for consultation when I went there the second time. Highly recommended!",
       bn: "খুবই সৎ ডাক্তার। আমার সমস্যাটি সঠিকভাবে নির্ণয় করেছেন এবং সঠিক নির্দেশনা দিয়েছেন। দ্বিতীয়বার যখন গিয়েছিলাম তখন পরামর্শের জন্য কোনো ফি নেননি।"
-    },
-    rating: 5
-  },
-  {
-    id: 3,
-    name: "Sumon Nath",
-    role: "Consultation",
-    concern: { en: "General ENT", bn: "সাধারণ ইএনটি" },
-    content: {
-      en: "Good experience the process is simple and Easy, also my problem got solved thanks sir.",
-      bn: "দারুণ অভিজ্ঞতা, প্রক্রিয়াটি খুব সহজ এবং সরল ছিল, আমার সমস্যাও সমাধান হয়ে গেছে। ধন্যবাদ স্যার।"
     },
     rating: 5
   },
@@ -109,39 +109,39 @@ export default function Testimonials({ lang }: TestimonialsProps) {
       <div className="absolute bottom-0 left-0 w-full h-1/2 bg-forest/5 blur-[120px] rounded-full translate-y-1/2" />
       
       <div className="max-w-7xl mx-auto relative z-10">
-        <div className="flex flex-col md:flex-row md:items-end md:justify-between mb-12 lg:mb-16 gap-8">
-          <div className="max-w-3xl space-y-4">
-            <span className="text-xs uppercase tracking-[0.3em] text-gold font-semibold block">
-              {isEn ? "Patient Success Stories" : "রোগীর সাফল্যের গল্প"}
-            </span>
-            <h2 className="text-4xl md:text-5xl lg:text-7xl font-serif text-paper leading-tight">
-              {isEn ? "Real outcomes for real lives." : "বাস্তব জীবনের জন্য বাস্তব ফলাফল।"}
-            </h2>
-          </div>
-          
-          {/* Navigation buttons */}
-          <div className="flex gap-3 shrink-0">
-            <button
-              onClick={() => scroll("left")}
-              className="w-12 h-12 rounded-full border border-white/15 hover:border-gold/50 flex items-center justify-center text-paper hover:text-gold bg-[#0A1A12] transition-all duration-300 active:scale-95 cursor-pointer"
-              aria-label={isEn ? "Previous testimonial" : "পূর্ববর্তী প্রশংসাপত্র"}
-            >
-              <ChevronLeft className="w-5 h-5" />
-            </button>
-            <button
-              onClick={() => scroll("right")}
-              className="w-12 h-12 rounded-full border border-white/15 hover:border-gold/50 flex items-center justify-center text-paper hover:text-gold bg-[#0A1A12] transition-all duration-300 active:scale-95 cursor-pointer"
-              aria-label={isEn ? "Next testimonial" : "পরবর্তী প্রশংসাপত্র"}
-            >
-              <ChevronRight className="w-5 h-5" />
-            </button>
-          </div>
+        <div className="max-w-3xl mb-12 lg:mb-16 space-y-4">
+          <span className="text-xs uppercase tracking-[0.3em] text-gold font-semibold block">
+            {isEn ? "Patient Success Stories" : "রোগীর সাফল্যের গল্প"}
+          </span>
+          <h2 className="text-4xl md:text-5xl lg:text-7xl font-serif text-paper leading-tight">
+            {isEn ? "Real outcomes for real lives." : "বাস্তব জীবনের জন্য বাস্তব ফলাফল।"}
+          </h2>
         </div>
 
-        <div 
-          ref={scrollContainerRef}
-          className="flex flex-row overflow-x-auto snap-x snap-mandatory scroll-smooth scrollbar-none gap-8 pb-8 -mx-6 px-6 lg:-mx-24 lg:px-24"
-        >
+        {/* Carousel Wrapper with Side Overlay Navigation Arrows */}
+        <div className="relative group/carousel">
+          {/* Left Side Arrow Button */}
+          <button
+            onClick={() => scroll("left")}
+            className="absolute left-[-16px] lg:left-[-48px] top-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full border border-white/15 hover:border-gold/50 flex items-center justify-center text-paper hover:text-gold bg-[#0A1A12]/90 backdrop-blur-md transition-all duration-300 active:scale-95 cursor-pointer shadow-lg hidden md:flex"
+            aria-label={isEn ? "Previous testimonial" : "পূর্ববর্তী প্রশংসাপত্র"}
+          >
+            <ChevronLeft className="w-5 h-5" />
+          </button>
+          
+          {/* Right Side Arrow Button */}
+          <button
+            onClick={() => scroll("right")}
+            className="absolute right-[-16px] lg:right-[-48px] top-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full border border-white/15 hover:border-gold/50 flex items-center justify-center text-paper hover:text-gold bg-[#0A1A12]/90 backdrop-blur-md transition-all duration-300 active:scale-95 cursor-pointer shadow-lg hidden md:flex"
+            aria-label={isEn ? "Next testimonial" : "পরবর্তী প্রশংসাপত্র"}
+          >
+            <ChevronRight className="w-5 h-5" />
+          </button>
+
+          <div 
+            ref={scrollContainerRef}
+            className="flex flex-row overflow-x-auto snap-x snap-mandatory scroll-smooth scrollbar-none gap-6 pb-6 px-1"
+          >
           {testimonials.map((item) => (
             <div 
               key={item.id}
@@ -172,6 +172,7 @@ export default function Testimonials({ lang }: TestimonialsProps) {
             </div>
           ))}
         </div>
+      </div>
 
         {/* Trust Badge */}
         <div className="mt-16 lg:mt-24 flex flex-col items-center gap-4 py-8 border-y border-white/5">
