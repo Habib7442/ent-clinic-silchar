@@ -70,6 +70,8 @@ Update this file after every meaningful implementation change.
 - *2026-05-22 (Gallery Image Optimization):* Converted all 12 high-resolution clinical and facility `.jpeg` gallery images under `public/images/gallery` to high-performance `.webp` format using `sharp` from the terminal (quality: 80). Purged the legacy `.jpeg` files to optimize bandwidth, page speed, and repository footprint.
 - *2026-05-22 (Bento Grid Gallery Expansion):* Implemented a premium Bento Grid showing a curated 6-item grid on the Homepage and a 12-item full gallery layout on the dynamic bilingual routes (`/en/gallery` and `/bn/gallery`) with dynamic metadata, footer links, and hydration-hardened GSAP animations.
 - *2026-05-22 (Navbar Integration):* Integrated dynamic English and Bengali "Gallery" / "গ্যালারি" links inside the global sticky navigation header (`Navbar.tsx`) for seamless navigation parity, verifying 100% error-free types and Next.js builds.
+- *2026-05-22 (Bento Grid Text Position Refactor):* Refactored both Homepage (`ClinicGallery.tsx`) and Subpage (`FullGallery.tsx`) Bento Grids to render Titles, Badges, and Descriptions cleanly *below* the images inside structured cards instead of absolute overlays, resolving contrast/legibility issues and ensuring 100% readability.
+
 
 
 

@@ -51,26 +51,27 @@ export default function FullGallery({ lang }: FullGalleryProps) {
           {galleryItems.map((item) => (
             <div 
               key={item.id} 
-              className={`full-gallery-item relative overflow-hidden rounded-sm group ${item.spanFullpage || "lg:col-span-4 lg:row-span-1"} aspect-[16/10] lg:aspect-auto lg:h-full`}
+              className={`full-gallery-item flex flex-col group ${item.spanFullpage || "lg:col-span-4 lg:row-span-1"} aspect-[16/10] lg:aspect-auto lg:h-full bg-white/[0.02] border border-white/5 p-4 rounded-sm hover:border-gold/20 transition-all duration-500`}
             >
-              <img
-                src={item.src}
-                alt={item.title[lang as "en" | "bn"]}
-                className="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
-                loading="lazy"
-              />
-              {/* Overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-[#0A1A12]/90 via-[#0A1A12]/25 to-transparent opacity-75 group-hover:opacity-90 transition-opacity duration-500" />
+              {/* Image Container */}
+              <div className="relative overflow-hidden rounded-sm aspect-[16/10] lg:aspect-auto lg:flex-1 w-full bg-[#0A1A12]/40">
+                <img
+                  src={item.src}
+                  alt={item.title[lang as "en" | "bn"]}
+                  className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
+                  loading="lazy"
+                />
+              </div>
               
-              {/* Clinical Details */}
-              <div className="absolute bottom-0 left-0 p-6 lg:p-8 space-y-2 translate-y-3 group-hover:translate-y-0 transition-transform duration-500">
-                <span className="text-[10px] tracking-[0.2em] uppercase text-gold font-semibold">
+              {/* Text Block below the image */}
+              <div className="mt-4 space-y-1 select-none">
+                <span className="text-[10px] tracking-[0.2em] uppercase text-gold font-semibold block">
                   {lang === "bn" ? "অত্যাধুনিক ইএনটি" : "Advanced ENT"}
                 </span>
-                <h3 className="text-xl lg:text-2xl font-serif text-paper">
+                <h3 className="text-lg lg:text-xl font-serif text-paper group-hover:text-gold transition-colors duration-300">
                   {lang === "bn" ? item.title.bn : item.title.en}
                 </h3>
-                <p className="text-xs lg:text-sm text-paper/70 max-w-md opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-75">
+                <p className="text-xs text-paper/60 line-clamp-2">
                   {lang === "bn" ? item.description.bn : item.description.en}
                 </p>
               </div>
