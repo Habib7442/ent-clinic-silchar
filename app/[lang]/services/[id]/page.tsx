@@ -6,6 +6,30 @@ import { ArrowLeft, CheckCircle2, Clock, Calendar } from "lucide-react";
 import FaqSection from "@/components/editorial/FaqSection";
 import ClosingCTA from "@/components/editorial/ClosingCTA";
 import { Button } from "@/components/ui/button";
+import { constructMetadata } from "@/lib/seo";
+import type { Metadata } from "next";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ lang: string; id: string }>;
+}): Promise<Metadata> {
+  const { lang, id } = await params;
+  const service = services.find((s) => s.id === id);
+  if (!service) return {};
+
+  const isEn = lang === "en";
+  const title = isEn ? service.title.en : service.title.bn;
+  const tagline = isEn ? service.tagline.en : service.tagline.bn;
+  const description = isEn ? service.description.en : service.description.bn;
+
+  return constructMetadata({
+    lang: lang as "en" | "bn",
+    title: isEn ? `${title} — Best ENT Care in Silchar` : `${title} — সিলচরের সেরা ইএনটি কেয়ার`,
+    description: `${tagline}. ${description.substring(0, 120)}...`,
+    path: `/services/${id}`,
+  });
+}
 
 export async function generateStaticParams() {
   return services.flatMap((service) => [

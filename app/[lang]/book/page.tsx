@@ -1,6 +1,24 @@
 import HeroBookingForm from "@/components/editorial/HeroBookingForm";
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
+import { constructMetadata } from "@/lib/seo";
+import type { Metadata } from "next";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ lang: string }>;
+}): Promise<Metadata> {
+  const { lang } = await params;
+  return constructMetadata({
+    lang: lang as "en" | "bn",
+    title: lang === "bn" ? "অনলাইন অ্যাপয়েন্টমেন্ট বুকিং | দি ইএনটি ক্লিনিক" : "Select an Appointment Slot | The ENT Clinic Silchar",
+    description: lang === "bn"
+      ? "দি ইএনটি ক্লিনিকের সহজ ও দ্রুত অনলাইন বুকিং সিস্টেম। আপনার সুবিধাজনক সময় ও দিন নির্বাচন করুন।"
+      : "Schedule your consultation slot instantly at Silchar's top ENT specialist practice using our streamlined 1-tap slot picker.",
+    path: "/book",
+  });
+}
 
 export default async function BookingPage({
   params,

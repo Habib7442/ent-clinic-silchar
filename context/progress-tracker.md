@@ -44,6 +44,7 @@ Update this file after every meaningful implementation change.
 - [x] **Services Pricing Update:** Removed all consultation fee fields (`fee`) from the services data definition in `lib/services.ts` and their corresponding sidebar UI elements in dynamic `/services/[id]` pages.
 - [x] **Prefilled Booking Form:** Implemented dynamic query param mapping for `?service=...` in the booking form with Suspense rendering and custom high-fidelity skeleton loading fallback to prevent CLS.
 - [x] **Premium Bento Gallery Hub:** Created a dedicated localized `/gallery` subpage displaying all 12 WebP clinic images in an elegant asymmetric Bento Grid with GSAP entrance animations, and completely redesigned the Homepage "Inside the Clinic" section into an aesthetic 6-item Bento Grid with auto-rows layout and a premium dynamic gold-border CTA button. Included active, bilingually localized titles and descriptions for all assets and linked it inside the footer menu navigation.
+- [x] **Local SEO Dominance Optimization:** Enriched taglines, default descriptions, Google Business Profile schema graph references, and expanded bilingual default keywords in `lib/seo.ts`. Created explicit custom metadata generators across all 11+ subpages and dynamic routes to eliminate duplicate indexation penalties and establish high-intent search visibility.
 - [ ] **Microsite Build:** Expand on these treatment hubs to create more long-tail SEO pages.
 - [ ] **Backend Integration:** Connect the `BookingFlow` component to an actual data handling service (e.g., Google Sheets, EmailJS, or WhatsApp API).
 - [x] **SEO Audit & Assets:** Finalize the bilingual content audit, generate search console assets (robots.txt, sitemap.xml), and establish a dynamic `lib/seo.ts` helper aligned with `https://theentclinicsilchar.com`.
@@ -71,8 +72,4 @@ Update this file after every meaningful implementation change.
 - *2026-05-22 (Bento Grid Gallery Expansion):* Implemented a premium Bento Grid showing a curated 6-item grid on the Homepage and a 12-item full gallery layout on the dynamic bilingual routes (`/en/gallery` and `/bn/gallery`) with dynamic metadata, footer links, and hydration-hardened GSAP animations.
 - *2026-05-22 (Navbar Integration):* Integrated dynamic English and Bengali "Gallery" / "গ্যালারি" links inside the global sticky navigation header (`Navbar.tsx`) for seamless navigation parity, verifying 100% error-free types and Next.js builds.
 - *2026-05-22 (Bento Grid Text Position Refactor):* Refactored both Homepage (`ClinicGallery.tsx`) and Subpage (`FullGallery.tsx`) Bento Grids to render Titles, Badges, and Descriptions cleanly *below* the images inside structured cards instead of absolute overlays, resolving contrast/legibility issues and ensuring 100% readability.
-
-
-
-
-
+- *2026-05-22 (Local SEO Optimization):* Enriched global configuration inside `lib/seo.ts` including keyword arrays and GBP schema maps. Resolved canonical page fallback loops by integrating custom metadata generators across all 11+ main pages and dynamic subroutes, while setting `noIndex: true` for legal policies to maximize ranking relevance. Verified flawless type safety with `npx tsc --noEmit`.

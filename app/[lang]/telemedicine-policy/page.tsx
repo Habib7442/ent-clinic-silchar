@@ -1,3 +1,23 @@
+import { constructMetadata } from "@/lib/seo";
+import type { Metadata } from "next";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ lang: string }>;
+}): Promise<Metadata> {
+  const { lang } = await params;
+  return constructMetadata({
+    lang: lang as "en" | "bn",
+    title: lang === "bn" ? "টেলিমেডিসিন নীতি | দি ইএনটি ক্লিনিক" : "Telemedicine Policy | The ENT Clinic Silchar",
+    description: lang === "bn"
+      ? "দি ইএনটি ক্লিনিক শিলচরের টেলিমেডিসিন এবং ভার্চুয়াল কনসালটেশন নীতি ও নির্দেশাবলী।"
+      : "Read the Telemedicine Practice Guidelines and consultation policy of The ENT Clinic Silchar.",
+    path: "/telemedicine-policy",
+    noIndex: true,
+  });
+}
+
 export default async function TelemedicinePolicyPage({
   params,
 }: {

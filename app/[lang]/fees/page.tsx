@@ -2,6 +2,24 @@ import FeeSection from "@/components/editorial/FeeSection";
 import ClosingCTA from "@/components/editorial/ClosingCTA";
 import Link from "next/link";
 import { ArrowRight, Info, ShieldCheck, CreditCard } from "lucide-react";
+import { constructMetadata } from "@/lib/seo";
+import type { Metadata } from "next";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ lang: string }>;
+}): Promise<Metadata> {
+  const { lang } = await params;
+  return constructMetadata({
+    lang: lang as "en" | "bn",
+    title: lang === "bn" ? "স্বচ্ছ ফি ও চিকিৎসার খরচ | দি ইএনটি ক্লিনিক শিলচর" : "Consultation Fees & Treatment Costs | The ENT Clinic Silchar",
+    description: lang === "bn"
+      ? "শিলচরের সেরা নাক কান গলা ডাক্তারের চেম্বারের ফি, এন্ডোস্কোপি এবং অন্যান্য ডায়াগনস্টিক পরীক্ষার স্বচ্ছ খরচের বিবরণী।"
+      : "View consultation rates, diagnostic procedures (audiometry, endoscopy), and treatment costs at the best ENT clinic in Silchar.",
+    path: "/fees",
+  });
+}
 
 export default async function FeesPage({
   params,

@@ -1,3 +1,23 @@
+import { constructMetadata } from "@/lib/seo";
+import type { Metadata } from "next";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ lang: string }>;
+}): Promise<Metadata> {
+  const { lang } = await params;
+  return constructMetadata({
+    lang: lang as "en" | "bn",
+    title: lang === "bn" ? "গোপনীয়তা নীতি | দি ইএনটি ক্লিনিক" : "Privacy Policy | The ENT Clinic Silchar",
+    description: lang === "bn"
+      ? "দি ইএনটি ক্লিনিক শিলচরের রোগীদের ব্যক্তিগত ও স্বাস্থ্যগত তথ্যের সুরক্ষার বিশদ বিবরণী।"
+      : "Read the Privacy Policy of The ENT Clinic Silchar, outlines our DPDP Act 2023 compliance guidelines.",
+    path: "/privacy",
+    noIndex: true,
+  });
+}
+
 export default async function PrivacyPage({
   params,
 }: {

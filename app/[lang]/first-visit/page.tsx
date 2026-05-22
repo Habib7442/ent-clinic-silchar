@@ -2,6 +2,24 @@ import ProcessSection from "@/components/editorial/ProcessSection";
 import ClosingCTA from "@/components/editorial/ClosingCTA";
 import Link from "next/link";
 import { ArrowRight, FileText, Stethoscope, AlertTriangle, Baby } from "lucide-react";
+import { constructMetadata } from "@/lib/seo";
+import type { Metadata } from "next";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ lang: string }>;
+}): Promise<Metadata> {
+  const { lang } = await params;
+  return constructMetadata({
+    lang: lang as "en" | "bn",
+    title: lang === "bn" ? "প্রথম দর্শনে কী আশা করবেন | দি ইএনটি ক্লিনিক" : "What to Expect on Your First Visit | The ENT Clinic Silchar",
+    description: lang === "bn"
+      ? "দি ইএনটি ক্লিনিকে আপনার প্রথম অ্যাপয়েন্টমেন্টের সময় কী কী কাগজপত্র আনবেন, কীভাবে পরীক্ষা করা হয় তার সম্পূর্ণ নির্দেশিকা।"
+      : "Step-by-step guidance on what documents to bring, standard consultation protocols, and child-friendly clinical check-ups for your first visit.",
+    path: "/first-visit",
+  });
+}
 
 export default async function FirstVisitPage({
   params,

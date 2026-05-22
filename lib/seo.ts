@@ -12,12 +12,12 @@ export const SITE = {
   // Brand
   name: "The ENT Clinic, Silchar",
   nameBn: "দি ইএনটি ক্লিনিক, শিলচর",
-  tagline: "Considered ENT care in the Barak Valley.",
-  taglineBn: "বরাক উপত্যকায় যত্নবান ইএনটি চিকিৎসা।",
+  tagline: "Premium Ear, Nose & Throat Care — Best ENT Clinic in Silchar",
+  taglineBn: "শিলচরের সেরা নাক, কান ও গলা চিকিৎসা কেন্দ্র (ইএনটি ক্লিনিক)",
   defaultDescription:
-    "The ENT Clinic is a premier institute in Silchar led by Dr. Abhishek Ray (10+ years experience). Dedicated Ear Clinic (Audiometry, Tympanometry, BERA, OAE), Vertigo Clinic (VEMP, VNG), and Speech Therapy.",
+    "The ENT Clinic is widely recognized as the best ENT clinic in Silchar, Barak Valley. Led by top ENT specialist & doctor Dr. Abhishek Ray (10+ years experience), offering advanced treatments for Ear, Nose, Throat, Voice, and Sinusitis.",
   defaultDescriptionBn:
-    "দি ইএনটি ক্লিনিক শিলচরের একটি অগ্রণী নাক, কান ও গলা চিকিৎসা প্রতিষ্ঠান। ডাঃ অভিষেক রায় (১০+ বছরের অভিজ্ঞতা) এর অধীনে অডিওমেট্রি, ভেরটিগো ক্লিনিক (VEMP, VNG), এবং স্পিচ থেরাপি প্রদান করা হয়।",
+    "শিলচর তথা বরাক উপত্যকার সেরা নাক, কান ও গলা চিকিৎসা কেন্দ্র (দি ইএনটি ক্লিনিক)। অভিজ্ঞতায় সেরা ইএনটি বিশেষজ্ঞ ডাঃ অভিষেক রায়ের অধীনে এখানে উন্নত শ্রবণ পরীক্ষা, সাইনাস ও থ্রোট কেয়ার দেওয়া হয়।",
   ogImage: "/og-image.jpg",
 
   // Doctor
@@ -55,10 +55,8 @@ export const SITE = {
 
   // Social / external profiles for sameAs
   sameAs: [
-    // "https://www.google.com/maps/...",
-    // "https://www.practo.com/silchar/doctor/...",
-    // "https://www.facebook.com/...",
-    // "https://www.instagram.com/...",
+    "https://maps.google.com/?q=The+ENT+Clinic+Silchar+Hriday+Rajani+Complex+Lochan+Bairagi+Rd",
+    "https://search.google.com/local/writereview?fid=0x374e4b4ff109cfdd:0x8ca2bfe2070dae4e"
   ] as string[],
 
   // Twitter / X handle (leave empty if none)
@@ -263,6 +261,12 @@ export function constructMetadata({
 function defaultKeywords(lang: Lang): string[] {
   if (lang === "bn") {
     return [
+      "শিলচরের সেরা ইএনটি ডাক্তার",
+      "শিলচর সেরা নাক কান গলা বিশেষজ্ঞ",
+      "সেরা কান নাক গলা ক্লিনিক শিলচর",
+      "শিলচরের সেরা ইএনটি ক্লিনিক",
+      "শিলচর সেরা নাক কান গলা ডাক্তার",
+      "বরাক উপত্যকার সেরা ইএনটি বিশেষজ্ঞ",
       "ইএনটি ক্লিনিক শিলচর",
       "শিলচর ইএনটি ডাক্তার",
       "অভিষেক রায় ইএনটি",
@@ -274,6 +278,13 @@ function defaultKeywords(lang: Lang): string[] {
     ];
   }
   return [
+    "best ent clinic silchar",
+    "best ent doctor in silchar",
+    "best ent specialist in silchar",
+    "top 10 ent specialist in silchar",
+    "ent specialist silchar",
+    "ear nose throat doctor silchar",
+    "silchar ent doctor specialist name",
     "ENT clinic Silchar",
     "ENT doctor Silchar",
     "otolaryngologist Silchar",

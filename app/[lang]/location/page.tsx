@@ -1,6 +1,24 @@
 import LocationSection from "@/components/editorial/LocationSection";
 import ClosingCTA from "@/components/editorial/ClosingCTA";
 import { Clock, MapPin, Navigation, Car } from "lucide-react";
+import { constructMetadata } from "@/lib/seo";
+import type { Metadata } from "next";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ lang: string }>;
+}): Promise<Metadata> {
+  const { lang } = await params;
+  return constructMetadata({
+    lang: lang as "en" | "bn",
+    title: lang === "bn" ? "অবস্থান, মানচিত্র ও যোগাযোগের বিবরণী | দি ইএনটি ক্লিনিক" : "Directions, Maps & Contact Details | The ENT Clinic Silchar",
+    description: lang === "bn"
+      ? "শিলচর বিলপারের বিবেকানন্দ কো-অপারেটিভ সংলগ্ন দি ইএনটি ক্লিনিকের সঠিক ঠিকানা, ম্যাপের পথনির্দেশনা এবং পার্কিং তথ্য।"
+      : "Get step-by-step driving directions, interactive maps, hours, and parking access for the best ENT clinic in Silchar.",
+    path: "/location",
+  });
+}
 
 export default async function LocationPage({
   params,

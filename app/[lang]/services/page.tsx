@@ -1,6 +1,24 @@
 import ServicesSection from "@/components/editorial/ServicesSection";
 import ClosingCTA from "@/components/editorial/ClosingCTA";
 import TreatmentsList from "@/components/editorial/TreatmentsList";
+import { constructMetadata } from "@/lib/seo";
+import type { Metadata } from "next";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ lang: string }>;
+}): Promise<Metadata> {
+  const { lang } = await params;
+  return constructMetadata({
+    lang: lang as "en" | "bn",
+    title: lang === "bn" ? "নাক, কান ও গলা চিকিৎসা ও সেবাসমূহ | দি ইএনটি ক্লিনিক" : "Ear, Nose & Throat Treatments & Services in Silchar",
+    description: lang === "bn"
+      ? "দি ইএনটি ক্লিনিকের আটটি মূল চিকিৎসা সেবা এবং ডায়াগনস্টিক পরীক্ষার তালিকা (শ্রবণযন্ত্র, সাইনাস, স্পিচ থেরাপি, মাইক্রো-সার্জারি)।"
+      : "Discover comprehensive ENT services in Silchar, covering Hearing Care, Sinusitis, Snoring, Voice treatments, and Pediatric ENT by Dr. Abhishek Ray.",
+    path: "/services",
+  });
+}
 
 export default async function ServicesPage({
   params,

@@ -5,6 +5,29 @@ import Link from "next/link";
 import { ArrowLeft, CheckCircle2 } from "lucide-react";
 import FaqSection from "@/components/editorial/FaqSection";
 import ClosingCTA from "@/components/editorial/ClosingCTA";
+import { constructMetadata } from "@/lib/seo";
+import type { Metadata } from "next";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ lang: string; slug: string }>;
+}): Promise<Metadata> {
+  const { lang, slug } = await params;
+  const treatment = treatments.find((t) => t.slug === slug);
+  if (!treatment) return {};
+
+  const isEn = lang === "en";
+  const title = isEn ? treatment.titleEn : treatment.titleBn;
+  const desc = isEn ? treatment.descEn : treatment.descBn;
+
+  return constructMetadata({
+    lang: lang as "en" | "bn",
+    title: isEn ? `${title} Treatment in Silchar | Top ENT Specialist` : `${title} চিকিৎসা শিলচর | ইএনটি বিশেষজ্ঞ ডাঃ অভিষেক রায়`,
+    description: `${desc.substring(0, 150)}...`,
+    path: `/treatments/${slug}`,
+  });
+}
 
 export async function generateStaticParams() {
   return treatments.flatMap((treatment) => [

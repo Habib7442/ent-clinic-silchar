@@ -2,6 +2,24 @@ import LocationSection from "@/components/editorial/LocationSection";
 import ClosingCTA from "@/components/editorial/ClosingCTA";
 import { Mail, Phone, Clock, ArrowUpRight } from "lucide-react";
 import Link from "next/link";
+import { constructMetadata } from "@/lib/seo";
+import type { Metadata } from "next";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ lang: string }>;
+}): Promise<Metadata> {
+  const { lang } = await params;
+  return constructMetadata({
+    lang: lang as "en" | "bn",
+    title: lang === "bn" ? "অ্যাপয়েন্টমেন্ট বুকিং ও সরাসরি যোগাযোগ | দি ইএনটি ক্লিনিক" : "Book Appointments & Contact Us | The ENT Clinic Silchar",
+    description: lang === "bn"
+      ? "দি ইএনটি ক্লিনিক শিলচরের সরাসরি ফোন নম্বর, ইমেইল এবং হোয়াটসঅ্যাপ বুকিং চ্যানেল। যেকোনো অনুসন্ধানে আমাদের কল করুন।"
+      : "Contact details for The ENT Clinic Silchar. Reach us via phone dialing, direct email, or official prefilled WhatsApp slots.",
+    path: "/contact",
+  });
+}
 
 export default async function ContactPage({
   params,
