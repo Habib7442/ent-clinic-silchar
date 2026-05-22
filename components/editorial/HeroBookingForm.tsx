@@ -35,11 +35,22 @@ const serviceToDiseaseMap: Record<string, string> = {
   "laryngoscopy-endoscopy": "other",
 };
 
+const diseaseLabels: Record<string, { en: string; bn: string }> = {
+  hearing: { en: "Hearing Loss", bn: "শ্রবণ সমস্যা" },
+  sinus: { en: "Sinus Infection", bn: "সাইনাস সংক্রমণ" },
+  tonsils: { en: "Tonsils/Adenoids", bn: "টনসিল/অ্যাডেনয়েড" },
+  snoring: { en: "Snoring/Sleep Apnea", bn: "নাক ডাকা/স্লিপ অ্যাপনিয়া" },
+  other: { en: "Other ENT Issue", bn: "অন্যান্য ইএনটি সমস্যা" },
+  not_sure: { en: "Not Sure / Need Diagnosis", bn: "নিশ্চিত নই / রোগ নির্ণয় প্রয়োজন" }
+};
+
 function BookingForm({ lang }: { lang: string }) {
   const isEn = lang === "en";
   const searchParams = useSearchParams();
   const serviceParam = searchParams.get("service");
 
+  const [name, setName] = useState("");
+  const [mobile, setMobile] = useState("");
   const [date, setDate] = useState<Date>();
   const [disease, setDisease] = useState<string>("");
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -60,11 +71,20 @@ function BookingForm({ lang }: { lang: string }) {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    // Simulate submission
-    setTimeout(() => {
-      setIsSubmitting(false);
-      alert(isEn ? "Appointment requested successfully!" : "সফলভাবে অ্যাপয়েন্টমেন্টের অনুরোধ করা হয়েছে!");
-    }, 1500);
+
+    const selectedDisease = diseaseLabels[disease]?.[lang === "bn" ? "bn" : "en"] || (isEn ? "Not specified" : "নির্দিষ্ট করা হয়নি");
+    const formattedDate = date ? format(date, "PPP") : (isEn ? "Not specified" : "নির্দিষ্ট করা হয়নি");
+
+    const message = isEn 
+      ? `Hello, I would like to book an appointment at The ENT Clinic Silchar.\n\n*Patient Name:* ${name}\n*Mobile Number:* ${mobile}\n*Preferred Date:* ${formattedDate}\n*ENT Issue:* ${selectedDisease}`
+      : `নমস্কার, আমি দি ইএনটি ক্লিনিক শিলচরে একটি অ্যাপয়েন্টমেন্ট বুক করতে চাই।\n\n*রোগীর নাম:* ${name}\n*মোবাইল নম্বর:* ${mobile}\n*পছন্দসই তারিখ:* ${formattedDate}\n*ইএনটি সমস্যা:* ${selectedDisease}`;
+
+    const whatsappUrl = `https://wa.me/919435070156?text=${encodeURIComponent(message)}`;
+
+    // Redirect to WhatsApp
+    window.open(whatsappUrl, "_blank");
+
+    setIsSubmitting(false);
   };
 
   return (
@@ -82,6 +102,8 @@ function BookingForm({ lang }: { lang: string }) {
           <div className="space-y-2">
             <Input 
               required 
+              value={name}
+              onChange={(e) => setName(e.target.value)}
               placeholder={isEn ? "Patient Name" : "রোগীর নাম"} 
               className="h-12 border-[#0A1A12]/20 focus-visible:ring-[#B65C36] bg-white text-[#0A1A12]"
             />
@@ -90,6 +112,8 @@ function BookingForm({ lang }: { lang: string }) {
             <Input 
               required 
               type="tel" 
+              value={mobile}
+              onChange={(e) => setMobile(e.target.value)}
               placeholder={isEn ? "Mobile Number" : "মোবাইল নম্বর"} 
               className="h-12 border-[#0A1A12]/20 focus-visible:ring-[#B65C36] bg-white text-[#0A1A12]"
             />
