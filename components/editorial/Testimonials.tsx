@@ -3,7 +3,7 @@
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { Quote, Star } from "lucide-react";
+import { ChevronLeft, ChevronRight, Quote, Star } from "lucide-react";
 
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
@@ -34,6 +34,17 @@ const testimonials = [
   },
   {
     id: 3,
+    name: "Sumon Nath",
+    role: "Consultation",
+    concern: { en: "General ENT", bn: "সাধারণ ইএনটি" },
+    content: {
+      en: "Good experience the process is simple and Easy, also my problem got solved thanks sir.",
+      bn: "দারুণ অভিজ্ঞতা, প্রক্রিয়াটি খুব সহজ এবং সরল ছিল, আমার সমস্যাও সমাধান হয়ে গেছে। ধন্যবাদ স্যার।"
+    },
+    rating: 5
+  },
+  {
+    id: 4,
     name: "Mala Paul",
     role: "Chronic Care",
     concern: { en: "Medical Management", bn: "মেডিক্যাল ম্যানেজমেন্ট" },
@@ -51,6 +62,7 @@ interface TestimonialsProps {
 
 export default function Testimonials({ lang }: TestimonialsProps) {
   const containerRef = useRef<HTMLDivElement>(null);
+  const scrollContainerRef = useRef<HTMLDivElement>(null);
   const isEn = lang === "en";
 
   useEffect(() => {
@@ -78,26 +90,62 @@ export default function Testimonials({ lang }: TestimonialsProps) {
     return () => ctx.revert();
   }, []);
 
+  const scroll = (direction: "left" | "right") => {
+    if (scrollContainerRef.current) {
+      const { scrollLeft, clientWidth } = scrollContainerRef.current;
+      const cardWidth = window.innerWidth < 768 ? clientWidth * 0.85 : (window.innerWidth < 1024 ? clientWidth * 0.45 : 380);
+      const gap = 32; // gap-8
+      const scrollAmount = cardWidth + gap;
+      scrollContainerRef.current.scrollTo({
+        left: direction === "left" ? scrollLeft - scrollAmount : scrollLeft + scrollAmount,
+        behavior: "smooth"
+      });
+    }
+  };
+
   return (
     <section ref={containerRef} className="py-12 lg:py-16 px-6 lg:px-24 bg-[#0A1A12] relative overflow-hidden">
       {/* Decorative radial glow */}
       <div className="absolute bottom-0 left-0 w-full h-1/2 bg-forest/5 blur-[120px] rounded-full translate-y-1/2" />
       
       <div className="max-w-7xl mx-auto relative z-10">
-        <div className="max-w-3xl mb-16 lg:mb-24 space-y-4">
-          <span className="text-xs uppercase tracking-[0.3em] text-gold font-semibold">
-            {isEn ? "Patient Success Stories" : "রোগীর সাফল্যের গল্প"}
-          </span>
-          <h2 className="text-4xl md:text-5xl lg:text-7xl font-serif text-paper leading-tight">
-            {isEn ? "Real outcomes for real lives." : "বাস্তব জীবনের জন্য বাস্তব ফলাফল।"}
-          </h2>
+        <div className="flex flex-col md:flex-row md:items-end md:justify-between mb-12 lg:mb-16 gap-8">
+          <div className="max-w-3xl space-y-4">
+            <span className="text-xs uppercase tracking-[0.3em] text-gold font-semibold block">
+              {isEn ? "Patient Success Stories" : "রোগীর সাফল্যের গল্প"}
+            </span>
+            <h2 className="text-4xl md:text-5xl lg:text-7xl font-serif text-paper leading-tight">
+              {isEn ? "Real outcomes for real lives." : "বাস্তব জীবনের জন্য বাস্তব ফলাফল।"}
+            </h2>
+          </div>
+          
+          {/* Navigation buttons */}
+          <div className="flex gap-3 shrink-0">
+            <button
+              onClick={() => scroll("left")}
+              className="w-12 h-12 rounded-full border border-white/15 hover:border-gold/50 flex items-center justify-center text-paper hover:text-gold bg-[#0A1A12] transition-all duration-300 active:scale-95 cursor-pointer"
+              aria-label={isEn ? "Previous testimonial" : "পূর্ববর্তী প্রশংসাপত্র"}
+            >
+              <ChevronLeft className="w-5 h-5" />
+            </button>
+            <button
+              onClick={() => scroll("right")}
+              className="w-12 h-12 rounded-full border border-white/15 hover:border-gold/50 flex items-center justify-center text-paper hover:text-gold bg-[#0A1A12] transition-all duration-300 active:scale-95 cursor-pointer"
+              aria-label={isEn ? "Next testimonial" : "পরবর্তী প্রশংসাপত্র"}
+            >
+              <ChevronRight className="w-5 h-5" />
+            </button>
+          </div>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        <div 
+          ref={scrollContainerRef}
+          className="flex flex-row overflow-x-auto snap-x snap-mandatory scroll-smooth scrollbar-none gap-8 pb-8 -mx-6 px-6 lg:-mx-24 lg:px-24"
+        >
           {testimonials.map((item) => (
             <div 
               key={item.id}
-              className="testimonial-card group relative p-10 bg-white/5 border border-white/10 rounded-sm flex flex-col justify-between transition-all duration-500 hover:border-gold/30"
+              className="testimonial-card group relative p-10 bg-white/5 border border-white/10 rounded-sm flex flex-col justify-between transition-all duration-500 hover:border-gold/30 shrink-0 w-[85vw] md:w-[45vw] lg:w-[380px] snap-start"
             >
               <Quote className="absolute top-8 right-8 w-12 h-12 text-white/5 group-hover:text-gold/15 transition-colors" />
               

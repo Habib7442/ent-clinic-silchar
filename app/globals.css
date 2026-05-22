@@ -61,6 +61,15 @@
   .container-padding {
     @apply px-6 lg:px-24;
   }
+
+  .scrollbar-none {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .scrollbar-none::-webkit-scrollbar {
+    display: none;
+  }
 }
 /* GSAP reveal safety - Base state before JS kicks in */
 .reveal-loc, .service-card, .testimonial-card, .process-step {
