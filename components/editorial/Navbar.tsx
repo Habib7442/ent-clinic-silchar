@@ -24,11 +24,13 @@ export default function Navbar() {
   const navLinks = {
     en: [
       { name: "Services", href: `/${lang}/services` },
+      { name: "Gallery", href: `/${lang}/gallery` },
       { name: "About", href: `/${lang}/about` },
       { name: "Contact", href: `/${lang}/contact` },
     ],
     bn: [
       { name: "সেবাসমূহ", href: `/${lang}/services` },
+      { name: "গ্যালারি", href: `/${lang}/gallery` },
       { name: "আমাদের সম্পর্কে", href: `/${lang}/about` },
       { name: "যোগাযোগ", href: `/${lang}/contact` },
     ]

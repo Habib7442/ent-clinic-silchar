@@ -68,6 +68,9 @@ Update this file after every meaningful implementation change.
 - *2026-05-20 (Credentials Purge):* Removed the placeholder DoctorCredentials component entirely from the About page (/en/about, /bn/about) and deleted the file `DoctorCredentials.tsx` to maintain codebase hygiene. Verified type checking passes successfully.
 - *2026-05-20 (Accessibility & Contrast Hardening):* Audited and hardened typography text-to-background contrast settings across 13 components and route pages to guarantee strict adherence to WCAG AA guidelines (>4.5:1 ratio for body, >3:1 for large text). Verified full application compile and TypeScript safety (`npx tsc --noEmit` and `npm run build`) passing 100% cleanly in production with zero errors or warnings, securing a flawless 100/100 Lighthouse Accessibility score.
 - *2026-05-22 (Gallery Image Optimization):* Converted all 12 high-resolution clinical and facility `.jpeg` gallery images under `public/images/gallery` to high-performance `.webp` format using `sharp` from the terminal (quality: 80). Purged the legacy `.jpeg` files to optimize bandwidth, page speed, and repository footprint.
+- *2026-05-22 (Bento Grid Gallery Expansion):* Implemented a premium Bento Grid showing a curated 6-item grid on the Homepage and a 12-item full gallery layout on the dynamic bilingual routes (`/en/gallery` and `/bn/gallery`) with dynamic metadata, footer links, and hydration-hardened GSAP animations.
+- *2026-05-22 (Navbar Integration):* Integrated dynamic English and Bengali "Gallery" / "গ্যালারি" links inside the global sticky navigation header (`Navbar.tsx`) for seamless navigation parity, verifying 100% error-free types and Next.js builds.
+
 
 
 
