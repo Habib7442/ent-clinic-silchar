@@ -31,15 +31,29 @@ const serviceToDiseaseMap: Record<string, string> = {
   "headache-clinic": "sinus",
   "snoring-sleep-apnea": "snoring",
   "paediatric-ent": "tonsils",
+  "pediatric-ent": "tonsils",
+  "voice-clinic": "other",
+  "vertigo-balance-clinic": "other",
   "surgical-ent": "other",
   "laryngoscopy-endoscopy": "other",
 };
 
 const diseaseLabels: Record<string, { en: string; bn: string }> = {
-  hearing: { en: "Hearing Loss", bn: "শ্রবণ সমস্যা" },
-  sinus: { en: "Sinus Infection", bn: "সাইনাস সংক্রমণ" },
-  tonsils: { en: "Tonsils/Adenoids", bn: "টনসিল/অ্যাডেনয়েড" },
-  snoring: { en: "Snoring/Sleep Apnea", bn: "নাক ডাকা/স্লিপ অ্যাপনিয়া" },
+  // Core 8 Services
+  "speech-therapy-clinic": { en: "Speech Therapy Clinic", bn: "স্পিচ থেরাপি ক্লিনিক" },
+  "hearing-aids": { en: "Hearing Aids Center", bn: "হিয়ারিং এইডস সেন্টার" },
+  "headache-clinic": { en: "Headache Clinic", bn: "মাথাব্যথা ক্লিনিক" },
+  "laryngoscopy-endoscopy": { en: "Laryngoscopy & Nasal Endoscopy", bn: "ল্যারিঙ্গোস্কোপি ও নাসাল এন্ডোস্কোপি" },
+  "pediatric-ent": { en: "Paediatric ENT Clinic", bn: "শিশু নাক, কান ও গলা ক্লিনিক" },
+  "voice-clinic": { en: "Voice & Throat Clinic", bn: "ভয়েস ও গলা ক্লিনিক" },
+  "vertigo-balance-clinic": { en: "Vertigo and Balance Clinic", bn: "ভার্টিগো ও ব্যালেন্স ক্লিনিক" },
+  "surgical-ent": { en: "Surgical ENT Services", bn: "সার্জিকাল ইএনটি সেবা" },
+
+  // General Categories / Fallbacks
+  hearing: { en: "Hearing Loss / Audiometry", bn: "শ্রবণ সমস্যা / অডিওমেট্রি" },
+  sinus: { en: "Sinus / Nose Allergy", bn: "সাইনাস / নাকের অ্যালার্জি" },
+  tonsils: { en: "Tonsils / Adenoids", bn: "টনসিল / অ্যাডেনয়েড" },
+  snoring: { en: "Snoring / Sleep Apnea", bn: "নাক ডাকা / স্লিপ অ্যাপনিয়া" },
   other: { en: "Other ENT Issue", bn: "অন্যান্য ইএনটি সমস্যা" },
   not_sure: { en: "Not Sure / Need Diagnosis", bn: "নিশ্চিত নই / রোগ নির্ণয় প্রয়োজন" }
 };
@@ -57,8 +71,11 @@ function BookingForm({ lang }: { lang: string }) {
 
   useEffect(() => {
     if (serviceParam) {
-      if (["hearing", "sinus", "tonsils", "snoring", "other", "not_sure"].includes(serviceParam)) {
+      // Check if it's one of the options in our labels mapping
+      if (diseaseLabels[serviceParam]) {
         setDisease(serviceParam);
+      } else if (serviceParam === "paediatric-ent") {
+        setDisease("pediatric-ent");
       } else {
         const mapped = serviceToDiseaseMap[serviceParam];
         if (mapped) {
@@ -144,17 +161,56 @@ function BookingForm({ lang }: { lang: string }) {
             </Popover>
           </div>
           <div className="space-y-2">
-            <Select required value={disease} onValueChange={setDisease}>
+            <Select key={disease} required value={disease} onValueChange={setDisease}>
               <SelectTrigger className="h-12 border-[#0A1A12]/20 focus:ring-[#B65C36] bg-white text-[#0A1A12]">
-                <SelectValue placeholder={isEn ? "Select Disease" : "রোগ নির্বাচন করুন"} />
+                <SelectValue placeholder={isEn ? "Select Service / Disease" : "সেবা / রোগ নির্বাচন করুন"} />
               </SelectTrigger>
               <SelectContent position="popper" className="bg-white border-[#0A1A12]/10 shadow-xl w-[--radix-select-trigger-width]">
-                <SelectItem value="hearing" className="text-[#0A1A12] focus:bg-[#0A1A12]/5 focus:text-[#0A1A12]">{isEn ? "Hearing Loss" : "শ্রবণ সমস্যা"}</SelectItem>
-                <SelectItem value="sinus" className="text-[#0A1A12] focus:bg-[#0A1A12]/5 focus:text-[#0A1A12]">{isEn ? "Sinus Infection" : "সাইনাস সংক্রমণ"}</SelectItem>
-                <SelectItem value="tonsils" className="text-[#0A1A12] focus:bg-[#0A1A12]/5 focus:text-[#0A1A12]">{isEn ? "Tonsils/Adenoids" : "টনসিল/অ্যাডেনয়েড"}</SelectItem>
-                <SelectItem value="snoring" className="text-[#0A1A12] focus:bg-[#0A1A12]/5 focus:text-[#0A1A12]">{isEn ? "Snoring/Sleep Apnea" : "নাক ডাকা/স্লিপ অ্যাপনিয়া"}</SelectItem>
-                <SelectItem value="other" className="text-[#0A1A12] focus:bg-[#0A1A12]/5 focus:text-[#0A1A12]">{isEn ? "Other ENT Issue" : "অন্যান্য ইএনটি সমস্যা"}</SelectItem>
-                <SelectItem value="not_sure" className="text-[#0A1A12] focus:bg-[#0A1A12]/5 focus:text-[#0A1A12]">{isEn ? "Not Sure / Need Diagnosis" : "নিশ্চিত নই / রোগ নির্ণয় প্রয়োজন"}</SelectItem>
+                {/* Core Services */}
+                <SelectItem value="speech-therapy-clinic" className="text-[#0A1A12] focus:bg-[#0A1A12]/5 focus:text-[#0A1A12]">
+                  {isEn ? "Speech Therapy Clinic" : "স্পিচ থেরাপি ক্লিনিক"}
+                </SelectItem>
+                <SelectItem value="hearing-aids" className="text-[#0A1A12] focus:bg-[#0A1A12]/5 focus:text-[#0A1A12]">
+                  {isEn ? "Hearing Aids Center" : "হিয়ারিং এইডস সেন্টার"}
+                </SelectItem>
+                <SelectItem value="headache-clinic" className="text-[#0A1A12] focus:bg-[#0A1A12]/5 focus:text-[#0A1A12]">
+                  {isEn ? "Headache Clinic" : "মাথাব্যথা ক্লিনিক"}
+                </SelectItem>
+                <SelectItem value="laryngoscopy-endoscopy" className="text-[#0A1A12] focus:bg-[#0A1A12]/5 focus:text-[#0A1A12]">
+                  {isEn ? "Laryngoscopy & Nasal Endoscopy" : "ল্যারিঙ্গোস্কোপি ও নাসাল এন্ডোস্কোপি"}
+                </SelectItem>
+                <SelectItem value="pediatric-ent" className="text-[#0A1A12] focus:bg-[#0A1A12]/5 focus:text-[#0A1A12]">
+                  {isEn ? "Paediatric ENT Clinic" : "শিশু নাক, কান ও গলা ক্লিনিক"}
+                </SelectItem>
+                <SelectItem value="voice-clinic" className="text-[#0A1A12] focus:bg-[#0A1A12]/5 focus:text-[#0A1A12]">
+                  {isEn ? "Voice & Throat Clinic" : "ভয়েস ও গলা ক্লিনিক"}
+                </SelectItem>
+                <SelectItem value="vertigo-balance-clinic" className="text-[#0A1A12] focus:bg-[#0A1A12]/5 focus:text-[#0A1A12]">
+                  {isEn ? "Vertigo and Balance Clinic" : "ভার্টিগো ও ব্যালেন্স ক্লিনিক"}
+                </SelectItem>
+                <SelectItem value="surgical-ent" className="text-[#0A1A12] focus:bg-[#0A1A12]/5 focus:text-[#0A1A12]">
+                  {isEn ? "Surgical ENT Services" : "সার্জিকাল ইএনটি সেবা"}
+                </SelectItem>
+
+                {/* Fallbacks / General */}
+                <SelectItem value="hearing" className="text-[#0A1A12] focus:bg-[#0A1A12]/5 focus:text-[#0A1A12]">
+                  {isEn ? "Hearing Loss" : "শ্রবণ সমস্যা"}
+                </SelectItem>
+                <SelectItem value="sinus" className="text-[#0A1A12] focus:bg-[#0A1A12]/5 focus:text-[#0A1A12]">
+                  {isEn ? "Sinus Infection" : "সাইনাস সংক্রমণ"}
+                </SelectItem>
+                <SelectItem value="tonsils" className="text-[#0A1A12] focus:bg-[#0A1A12]/5 focus:text-[#0A1A12]">
+                  {isEn ? "Tonsils/Adenoids" : "টনসিল/অ্যাডেনয়েড"}
+                </SelectItem>
+                <SelectItem value="snoring" className="text-[#0A1A12] focus:bg-[#0A1A12]/5 focus:text-[#0A1A12]">
+                  {isEn ? "Snoring/Sleep Apnea" : "নাক ডাকা/স্লিপ অ্যাপনিয়া"}
+                </SelectItem>
+                <SelectItem value="other" className="text-[#0A1A12] focus:bg-[#0A1A12]/5 focus:text-[#0A1A12]">
+                  {isEn ? "Other ENT Issue" : "অন্যান্য ইএনটি সমস্যা"}
+                </SelectItem>
+                <SelectItem value="not_sure" className="text-[#0A1A12] focus:bg-[#0A1A12]/5 focus:text-[#0A1A12]">
+                  {isEn ? "Not Sure / Need Diagnosis" : "নিশ্চিত নই / রোগ নির্ণয় প্রয়োজন"}
+                </SelectItem>
               </SelectContent>
             </Select>
           </div>
