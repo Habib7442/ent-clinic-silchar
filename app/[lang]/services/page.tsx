@@ -1,6 +1,5 @@
 import ServicesSection from "@/components/editorial/ServicesSection";
 import ClosingCTA from "@/components/editorial/ClosingCTA";
-import TreatmentsList from "@/components/editorial/TreatmentsList";
 import { constructMetadata } from "@/lib/seo";
 import type { Metadata } from "next";
 
@@ -42,7 +41,6 @@ export default async function ServicesPage({
       </section>
 
       <ServicesSection lang={lang} hideExploreLink={true} />
-      <TreatmentsList lang={lang} />
       <ClosingCTA lang={lang} />
     </main>
   );
