@@ -93,8 +93,16 @@ export default function ServicesSection({ lang, hideExploreLink = false }: Servi
 
               {/* Top Details (Icon and Title) */}
               <div className="relative z-10 p-6 lg:p-8 space-y-4">
-                <div className="w-10 h-10 bg-forest/15 rounded-full border border-gold/30 flex items-center justify-center text-gold transition-all duration-500 group-hover:scale-110 group-hover:border-gold/60 group-hover:bg-gold/10">
-                  <service.icon className="w-5 h-5" />
+                <div className="w-10 h-10 bg-forest/15 rounded-full border border-gold/30 flex items-center justify-center text-gold transition-all duration-500 group-hover:scale-110 group-hover:border-gold/60 group-hover:bg-gold/10 overflow-hidden">
+                  {service.id === "vertigo-balance-clinic" ? (
+                    <img 
+                      src="/images/icons/doctor_page/Dedicated Vertigo Clinic.webp" 
+                      alt="Vertigo Clinic Icon"
+                      className="w-6 h-6 object-contain filter brightness-110 contrast-125"
+                    />
+                  ) : (
+                    <service.icon className="w-5 h-5" />
+                  )}
                 </div>
                 <h3 className="text-xl lg:text-2xl font-serif text-paper leading-tight group-hover:text-gold transition-colors duration-300">
                   {lang === "bn" ? service.title.bn : service.title.en}

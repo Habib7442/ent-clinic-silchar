@@ -136,7 +136,7 @@ export default async function DoctorPage({
         tests: ["Audiometry", "Tympanometry", "OAE Test", "BERA Test"]
       },
       vertigoClinic: {
-        title: isBn ? "বিশেষায়িত ভার্টিগো (মাথা ঘোরা) ক্লিনিক" : "Dedicated Vertigo Clinic",
+        title: isBn ? "ভার্টিগো ও ব্যালেন্স ক্লিনিক" : "Vertigo and Balance Clinic",
         desc: isBn
           ? "মাথা ঘোরা এবং ভার্টিগোতে আক্রান্ত রোগীদের জন্য সঠিক কারণ নির্ণয় ও উন্নত পুনর্বাসন থেরাপি।"
           : "Specialized clinical diagnosis and vestibular rehabilitation for patients suffering from dizziness and vertigo.",
@@ -239,7 +239,7 @@ export default async function DoctorPage({
                   <img 
                     src={icons.doctor_page.earClinic} 
                     alt={content.sections.earClinic.title}
-                    className="object-cover w-full h-full filter brightness-75 contrast-125 group-hover:scale-105 transition-transform duration-700" 
+                    className="object-contain p-6 w-full h-full filter brightness-75 contrast-125 group-hover:scale-105 transition-transform duration-700" 
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#0A1A12] via-[#0A1A12]/40 to-transparent" />
                 </div>
@@ -269,7 +269,7 @@ export default async function DoctorPage({
                   <img 
                     src={icons.doctor_page.vertigoClinic} 
                     alt={content.sections.vertigoClinic.title}
-                    className="object-cover w-full h-full filter brightness-75 contrast-125 group-hover:scale-105 transition-transform duration-700" 
+                    className="object-contain p-8 w-full h-full filter brightness-75 contrast-125 group-hover:scale-105 transition-transform duration-700" 
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#0A1A12] via-[#0A1A12]/40 to-transparent" />
                 </div>
@@ -299,7 +299,7 @@ export default async function DoctorPage({
                   <img 
                     src={icons.doctor_page.speechClinic} 
                     alt={content.sections.speechClinic.title}
-                    className="object-cover w-full h-full filter brightness-75 contrast-125 group-hover:scale-105 transition-transform duration-700" 
+                    className="object-contain p-6 w-full h-full filter brightness-75 contrast-125 group-hover:scale-105 transition-transform duration-700" 
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#0A1A12] via-[#0A1A12]/40 to-transparent" />
                 </div>
