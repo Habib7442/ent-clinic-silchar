@@ -103,7 +103,12 @@ export default function Navbar() {
           </SheetTrigger>
           <SheetContent side="right" className="bg-[#0A1A12] border-white/10 text-paper flex flex-col p-8">
             <SheetHeader className="text-left mb-12">
-              <SheetTitle className="font-serif text-2xl text-paper">Menu<span className="text-gold">.</span></SheetTitle>
+              <SheetTitle className="font-serif text-2xl text-paper">
+                The ENT Clinic<span className="text-gold">.</span>
+              </SheetTitle>
+              <span className="block text-[8px] uppercase tracking-[0.3em] text-paper/60 font-sans mt-0.5">
+                {lang === 'bn' ? "শিলচর, আসাম" : "SILCHAR, ASSAM"}
+              </span>
               <SheetDescription className="sr-only">
                 Navigate through The ENT Clinic Silchar services and information.
               </SheetDescription>
