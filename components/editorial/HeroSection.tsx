@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+import Image from "next/image";
 import gsap from "gsap";
 import HeroBookingForm from "./HeroBookingForm";
 
@@ -53,13 +54,13 @@ export default function HeroSection({ lang }: HeroProps) {
   const translations = {
     en: {
       eyebrow: "SPECIALIZED CARE",
-      title: "Advanced ENT Care \n redefined for Silchar.",
+      title: "Ear, Nose & Throat Care \n in Silchar.",
       description: "Combining surgical excellence with a compassionate, patient-first approach to hearing, sinus, and throat health.",
       cta: "Book Consultation",
     },
     bn: {
       eyebrow: "বিশেষায়িত যত্ন",
-      title: "শিলচরের জন্য উন্নত ইএনটি \n চিকিৎসার নতুন দিগন্ত।",
+      title: "শিলচরে নাক, কান ও \n গলা চিকিৎসা।",
       description: "শ্রবণশক্তি, সাইনাস এবং গলার স্বাস্থ্যের জন্য আধুনিক সার্জিক্যাল উৎকর্ষ এবং মমতাময়ী রোগীর যত্নের সমন্বয়।",
       cta: "অ্যাপয়েন্টমেন্ট বুক করুন",
     }
@@ -77,11 +78,11 @@ export default function HeroSection({ lang }: HeroProps) {
               {content.eyebrow}
             </div>
             
-            <h1 ref={titleRef} className="reveal-text text-4xl sm:text-5xl md:text-7xl lg:text-8xl mb-8 whitespace-pre-line leading-[1.05] break-words">
+            <h1 ref={titleRef} className="reveal-text text-4xl sm:text-5xl md:text-7xl lg:text-8xl mb-8 whitespace-pre-line leading-[1.05] break-words text-forest">
               {content.title}
             </h1>
             
-            <p className="reveal-text max-w-lg text-lg md:text-xl text-paper/70 mb-10 leading-relaxed">
+            <p className="reveal-text max-w-lg text-lg md:text-xl text-ink-soft mb-10 leading-relaxed">
               {content.description}
             </p>
           </div>
@@ -92,8 +93,20 @@ export default function HeroSection({ lang }: HeroProps) {
         </div>
       </div>
       
-      {/* Background Decorative Element */}
-      <div className="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-l from-forest/10 to-transparent -z-10" />
+      {/* Background Image with Vignette Overlays */}
+      <div className="absolute inset-0 z-0 overflow-hidden">
+        <Image
+          src="/images/hero_bg.webp"
+          alt="The ENT Clinic Silchar Background"
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover opacity-35 select-none pointer-events-none"
+        />
+        {/* Light vignettes and gradients to preserve contrast and premium editorial depth */}
+        <div className="absolute inset-0 bg-gradient-to-b from-paper/20 via-paper/45 to-paper" />
+        <div className="absolute inset-0 bg-gradient-to-r from-paper/85 via-paper/25 to-transparent lg:block hidden" />
+      </div>
     </section>
   );
 }

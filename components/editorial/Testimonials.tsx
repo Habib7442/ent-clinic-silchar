@@ -104,7 +104,7 @@ export default function Testimonials({ lang }: TestimonialsProps) {
   };
 
   return (
-    <section ref={containerRef} className="py-12 lg:py-16 px-6 lg:px-24 bg-[#0A1A12] relative overflow-hidden">
+    <section ref={containerRef} className="py-12 lg:py-16 px-6 lg:px-24 bg-paper-warm relative overflow-hidden">
       {/* Decorative radial glow */}
       <div className="absolute bottom-0 left-0 w-full h-1/2 bg-forest/5 blur-[120px] rounded-full translate-y-1/2" />
       
@@ -113,7 +113,7 @@ export default function Testimonials({ lang }: TestimonialsProps) {
           <span className="text-xs uppercase tracking-[0.3em] text-gold font-semibold block">
             {isEn ? "Patient Success Stories" : "রোগীর সাফল্যের গল্প"}
           </span>
-          <h2 className="text-4xl md:text-5xl lg:text-7xl font-serif text-paper leading-tight">
+          <h2 className="text-4xl md:text-5xl lg:text-7xl font-serif text-forest leading-tight">
             {isEn ? "Real outcomes for real lives." : "বাস্তব জীবনের জন্য বাস্তব ফলাফল।"}
           </h2>
         </div>
@@ -123,7 +123,7 @@ export default function Testimonials({ lang }: TestimonialsProps) {
           {/* Left Side Arrow Button */}
           <button
             onClick={() => scroll("left")}
-            className="absolute left-[-16px] lg:left-[-48px] top-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full border border-white/15 hover:border-gold/50 flex items-center justify-center text-paper hover:text-gold bg-[#0A1A12]/90 backdrop-blur-md transition-all duration-300 active:scale-95 cursor-pointer shadow-lg hidden md:flex"
+            className="absolute left-[-16px] lg:left-[-48px] top-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full border border-forest/15 hover:border-gold/50 flex items-center justify-center text-forest hover:text-gold bg-paper/90 backdrop-blur-md transition-all duration-300 active:scale-95 cursor-pointer shadow-lg hidden md:flex"
             aria-label={isEn ? "Previous testimonial" : "পূর্ববর্তী প্রশংসাপত্র"}
           >
             <ChevronLeft className="w-5 h-5" />
@@ -132,7 +132,7 @@ export default function Testimonials({ lang }: TestimonialsProps) {
           {/* Right Side Arrow Button */}
           <button
             onClick={() => scroll("right")}
-            className="absolute right-[-16px] lg:right-[-48px] top-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full border border-white/15 hover:border-gold/50 flex items-center justify-center text-paper hover:text-gold bg-[#0A1A12]/90 backdrop-blur-md transition-all duration-300 active:scale-95 cursor-pointer shadow-lg hidden md:flex"
+            className="absolute right-[-16px] lg:right-[-48px] top-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full border border-forest/15 hover:border-gold/50 flex items-center justify-center text-forest hover:text-gold bg-paper/90 backdrop-blur-md transition-all duration-300 active:scale-95 cursor-pointer shadow-lg hidden md:flex"
             aria-label={isEn ? "Next testimonial" : "পরবর্তী প্রশংসাপত্র"}
           >
             <ChevronRight className="w-5 h-5" />
@@ -145,9 +145,9 @@ export default function Testimonials({ lang }: TestimonialsProps) {
           {testimonials.map((item) => (
             <div 
               key={item.id}
-              className="testimonial-card group relative p-10 bg-white/5 border border-white/10 rounded-sm flex flex-col justify-between transition-all duration-500 hover:border-gold/30 shrink-0 w-[85vw] md:w-[45vw] lg:w-[380px] snap-start"
+              className="testimonial-card group relative p-10 bg-paper-card border border-hairline rounded-sm flex flex-col justify-between transition-all duration-500 hover:border-gold/30 shrink-0 w-[85vw] md:w-[45vw] lg:w-[380px] snap-start shadow-md hover:shadow-lg"
             >
-              <Quote className="absolute top-8 right-8 w-12 h-12 text-white/5 group-hover:text-gold/15 transition-colors" />
+              <Quote className="absolute top-8 right-8 w-12 h-12 text-forest/5 group-hover:text-gold/15 transition-colors" />
               
               <div className="space-y-6">
                 <div className="flex gap-1 text-gold">
@@ -156,14 +156,14 @@ export default function Testimonials({ lang }: TestimonialsProps) {
                   ))}
                 </div>
                 
-                <p className="text-lg lg:text-xl text-paper/80 leading-relaxed font-light italic">
+                <p className="text-lg lg:text-xl text-ink-soft leading-relaxed font-light italic">
                   "{lang === "bn" ? item.content.bn : item.content.en}"
                 </p>
               </div>
 
-              <div className="mt-12 pt-8 border-t border-white/5 space-y-1">
-                <p className="text-paper font-serif text-xl">{item.name}</p>
-                <div className="flex items-center gap-2 text-[10px] uppercase tracking-widest text-paper/60">
+              <div className="mt-12 pt-8 border-t border-hairline space-y-1">
+                <p className="text-forest font-serif text-xl font-semibold">{item.name}</p>
+                <div className="flex items-center gap-2 text-[10px] uppercase tracking-widest text-mute font-medium">
                   <span>{item.role}</span>
                   <span className="w-1 h-1 bg-gold rounded-full" />
                   <span className="text-gold">{lang === "bn" ? item.concern.bn : item.concern.en}</span>
@@ -175,16 +175,16 @@ export default function Testimonials({ lang }: TestimonialsProps) {
       </div>
 
         {/* Trust Badge */}
-        <div className="mt-16 lg:mt-24 flex flex-col items-center gap-4 py-8 border-y border-white/5">
+        <div className="mt-16 lg:mt-24 flex flex-col items-center gap-4 py-8 border-y border-hairline">
           <div className="flex items-center gap-2">
             <div className="flex gap-0.5 text-gold">
               {[...Array(5)].map((_, i) => (
                 <Star key={i} className="w-5 h-5 fill-gold" />
               ))}
             </div>
-            <span className="text-paper font-bold text-xl ml-2">4.9 / 5</span>
+            <span className="text-forest font-bold text-xl ml-2">4.9 / 5</span>
           </div>
-          <p className="text-xs uppercase tracking-[0.2em] text-paper/60">
+          <p className="text-xs uppercase tracking-[0.2em] text-mute font-medium">
             {isEn ? "Based on 150+ Verified Google Reviews" : "১৫০+ যাচাইকৃত গুগল রিভিউ ভিত্তিক"}
           </p>
         </div>

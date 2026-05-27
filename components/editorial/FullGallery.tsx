@@ -43,7 +43,7 @@ export default function FullGallery({ lang }: FullGalleryProps) {
   }, []);
 
   return (
-    <section ref={containerRef} className="py-8 lg:py-16 px-6 lg:px-24 bg-[#0A1A12]">
+    <section ref={containerRef} className="py-8 lg:py-16 px-6 lg:px-24 bg-paper-warm border-t border-hairline">
       <div className="max-w-7xl mx-auto">
         
         {/* Full Bento Grid */}
@@ -51,10 +51,10 @@ export default function FullGallery({ lang }: FullGalleryProps) {
           {galleryItems.map((item) => (
             <div 
               key={item.id} 
-              className={`full-gallery-item flex flex-col group ${item.spanFullpage || "lg:col-span-4 lg:row-span-1"} aspect-[16/10] lg:aspect-auto lg:h-full bg-white/[0.02] border border-white/5 p-4 rounded-sm hover:border-gold/20 transition-all duration-500`}
+              className={`full-gallery-item flex flex-col group ${item.spanFullpage || "lg:col-span-4 lg:row-span-1"} aspect-[16/10] lg:aspect-auto lg:h-full bg-paper-card border border-hairline p-4 rounded-sm hover:border-gold/20 transition-all duration-500 shadow-md hover:shadow-lg`}
             >
               {/* Image Container */}
-              <div className="relative overflow-hidden rounded-sm aspect-[16/10] lg:aspect-auto lg:flex-1 w-full bg-[#0A1A12]/40">
+              <div className="relative overflow-hidden rounded-sm aspect-[16/10] lg:aspect-auto lg:flex-1 w-full bg-paper-warm">
                 <img
                   src={item.src}
                   alt={item.title[lang as "en" | "bn"]}
@@ -65,10 +65,10 @@ export default function FullGallery({ lang }: FullGalleryProps) {
               
               {/* Text Block below the image */}
               <div className="mt-4 space-y-1 select-none">
-                <h3 className="text-lg lg:text-xl font-serif text-paper group-hover:text-gold transition-colors duration-300">
+                <h3 className="text-lg lg:text-xl font-serif text-forest group-hover:text-rust transition-colors duration-300">
                   {lang === "bn" ? item.title.bn : item.title.en}
                 </h3>
-                <p className="text-xs text-paper/60 line-clamp-2">
+                <p className="text-xs text-mute line-clamp-2">
                   {lang === "bn" ? item.description.bn : item.description.en}
                 </p>
               </div>

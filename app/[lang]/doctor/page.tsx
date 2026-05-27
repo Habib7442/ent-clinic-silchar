@@ -166,10 +166,10 @@ export default async function DoctorPage({
   };
 
   return (
-    <main className="flex-1 bg-[#0A1A12] text-paper overflow-x-hidden pt-0">
+    <main className="flex-1 bg-paper text-ink overflow-x-hidden pt-0">
       
       {/* 1. Doctor Hero Section */}
-      <section className="relative pt-8 pb-20 lg:pt-12 lg:pb-32 px-6 lg:px-24 border-b border-white/5">
+      <section className="relative pt-8 pb-20 lg:pt-12 lg:pb-32 px-6 lg:px-24 border-b border-hairline">
         <div className="absolute top-0 right-0 w-1/2 h-full bg-forest/5 blur-[120px] rounded-full -translate-y-1/2 translate-x-1/4 pointer-events-none" />
         
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24 items-center">
@@ -179,7 +179,7 @@ export default async function DoctorPage({
               <span className="inline-block text-xs uppercase tracking-[0.3em] text-gold font-semibold">
                 {content.hero.tagline}
               </span>
-              <h1 className="text-5xl md:text-7xl lg:text-8xl font-serif text-paper leading-tight">
+              <h1 className="text-5xl md:text-7xl lg:text-8xl font-serif text-forest leading-tight font-light">
                 {content.hero.title}
               </h1>
               <p className="text-xl lg:text-2xl text-gold font-serif italic">
@@ -187,16 +187,16 @@ export default async function DoctorPage({
               </p>
             </div>
 
-            <p className="text-base lg:text-lg text-paper/70 leading-relaxed font-light max-w-2xl">
+            <p className="text-base lg:text-lg text-ink-soft leading-relaxed font-light max-w-2xl">
               {content.hero.bio}
             </p>
 
-            <div className="flex flex-wrap gap-8 pt-6 border-t border-white/5">
+            <div className="flex flex-wrap gap-8 pt-6 border-t border-hairline">
               <div className="flex items-center gap-3">
                 <MedicalSealIcon />
                 <div>
-                  <p className="text-paper text-sm font-semibold">{content.hero.experienceLabel}</p>
-                  <p className="text-paper/60 text-[10px] uppercase tracking-widest">{content.hero.recordLabel}</p>
+                  <p className="text-ink text-sm font-semibold">{content.hero.experienceLabel}</p>
+                  <p className="text-mute text-[10px] uppercase tracking-widest">{content.hero.recordLabel}</p>
                 </div>
               </div>
             </div>
@@ -204,56 +204,56 @@ export default async function DoctorPage({
 
           {/* Image Placeholder Frame */}
           <div className="lg:col-span-5 order-1 lg:order-2">
-            <div className="relative aspect-[4/5] rounded-sm overflow-hidden bg-forest/10 ring-1 ring-white/10 group shadow-2xl">
+            <div className="relative aspect-[4/5] rounded-sm overflow-hidden bg-paper-warm ring-1 ring-hairline group shadow-2xl">
               <div className="absolute inset-0 flex flex-col items-center justify-center p-6 text-center space-y-4">
-                <div className="p-4 bg-forest/20 rounded-full text-gold">
+                <div className="p-4 bg-forest/5 border border-forest/10 rounded-full text-gold">
                   <ShieldCheck className="w-16 h-16" />
                 </div>
-                <h3 className="font-serif text-xl text-paper">{content.hero.title}</h3>
-                <p className="text-xs text-paper/60 uppercase tracking-widest">{content.hero.specialty}</p>
+                <h3 className="font-serif text-xl text-forest font-semibold">{content.hero.title}</h3>
+                <p className="text-xs text-mute uppercase tracking-widest">{content.hero.specialty}</p>
               </div>
               {/* Gradient Overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-[#0A1A12] via-transparent to-transparent opacity-50" />
+              <div className="absolute inset-0 bg-gradient-to-t from-paper-warm via-transparent to-transparent opacity-50" />
             </div>
           </div>
         </div>
       </section>
 
       {/* 2. Specialized Clinics Grid */}
-      <section className="py-12 lg:py-16 px-6 lg:px-24 bg-[#07140E]">
+      <section className="py-12 lg:py-16 px-6 lg:px-24 bg-paper-warm">
         <div className="max-w-7xl mx-auto space-y-20">
           <div className="text-center space-y-4 max-w-3xl mx-auto">
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif text-paper font-light">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif text-forest font-light">
               {content.sections.clinicsTitle}
             </h2>
-            <p className="text-paper/60 text-base md:text-lg font-light">
+            <p className="text-ink-soft text-base md:text-lg font-light">
               {content.sections.clinicsSub}
             </p>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
             {/* Card 1: Ear Clinic */}
-            <div className="group overflow-hidden bg-[#0A1A12] border border-white/5 rounded-sm flex flex-col justify-between hover:border-forest/40 transition-all duration-500 hover:-translate-y-1">
+            <div className="group overflow-hidden bg-paper-card border border-hairline rounded-sm flex flex-col justify-between hover:border-forest/40 transition-all duration-500 hover:-translate-y-1 shadow-md hover:shadow-lg">
               <div>
-                <div className="relative aspect-[16/10] w-full overflow-hidden bg-forest/10">
+                <div className="relative aspect-[16/10] w-full overflow-hidden bg-forest/5">
                   <img 
                     src={icons.doctor_page.earClinic} 
                     alt={content.sections.earClinic.title}
-                    className="object-contain p-6 w-full h-full filter brightness-75 contrast-125 group-hover:scale-105 transition-transform duration-700" 
+                    className="object-contain p-6 w-full h-full filter contrast-125 group-hover:scale-105 transition-transform duration-700" 
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#0A1A12] via-[#0A1A12]/40 to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-paper-card via-paper-card/40 to-transparent" />
                 </div>
 
                 <div className="p-8 lg:p-10 pt-6 space-y-4">
-                  <h3 className="text-2xl font-serif text-paper font-semibold">{content.sections.earClinic.title}</h3>
-                  <p className="text-sm text-paper/60 leading-relaxed font-light">{content.sections.earClinic.desc}</p>
+                  <h3 className="text-2xl font-serif text-forest font-semibold">{content.sections.earClinic.title}</h3>
+                  <p className="text-sm text-ink-soft leading-relaxed font-light">{content.sections.earClinic.desc}</p>
                 </div>
               </div>
 
               <div className="px-8 lg:px-10 pb-8">
-                <div className="pt-6 border-t border-white/5 space-y-3">
+                <div className="pt-6 border-t border-hairline space-y-3">
                   {content.sections.earClinic.tests.map((test, index) => (
-                    <div key={index} className="flex items-center gap-2 text-xs text-paper/80">
+                    <div key={index} className="flex items-center gap-2 text-xs text-ink-soft font-semibold">
                       <CheckCircle2 className="w-4 h-4 text-gold shrink-0" />
                       <span>{test}</span>
                     </div>
@@ -263,27 +263,27 @@ export default async function DoctorPage({
             </div>
 
             {/* Card 2: Vertigo Clinic */}
-            <div className="group overflow-hidden bg-[#0A1A12] border border-white/5 rounded-sm flex flex-col justify-between hover:border-gold/30 transition-all duration-500 hover:-translate-y-1">
+            <div className="group overflow-hidden bg-paper-card border border-hairline rounded-sm flex flex-col justify-between hover:border-gold/30 transition-all duration-500 hover:-translate-y-1 shadow-md hover:shadow-lg">
               <div>
                 <div className="relative aspect-[16/10] w-full overflow-hidden bg-gold/5">
                   <img 
                     src={icons.doctor_page.vertigoClinic} 
                     alt={content.sections.vertigoClinic.title}
-                    className="object-contain p-8 w-full h-full filter brightness-75 contrast-125 group-hover:scale-105 transition-transform duration-700" 
+                    className="object-contain p-8 w-full h-full filter contrast-125 group-hover:scale-105 transition-transform duration-700" 
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#0A1A12] via-[#0A1A12]/40 to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-paper-card via-paper-card/40 to-transparent" />
                 </div>
 
                 <div className="p-8 lg:p-10 pt-6 space-y-4">
-                  <h3 className="text-2xl font-serif text-paper font-semibold">{content.sections.vertigoClinic.title}</h3>
-                  <p className="text-sm text-paper/60 leading-relaxed font-light">{content.sections.vertigoClinic.desc}</p>
+                  <h3 className="text-2xl font-serif text-forest font-semibold">{content.sections.vertigoClinic.title}</h3>
+                  <p className="text-sm text-ink-soft leading-relaxed font-light">{content.sections.vertigoClinic.desc}</p>
                 </div>
               </div>
 
               <div className="px-8 lg:px-10 pb-8">
-                <div className="pt-6 border-t border-white/5 space-y-3">
+                <div className="pt-6 border-t border-hairline space-y-3">
                   {content.sections.vertigoClinic.tests.map((test, index) => (
-                    <div key={index} className="flex items-center gap-2 text-xs text-paper/80">
+                    <div key={index} className="flex items-center gap-2 text-xs text-ink-soft font-semibold">
                       <Activity className="w-4 h-4 text-forest shrink-0" />
                       <span>{test}</span>
                     </div>
@@ -293,27 +293,27 @@ export default async function DoctorPage({
             </div>
 
             {/* Card 3: Speech Therapy */}
-            <div className="group overflow-hidden bg-[#0A1A12] border border-white/5 rounded-sm flex flex-col justify-between hover:border-forest/40 transition-all duration-500 hover:-translate-y-1">
+            <div className="group overflow-hidden bg-paper-card border border-hairline rounded-sm flex flex-col justify-between hover:border-forest/40 transition-all duration-500 hover:-translate-y-1 shadow-md hover:shadow-lg">
               <div>
-                <div className="relative aspect-[16/10] w-full overflow-hidden bg-forest/10">
+                <div className="relative aspect-[16/10] w-full overflow-hidden bg-forest/5">
                   <img 
                     src={icons.doctor_page.speechClinic} 
                     alt={content.sections.speechClinic.title}
-                    className="object-contain p-6 w-full h-full filter brightness-75 contrast-125 group-hover:scale-105 transition-transform duration-700" 
+                    className="object-contain p-6 w-full h-full filter contrast-125 group-hover:scale-105 transition-transform duration-700" 
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#0A1A12] via-[#0A1A12]/40 to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-paper-card via-paper-card/40 to-transparent" />
                 </div>
 
                 <div className="p-8 lg:p-10 pt-6 space-y-4">
-                  <h3 className="text-2xl font-serif text-paper font-semibold">{content.sections.speechClinic.title}</h3>
-                  <p className="text-sm text-paper/60 leading-relaxed font-light">{content.sections.speechClinic.desc}</p>
+                  <h3 className="text-2xl font-serif text-forest font-semibold">{content.sections.speechClinic.title}</h3>
+                  <p className="text-sm text-ink-soft leading-relaxed font-light">{content.sections.speechClinic.desc}</p>
                 </div>
               </div>
 
               <div className="px-8 lg:px-10 pb-8">
-                <div className="pt-6 border-t border-white/5 space-y-3">
+                <div className="pt-6 border-t border-hairline space-y-3">
                   {content.sections.speechClinic.tests.map((test, index) => (
-                    <div key={index} className="flex items-center gap-2 text-xs text-paper/80">
+                    <div key={index} className="flex items-center gap-2 text-xs text-ink-soft font-semibold">
                       <CheckCircle2 className="w-4 h-4 text-gold shrink-0" />
                       <span>{test}</span>
                     </div>
@@ -326,25 +326,25 @@ export default async function DoctorPage({
       </section>
 
       {/* 3. Philosophy Quote Section */}
-      <section className="py-12 lg:py-16 px-6 lg:px-24 bg-[#0A1A12] relative overflow-hidden">
+      <section className="py-12 lg:py-16 px-6 lg:px-24 bg-paper relative overflow-hidden border-b border-hairline">
         <div className="max-w-4xl mx-auto text-center space-y-6">
           <Heart className="w-8 h-8 text-gold mx-auto opacity-70" />
           <h3 className="text-xs uppercase tracking-[0.3em] text-gold font-semibold">{content.philosophy.title}</h3>
-          <p className="text-3xl md:text-4xl lg:text-5xl font-serif italic text-paper leading-snug">
+          <p className="text-3xl md:text-4xl lg:text-5xl font-serif italic text-forest leading-snug">
             "{content.philosophy.quote}"
           </p>
         </div>
       </section>
 
       {/* 4. Action Booking CTA Section */}
-      <section className="py-12 lg:py-16 px-6 lg:px-24 bg-[#07140E] border-t border-white/5 text-center relative">
+      <section className="py-12 lg:py-16 px-6 lg:px-24 bg-paper-warm text-center relative">
         <div className="max-w-4xl mx-auto space-y-8">
           <Calendar className="w-12 h-12 text-forest mx-auto" />
           <div className="space-y-4">
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif text-paper">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif text-forest font-semibold">
               {content.cta.title}
             </h2>
-            <p className="text-paper/60 text-base md:text-lg max-w-xl mx-auto font-light">
+            <p className="text-ink-soft text-base md:text-lg max-w-xl mx-auto font-light">
               {content.cta.sub}
             </p>
           </div>

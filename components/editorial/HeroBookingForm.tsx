@@ -105,12 +105,12 @@ function BookingForm({ lang }: { lang: string }) {
   };
 
   return (
-    <Card className="w-full max-w-md mx-auto lg:max-w-none bg-white shadow-2xl border-0 overflow-hidden p-0 gap-0">
-      <CardHeader className="bg-[#0A1A12] text-[#F6F1E6] pb-6 pt-8 px-8 border-b-4 border-[#B65C36]">
+    <Card className="w-full max-w-md mx-auto lg:max-w-none bg-paper-card border border-hairline shadow-xl overflow-hidden p-0 gap-0">
+      <CardHeader className="bg-forest text-paper pb-6 pt-8 px-8 border-b-4 border-rust">
         <CardTitle className="text-2xl font-serif">
           {isEn ? "Book FREE Appointment" : "ফ্রি অ্যাপয়েন্টমেন্ট বুক করুন"}
         </CardTitle>
-        <CardDescription className="text-[#F6F1E6]/70 text-sm mt-2">
+        <CardDescription className="text-paper/70 text-sm mt-2">
           {isEn ? "Get expert ENT consultation at our clinic. Fill the details below." : "আমাদের ক্লিনিকে বিশেষজ্ঞ ইএনটি পরামর্শ পান। নিচের বিবরণ পূরণ করুন।"}
         </CardDescription>
       </CardHeader>
@@ -122,7 +122,7 @@ function BookingForm({ lang }: { lang: string }) {
               value={name}
               onChange={(e) => setName(e.target.value)}
               placeholder={isEn ? "Patient Name" : "রোগীর নাম"} 
-              className="h-12 border-[#0A1A12]/20 focus-visible:ring-[#B65C36] bg-white text-[#0A1A12]"
+              className="h-12 border-hairline focus-visible:ring-forest focus-visible:border-forest bg-paper-card text-ink"
             />
           </div>
           <div className="space-y-2">
@@ -132,7 +132,7 @@ function BookingForm({ lang }: { lang: string }) {
               value={mobile}
               onChange={(e) => setMobile(e.target.value)}
               placeholder={isEn ? "Mobile Number" : "মোবাইল নম্বর"} 
-              className="h-12 border-[#0A1A12]/20 focus-visible:ring-[#B65C36] bg-white text-[#0A1A12]"
+              className="h-12 border-hairline focus-visible:ring-forest focus-visible:border-forest bg-paper-card text-ink"
             />
           </div>
           <div className="space-y-2">
@@ -141,74 +141,74 @@ function BookingForm({ lang }: { lang: string }) {
                 <Button
                   variant="outline"
                   className={cn(
-                    "w-full h-12 justify-start text-left font-normal border-[#0A1A12]/20 focus-visible:ring-[#B65C36] bg-white hover:bg-[#0A1A12]/5 text-[#0A1A12]",
-                    !date && "text-[#0A1A12]/50"
+                    "w-full h-12 justify-start text-left font-normal border-hairline focus-visible:ring-forest focus-visible:border-forest bg-paper-card hover:bg-paper-warm text-ink",
+                    !date && "text-ink/50"
                   )}
                 >
                   <CalendarIcon className="mr-2 h-4 w-4" />
                   {date ? format(date, "PPP") : <span>{isEn ? "Select Date" : "তারিখ নির্বাচন করুন"}</span>}
                 </Button>
               </PopoverTrigger>
-              <PopoverContent className="w-auto p-0 bg-white border-[#0A1A12]/10 z-50 shadow-xl" align="start">
+              <PopoverContent className="w-auto p-0 bg-paper-card border border-hairline z-50 shadow-xl" align="start">
                 <Calendar
                   mode="single"
                   selected={date}
                   onSelect={setDate}
                   disabled={(date) => date < new Date(new Date().setHours(0,0,0,0))}
-                  className="bg-white text-[#0A1A12] rounded-md"
+                  className="bg-paper-card text-ink rounded-none"
                 />
               </PopoverContent>
             </Popover>
           </div>
           <div className="space-y-2">
             <Select key={disease} required value={disease} onValueChange={setDisease}>
-              <SelectTrigger className="h-12 border-[#0A1A12]/20 focus:ring-[#B65C36] bg-white text-[#0A1A12]">
+              <SelectTrigger className="h-12 border border-hairline focus:ring-forest bg-paper-card text-ink">
                 <SelectValue placeholder={isEn ? "Select Service / Disease" : "সেবা / রোগ নির্বাচন করুন"} />
               </SelectTrigger>
-              <SelectContent position="popper" className="bg-white border-[#0A1A12]/10 shadow-xl w-[--radix-select-trigger-width]">
+              <SelectContent position="popper" className="bg-paper-card border border-hairline shadow-xl w-[--radix-select-trigger-width]">
                 {/* Core Services */}
-                <SelectItem value="speech-therapy-clinic" className="text-[#0A1A12] focus:bg-[#0A1A12]/5 focus:text-[#0A1A12]">
+                <SelectItem value="speech-therapy-clinic" className="text-ink focus:bg-paper-warm focus:text-forest">
                   {isEn ? "Speech Therapy Clinic" : "স্পিচ থেরাপি ক্লিনিক"}
                 </SelectItem>
-                <SelectItem value="hearing-aids" className="text-[#0A1A12] focus:bg-[#0A1A12]/5 focus:text-[#0A1A12]">
+                <SelectItem value="hearing-aids" className="text-ink focus:bg-paper-warm focus:text-forest">
                   {isEn ? "Hearing Aids Center" : "হিয়ারিং এইডস সেন্টার"}
                 </SelectItem>
-                <SelectItem value="headache-clinic" className="text-[#0A1A12] focus:bg-[#0A1A12]/5 focus:text-[#0A1A12]">
+                <SelectItem value="headache-clinic" className="text-ink focus:bg-paper-warm focus:text-forest">
                   {isEn ? "Headache Clinic" : "মাথাব্যথা ক্লিনিক"}
                 </SelectItem>
-                <SelectItem value="laryngoscopy-endoscopy" className="text-[#0A1A12] focus:bg-[#0A1A12]/5 focus:text-[#0A1A12]">
+                <SelectItem value="laryngoscopy-endoscopy" className="text-ink focus:bg-paper-warm focus:text-forest">
                   {isEn ? "Laryngoscopy & Nasal Endoscopy" : "ল্যারিঙ্গোস্কোপি ও নাসাল এন্ডোস্কোপি"}
                 </SelectItem>
-                <SelectItem value="pediatric-ent" className="text-[#0A1A12] focus:bg-[#0A1A12]/5 focus:text-[#0A1A12]">
+                <SelectItem value="pediatric-ent" className="text-ink focus:bg-paper-warm focus:text-forest">
                   {isEn ? "Paediatric ENT Clinic" : "শিশু নাক, কান ও গলা ক্লিনিক"}
                 </SelectItem>
-                <SelectItem value="voice-clinic" className="text-[#0A1A12] focus:bg-[#0A1A12]/5 focus:text-[#0A1A12]">
+                <SelectItem value="voice-clinic" className="text-ink focus:bg-paper-warm focus:text-forest">
                   {isEn ? "Voice & Throat Clinic" : "ভয়েস ও গলা ক্লিনিক"}
                 </SelectItem>
-                <SelectItem value="vertigo-balance-clinic" className="text-[#0A1A12] focus:bg-[#0A1A12]/5 focus:text-[#0A1A12]">
+                <SelectItem value="vertigo-balance-clinic" className="text-ink focus:bg-paper-warm focus:text-forest">
                   {isEn ? "Vertigo and Balance Clinic" : "ভার্টিগো ও ব্যালেন্স ক্লিনিক"}
                 </SelectItem>
-                <SelectItem value="surgical-ent" className="text-[#0A1A12] focus:bg-[#0A1A12]/5 focus:text-[#0A1A12]">
+                <SelectItem value="surgical-ent" className="text-ink focus:bg-paper-warm focus:text-forest">
                   {isEn ? "Surgical ENT Services" : "সার্জিকাল ইএনটি সেবা"}
                 </SelectItem>
 
                 {/* Fallbacks / General */}
-                <SelectItem value="hearing" className="text-[#0A1A12] focus:bg-[#0A1A12]/5 focus:text-[#0A1A12]">
+                <SelectItem value="hearing" className="text-ink focus:bg-paper-warm focus:text-forest">
                   {isEn ? "Hearing Loss" : "শ্রবণ সমস্যা"}
                 </SelectItem>
-                <SelectItem value="sinus" className="text-[#0A1A12] focus:bg-[#0A1A12]/5 focus:text-[#0A1A12]">
+                <SelectItem value="sinus" className="text-ink focus:bg-paper-warm focus:text-forest">
                   {isEn ? "Sinus Infection" : "সাইনাস সংক্রমণ"}
                 </SelectItem>
-                <SelectItem value="tonsils" className="text-[#0A1A12] focus:bg-[#0A1A12]/5 focus:text-[#0A1A12]">
+                <SelectItem value="tonsils" className="text-ink focus:bg-paper-warm focus:text-forest">
                   {isEn ? "Tonsils/Adenoids" : "টনসিল/অ্যাডেনয়েড"}
                 </SelectItem>
-                <SelectItem value="snoring" className="text-[#0A1A12] focus:bg-[#0A1A12]/5 focus:text-[#0A1A12]">
+                <SelectItem value="snoring" className="text-ink focus:bg-paper-warm focus:text-forest">
                   {isEn ? "Snoring/Sleep Apnea" : "নাক ডাকা/স্লিপ অ্যাপনিয়া"}
                 </SelectItem>
-                <SelectItem value="other" className="text-[#0A1A12] focus:bg-[#0A1A12]/5 focus:text-[#0A1A12]">
+                <SelectItem value="other" className="text-ink focus:bg-paper-warm focus:text-forest">
                   {isEn ? "Other ENT Issue" : "অন্যান্য ইএনটি সমস্যা"}
                 </SelectItem>
-                <SelectItem value="not_sure" className="text-[#0A1A12] focus:bg-[#0A1A12]/5 focus:text-[#0A1A12]">
+                <SelectItem value="not_sure" className="text-ink focus:bg-paper-warm focus:text-forest">
                   {isEn ? "Not Sure / Need Diagnosis" : "নিশ্চিত নই / রোগ নির্ণয় প্রয়োজন"}
                 </SelectItem>
               </SelectContent>
@@ -233,17 +233,17 @@ function BookingForm({ lang }: { lang: string }) {
 export default function HeroBookingForm({ lang }: { lang: string }) {
   return (
     <Suspense fallback={
-      <Card className="w-full max-w-md mx-auto lg:max-w-none bg-white shadow-2xl border-0 overflow-hidden p-0 gap-0">
-        <div className="bg-[#0A1A12] text-[#F6F1E6] pb-6 pt-8 px-8 border-b-4 border-[#B65C36] animate-pulse">
+      <Card className="w-full max-w-md mx-auto lg:max-w-none bg-paper-card border border-hairline shadow-xl overflow-hidden p-0 gap-0">
+        <div className="bg-forest text-paper pb-6 pt-8 px-8 border-b-4 border-rust animate-pulse">
           <div className="h-8 bg-white/20 rounded w-2/3 mb-2" />
           <div className="h-4 bg-white/10 rounded w-5/6" />
         </div>
         <div className="p-8 space-y-5 animate-pulse">
-          <div className="h-12 bg-[#0A1A12]/5 rounded" />
-          <div className="h-12 bg-[#0A1A12]/5 rounded" />
-          <div className="h-12 bg-[#0A1A12]/5 rounded" />
-          <div className="h-12 bg-[#0A1A12]/5 rounded" />
-          <div className="h-12 bg-[#B65C36]/50 rounded mt-4" />
+          <div className="h-12 bg-hairline rounded-none" />
+          <div className="h-12 bg-hairline rounded-none" />
+          <div className="h-12 bg-hairline rounded-none" />
+          <div className="h-12 bg-hairline rounded-none" />
+          <div className="h-12 bg-rust/50 rounded-none mt-4" />
         </div>
       </Card>
     }>

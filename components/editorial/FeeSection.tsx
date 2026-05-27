@@ -72,46 +72,46 @@ export default function FeeSection({ lang }: FeeSectionProps) {
   }, []);
 
   return (
-    <section id="fees" ref={containerRef} className="py-12 lg:py-16 px-6 lg:px-24 bg-[#0A1A12] border-t border-white/5">
+    <section id="fees" ref={containerRef} className="py-12 lg:py-16 px-6 lg:px-24 bg-paper-warm border-t border-hairline">
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-32 items-center">
         <div className="reveal-fee space-y-8">
           <div className="space-y-4">
             <span className="text-xs uppercase tracking-[0.3em] text-gold font-semibold">
               {content.title}
             </span>
-            <h2 className="text-4xl md:text-5xl lg:text-7xl font-serif text-paper leading-tight">
+            <h2 className="text-4xl md:text-5xl lg:text-7xl font-serif text-forest leading-tight">
               {content.headline}
             </h2>
           </div>
           
           <div className="space-y-4">
             {content.includes.map((item, index) => (
-              <div key={index} className="flex items-center gap-3 text-paper/60">
+              <div key={index} className="flex items-center gap-3 text-ink-soft font-medium">
                 <CheckCircle2 className="w-5 h-5 text-forest" />
                 <span className="text-lg">{item}</span>
               </div>
             ))}
           </div>
 
-          <p className="text-sm italic text-paper/60 pt-4">
+          <p className="text-sm italic text-mute pt-4">
             {content.note}
           </p>
         </div>
 
         <div className="reveal-fee relative">
           {/* Glass Card */}
-          <div className="relative p-12 lg:p-20 bg-white/5 border border-white/10 rounded-sm overflow-hidden flex flex-col items-center text-center">
-            <div className="absolute top-0 right-0 w-32 h-32 bg-forest/20 blur-[60px] rounded-full" />
+          <div className="relative p-12 lg:p-20 bg-paper-card border border-hairline rounded-sm shadow-xl overflow-hidden flex flex-col items-center text-center">
+            <div className="absolute top-0 right-0 w-32 h-32 bg-forest/5 blur-[60px] rounded-full" />
             
-            <p className="text-xs uppercase tracking-[0.3em] text-paper/60 mb-4">
+            <p className="text-xs uppercase tracking-[0.3em] text-mute mb-4 font-semibold">
               {content.label}
             </p>
-            <div className="font-serif text-8xl md:text-9xl text-paper mb-4 relative">
+            <div className="font-serif text-8xl md:text-9xl text-forest mb-4 relative">
               <span className="text-gold absolute -left-8 top-4 text-4xl italic opacity-50">₹</span>
               {content.fee.replace("₹", "")}
             </div>
             <div className="w-12 h-1 bg-gold mb-8" />
-            <p className="text-paper/60 max-w-xs mx-auto">
+            <p className="text-ink-soft max-w-xs mx-auto font-medium">
               {lang === "en" ? "Inclusive of all first-visit diagnostics performed by the doctor." : "ডাক্তারের দ্বারা সম্পাদিত সমস্ত প্রথম ভিজিটের ডায়াগনস্টিকস অন্তর্ভুক্ত।"}
             </p>
           </div>

@@ -60,7 +60,7 @@ export default function DoctorPhilosophy({ lang }: DoctorPhilosophyProps) {
   }, []);
 
   return (
-    <section ref={containerRef} className="py-12 lg:py-16 px-6 lg:px-24 bg-[#07140E] relative overflow-hidden border-b border-white/5">
+    <section ref={containerRef} className="py-12 lg:py-16 px-6 lg:px-24 bg-paper-warm relative overflow-hidden border-b border-hairline">
       {/* Subtle Ambient Glow */}
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
         <div className="w-[400px] h-[400px] bg-gold/5 blur-[120px] rounded-full" />
@@ -74,24 +74,24 @@ export default function DoctorPhilosophy({ lang }: DoctorPhilosophyProps) {
           <span className="inline-block text-xs uppercase tracking-[0.4em] text-gold font-semibold">
             {content.title}
           </span>
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif text-paper leading-tight">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif text-forest leading-tight">
             {content.headline}
           </h2>
         </div>
 
         {/* Narrative Copy - Beautiful Two Column Editorial Layout */}
-        <div className="reveal-phi grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 text-left pt-4 border-t border-white/5">
-          <p className="text-lg text-paper/70 leading-relaxed font-light">
+        <div className="reveal-phi grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 text-left pt-4 border-t border-hairline">
+          <p className="text-lg text-ink-soft leading-relaxed font-light">
             {content.para1}
           </p>
-          <p className="text-lg text-paper/70 leading-relaxed font-light">
+          <p className="text-lg text-ink-soft leading-relaxed font-light">
             {content.para2}
           </p>
         </div>
 
         {/* Highlighted Philosophy Quote */}
-        <div className="reveal-phi pt-8 border-t border-white/5">
-          <p className="text-3xl md:text-4xl lg:text-5xl font-serif italic text-paper leading-snug italic-rust">
+        <div className="reveal-phi pt-8 border-t border-hairline">
+          <p className="text-3xl md:text-4xl lg:text-5xl font-serif italic text-forest leading-snug">
             "{content.quote}"
           </p>
         </div>

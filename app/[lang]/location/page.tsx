@@ -29,13 +29,13 @@ export default async function LocationPage({
   const isBn = lang === "bn";
 
   return (
-    <main className="flex-1 overflow-x-hidden pt-24 md:pt-32">
+    <main className="flex-1 overflow-x-hidden pt-24 md:pt-32 bg-paper">
       {/* Hero Section */}
       <section className="px-6 lg:px-24 py-16 max-w-4xl mx-auto text-center">
-        <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl text-paper font-light mb-6">
+        <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl text-forest font-light mb-6">
           {isBn ? "ক্লিনিকের অবস্থান" : "Location & Access"}
         </h1>
-        <p className="font-sans text-lg md:text-xl text-paper/70 max-w-2xl mx-auto leading-relaxed">
+        <p className="font-sans text-lg md:text-xl text-ink-soft max-w-2xl mx-auto leading-relaxed">
           {isBn
             ? "আমরা শিলচরের কেন্দ্রস্থলে অবস্থিত। আপনার সুবিধার্থে আমাদের পৌঁছানোর দিকনির্দেশনা নিচে দেওয়া হলো।"
             : "We are centrally located in Silchar, designed for easy access from Cachar, Karimganj, and Hailakandi."}
@@ -43,7 +43,7 @@ export default async function LocationPage({
       </section>
 
       {/* Reusing Location Section */}
-      <LocationSection lang={lang} />
+      <LocationSection lang={lang} bgClass="bg-paper-warm border-t border-hairline" />
 
       {/* Access Details */}
       <section className="px-6 lg:px-24 py-24 bg-paper-card">

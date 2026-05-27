@@ -47,13 +47,13 @@ export default function ClinicGallery({ lang }: ClinicGalleryProps) {
   }, []);
 
   return (
-    <section ref={containerRef} className="py-12 lg:py-16 px-6 lg:px-24 bg-[#0A1A12] border-t border-gold/5">
+    <section ref={containerRef} className="py-12 lg:py-16 px-6 lg:px-24 bg-paper border-t border-hairline">
       <div className="max-w-7xl mx-auto">
         <div className="max-w-2xl mb-12 lg:mb-16 space-y-4">
           <span className="text-xs uppercase tracking-[0.3em] text-gold font-semibold">
             {isEn ? "Inside the Clinic" : "ক্লিনিকের ভেতর"}
           </span>
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif text-paper leading-tight">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif text-forest leading-tight">
             {isEn ? "Modern equipment. Calm environment." : "আধুনিক সরঞ্জাম। শান্ত পরিবেশ।"}
           </h2>
         </div>
@@ -63,10 +63,10 @@ export default function ClinicGallery({ lang }: ClinicGalleryProps) {
           {homepageItems.map((item) => (
             <div 
               key={item.id} 
-              className={`gallery-item flex flex-col group ${item.spanHomepage} aspect-[16/10] lg:aspect-auto lg:h-full bg-white/[0.02] border border-white/5 p-4 rounded-sm hover:border-gold/20 transition-all duration-500`}
+              className={`gallery-item flex flex-col group ${item.spanHomepage} aspect-[16/10] lg:aspect-auto lg:h-full bg-paper-card border border-hairline p-4 rounded-sm hover:border-gold/20 transition-all duration-500 shadow-md hover:shadow-lg`}
             >
               {/* Image Container */}
-              <div className="relative overflow-hidden rounded-sm aspect-[16/10] lg:aspect-auto lg:flex-1 w-full bg-[#0A1A12]/40">
+              <div className="relative overflow-hidden rounded-sm aspect-[16/10] lg:aspect-auto lg:flex-1 w-full bg-paper-warm">
                 <img
                   src={item.src}
                   alt={item.title[lang as "en" | "bn"]}
@@ -77,10 +77,10 @@ export default function ClinicGallery({ lang }: ClinicGalleryProps) {
               
               {/* Text Block below the image */}
               <div className="mt-4 space-y-1 select-none">
-                <h3 className="text-lg lg:text-xl font-serif text-paper group-hover:text-gold transition-colors duration-300">
+                <h3 className="text-lg lg:text-xl font-serif text-forest group-hover:text-rust transition-colors duration-300">
                   {lang === "bn" ? item.title.bn : item.title.en}
                 </h3>
-                <p className="text-xs text-paper/60 line-clamp-2">
+                <p className="text-xs text-mute line-clamp-2">
                   {lang === "bn" ? item.description.bn : item.description.en}
                 </p>
               </div>
@@ -92,7 +92,7 @@ export default function ClinicGallery({ lang }: ClinicGalleryProps) {
         <div className="flex justify-center mt-12 lg:mt-16">
           <Link
             href={`/${lang}/gallery`}
-            className="inline-flex items-center justify-center px-8 py-4 border border-gold/30 rounded-sm text-gold hover:text-paper hover:bg-gold/10 hover:border-gold transition-all duration-300 tracking-[0.25em] uppercase font-semibold text-xs text-center"
+            className="inline-flex items-center justify-center px-8 py-4 border border-rust/30 rounded-sm text-rust hover:text-rust hover:bg-rust/10 hover:border-rust transition-all duration-300 tracking-[0.25em] uppercase font-semibold text-xs text-center"
           >
             {isEn ? "Explore Full Gallery" : "সম্পূর্ণ গ্যালারি দেখুন"}
           </Link>

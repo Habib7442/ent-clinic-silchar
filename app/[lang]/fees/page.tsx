@@ -30,13 +30,13 @@ export default async function FeesPage({
   const isBn = lang === "bn";
 
   return (
-    <main className="flex-1 overflow-x-hidden pt-24 md:pt-32">
+    <main className="flex-1 overflow-x-hidden pt-24 md:pt-32 bg-paper">
       {/* Hero Section */}
       <section className="px-6 lg:px-24 py-16 md:py-24 max-w-4xl mx-auto text-center">
-        <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl text-paper font-light mb-6">
+        <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl text-forest font-light mb-6">
           {isBn ? "স্বচ্ছ ফি কাঠামো" : "Transparent Pricing"}
         </h1>
-        <p className="font-sans text-lg md:text-xl text-paper/70 max-w-2xl mx-auto leading-relaxed">
+        <p className="font-sans text-lg md:text-xl text-ink-soft max-w-2xl mx-auto leading-relaxed">
           {isBn
             ? "আমরা বিশ্বাস করি চিকিৎসার খরচ সম্পর্কে পূর্বেই জানা উচিত। কোনো লুকানো চার্জ বা অস্পষ্টতা নেই।"
             : "We believe healthcare costs should be known before you walk in the door. No hidden charges, no asterisks."}

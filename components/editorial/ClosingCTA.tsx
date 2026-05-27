@@ -74,25 +74,25 @@ export default function ClosingCTA({ lang }: ClosingCTAProps) {
   }, []);
 
   return (
-    <section ref={containerRef} className="relative py-16 lg:py-24 px-6 lg:px-24 bg-[#0A1A12] overflow-hidden text-center">
+    <section ref={containerRef} className="relative py-16 lg:py-24 px-6 lg:px-24 bg-forest overflow-hidden text-center">
       {/* Dynamic background glow */}
       <div className="absolute inset-0 flex items-center justify-center">
-        <div className="w-[300px] h-[300px] md:w-[500px] md:h-[500px] bg-forest/10 blur-[100px] md:blur-[140px] rounded-full animate-pulse" />
+        <div className="w-[300px] h-[300px] md:w-[500px] md:h-[500px] bg-white/5 blur-[100px] md:blur-[140px] rounded-full animate-pulse" />
       </div>
-
+ 
       <div className="relative z-10 max-w-4xl mx-auto space-y-12">
         <div className="space-y-6">
-          <h2 className="reveal-cta text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-serif text-paper leading-tight italic italic-rust">
+          <h2 className="reveal-cta text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-serif text-paper leading-tight italic font-semibold">
             {content.question}
           </h2>
-          <p className="reveal-cta text-xl lg:text-2xl text-paper/60 font-light max-w-2xl mx-auto leading-relaxed">
+          <p className="reveal-cta text-xl lg:text-2xl text-paper/70 font-light max-w-2xl mx-auto leading-relaxed">
             {content.subline}
           </p>
         </div>
 
         <div className="reveal-cta flex flex-col md:flex-row items-center justify-center gap-6">
           <Link href={`/${lang}/book`} className="w-full md:w-auto">
-            <Button variant="rust" className="w-full md:w-auto py-8 px-12 text-lg rounded-sm group">
+            <Button variant="rust" className="w-full md:w-auto py-8 px-12 text-lg rounded-sm group shadow-xl">
               <Calendar className="w-5 h-5 mr-3 transition-transform group-hover:scale-110" />
               {content.primary}
             </Button>
@@ -109,14 +109,14 @@ export default function ClosingCTA({ lang }: ClosingCTAProps) {
               rel="noopener noreferrer"
               className="flex-1"
             >
-              <Button variant="outline" className="w-full py-8 px-8 border-white/10 hover:border-gold hover:bg-transparent text-paper group flex items-center justify-center">
+              <Button variant="outline" className="w-full py-8 px-8 border-paper/20 hover:border-gold hover:bg-white/5 text-paper group flex items-center justify-center">
                 <WhatsAppIcon className="w-5 h-5 mr-3 text-[#25D366] group-hover:scale-110 transition-transform" />
                 {content.whatsapp}
               </Button>
             </a>
             
             <a href="tel:+919435070156" className="flex-1">
-              <Button variant="outline" className="w-full py-8 px-8 border-white/10 hover:border-gold hover:bg-transparent text-paper group">
+              <Button variant="outline" className="w-full py-8 px-8 border-paper/20 hover:border-gold hover:bg-white/5 text-paper group">
                 <Phone className="w-5 h-5 mr-3 text-gold group-hover:scale-110 transition-transform" />
                 {content.call}
               </Button>
@@ -125,7 +125,7 @@ export default function ClosingCTA({ lang }: ClosingCTAProps) {
         </div>
 
         <div className="reveal-cta pt-12">
-          <p className="text-[10px] uppercase tracking-[0.4em] text-paper/60">
+          <p className="text-[10px] uppercase tracking-[0.4em] text-paper/60 font-semibold">
             {lang === "en" ? "Available Monday — Saturday · Silchar, Assam" : "সোমবার — শনিবার উপলব্ধ · শিলচর, আসাম"}
           </p>
         </div>

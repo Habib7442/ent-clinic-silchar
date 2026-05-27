@@ -28,16 +28,16 @@ export default async function GalleryPage({
   const isBn = lang === "bn";
 
   return (
-    <main className="flex-1 overflow-x-hidden pt-20 md:pt-28">
+    <main className="flex-1 overflow-x-hidden pt-20 md:pt-28 bg-paper">
       {/* Hero Section */}
       <section className="px-6 lg:px-24 py-16 md:py-20 max-w-4xl mx-auto text-center">
         <span className="text-xs uppercase tracking-[0.3em] text-gold font-semibold mb-4 block">
           {isBn ? "ক্লিনিকের বাস্তব ছবি" : "Real Clinical Photography"}
         </span>
-        <h1 className="font-serif text-4xl md:text-5xl lg:text-7xl text-paper font-light mb-6">
+        <h1 className="font-serif text-4xl md:text-5xl lg:text-7xl text-forest font-light mb-6">
           {isBn ? "আধুনিক অবকাঠামো। শান্ত পরিবেশ।" : "Modern Facility. Calm Environment."}
         </h1>
-        <p className="font-sans text-lg md:text-xl text-paper/70 max-w-2xl mx-auto leading-relaxed">
+        <p className="font-sans text-lg md:text-xl text-ink-soft max-w-2xl mx-auto leading-relaxed">
           {isBn
             ? "শিলচরে অবস্থিত আমাদের সর্বাধুনিক ডায়াগনস্টিক ল্যাব, অডিওমেট্রি বুথ এবং স্পিচ থেরাপি কেন্দ্রের বাস্তব চিত্র।"
             : "Explore our double-walled audiometry testing facilities, private consulting rooms, and advanced diagnostic technologies in Silchar."}

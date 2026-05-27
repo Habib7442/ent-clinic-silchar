@@ -58,7 +58,7 @@ export default async function RootLayout({
       suppressHydrationWarning
     >
       <body 
-        className="min-h-full flex flex-col bg-[#0A1A12] selection:bg-gold/20 selection:text-gold"
+        className="min-h-full flex flex-col bg-paper selection:bg-gold/20 selection:text-gold"
         suppressHydrationWarning
       >
         <script
@@ -66,7 +66,7 @@ export default async function RootLayout({
           dangerouslySetInnerHTML={jsonLd(medicalClinicSchema())}
         />
         <Navbar />
-        <div className="pt-16 lg:pt-20 flex-1 flex flex-col">
+        <div className="pt-24 lg:pt-28 flex-1 flex flex-col">
           {children}
         </div>
         <Footer lang={lang} />

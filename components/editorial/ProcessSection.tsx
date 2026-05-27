@@ -107,28 +107,28 @@ export default function ProcessSection({ lang }: ProcessSectionProps) {
   }, []);
 
   return (
-    <section id="process" ref={containerRef} className="py-12 lg:py-16 px-6 lg:px-24 bg-[#0A1A12] overflow-hidden">
+    <section id="process" ref={containerRef} className="py-12 lg:py-16 px-6 lg:px-24 bg-paper-warm overflow-hidden">
       <div className="max-w-7xl mx-auto">
         <div className="max-w-2xl mb-20 lg:mb-32 space-y-4">
           <span className="text-xs uppercase tracking-[0.3em] text-gold font-semibold">
             {isEn ? "The Clinical Journey" : "ক্লিনিকাল যাত্রা"}
           </span>
-          <h2 className="text-4xl md:text-5xl lg:text-7xl font-serif text-paper leading-tight">
+          <h2 className="text-4xl md:text-5xl lg:text-7xl font-serif text-forest leading-tight">
             {isEn ? "What to expect during your first visit." : "প্রথম ভিজিটের সময় কী আশা করবেন।"}
           </h2>
         </div>
 
         <div className="process-container relative">
           {/* Vertical Line for Desktop */}
-          <div className="hidden lg:block absolute left-[45px] top-0 bottom-0 w-px bg-white/10" />
+          <div className="hidden lg:block absolute left-[45px] top-0 bottom-0 w-px bg-forest/10" />
           <div className="process-line hidden lg:block absolute left-[45px] top-0 bottom-0 w-px bg-gold" />
 
           <div className="space-y-12 lg:space-y-24">
             {steps.map((step) => (
               <div key={step.number} className="process-step group relative lg:pl-32">
                 {/* Step Marker */}
-                <div className="hidden lg:flex absolute left-0 top-0 w-24 h-24 items-center justify-center bg-[#0A1A12] z-10">
-                  <span className="font-serif text-3xl text-paper/20 group-hover:text-gold transition-colors duration-500">
+                <div className="hidden lg:flex absolute left-0 top-0 w-24 h-24 items-center justify-center bg-paper-warm z-10">
+                  <span className="font-serif text-3xl text-forest/20 group-hover:text-gold transition-colors duration-500">
                     {step.number}
                   </span>
                 </div>
@@ -137,19 +137,19 @@ export default function ProcessSection({ lang }: ProcessSectionProps) {
                   <div className="max-w-xl space-y-4">
                     <div className="flex items-center gap-4 lg:hidden">
                       <span className="text-gold font-serif text-2xl">{step.number}</span>
-                      <div className="h-px flex-1 bg-white/10" />
+                      <div className="h-px flex-1 bg-forest/10" />
                     </div>
-                    <h3 className="text-2xl lg:text-4xl font-serif text-paper">
+                    <h3 className="text-2xl lg:text-4xl font-serif text-forest">
                       {lang === "bn" ? step.title.bn : step.title.en}
                     </h3>
-                    <p className="text-paper/60 text-lg leading-relaxed">
+                    <p className="text-ink-soft text-lg leading-relaxed">
                       {lang === "bn" ? step.description.bn : step.description.en}
                     </p>
                   </div>
 
-                  <div className="flex items-center gap-3 py-2 px-4 bg-white/5 border border-white/10 rounded-full w-fit">
+                  <div className="flex items-center gap-3 py-2 px-4 bg-forest/5 border border-forest/10 rounded-full w-fit">
                     <Clock className="w-4 h-4 text-forest" />
-                    <span className="text-[10px] uppercase tracking-widest text-paper/80">
+                    <span className="text-[10px] uppercase tracking-widest text-ink font-semibold">
                       {step.duration}
                     </span>
                   </div>

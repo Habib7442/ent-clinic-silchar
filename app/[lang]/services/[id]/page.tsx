@@ -82,7 +82,7 @@ export default async function ServiceDetailPage({
             sizes="100vw"
             className="object-cover"
           />
-          <div className="absolute inset-0 bg-[#0A1A12]/40 mix-blend-multiply" />
+          <div className="absolute inset-0 bg-forest/15" />
         </div>
 
         {/* Dynamic 2-Column Grid Layout (Information Hierarchy) */}
@@ -112,8 +112,8 @@ export default async function ServiceDetailPage({
           </div>
 
           {/* Right Column: Premium Timing, Pricing & Sticky Booking Card */}
-          <div className="lg:col-span-4 bg-[#0A1A12] border border-white/10 rounded-sm p-8 text-paper shadow-xl space-y-8 sticky top-28">
-            <h3 className="text-2xl font-serif text-paper border-b border-white/5 pb-4">
+          <div className="lg:col-span-4 bg-paper-warm border border-hairline rounded-sm p-8 text-ink shadow-xl space-y-8 sticky top-28">
+            <h3 className="text-2xl font-serif text-forest border-b border-hairline pb-4">
               {isEn ? "Service Details" : "সেবার বিবরণ"}
             </h3>
 
@@ -125,14 +125,14 @@ export default async function ServiceDetailPage({
                   {isEn ? "Clinical Schedule" : "ক্লিনিকাল সময়সূচী"}
                 </span>
               </div>
-              <p className="text-base text-paper/85 font-light leading-relaxed pl-8">
+              <p className="text-base text-ink-soft font-light leading-relaxed pl-8">
                 {timing}
               </p>
             </div>
 
 
             {/* Dynamic Slot Picker Call-to-action */}
-            <div className="pt-4 border-t border-white/5">
+            <div className="pt-4 border-t border-hairline">
               <Link href={`/${lang}/book?service=${service.id}`}>
                 <Button variant="rust" className="w-full py-6 rounded-none group flex items-center justify-center gap-2">
                   <Calendar className="w-5 h-5" />

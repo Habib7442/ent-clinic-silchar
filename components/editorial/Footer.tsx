@@ -34,18 +34,18 @@ export default function Footer({ lang }: FooterProps) {
   const isEn = lang === "en";
 
   return (
-    <footer className="bg-[#0A1A12] border-t border-white/5 pt-24 pb-12 px-6 lg:px-24">
+    <footer className="bg-paper-warm border-t border-hairline pt-24 pb-12 px-6 lg:px-24">
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-16 lg:gap-24 mb-24">
           
           {/* Brand Column */}
           <div className="lg:col-span-4 space-y-8">
             <Link href={`/${lang}`} className="block">
-              <span className="text-2xl font-serif text-paper tracking-tight">
+              <span className="text-2xl font-serif text-forest tracking-tight">
                 The ENT <span className="text-gold">Clinic</span>
               </span>
             </Link>
-            <p className="text-paper/70 text-lg leading-relaxed max-w-sm">
+            <p className="text-ink-soft text-lg leading-relaxed max-w-sm">
               {content.tagline}
             </p>
             <div className="flex gap-4">
@@ -57,7 +57,7 @@ export default function Footer({ lang }: FooterProps) {
                 } 
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-3 bg-[#25D366]/10 hover:bg-[#25D366]/20 transition-all rounded-full border border-[#25D366]/20 hover:border-[#25D366]/40 group flex items-center justify-center gap-2 px-5 text-xs text-[#25D366] font-semibold"
+                className="p-3 bg-[#0A1A12] hover:bg-[#1E3A2B] transition-all rounded-full border border-white/5 hover:border-gold/30 group flex items-center justify-center gap-2 px-5 text-xs text-[#F6F1E6] font-semibold shadow-sm hover:shadow-md"
               >
                 <img 
                   src="/social-icons/whatsapp.webp" 
@@ -71,11 +71,11 @@ export default function Footer({ lang }: FooterProps) {
 
           {/* Quick Links */}
           <div className="lg:col-span-2 space-y-8">
-            <h4 className="text-paper font-serif text-xl">{content.services}</h4>
+            <h4 className="text-forest font-serif text-xl font-medium">{content.services}</h4>
             <ul className="space-y-4">
               {["Hearing", "Sinus", "Snoring", "Paediatric", "Surgical"].map((item) => (
                 <li key={item}>
-                  <Link href={`/${lang}/services`} className="text-paper/60 hover:text-gold transition-colors text-sm">
+                  <Link href={`/${lang}/services`} className="text-ink/70 hover:text-gold transition-colors text-sm font-medium">
                     {item} Care
                   </Link>
                 </li>
@@ -84,7 +84,7 @@ export default function Footer({ lang }: FooterProps) {
           </div>
 
           <div className="lg:col-span-2 space-y-8">
-            <h4 className="text-paper font-serif text-xl">{content.practice}</h4>
+            <h4 className="text-forest font-serif text-xl font-medium">{content.practice}</h4>
             <ul className="space-y-4">
               {[
                 { name: isEn ? "Doctor Profile" : "ডাক্তারের পরিচিতি", href: `/${lang}/doctor` },
@@ -93,7 +93,7 @@ export default function Footer({ lang }: FooterProps) {
                 { name: isEn ? "Location" : "অবস্থান", href: `/${lang}#location` }
               ].map((item) => (
                 <li key={item.name}>
-                  <Link href={item.href} className="text-paper/60 hover:text-gold transition-colors text-sm">
+                  <Link href={item.href} className="text-ink/70 hover:text-gold transition-colors text-sm font-medium">
                     {item.name}
                   </Link>
                 </li>
@@ -103,7 +103,7 @@ export default function Footer({ lang }: FooterProps) {
                   href="https://search.google.com/local/writereview?fid=0x374e4b4ff109cfdd:0x8ca2bfe2070dae4e"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-paper/60 hover:text-gold transition-colors text-sm"
+                  className="text-ink/70 hover:text-gold transition-colors text-sm font-medium"
                 >
                   {isEn ? "Write a Google Review" : "গুগল রিভিউ লিখুন"}
                 </a>
@@ -113,7 +113,7 @@ export default function Footer({ lang }: FooterProps) {
 
           {/* Contact Column */}
           <div className="lg:col-span-4 space-y-8">
-            <h4 className="text-paper font-serif text-xl">{content.contact}</h4>
+            <h4 className="text-forest font-serif text-xl font-medium">{content.contact}</h4>
             <div className="space-y-6">
               <div className="flex items-start gap-4">
                 <MapPin className="w-5 h-5 text-gold shrink-0 mt-1" />
@@ -121,26 +121,26 @@ export default function Footer({ lang }: FooterProps) {
                   href="https://maps.google.com/?q=The+ENT+Clinic+Silchar+Hriday+Rajani+Complex+Lochan+Bairagi+Rd"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-paper/70 hover:text-gold transition-colors text-sm leading-relaxed"
+                  className="text-ink-soft hover:text-gold transition-colors text-sm leading-relaxed"
                 >
                   Hriday Rajani Complex, Lochan Bairagi Rd, beside Durga Badi, Bilpar, Silchar, Assam 788001
                 </a>
               </div>
               <a href="tel:+919435070156" className="flex items-center gap-4 group/footer-phone">
                 <Phone className="w-5 h-5 text-gold group-hover/footer-phone:text-gold/80 transition-colors shrink-0" />
-                <p className="text-paper/70 group-hover/footer-phone:text-gold transition-colors text-sm font-bold font-sans">+91 94350 70156</p>
+                <p className="text-ink group-hover/footer-phone:text-gold transition-colors text-sm font-bold font-sans">+91 94350 70156</p>
               </a>
               <a href="mailto:abhishek.hister@gmail.com" className="flex items-center gap-4 group/footer-mail">
                 <Mail className="w-5 h-5 text-gold group-hover/footer-mail:text-gold/80 transition-colors shrink-0" />
-                <p className="text-paper/70 group-hover/footer-mail:text-gold transition-colors text-sm font-sans">abhishek.hister@gmail.com</p>
+                <p className="text-ink group-hover/footer-mail:text-gold transition-colors text-sm font-sans">abhishek.hister@gmail.com</p>
               </a>
             </div>
           </div>
         </div>
 
         {/* Bottom Bar */}
-        <div className="pt-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-8">
-          <div className="flex flex-wrap justify-center gap-6 text-[10px] uppercase tracking-[0.2em] text-paper/60">
+        <div className="pt-12 border-t border-hairline flex flex-col md:flex-row justify-between items-center gap-8">
+          <div className="flex flex-wrap justify-center gap-6 text-[10px] uppercase tracking-[0.2em] text-mute font-medium">
             <span>© 2026 The ENT Clinic Silchar</span>
             <Link href={`/${lang}/privacy`} className="hover:text-gold transition-colors">
               {lang === "bn" ? "গোপনীয়তা নীতি" : "Privacy Policy"}
@@ -150,7 +150,7 @@ export default function Footer({ lang }: FooterProps) {
             </Link>
           </div>
           
-          <div className="text-[10px] uppercase tracking-[0.3em] text-paper/60">
+          <div className="text-[10px] uppercase tracking-[0.3em] text-mute font-medium">
             {content.developer}
           </div>
         </div>

@@ -11,7 +11,7 @@
   --color-ink: #14181A;
   --color-ink-soft: #2C322F;
   --color-mute: #6B6B5C;
-  --color-hairline: rgba(255, 255, 255, 0.1);
+  --color-hairline: rgba(20, 24, 26, 0.12);
   --color-teal-deep: #0A1A12;
 
   --font-serif: "Fraunces", serif;
@@ -21,18 +21,18 @@
 @layer base {
   html {
     @apply h-full overflow-x-hidden;
-    background-color: #0A1A12;
+    background-color: #F6F1E6;
   }
   
   body {
-    @apply text-paper/90 antialiased selection:bg-gold/20 selection:text-gold min-h-full flex flex-col overflow-x-hidden max-w-full;
+    @apply text-ink antialiased selection:bg-gold/20 selection:text-gold min-h-full flex flex-col overflow-x-hidden max-w-full;
     font-feature-settings: "ss01", "ss02";
-    background: radial-gradient(circle at top left, #1E3A2B 0%, #0A1A12 100%);
+    background-color: #F6F1E6;
     background-attachment: fixed;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    @apply font-serif text-paper font-normal tracking-tight;
+    @apply font-serif text-forest font-normal tracking-tight;
   }
 
   em {

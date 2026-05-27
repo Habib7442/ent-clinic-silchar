@@ -68,7 +68,7 @@ export default function DoctorHero({ lang }: DoctorHeroProps) {
   }, []);
 
   return (
-    <section ref={containerRef} className="relative pt-8 pb-20 lg:pt-12 lg:pb-32 px-6 lg:px-24 bg-[#0A1A12] overflow-hidden border-b border-white/5">
+    <section ref={containerRef} className="relative pt-8 pb-20 lg:pt-12 lg:pb-32 px-6 lg:px-24 bg-paper overflow-hidden border-b border-hairline">
       {/* Premium Dynamic Background Glow */}
       <div className="absolute top-0 right-0 w-1/2 h-full bg-forest/5 blur-[120px] rounded-full -translate-y-1/2 translate-x-1/4 pointer-events-none" />
       
@@ -80,7 +80,7 @@ export default function DoctorHero({ lang }: DoctorHeroProps) {
             <span className="reveal-doc-hero inline-block text-xs uppercase tracking-[0.3em] text-gold font-semibold">
               {content.tagline}
             </span>
-            <h1 className="reveal-doc-hero text-5xl md:text-7xl lg:text-8xl font-serif text-paper leading-tight">
+            <h1 className="reveal-doc-hero text-5xl md:text-7xl lg:text-8xl font-serif text-forest leading-tight">
               {content.name}
             </h1>
             <p className="reveal-doc-hero text-xl lg:text-2xl text-gold font-serif italic">
@@ -88,23 +88,23 @@ export default function DoctorHero({ lang }: DoctorHeroProps) {
             </p>
           </div>
 
-          <p className="reveal-doc-hero text-base lg:text-lg text-paper/70 leading-relaxed font-light max-w-2xl">
+          <p className="reveal-doc-hero text-base lg:text-lg text-ink-soft leading-relaxed font-light max-w-2xl">
             {content.mission}
           </p>
 
-          <div className="reveal-doc-hero flex flex-wrap gap-8 pt-8 border-t border-white/5">
+          <div className="reveal-doc-hero flex flex-wrap gap-8 pt-8 border-t border-hairline">
             <div className="flex items-center gap-3">
               <MedicalSealIcon />
               <div>
-                <p className="text-paper text-sm font-semibold">{content.experienceLabel}</p>
-                <p className="text-paper/60 text-[10px] uppercase tracking-widest">{content.recordLabel}</p>
+                <p className="text-ink text-sm font-semibold">{content.experienceLabel}</p>
+                <p className="text-mute text-[10px] uppercase tracking-widest">{content.recordLabel}</p>
               </div>
             </div>
-            <div className="flex items-center gap-3 border-l border-white/5 pl-8">
+            <div className="flex items-center gap-3 border-l border-hairline pl-8">
               <ShieldCheck className="w-6 h-6 text-forest shrink-0" />
               <div>
-                <p className="text-paper text-sm font-semibold">{content.reg}</p>
-                <p className="text-paper/60 text-[10px] uppercase tracking-widest">{content.regSub}</p>
+                <p className="text-ink text-sm font-semibold">{content.reg}</p>
+                <p className="text-mute text-[10px] uppercase tracking-widest">{content.regSub}</p>
               </div>
             </div>
           </div>
@@ -112,16 +112,16 @@ export default function DoctorHero({ lang }: DoctorHeroProps) {
 
         {/* Dynamic Premium Blank Placeholder Image Column */}
         <div className="lg:col-span-5 order-1 lg:order-2">
-          <div className="relative aspect-[4/5] rounded-sm overflow-hidden bg-forest/10 ring-1 ring-white/10 group shadow-2xl">
+          <div className="relative aspect-[4/5] rounded-sm overflow-hidden bg-paper-warm ring-1 ring-hairline group shadow-2xl">
             <div className="absolute inset-0 flex flex-col items-center justify-center p-6 text-center space-y-4">
-              <div className="p-4 bg-forest/20 rounded-full text-gold transition-transform duration-500 group-hover:scale-110">
+              <div className="p-4 bg-forest/5 rounded-full text-gold border border-forest/10 transition-transform duration-500 group-hover:scale-110">
                 <ShieldCheck className="w-16 h-16" />
               </div>
-              <h3 className="font-serif text-xl text-paper">{content.name}</h3>
-              <p className="text-xs text-paper/60 uppercase tracking-widest">{content.credentials}</p>
+              <h3 className="font-serif text-xl text-forest font-semibold">{content.name}</h3>
+              <p className="text-xs text-mute uppercase tracking-widest">{content.credentials}</p>
             </div>
             {/* Elegant Gradient Overlay */}
-            <div className="absolute inset-0 bg-gradient-to-t from-[#0A1A12] via-transparent to-transparent opacity-50 pointer-events-none" />
+            <div className="absolute inset-0 bg-gradient-to-t from-paper-warm via-transparent to-transparent opacity-50 pointer-events-none" />
           </div>
         </div>
 

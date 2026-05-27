@@ -79,7 +79,7 @@ export default function DoctorBrief({ lang }: DoctorBriefProps) {
   }, []);
 
   return (
-    <section id="doctor" ref={containerRef} className="relative py-12 lg:py-16 px-6 lg:px-24 bg-[#0A1A12] overflow-hidden">
+    <section id="doctor" ref={containerRef} className="relative py-12 lg:py-16 px-6 lg:px-24 bg-paper-warm overflow-hidden">
       {/* Decorative background element */}
       <div className="absolute top-0 right-0 w-1/2 h-full bg-forest/5 blur-[120px] rounded-full -translate-y-1/2 translate-x-1/4" />
       
@@ -89,7 +89,7 @@ export default function DoctorBrief({ lang }: DoctorBriefProps) {
             <span className="text-xs uppercase tracking-[0.3em] text-gold font-semibold">
               {content.title}
             </span>
-            <h2 className="text-4xl md:text-5xl lg:text-7xl font-serif text-paper leading-tight">
+            <h2 className="text-4xl md:text-5xl lg:text-7xl font-serif text-forest leading-tight">
               {content.name}
             </h2>
             <p className="text-xl lg:text-2xl text-gold font-serif italic">
@@ -97,24 +97,24 @@ export default function DoctorBrief({ lang }: DoctorBriefProps) {
             </p>
           </div>
 
-          <div className="py-8 border-y border-white/5">
+          <div className="py-8 border-y border-hairline">
             <div className="flex items-start gap-4">
-              <div className="p-3 bg-forest/10 rounded-full text-forest flex items-center justify-center">
+              <div className="p-3 bg-forest/5 rounded-full text-forest flex items-center justify-center border border-forest/10">
                 <MedicalSealIcon />
               </div>
               <div>
-                <p className="text-paper font-semibold">{content.experience}</p>
-                <p className="text-xs text-paper/60 uppercase tracking-widest mt-1">Clinical Record</p>
+                <p className="text-ink font-semibold">{content.experience}</p>
+                <p className="text-xs text-mute uppercase tracking-widest mt-1">Clinical Record</p>
               </div>
             </div>
           </div>
 
           <div className="space-y-6">
-            <p className="text-lg lg:text-xl text-paper/70 leading-relaxed font-light">
+            <p className="text-lg lg:text-xl text-ink-soft leading-relaxed font-light">
               "{content.philosophy}"
             </p>
             
-            <div className="flex items-center gap-3 text-sm text-paper/70">
+            <div className="flex items-center gap-3 text-sm text-ink-soft">
               <Languages className="w-4 h-4 text-forest" />
               <span>{content.languages}</span>
             </div>
@@ -122,7 +122,7 @@ export default function DoctorBrief({ lang }: DoctorBriefProps) {
 
           <div className="pt-4">
             <Link href={`/${lang}/doctor`}>
-              <Button variant="outline" className="group border-white/10 hover:border-gold hover:bg-transparent text-paper rounded-none px-8 py-6">
+              <Button variant="outline" className="group border-forest/20 hover:border-gold hover:bg-transparent text-forest rounded-none px-8 py-6">
                 {content.cta}
                 <ArrowRight className="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1 text-gold" />
               </Button>
