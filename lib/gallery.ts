@@ -162,5 +162,18 @@ export const galleryItems: GalleryItem[] = [
       bn: "শিলচরের প্রধান রাস্তায় অবস্থিত সহজে চেনা যাওয়ার মতো ল্যান্ডমার্ক।"
     },
     spanFullpage: "lg:col-span-4 lg:row-span-1"
+  },
+  {
+    id: "exterior_2",
+    src: "/images/gallery/exterior_2.webp",
+    title: {
+      en: "Clinic Building Exterior",
+      bn: "ক্লিনিক ভবনের দৃশ্য"
+    },
+    description: {
+      en: "Another view of the prominent Ground Floor facility at Hriday Rajani Complex.",
+      bn: "হৃদয় রজনী কমপ্লেক্সের গ্রাউন্ড ফ্লোরে অবস্থিত আমাদের ইএনটি ক্লিনিকের দৃশ্য।"
+    },
+    spanFullpage: "lg:col-span-4 lg:row-span-1"
   }
 ];
