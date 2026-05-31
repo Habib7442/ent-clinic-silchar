@@ -87,11 +87,7 @@ Update this file after every meaningful implementation change.
 - *2026-05-27 (Hero Contact & Location Ribbon):* Pinned a direct contact and location bar directly below the fixed navigation bar in `Navbar.tsx` inside a wrapping `<header>` container. Cleaned up the initial implementation from `HeroSection.tsx` and adjusted page container layouts globally in `layout.tsx` to accommodate the new sticky sub-bar height.
 - *2026-05-27 (Contact Page Buttons Dark Mode):* Modified all three action buttons (WhatsApp Chat, Send Email, Book Online) on the `/contact` page in `contact/page.tsx` to have the premium dark background (`bg-[#0A1A12]`), ivory text (`text-[#F6F1E6]`), and smooth transitions to forest green with gold hover outlines.
 - *2026-05-30 (Search Console & Local SEO Hardening):* Analyzed Google Search Console reports, revealing index coverage gaps where Google was indexing the root domain but failing to crawl/index nested services, doctor page, or gallery routes due to double-redirect hops and lack of www to non-www canonicalization. Upgraded Next.js 16 native `proxy.ts` request-interception engine: implemented a robust 308 permanent redirect rule mapping `www` directly to non-www canonical URLs, removed the trailing-slash redirect double-hop loop mapping `/` to `/en/` down to `/en` (making it a single-hop redirect `/` -> `/en`), and changed all redirection handlers to permanent `308` status codes to guarantee full equity and crawler page-rank transfer. Converted the new clinic exterior and close-up images (`exterior_1.jpeg`, `exterior_2.jpeg`, and `close-up-shot.jpeg`) to high-performance WebP formats, integrated the new `exterior_2.webp` into the bilingually localized gallery configuration data (`lib/gallery.ts`), and purged all legacy `.jpeg` files. Passed all TypeScript safety checks and built cleanly.
-
-
-
-
-
+- *2026-05-31 (Services Grid Reordering):* Reordered services inside `lib/services.ts` according to user feedback: moved "Allergy Clinic" and "Otology Clinic" to display immediately after "Headache Clinic", and shifted "Hearing Aids Center" and "Laryngoscopy & Nasal Endoscopy" to the end of the services array. Adjusted comments to match the new numbering layout. Verified hot reload is fully successful and visual grid updates accurately without compile issues.
 
 
 
