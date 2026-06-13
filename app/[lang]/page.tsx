@@ -1,5 +1,6 @@
 import HeroSection from "@/components/editorial/HeroSection";
 import DoctorBrief from "@/components/editorial/DoctorBrief";
+import VideoTestimonials from "@/components/editorial/VideoTestimonials";
 import ServicesSection from "@/components/editorial/ServicesSection";
 import Testimonials from "@/components/editorial/Testimonials";
 import ClinicGallery from "@/components/editorial/ClinicGallery";
@@ -19,7 +20,8 @@ export default async function Home({
     <main className="flex-1 overflow-x-hidden">
       <HeroSection lang={lang} />
       <DoctorBrief lang={lang} />
-      <ServicesSection lang={lang} />
+      <VideoTestimonials lang={lang} />
+      <ServicesSection lang={lang} bgClass="bg-paper-warm" />
       <Testimonials lang={lang} />
       <ClinicGallery lang={lang} />
       <ProcessSection lang={lang} />
@@ -29,3 +31,4 @@ export default async function Home({
     </main>
   );
 }
+
