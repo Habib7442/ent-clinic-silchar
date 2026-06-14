@@ -134,10 +134,7 @@ export default function VideoTestimonials({ lang }: VideoTestimonialsProps) {
                         </button>
                       </div>
 
-                      {/* Visual Badge overlay on Video */}
-                      <span className="absolute top-4 left-4 text-[9px] font-mono tracking-widest uppercase bg-[#0A1A12] text-gold px-2.5 py-1 border border-gold/15 rounded-full z-10">
-                        {isEn ? "Video" : "ভিডিও"}
-                      </span>
+
                     </div>
                   ) : (
                     <iframe
@@ -188,10 +185,7 @@ export default function VideoTestimonials({ lang }: VideoTestimonialsProps) {
                         </button>
                       </div>
 
-                      {/* Visual Badge overlay on Video */}
-                      <span className="absolute top-4 left-4 text-[9px] font-mono tracking-widest uppercase bg-[#0A1A12] text-gold px-2.5 py-1 border border-gold/15 rounded-full z-10">
-                        {isEn ? "Shorts" : "শর্টস"}
-                      </span>
+
                     </div>
                   ) : (
                     <iframe
