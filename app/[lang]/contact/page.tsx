@@ -30,8 +30,8 @@ export default async function ContactPage({
   const isBn = lang === "bn";
 
   const waLink = isBn
-    ? "https://wa.me/919435070156?text=নমস্কার%2C%20আমি%20দি%20ইএনটি%20ক্লিনিক%20শিলচরের%20সাথে%20যোগাযোগ%20করতে%20চাই।"
-    : "https://wa.me/919435070156?text=Hello%2C%20I%20would%20like%20to%20connect%20with%20The%20ENT%20Clinic%20Silchar%20regarding%20an%20appointment.";
+    ? "https://wa.me/916901258281?text=নমস্কার%2C%20আমি%20দি%20ইএনটি%20ক্লিনিক%20শিলচরের%20সাথে%20যোগাযোগ%20করতে%20চাই।"
+    : "https://wa.me/916901258281?text=Hello%2C%20I%20would%20like%20to%20connect%20with%20The%20ENT%20Clinic%20Silchar%20regarding%20an%20appointment.";
 
   return (
     <main className="flex-1 overflow-x-hidden pt-24 md:pt-32 bg-paper">
@@ -69,10 +69,10 @@ export default async function ContactPage({
                   : "Call us directly or send a message for quick booking support and queries."}
               </p>
               <a 
-                href="tel:+919435070156" 
+                href="tel:+916901258281" 
                 className="block text-2xl font-bold font-sans text-gold hover:text-gold/80 transition-colors mt-2"
               >
-                +91 94350 70156
+                +91 69012 58281
               </a>
             </div>
             

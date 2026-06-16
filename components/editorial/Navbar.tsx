@@ -163,11 +163,11 @@ export default function Navbar() {
       {/* Direct Contact & Location Bar (attached below the navbar) */}
       <div className="bg-[#0A1A12] text-paper/90 py-2.5 px-6 lg:px-12 flex justify-between items-center text-[10px] md:text-xs font-sans tracking-wider uppercase font-semibold border-b border-white/5">
         <a 
-          href="tel:+919435070156" 
+          href="tel:+916901258281" 
           className="flex items-center gap-1.5 hover:text-gold transition-colors text-white font-bold"
         >
           <Phone className="w-3.5 h-3.5 text-gold shrink-0" />
-          <span><span className="hidden sm:inline text-paper/70 font-medium">{lang === "bn" ? "কল করুন: " : "Call Clinic: "}</span>+91 94350 70156</span>
+          <span><span className="hidden sm:inline text-paper/70 font-medium">{lang === "bn" ? "কল করুন: " : "Call Clinic: "}</span>+91 69012 58281</span>
         </a>
         <a 
           href="https://maps.google.com/?q=The+ENT+Clinic+Silchar+Hriday+Rajani+Complex+Lochan+Bairagi+Rd" 

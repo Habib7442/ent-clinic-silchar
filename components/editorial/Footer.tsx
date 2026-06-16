@@ -49,12 +49,12 @@ export default function Footer({ lang }: FooterProps) {
               {content.tagline}
             </p>
             <div className="flex gap-4">
-              <a 
-                href={
-                  lang === "bn" 
-                    ? "https://wa.me/919435070156?text=নমস্কার%2C%20আমি%20দি%20ইএনটি%20ক্লিনিক%20শিলচরের%20সাথে%20যোগাযোগ%20করতে%20চাই।"
-                    : "https://wa.me/919435070156?text=Hello%2C%20I%20would%20like%20to%20connect%20with%20The%20ENT%20Clinic%20Silchar%20regarding%20an%20appointment."
-                } 
+            <a 
+              href={
+                lang === "bn" 
+                  ? "https://wa.me/916901258281?text=নমস্কার%2C%20আমি%20দি%20ইএনটি%20ক্লিনিক%20শিলচরের%20সাথে%20যোগাযোগ%20করতে%20চাই।"
+                  : "https://wa.me/916901258281?text=Hello%2C%20I%20would%20like%20to%20connect%20with%20The%20ENT%20Clinic%20Silchar%20regarding%20an%20appointment."
+              } 
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-3 bg-[#0A1A12] hover:bg-[#1E3A2B] transition-all rounded-full border border-white/5 hover:border-gold/30 group flex items-center justify-center gap-2 px-5 text-xs text-[#F6F1E6] font-semibold shadow-sm hover:shadow-md"
@@ -126,9 +126,9 @@ export default function Footer({ lang }: FooterProps) {
                   Hriday Rajani Complex, Lochan Bairagi Rd, beside Durga Badi, Bilpar, Silchar, Assam 788001
                 </a>
               </div>
-              <a href="tel:+919435070156" className="flex items-center gap-4 group/footer-phone">
+              <a href="tel:+916901258281" className="flex items-center gap-4 group/footer-phone">
                 <Phone className="w-5 h-5 text-gold group-hover/footer-phone:text-gold/80 transition-colors shrink-0" />
-                <p className="text-ink group-hover/footer-phone:text-gold transition-colors text-sm font-bold font-sans">+91 94350 70156</p>
+                <p className="text-ink group-hover/footer-phone:text-gold transition-colors text-sm font-bold font-sans">+91 69012 58281</p>
               </a>
               <a href="mailto:abhishek.hister@gmail.com" className="flex items-center gap-4 group/footer-mail">
                 <Mail className="w-5 h-5 text-gold group-hover/footer-mail:text-gold/80 transition-colors shrink-0" />

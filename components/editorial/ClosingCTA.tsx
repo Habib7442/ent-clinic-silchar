@@ -102,8 +102,8 @@ export default function ClosingCTA({ lang }: ClosingCTAProps) {
             <a 
               href={
                 lang === "bn" 
-                  ? "https://wa.me/919435070156?text=নমস্কার%2C%20আমি%20দি%20ইএনটি%20ক্লিনিক%20শিলচরের%20সাথে%20যোগাযোগ%20করতে%20চাই।"
-                  : "https://wa.me/919435070156?text=Hello%2C%20I%20would%20like%20to%20connect%20with%20The%20ENT%20Clinic%20Silchar%20regarding%20an%20appointment."
+                  ? "https://wa.me/916901258281?text=নমস্কার%2C%20আমি%20দি%20ইএনটি%20ক্লিনিক%20শিলচরের%20সাথে%20যোগাযোগ%20করতে%20চাই।"
+                  : "https://wa.me/916901258281?text=Hello%2C%20I%20would%20like%20to%20connect%20with%20The%20ENT%20Clinic%20Silchar%20regarding%20an%20appointment."
               } 
               target="_blank"
               rel="noopener noreferrer"
@@ -115,7 +115,7 @@ export default function ClosingCTA({ lang }: ClosingCTAProps) {
               </Button>
             </a>
             
-            <a href="tel:+919435070156" className="flex-1">
+            <a href="tel:+916901258281" className="flex-1">
               <Button variant="outline" className="w-full py-8 px-8 border-paper/20 hover:border-gold hover:bg-white/5 text-paper group">
                 <Phone className="w-5 h-5 mr-3 text-gold group-hover:scale-110 transition-transform" />
                 {content.call}
