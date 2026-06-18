@@ -5,6 +5,7 @@ import Link from "next/link";
 import { ArrowLeft, CheckCircle2, Clock, Calendar } from "lucide-react";
 import FaqSection from "@/components/editorial/FaqSection";
 import ClosingCTA from "@/components/editorial/ClosingCTA";
+import HearingAidsShowcase from "@/components/editorial/HearingAidsShowcase";
 import { Button } from "@/components/ui/button";
 import { constructMetadata } from "@/lib/seo";
 import type { Metadata } from "next";
@@ -73,7 +74,9 @@ export default async function ServiceDetailPage({
         </Link>
 
         {/* Majestic Hero Banner */}
-        <div className="relative aspect-[21/9] w-full rounded-sm overflow-hidden mb-16 shadow-2xl border border-forest/10">
+        <div className={`relative w-full rounded-sm overflow-hidden mb-16 shadow-2xl border border-forest/10 ${
+          id === "hearing-aids" ? "aspect-[16/9]" : "aspect-[21/9]"
+        }`}>
           <Image
             src={service.bgImage}
             alt={title}
@@ -143,6 +146,11 @@ export default async function ServiceDetailPage({
           </div>
 
         </div>
+
+        {/* Custom Hearing Aids Showcase */}
+        {id === "hearing-aids" && (
+          <HearingAidsShowcase lang={lang} />
+        )}
 
         {/* FAQ Section */}
         <div className="mt-20 border-t border-forest/10 pt-12">

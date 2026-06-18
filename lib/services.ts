@@ -767,7 +767,7 @@ export const services: ServiceData[] = [
   {
     id: "hearing-aids",
     icon: Ear,
-    bgImage: "/images/hearing_aids.webp",
+    bgImage: "/images/hearing_aids/banner.webp",
     title: {
       en: "Hearing Aids Center",
       bn: "হিয়ারিং এইডস সেন্টার",
