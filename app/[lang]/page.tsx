@@ -3,6 +3,7 @@ import DoctorBrief from "@/components/editorial/DoctorBrief";
 import VideoTestimonials from "@/components/editorial/VideoTestimonials";
 import ServicesSection from "@/components/editorial/ServicesSection";
 import Testimonials from "@/components/editorial/Testimonials";
+import EducationalVideosSection from "@/components/editorial/EducationalVideosSection";
 import ClinicGallery from "@/components/editorial/ClinicGallery";
 import ProcessSection from "@/components/editorial/ProcessSection";
 
@@ -23,6 +24,7 @@ export default async function Home({
       <VideoTestimonials lang={lang} />
       <ServicesSection lang={lang} bgClass="bg-paper-warm" />
       <Testimonials lang={lang} />
+      <EducationalVideosSection lang={lang} />
       <ClinicGallery lang={lang} />
       <ProcessSection lang={lang} />
 

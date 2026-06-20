@@ -3,6 +3,7 @@
 import { cn } from "@/lib/utils";
 import { Mail, MapPin, Phone } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 
 const translations = {
   en: {
@@ -40,8 +41,15 @@ export default function Footer({ lang }: FooterProps) {
           
           {/* Brand Column */}
           <div className="lg:col-span-4 space-y-8">
-            <Link href={`/${lang}`} className="block">
-              <span className="text-2xl font-serif text-forest tracking-tight">
+            <Link href={`/${lang}`} className="group flex items-center gap-3.5">
+              <Image
+                src="/images/header_logo.png"
+                alt="The ENT Clinic Logo"
+                width={48}
+                height={48}
+                className="h-12 w-12 object-contain"
+              />
+              <span className="text-2xl font-serif text-forest tracking-tight leading-tight">
                 The ENT <span className="text-gold">Clinic</span>
               </span>
             </Link>
@@ -89,6 +97,7 @@ export default function Footer({ lang }: FooterProps) {
               {[
                 { name: isEn ? "Doctor Profile" : "ডাক্তারের পরিচিতি", href: `/${lang}/doctor` },
                 { name: isEn ? "Clinic Gallery" : "ক্লিনিক গ্যালারি", href: `/${lang}/gallery` },
+                { name: isEn ? "Educational Videos" : "শিক্ষামূলক ভিডিও", href: `/${lang}/videos` },
                 { name: isEn ? "First Visit" : "প্রথম ভিজিট", href: `/${lang}#process` },
                 { name: isEn ? "Location" : "অবস্থান", href: `/${lang}#location` }
               ].map((item) => (

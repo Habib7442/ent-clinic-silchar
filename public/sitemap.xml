@@ -64,6 +64,13 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://theentclinicsilchar.com/en/gallery" />
     <xhtml:link rel="alternate" hreflang="bn" href="https://theentclinicsilchar.com/bn/gallery" />
   </url>
+  <url>
+    <loc>https://theentclinicsilchar.com/en/videos</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://theentclinicsilchar.com/en/videos" />
+    <xhtml:link rel="alternate" hreflang="bn" href="https://theentclinicsilchar.com/bn/videos" />
+  </url>
 
   <!-- Bengali Static Pages -->
   <url>
@@ -128,6 +135,13 @@
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://theentclinicsilchar.com/en/gallery" />
     <xhtml:link rel="alternate" hreflang="bn" href="https://theentclinicsilchar.com/bn/gallery" />
+  </url>
+  <url>
+    <loc>https://theentclinicsilchar.com/bn/videos</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://theentclinicsilchar.com/en/videos" />
+    <xhtml:link rel="alternate" hreflang="bn" href="https://theentclinicsilchar.com/bn/videos" />
   </url>
 
 

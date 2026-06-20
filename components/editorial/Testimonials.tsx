@@ -184,7 +184,7 @@ export default function Testimonials({ lang }: TestimonialsProps) {
             </div>
             <span className="text-forest font-bold text-xl ml-2">4.9 / 5</span>
           </div>
-          <p className="text-xs uppercase tracking-[0.2em] text-mute font-medium">
+          <p className="text-xs uppercase tracking-[0.2em] text-mute font-medium text-center">
             {isEn ? "Based on 150+ Verified Google Reviews" : "১৫০+ যাচাইকৃত গুগল রিভিউ ভিত্তিক"}
           </p>
         </div>

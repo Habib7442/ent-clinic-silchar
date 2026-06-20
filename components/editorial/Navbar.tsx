@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { useParams, usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
@@ -25,12 +26,14 @@ export default function Navbar() {
     en: [
       { name: "Services", href: `/${lang}/services` },
       { name: "Gallery", href: `/${lang}/gallery` },
+      { name: "Videos", href: `/${lang}/videos` },
       { name: "About", href: `/${lang}/about` },
       { name: "Contact", href: `/${lang}/contact` },
     ],
     bn: [
       { name: "সেবাসমূহ", href: `/${lang}/services` },
       { name: "গ্যালারি", href: `/${lang}/gallery` },
+      { name: "ভিডিও", href: `/${lang}/videos` },
       { name: "আমাদের সম্পর্কে", href: `/${lang}/about` },
       { name: "যোগাযোগ", href: `/${lang}/contact` },
     ]
@@ -40,13 +43,23 @@ export default function Navbar() {
     <header className="fixed top-0 left-0 w-full z-50 flex flex-col">
       <nav className="flex items-center justify-between px-6 py-4 lg:px-12 bg-paper/95 backdrop-blur-md border-b border-hairline w-full">
         <div className="flex items-center gap-12">
-        <Link href={`/${lang}`} className="group">
-          <span className="font-serif text-xl lg:text-2xl text-forest tracking-tight">
-            The ENT Clinic<span className="text-gold">.</span>
-          </span>
-          <span className="block text-[8px] uppercase tracking-[0.3em] text-mute font-sans mt-0.5">
-            SILCHAR, ASSAM
-          </span>
+        <Link href={`/${lang}`} className="group flex items-center gap-3">
+          <Image
+            src="/images/header_logo.png"
+            alt="The ENT Clinic Logo"
+            width={40}
+            height={40}
+            className="h-10 w-10 object-contain"
+            priority
+          />
+          <div className="flex flex-col">
+            <span className="font-serif text-lg lg:text-xl text-forest tracking-tight leading-none">
+              The ENT Clinic<span className="text-gold">.</span>
+            </span>
+            <span className="block text-[8px] uppercase tracking-[0.3em] text-mute font-sans mt-1">
+              SILCHAR, ASSAM
+            </span>
+          </div>
         </Link>
 
         <div className="hidden md:flex items-center gap-8">
@@ -104,12 +117,23 @@ export default function Navbar() {
           </SheetTrigger>
           <SheetContent side="right" className="bg-paper-warm border-hairline text-ink flex flex-col p-8 shadow-2xl">
             <SheetHeader className="text-left mb-12">
-              <SheetTitle className="font-serif text-2xl text-forest">
-                The ENT Clinic<span className="text-gold">.</span>
-              </SheetTitle>
-              <span className="block text-[8px] uppercase tracking-[0.3em] text-mute font-sans mt-0.5">
-                {lang === 'bn' ? "শিলচর, আসাম" : "SILCHAR, ASSAM"}
-              </span>
+              <div className="flex items-center gap-3">
+                <Image
+                  src="/images/header_logo.png"
+                  alt="The ENT Clinic Logo"
+                  width={36}
+                  height={36}
+                  className="h-9 w-9 object-contain"
+                />
+                <div className="flex flex-col">
+                  <SheetTitle className="font-serif text-xl text-forest leading-none">
+                    The ENT Clinic<span className="text-gold">.</span>
+                  </SheetTitle>
+                  <span className="block text-[8px] uppercase tracking-[0.3em] text-mute font-sans mt-1">
+                    {lang === 'bn' ? "শিলচর, আসাম" : "SILCHAR, ASSAM"}
+                  </span>
+                </div>
+              </div>
               <SheetDescription className="sr-only">
                 Navigate through The ENT Clinic Silchar services and information.
               </SheetDescription>
