@@ -33,7 +33,7 @@ export const services: ServiceData[] = [
   {
     id: "speech-therapy-clinic",
     icon: MessageSquare,
-    bgImage: "/images/audiometry_therapy.webp",
+    bgImage: "/images/speech-therapy-clinic/banner.webp",
     title: {
       en: "Speech Therapy Clinic",
       bn: "স্পিচ থেরাপি ক্লিনিক",
