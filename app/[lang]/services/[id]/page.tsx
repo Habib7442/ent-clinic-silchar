@@ -6,6 +6,7 @@ import { ArrowLeft, CheckCircle2, Clock, Calendar } from "lucide-react";
 import FaqSection from "@/components/editorial/FaqSection";
 import ClosingCTA from "@/components/editorial/ClosingCTA";
 import HearingAidsShowcase from "@/components/editorial/HearingAidsShowcase";
+import OtologyShowcase from "@/components/editorial/OtologyShowcase";
 import { Button } from "@/components/ui/button";
 import { constructMetadata } from "@/lib/seo";
 import type { Metadata } from "next";
@@ -150,6 +151,11 @@ export default async function ServiceDetailPage({
         {/* Custom Hearing Aids Showcase */}
         {id === "hearing-aids" && (
           <HearingAidsShowcase lang={lang} />
+        )}
+
+        {/* Custom Otology Showcase */}
+        {id === "otology-clinic" && (
+          <OtologyShowcase lang={lang} />
         )}
 
         {/* FAQ Section */}
