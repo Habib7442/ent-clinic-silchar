@@ -5,19 +5,46 @@ const locales = ['en', 'bn'];
 const defaultLocale = 'en';
 
 export default function proxy(request: NextRequest) {
-  const { pathname } = request.nextUrl;
+  const url = request.nextUrl.clone();
+  const host = request.headers.get('host') || '';
+  const pathname = url.pathname;
+  let redirectNeeded = false;
 
-  // Redirect locale-less paths permanently (e.g. / -> /en, /about -> /en/about)
+  // 1. www to non-www redirection
+  if (host.startsWith('www.')) {
+    const newHost = host.replace(/^www\./, '');
+    url.host = newHost;
+    // Upgrade to HTTPS for production
+    if (!host.includes('localhost') && !host.includes('127.0.0.1')) {
+      url.protocol = 'https:';
+    }
+    redirectNeeded = true;
+  }
+
+  // 2. Trailing slash cleaning (e.g. /en/ -> /en, /en/about/ -> /en/about)
+  let cleanPathname = pathname;
+  if (pathname !== '/' && pathname.endsWith('/')) {
+    cleanPathname = pathname.slice(0, -1);
+    redirectNeeded = true;
+  }
+
+  // 3. Locale routing (e.g. / -> /en, /about -> /en/about)
   const pathnameIsMissingLocale = locales.every(
-    (locale) => !pathname.startsWith(`/${locale}/`) && pathname !== `/${locale}`
+    (locale) => !cleanPathname.startsWith(`/${locale}/`) && cleanPathname !== `/${locale}`
   );
 
   if (pathnameIsMissingLocale) {
-    const cleanPathname = pathname === '/' ? '' : pathname;
-    return NextResponse.redirect(
-      new URL(`/${defaultLocale}${cleanPathname}${request.nextUrl.search}`, request.url),
-      308 // Permanent Redirect for SEO
-    );
+    const localePrefix = `/${defaultLocale}`;
+    const suffix = cleanPathname === '/' ? '' : cleanPathname;
+    url.pathname = `${localePrefix}${suffix}`;
+    redirectNeeded = true;
+  } else {
+    url.pathname = cleanPathname;
+  }
+
+  // If any redirect condition was met, return a permanent 308 redirect
+  if (redirectNeeded) {
+    return NextResponse.redirect(url, 308);
   }
 }
 
