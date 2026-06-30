@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Image from "next/image";
-import { X, ZoomIn } from "lucide-react";
+import { X, ZoomIn, Play } from "lucide-react";
 
 interface OtologyShowcaseProps {
   lang: string;
@@ -69,6 +69,7 @@ const otologyImages = [
 export default function OtologyShowcase({ lang }: OtologyShowcaseProps) {
   const isEn = lang === "en";
   const [activeImage, setActiveImage] = useState<string | null>(null);
+  const [isVideoPlaying, setIsVideoPlaying] = useState(false);
 
   // Close lightbox on escape key press
   useEffect(() => {
@@ -108,7 +109,9 @@ export default function OtologyShowcase({ lang }: OtologyShowcaseProps) {
                 alt={isEn ? item.title.en : item.title.bn}
                 fill
                 sizes="(max-width: 768px) 100vw, 33vw"
-                className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+                className={`object-cover transition-transform duration-500 group-hover:scale-[1.03] ${
+                  item.image.includes("bera-test") ? "object-top" : "object-center"
+                }`}
               />
               {/* Hover Zoom Overlay */}
               <div className="absolute inset-0 bg-forest/5 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity duration-300">
@@ -129,6 +132,88 @@ export default function OtologyShowcase({ lang }: OtologyShowcaseProps) {
             </div>
           </div>
         ))}
+      </div>
+
+      {/* Video Demonstration Section */}
+      <div className="mt-16 bg-[#0A1A12] border border-gold/15 rounded-sm p-8 text-paper shadow-2xl relative overflow-hidden">
+        {/* Subtle background decoration */}
+        <div className="absolute top-0 right-0 w-96 h-96 bg-gold/5 rounded-full blur-3xl pointer-events-none" />
+        
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative z-10">
+          {/* Text Content */}
+          <div className="lg:col-span-7 space-y-6">
+            <span className="inline-block px-3 py-1 bg-gold/10 border border-gold/30 rounded-full text-gold text-xs font-semibold tracking-wider uppercase">
+              {isEn ? "Video Demonstration" : "ভিডিও প্রদর্শন"}
+            </span>
+            <div className="space-y-3">
+              <h3 className="text-3xl font-serif text-paper">
+                {isEn ? "Watch a BERA Test in Action" : "BERA পরীক্ষার সরাসরি কার্যক্রম দেখুন"}
+              </h3>
+              <p className="text-paper-muted font-sans text-sm md:text-base leading-relaxed font-light">
+                {isEn 
+                  ? "Observe how BERA (Brainstem Evoked Response Audiometry) testing is conducted safely and comfortably at our clinic. We use gold-standard computer interfaces and non-invasive sensors to record brainstem activity in response to auditory stimulus."
+                  : "আমাদের ক্লিনিকে কীভাবে নিরাপদে এবং আরামদায়কভাবে BERA (ব্রেনস্টেম ইভোকড রেসপন্স অডিওমেট্রি) পরীক্ষা সম্পন্ন করা হয় তা দেখুন। আমরা শ্রবণ উদ্দীপনার প্রতিক্রিয়ায় ব্রেনস্টেমের কার্যকলাপ রেকর্ড করতে গোল্ড-স্ট্যান্ডার্ড কম্পিউটার ইন্টারফেস এবং নন-ইনভেসিভ সেন্সর ব্যবহার করি।"}
+              </p>
+            </div>
+            
+            <div className="flex flex-col sm:flex-row gap-4 pt-2">
+              <div className="flex items-center space-x-3 bg-white/5 border border-white/10 rounded-sm p-4">
+                <div className="w-2 h-2 rounded-full bg-gold animate-pulse" />
+                <span className="text-sm font-light text-paper/90">
+                  {isEn ? "Pediatric & Infant Friendly" : "শিশু এবং নবজাতক বান্ধব"}
+                </span>
+              </div>
+              <div className="flex items-center space-x-3 bg-white/5 border border-white/10 rounded-sm p-4">
+                <div className="w-2 h-2 rounded-full bg-gold animate-pulse" />
+                <span className="text-sm font-light text-paper/90">
+                  {isEn ? "100% Painless & Objective" : "১০০% ব্যথামুক্ত এবং নির্ভুল"}
+                </span>
+              </div>
+            </div>
+          </div>
+
+          {/* Embedded Video Component */}
+          <div className="lg:col-span-5 flex justify-center w-full">
+            {/* Embedded Player with 9:16 aspect ratio */}
+            <div className="w-full max-w-[280px] aspect-[9/16] rounded-sm overflow-hidden border border-gold/20 shadow-2xl relative bg-[#050D09] group">
+              {!isVideoPlaying ? (
+                <div
+                  onClick={() => setIsVideoPlaying(true)}
+                  className="absolute inset-0 w-full h-full cursor-pointer"
+                >
+                  <Image
+                    src="https://img.youtube.com/vi/WJp_ubkWjps/hqdefault.jpg"
+                    alt={isEn ? "BERA Test Demonstration Video" : "BERA পরীক্ষা প্রদর্শন ভিডিও"}
+                    fill
+                    sizes="(max-width: 768px) 100vw, 300px"
+                    className="object-cover transition-transform duration-700 group-hover:scale-105"
+                    unoptimized
+                  />
+                  {/* Dark overlay */}
+                  <div className="absolute inset-0 bg-[#0A1A12]/30 group-hover:bg-[#0A1A12]/45 transition-colors duration-500" />
+                  
+                  {/* Play Button */}
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <button
+                      className="w-16 h-16 bg-[#0A1A12] text-paper rounded-full flex items-center justify-center shadow-xl border border-gold/25 transition-all duration-300 transform group-hover:scale-110 group-hover:bg-gold group-hover:text-[#0A1A12] cursor-pointer"
+                      aria-label={isEn ? "Play Video" : "ভিডিও চালান"}
+                    >
+                      <Play className="w-6 h-6 fill-current ml-0.5" />
+                    </button>
+                  </div>
+                </div>
+              ) : (
+                <iframe
+                  src="https://www.youtube.com/embed/WJp_ubkWjps?autoplay=1&rel=0&modestbranding=1"
+                  title={isEn ? "BERA Test Demonstration Video" : "BERA পরীক্ষা প্রদর্শন ভিডিও"}
+                  className="absolute inset-0 w-full h-full border-0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowFullScreen
+                />
+              )}
+            </div>
+          </div>
+        </div>
       </div>
 
       {/* Full-Screen Lightbox Modal */}
