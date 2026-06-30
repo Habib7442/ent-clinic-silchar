@@ -46,6 +46,8 @@ export default function proxy(request: NextRequest) {
   if (redirectNeeded) {
     return NextResponse.redirect(url, 308);
   }
+
+  return NextResponse.next();
 }
 
 export const config = {
