@@ -41,6 +41,28 @@ const otologyImages = [
       en: "A comfortable, distraction-free environment tailored for both pediatric and adult hearing evaluation, ensuring stress-free and accurate diagnostics.",
       bn: "শিশু ও প্রাপ্তবয়স্কদের শ্রবণ মূল্যায়নের জন্য আরামদায়ক এবং গোলমালমুক্ত পরিবেশ, যা চাপমুক্ত ও সঠিক রোগনির্ণয় নিশ্চিত করে।",
     }
+  },
+  {
+    image: "/images/otology-clinic/bera-test-1.webp",
+    title: {
+      en: "Diagnostic BERA Testing",
+      bn: "ডায়াগনস্টিক BERA পরীক্ষা",
+    },
+    desc: {
+      en: "Objective assessment of the auditory pathway and brainstem response to sound waves, essential for pediatric and infant hearing verification.",
+      bn: "শব্দ তরঙ্গের প্রতি শ্রবণ স্নায়ু এবং মস্তিষ্কের প্রতিক্রিয়ার উদ্দেশ্যমূলক মূল্যায়ন, যা শিশু ও নবজাতকদের শ্রবণ পরীক্ষার জন্য অত্যন্ত গুরুত্বপূর্ণ।",
+    }
+  },
+  {
+    image: "/images/otology-clinic/bera-test-2.webp",
+    title: {
+      en: "Hearing Threshold Analysis",
+      bn: "শ্রবণ থ্রেশহোল্ড বিশ্লেষণ",
+    },
+    desc: {
+      en: "Advanced computerized recording of brain waves (auditory evoked potentials) to measure hearing thresholds and diagnose neural pathway integrity.",
+      bn: "শ্রবণ থ্রেশহোল্ড পরিমাপ এবং শ্রবণ স্নায়ুর কার্যকারিতা মূল্যায়নের জন্য মস্তিষ্কের তরঙ্গের (অডিটরি ইভোকড পোটেনশিয়াল) আধুনিক কম্পিউটারাইজড রেকর্ডিং।",
+    }
   }
 ];
 
@@ -72,7 +94,7 @@ export default function OtologyShowcase({ lang }: OtologyShowcaseProps) {
         </p>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {otologyImages.map((item, idx) => (
           <div
             key={idx}
