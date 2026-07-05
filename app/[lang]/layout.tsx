@@ -28,10 +28,9 @@ export async function generateMetadata({
   const { lang } = await params;
   return constructMetadata({
     lang: lang as "en" | "bn",
-    title: lang === "bn" ? "দি ইএনটি ক্লিনিক" : "The ENT Clinic",
-    description: lang === "bn"
-      ? "শিলচর, আসামে ডঃ অভিষেক রায়-এর বিশেষায়িত ইএনটি (নাক, কান, গলা) চিকিৎসা কেন্দ্র।"
-      : "Premium ENT clinic in Silchar, Assam by Dr. Abhishek Ray.",
+    title: lang === "bn" 
+      ? "ডাঃ অভিষেক রায় | সেরা নাক, কান, গলা বিশেষজ্ঞ" 
+      : "Dr. Abhishek Ray | Best ENT Specialist",
     path: "/",
   });
 }
