@@ -70,6 +70,22 @@ export default function HeroSection({ lang }: HeroProps) {
 
   return (
     <section ref={containerRef} className="relative min-h-[90vh] flex flex-col justify-start px-6 py-8 lg:px-24 lg:py-12 overflow-hidden">
+      {/* Background Image with Vignette Overlays - Moved to top for fast LCP discovery */}
+      <div className="absolute inset-0 z-0 overflow-hidden">
+        <Image
+          src="/images/hero_bg.webp"
+          alt="The ENT Clinic Silchar Background"
+          fill
+          priority
+          unoptimized
+          fetchPriority="high"
+          className="object-cover opacity-35 select-none pointer-events-none"
+        />
+        {/* Light vignettes and gradients to preserve contrast and premium editorial depth */}
+        <div className="absolute inset-0 bg-gradient-to-b from-paper/20 via-paper/45 to-paper" />
+        <div className="absolute inset-0 bg-gradient-to-r from-paper/85 via-paper/25 to-transparent lg:block hidden" />
+      </div>
+
       <div className="max-w-7xl mx-auto w-full relative z-10 flex-1 flex flex-col justify-center">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start mt-12 lg:mt-20">
           <div className="lg:col-span-7">
@@ -91,21 +107,6 @@ export default function HeroSection({ lang }: HeroProps) {
               <HeroBookingForm lang={lang} />
           </div>
         </div>
-      </div>
-      
-      {/* Background Image with Vignette Overlays */}
-      <div className="absolute inset-0 z-0 overflow-hidden">
-        <Image
-          src="/images/hero_bg.webp"
-          alt="The ENT Clinic Silchar Background"
-          fill
-          priority
-          unoptimized
-          className="object-cover opacity-35 select-none pointer-events-none"
-        />
-        {/* Light vignettes and gradients to preserve contrast and premium editorial depth */}
-        <div className="absolute inset-0 bg-gradient-to-b from-paper/20 via-paper/45 to-paper" />
-        <div className="absolute inset-0 bg-gradient-to-r from-paper/85 via-paper/25 to-transparent lg:block hidden" />
       </div>
     </section>
   );
