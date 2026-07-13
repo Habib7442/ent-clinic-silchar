@@ -96,7 +96,7 @@ function BookingForm({ lang }: { lang: string }) {
       ? `Hello, I would like to book an appointment at The ENT Clinic Silchar.\n\n*Patient Name:* ${name}\n*Mobile Number:* ${mobile}\n*Preferred Date:* ${formattedDate}\n*ENT Issue:* ${selectedDisease}`
       : `নমস্কার, আমি দি ইএনটি ক্লিনিক শিলচরে একটি অ্যাপয়েন্টমেন্ট বুক করতে চাই।\n\n*রোগীর নাম:* ${name}\n*মোবাইল নম্বর:* ${mobile}\n*পছন্দসই তারিখ:* ${formattedDate}\n*ইএনটি সমস্যা:* ${selectedDisease}`;
 
-    const whatsappUrl = `https://wa.me/916901258281?text=${encodeURIComponent(message)}`;
+    const whatsappUrl = `https://wa.me/919435070156?text=${encodeURIComponent(message)}`;
 
     // Redirect to WhatsApp
     window.open(whatsappUrl, "_blank");

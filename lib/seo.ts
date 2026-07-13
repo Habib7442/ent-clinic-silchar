@@ -43,8 +43,8 @@ export const SITE = {
   geo: { latitude: 24.8163027, longitude: 92.8007081 },
 
   // Contact (replace placeholders before launch)
-  telephone: "+91-6901258281",
-  whatsapp: "+91-6901258281",
+  telephone: "+91-9435070156",
+  whatsapp: "+91-9435070156",
   email: "abhishek.hister@gmail.com",
 
   // Hours — keep aligned with GBP "openingHoursSpecification"
