@@ -39,8 +39,8 @@ export default function proxy(request: NextRequest) {
 }
 
 export const config = {
-  // Matcher ignoring `/_next/`, `/api/`, `/images/`, `/social-icons/`, `/sitemap.xml`, `/robots.txt`, `/favicon.ico`, `/favicon.svg`, `/favicon-dark.svg`, `/site.webmanifest`, and `/og-image.jpg`
+  // Matcher ignoring internal next assets, API routes, custom folder resources, and any path with a static file extension
   matcher: [
-    '/((?!api|_next/static|_next/image|images|social-icons|sitemap\\.xml|robots\\.txt|favicon\\.ico|favicon\\.svg|favicon-dark\\.svg|site\\.webmanifest|og-image\\.jpg).*)'
+    '/((?!api|_next/static|_next/image|images|social-icons|[^?]*\\.(?:html|css|js(?!on)|jpe?g|webp|png|gif|svg|ico|woff2?|webmanifest|xml|txt)).*)'
   ],
 };
