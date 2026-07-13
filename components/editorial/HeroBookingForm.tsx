@@ -162,7 +162,10 @@ function BookingForm({ lang }: { lang: string }) {
           </div>
           <div className="space-y-2">
             <Select key={disease} required value={disease} onValueChange={setDisease}>
-              <SelectTrigger className="h-12 border border-hairline focus:ring-forest bg-paper-card text-ink">
+              <SelectTrigger 
+                className="h-12 border border-hairline focus:ring-forest bg-paper-card text-ink"
+                aria-label={isEn ? "Select Service or Disease" : "সেবা বা রোগ নির্বাচন করুন"}
+              >
                 <SelectValue placeholder={isEn ? "Select Service / Disease" : "সেবা / রোগ নির্বাচন করুন"} />
               </SelectTrigger>
               <SelectContent position="popper" className="bg-paper-card border border-hairline shadow-xl w-[--radix-select-trigger-width]">
