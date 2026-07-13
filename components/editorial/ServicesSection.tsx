@@ -56,7 +56,7 @@ export default function ServicesSection({
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-16 lg:mb-24">
           <div className="max-w-2xl space-y-4">
-            <span className="text-xs uppercase tracking-[0.3em] text-gold font-semibold">
+            <span className="text-xs uppercase tracking-[0.3em] text-rust font-semibold">
               {isEn ? "Expert Clinical Services" : "বিশেষজ্ঞ ক্লিনিকাল সেবা"}
             </span>
             <h2 className="text-4xl md:text-5xl lg:text-7xl font-serif text-forest leading-tight">

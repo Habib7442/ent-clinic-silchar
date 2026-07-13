@@ -58,7 +58,7 @@ export default function EducationalVideosSection({ lang }: EducationalVideosSect
         
         {/* Section Header */}
         <div className="max-w-3xl mb-12 lg:mb-16 space-y-4">
-          <span className="text-xs uppercase tracking-[0.3em] text-gold font-semibold block">
+          <span className="text-xs uppercase tracking-[0.3em] text-rust font-semibold block">
             {content.eyebrow}
           </span>
           <h2 className="text-4xl md:text-5xl lg:text-7xl font-serif text-forest leading-tight">

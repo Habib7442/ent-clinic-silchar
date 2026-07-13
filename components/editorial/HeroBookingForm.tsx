@@ -142,7 +142,7 @@ function BookingForm({ lang }: { lang: string }) {
                   variant="outline"
                   className={cn(
                     "w-full h-12 justify-start text-left font-normal border-hairline focus-visible:ring-forest focus-visible:border-forest bg-paper-card hover:bg-paper-warm text-ink",
-                    !date && "text-ink/50"
+                    !date && "text-ink-soft/75"
                   )}
                 >
                   <CalendarIcon className="mr-2 h-4 w-4" />

@@ -86,13 +86,13 @@ export default function DoctorBrief({ lang }: DoctorBriefProps) {
       <div className="max-w-7xl mx-auto relative z-10">
         <div className="reveal-doc space-y-8">
           <div className="space-y-2">
-            <span className="text-xs uppercase tracking-[0.3em] text-gold font-semibold">
+            <span className="text-xs uppercase tracking-[0.3em] text-rust font-semibold">
               {content.title}
             </span>
             <h2 className="text-4xl md:text-5xl lg:text-7xl font-serif text-forest leading-tight">
               {content.name}
             </h2>
-            <p className="text-xl lg:text-2xl text-gold font-serif italic">
+            <p className="text-xl lg:text-2xl text-rust font-serif italic">
               {content.credentials}
             </p>
           </div>

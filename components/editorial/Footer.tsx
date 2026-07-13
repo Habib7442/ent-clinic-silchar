@@ -50,7 +50,7 @@ export default function Footer({ lang }: FooterProps) {
                 className="h-12 w-12 object-contain"
               />
               <span className="text-2xl font-serif text-forest tracking-tight leading-tight">
-                The ENT <span className="text-gold">Clinic</span>
+                The ENT <span className="text-rust">Clinic</span>
               </span>
             </Link>
             <p className="text-ink-soft text-lg leading-relaxed max-w-sm">
@@ -149,17 +149,17 @@ export default function Footer({ lang }: FooterProps) {
 
         {/* Bottom Bar */}
         <div className="pt-12 border-t border-hairline flex flex-col md:flex-row justify-between items-center gap-8">
-          <div className="flex flex-wrap justify-center gap-6 text-[10px] uppercase tracking-[0.2em] text-mute font-medium">
+          <div className="flex flex-wrap justify-center gap-6 text-[10px] uppercase tracking-[0.2em] text-ink-soft/80 font-medium">
             <span>© 2026 The ENT Clinic Silchar</span>
-            <Link href={`/${lang}/privacy`} className="hover:text-gold transition-colors">
+            <Link href={`/${lang}/privacy`} className="hover:text-rust transition-colors">
               {lang === "bn" ? "গোপনীয়তা নীতি" : "Privacy Policy"}
             </Link>
-            <Link href={`/${lang}/telemedicine-policy`} className="hover:text-gold transition-colors">
+            <Link href={`/${lang}/telemedicine-policy`} className="hover:text-rust transition-colors">
               {lang === "bn" ? "টেলিমেডিসিন নীতি" : "Telemedicine Policy"}
             </Link>
           </div>
           
-          <div className="text-[10px] uppercase tracking-[0.3em] text-mute font-medium">
+          <div className="text-[10px] uppercase tracking-[0.3em] text-ink-soft/80 font-medium">
             {content.developer}
           </div>
         </div>

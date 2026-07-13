@@ -110,7 +110,7 @@ export default function ProcessSection({ lang }: ProcessSectionProps) {
     <section id="process" ref={containerRef} className="py-12 lg:py-16 px-6 lg:px-24 bg-paper-warm overflow-hidden">
       <div className="max-w-7xl mx-auto">
         <div className="max-w-2xl mb-20 lg:mb-32 space-y-4">
-          <span className="text-xs uppercase tracking-[0.3em] text-gold font-semibold">
+          <span className="text-xs uppercase tracking-[0.3em] text-rust font-semibold">
             {isEn ? "The Clinical Journey" : "ক্লিনিকাল যাত্রা"}
           </span>
           <h2 className="text-4xl md:text-5xl lg:text-7xl font-serif text-forest leading-tight">

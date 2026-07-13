@@ -19,7 +19,7 @@ const buttonVariants = cva(
         destructive:
           "bg-destructive/10 text-destructive hover:bg-destructive/20 focus-visible:border-destructive/40 focus-visible:ring-destructive/20 dark:bg-destructive/20 dark:hover:bg-destructive/30 dark:focus-visible:ring-destructive/40",
         link: "text-primary underline-offset-4 hover:underline",
-        rust: "bg-[#B65C36] text-[#F6F1E6] hover:bg-[#8F482A]",
+        rust: "bg-[#A04925] text-[#F6F1E6] hover:bg-[#803A1D]",
       },
       size: {
         default:

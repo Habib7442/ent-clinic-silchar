@@ -110,7 +110,7 @@ export default function Testimonials({ lang }: TestimonialsProps) {
       
       <div className="max-w-7xl mx-auto relative z-10">
         <div className="max-w-3xl mb-12 lg:mb-16 space-y-4">
-          <span className="text-xs uppercase tracking-[0.3em] text-gold font-semibold block">
+          <span className="text-xs uppercase tracking-[0.3em] text-rust font-semibold block">
             {isEn ? "Patient Success Stories" : "রোগীর সাফল্যের গল্প"}
           </span>
           <h2 className="text-4xl md:text-5xl lg:text-7xl font-serif text-forest leading-tight">
@@ -184,7 +184,7 @@ export default function Testimonials({ lang }: TestimonialsProps) {
             </div>
             <span className="text-forest font-bold text-xl ml-2">4.9 / 5</span>
           </div>
-          <p className="text-xs uppercase tracking-[0.2em] text-mute font-medium text-center">
+          <p className="text-xs uppercase tracking-[0.2em] text-ink-soft/80 font-medium text-center">
             {isEn ? "Based on 150+ Verified Google Reviews" : "১৫০+ যাচাইকৃত গুগল রিভিউ ভিত্তিক"}
           </p>
         </div>
