@@ -79,7 +79,7 @@ export default function Footer({ lang }: FooterProps) {
 
           {/* Quick Links */}
           <div className="lg:col-span-2 space-y-8">
-            <h4 className="text-forest font-serif text-xl font-medium">{content.services}</h4>
+            <h3 className="text-forest font-serif text-xl font-medium">{content.services}</h3>
             <ul className="space-y-4">
               {["Hearing", "Sinus", "Snoring", "Paediatric", "Surgical"].map((item) => (
                 <li key={item}>
@@ -92,7 +92,7 @@ export default function Footer({ lang }: FooterProps) {
           </div>
 
           <div className="lg:col-span-2 space-y-8">
-            <h4 className="text-forest font-serif text-xl font-medium">{content.practice}</h4>
+            <h3 className="text-forest font-serif text-xl font-medium">{content.practice}</h3>
             <ul className="space-y-4">
               {[
                 { name: isEn ? "Doctor Profile" : "ডাক্তারের পরিচিতি", href: `/${lang}/doctor` },
@@ -122,7 +122,7 @@ export default function Footer({ lang }: FooterProps) {
 
           {/* Contact Column */}
           <div className="lg:col-span-4 space-y-8">
-            <h4 className="text-forest font-serif text-xl font-medium">{content.contact}</h4>
+            <h3 className="text-forest font-serif text-xl font-medium">{content.contact}</h3>
             <div className="space-y-6">
               <div className="flex items-start gap-4">
                 <MapPin className="w-5 h-5 text-gold shrink-0 mt-1" />
