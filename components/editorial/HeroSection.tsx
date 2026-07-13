@@ -100,7 +100,7 @@ export default function HeroSection({ lang }: HeroProps) {
           alt="The ENT Clinic Silchar Background"
           fill
           priority
-          sizes="100vw"
+          unoptimized
           className="object-cover opacity-35 select-none pointer-events-none"
         />
         {/* Light vignettes and gradients to preserve contrast and premium editorial depth */}

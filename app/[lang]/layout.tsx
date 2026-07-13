@@ -56,6 +56,10 @@ export default async function RootLayout({
       )}
       suppressHydrationWarning
     >
+      <head>
+        <link rel="preconnect" href="https://img.youtube.com" />
+        <link rel="preconnect" href="https://www.youtube.com" />
+      </head>
       <body 
         className="min-h-full flex flex-col bg-paper selection:bg-gold/20 selection:text-gold"
         suppressHydrationWarning
