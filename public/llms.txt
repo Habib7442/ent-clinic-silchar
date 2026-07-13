@@ -1,0 +1,11 @@
+# The ENT Clinic Silchar
+
+> MS (ENT) Head & Neck Surgery Specialist in Silchar, Assam. Combining surgical excellence with a compassionate, patient-first approach to hearing, sinus, and throat health.
+
+## Core Pages
+- [Doctor Profile](/en/doctor) - Detailed MS (ENT) clinical experience, credentials, and head and neck surgical expertise of Dr. Abhishek Ray.
+- [Clinical Services](/en/services) - Comprehensive diagnostic and surgical services including hearing testing, snoring therapy, sinus relief, and pediatric ENT.
+- [Clinic Gallery](/en/gallery) - Photos showing our modern equipment, soundproof audiometry cabin, and patient facilities.
+- [Educational Videos](/en/videos) - Free video guides, neuromotor wellness exercises, and clinical hygiene tips by Dr. Ray.
+- [Book Appointment](/en/book) - Request clinic booking slots and telemedicine consultation times.
+- [Contact Details](/en/contact) - Contact phone numbers, address, mapping coordinates, and direct WhatsApp links.
