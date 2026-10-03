@@ -39,3 +39,7 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# removed reference material (do not re-add)
+/Six-File+Context+Methodology/
+/search-console-optimization/
