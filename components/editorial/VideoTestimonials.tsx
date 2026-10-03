@@ -5,6 +5,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Play } from "lucide-react";
 import Image from "next/image";
+import SurgicalCaseCarousel from "./SurgicalCaseCarousel";
 
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
@@ -138,7 +139,7 @@ export default function VideoTestimonials({ lang }: VideoTestimonialsProps) {
                     </div>
                   ) : (
                     <iframe
-                      src={`https://www.youtube.com/embed/${item.id}?autoplay=1&rel=0&modestbranding=1`}
+                      src={`https://www.youtube-nocookie.com/embed/${item.id}?autoplay=1&rel=0&modestbranding=1`}
                       title={item.title}
                       className="absolute inset-0 w-full h-full border-0"
                       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -189,7 +190,7 @@ export default function VideoTestimonials({ lang }: VideoTestimonialsProps) {
                     </div>
                   ) : (
                     <iframe
-                      src={`https://www.youtube.com/embed/${item.id}?autoplay=1&rel=0&modestbranding=1`}
+                      src={`https://www.youtube-nocookie.com/embed/${item.id}?autoplay=1&rel=0&modestbranding=1`}
                       title={item.title}
                       className="absolute inset-0 w-full h-full border-0"
                       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -200,6 +201,9 @@ export default function VideoTestimonials({ lang }: VideoTestimonialsProps) {
               );
             })}
           </div>
+
+          {/* Surgical Case: Enlarged Thyroid Goiter (same patient, before & after) */}
+          <SurgicalCaseCarousel lang={lang} />
         </div>
       </div>
     </section>
