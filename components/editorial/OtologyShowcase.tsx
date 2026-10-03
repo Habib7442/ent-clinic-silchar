@@ -204,7 +204,7 @@ export default function OtologyShowcase({ lang }: OtologyShowcaseProps) {
                 </div>
               ) : (
                 <iframe
-                  src="https://www.youtube.com/embed/WJp_ubkWjps?autoplay=1&rel=0&modestbranding=1"
+                  src="https://www.youtube-nocookie.com/embed/WJp_ubkWjps?autoplay=1&rel=0&modestbranding=1"
                   title={isEn ? "BERA Test Demonstration Video" : "BERA পরীক্ষা প্রদর্শন ভিডিও"}
                   className="absolute inset-0 w-full h-full border-0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"

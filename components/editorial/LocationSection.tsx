@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { MapPin, Clock, Car, Navigation } from "lucide-react";
@@ -30,6 +30,7 @@ interface LocationSectionProps {
 export default function LocationSection({ lang, bgClass = "bg-paper" }: LocationSectionProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const isEn = lang === "en";
+  const [mapLoaded, setMapLoaded] = useState(false);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -141,15 +142,29 @@ export default function LocationSection({ lang, bgClass = "bg-paper" }: Location
             </div>
 
             <div className="reveal-loc relative w-full h-[300px] sm:h-[400px] lg:h-[450px] rounded-sm overflow-hidden border border-hairline group">
-              <iframe 
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d905.3448291394222!2d92.80013211814338!3d24.81669857211992!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x374e4bc39d29f7cd%3A0xa1149eff6fb1f70d!2sEAR%20CLINIC!5e0!3m2!1sen!2sin!4v1779078655094!5m2!1sen!2sin"
-                title={isEn ? "The ENT Clinic Silchar Google Maps Location" : "দি ইএনটি ক্লিনিক শিলচর গুগল ম্যাপস অবস্থান"}
-                className="absolute inset-0 w-full h-full grayscale-[0.1] contrast-[1.0] brightness-[1.0] transition-all duration-700 group-hover:grayscale-0 group-hover:contrast-100 group-hover:brightness-100"
-                style={{ border: 0 }}
-                allowFullScreen={true}
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-              />
+              {/* Click-to-load: Google sets cookies on the embed, so it only loads after the visitor opts in (DPDP consent) */}
+              {mapLoaded ? (
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d905.3448291394222!2d92.80013211814338!3d24.81669857211992!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x374e4bc39d29f7cd%3A0xa1149eff6fb1f70d!2sEAR%20CLINIC!5e0!3m2!1sen!2sin!4v1779078655094!5m2!1sen!2sin"
+                  title={isEn ? "The ENT Clinic Silchar Google Maps Location" : "দি ইএনটি ক্লিনিক শিলচর গুগল ম্যাপস অবস্থান"}
+                  className="absolute inset-0 w-full h-full"
+                  style={{ border: 0 }}
+                  allowFullScreen={true}
+                  referrerPolicy="no-referrer-when-downgrade"
+                />
+              ) : (
+                <div className="absolute inset-0 flex flex-col items-center justify-center gap-4 bg-paper-warm p-6 text-center">
+                  <MapPin className="w-10 h-10 text-gold" />
+                  <p className="text-sm text-ink-soft max-w-xs leading-relaxed">
+                    {isEn
+                      ? "The map is provided by Google, which may set cookies on your device when it loads."
+                      : "মানচিত্রটি গুগল সরবরাহ করে, এটি লোড হলে আপনার ডিভাইসে কুকি সেট হতে পারে।"}
+                  </p>
+                  <Button variant="outline" onClick={() => setMapLoaded(true)} className="border-forest/30 text-forest hover:border-gold">
+                    {isEn ? "Load Google Map" : "গুগল ম্যাপ লোড করুন"}
+                  </Button>
+                </div>
+              )}
               <div className="absolute inset-0 pointer-events-none ring-1 ring-inset ring-hairline" />
             </div>
           </div>

@@ -67,6 +67,8 @@ function BookingForm({ lang }: { lang: string }) {
   const [mobile, setMobile] = useState("");
   const [date, setDate] = useState<Date>();
   const [disease, setDisease] = useState<string>("");
+  // DPDP Act 2023 s.6: consent must be a clear affirmative action, so this starts unticked
+  const [consent, setConsent] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   useEffect(() => {
@@ -87,6 +89,7 @@ function BookingForm({ lang }: { lang: string }) {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    if (!consent) return;
     setIsSubmitting(true);
 
     const selectedDisease = diseaseLabels[disease]?.[lang === "bn" ? "bn" : "en"] || (isEn ? "Not specified" : "নির্দিষ্ট করা হয়নি");
@@ -217,11 +220,33 @@ function BookingForm({ lang }: { lang: string }) {
               </SelectContent>
             </Select>
           </div>
-          <Button 
-            type="submit" 
+          {/* DPDP short-form consent (Act s.5–6, Rules r.3): data, purpose, channel, withdrawal; full detail lives on /privacy */}
+          <label className="flex items-start gap-2.5 cursor-pointer pt-1">
+            <input
+              type="checkbox"
+              required
+              checked={consent}
+              onChange={(e) => setConsent(e.target.checked)}
+              className="mt-0.5 h-4 w-4 shrink-0 accent-forest cursor-pointer"
+            />
+            <span className="text-[11px] text-ink-soft leading-snug">
+              {isEn
+                ? "I agree to share my name, mobile, date and health concern with the clinic via WhatsApp to book this appointment. I can withdraw anytime. "
+                : "এই অ্যাপয়েন্টমেন্ট বুক করতে আমার নাম, মোবাইল, তারিখ ও স্বাস্থ্য সমস্যা হোয়াটসঅ্যাপে ক্লিনিকের সাথে শেয়ার করতে সম্মত। যেকোনো সময় প্রত্যাহার করতে পারি। "}
+              <a
+                href={`/${lang}/privacy`}
+                target="_blank"
+                className="text-rust underline underline-offset-2 hover:text-forest"
+              >
+                {isEn ? "Privacy Notice" : "গোপনীয়তা নোটিশ"}
+              </a>
+            </span>
+          </label>
+          <Button
+            type="submit"
             variant="rust"
-            className="w-full h-12 text-md mt-4" 
-            disabled={isSubmitting}
+            className="w-full h-12 text-md mt-4"
+            disabled={isSubmitting || !consent}
           >
             {isSubmitting 
               ? (isEn ? "Booking..." : "বুকিং হচ্ছে...") 
@@ -246,6 +271,7 @@ export default function HeroBookingForm({ lang }: { lang: string }) {
           <div className="h-12 bg-hairline rounded-none" />
           <div className="h-12 bg-hairline rounded-none" />
           <div className="h-12 bg-hairline rounded-none" />
+          <div className="h-8 bg-hairline rounded-none" />
           <div className="h-12 bg-rust/50 rounded-none mt-4" />
         </div>
       </Card>
