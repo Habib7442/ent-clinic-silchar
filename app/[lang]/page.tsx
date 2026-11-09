@@ -1,5 +1,4 @@
 import HeroSection from "@/components/editorial/HeroSection";
-import FestiveGreeting from "@/components/editorial/FestiveGreeting";
 import DoctorBrief from "@/components/editorial/DoctorBrief";
 import VideoTestimonials from "@/components/editorial/VideoTestimonials";
 import ServicesSection from "@/components/editorial/ServicesSection";
@@ -21,7 +20,6 @@ export default async function Home({
   return (
     <main className="flex-1 overflow-x-hidden">
       <HeroSection lang={lang} />
-      <FestiveGreeting lang={lang} />
       <DoctorBrief lang={lang} />
       <VideoTestimonials lang={lang} />
       <ServicesSection lang={lang} bgClass="bg-paper-warm" />
